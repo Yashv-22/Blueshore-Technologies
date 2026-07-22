@@ -1,0 +1,1 @@
+# Blueshore Django Apps Package

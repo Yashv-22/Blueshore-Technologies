@@ -1,0 +1,40 @@
+# Blueshore Technologies - robots.txt
+# https://www.blueshoretech.com/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /agency-agents-main/
+
+# Allow major AI search and answer engine crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.blueshoretech.com/sitemap.xml

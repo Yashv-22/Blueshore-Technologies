@@ -1,0 +1,208 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block content %}
+<div class="space-y-6 pb-12">
+    <!-- Welcome Header -->
+    <div class="relative overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-red-500/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-[11px] font-semibold tracking-wider uppercase mb-2">
+                <i data-lucide="shield" class="w-3.5 h-3.5"></i> SOC Security & Compliance
+            </div>
+            <h1 class="text-2xl font-extrabold text-white font-sans tracking-tight">Security Operations Center</h1>
+            <p class="text-xs text-slate-400 max-w-xl">
+                Real-time security analytics, lockout statistics, rate limit enforcement status, and audit log tracking.
+            </p>
+        </div>
+    </div>
+
+    <!-- Security KPI Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Card 1: System Status -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm">
+            <div class="flex justify-between text-slate-400 text-xs font-bold mb-2">
+                <span>SYSTEM STATUS</span>
+                <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+            </div>
+            <div class="text-2xl font-black text-green-500">Compliant</div>
+            <div class="text-[10px] text-slate-400 mt-1 font-semibold">SOC2 Compliance rules active</div>
+        </div>
+
+        <!-- Card 2: Total Authentication Requests -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm">
+            <div class="flex justify-between text-slate-400 text-xs font-bold mb-2">
+                <span>AUTH ATTEMPTS</span>
+                <i data-lucide="activity" class="w-4 h-4 text-blue-500"></i>
+            </div>
+            <div class="text-2xl font-black text-slate-900 dark:text-white">{{ total_attempts|default:"0" }}</div>
+            <div class="text-[10px] text-slate-400 mt-1 font-semibold">Logged authentication attempts</div>
+        </div>
+
+        <!-- Card 3: Active Lockouts -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm">
+            <div class="flex justify-between text-slate-400 text-xs font-bold mb-2">
+                <span>ACTIVE LOCKOUTS</span>
+                <i data-lucide="shield-alert" class="w-4 h-4 text-red-500"></i>
+            </div>
+            <div class="text-2xl font-black text-slate-900 dark:text-white">{{ total_blocked|default:"0" }}</div>
+            <div class="text-[10px] text-slate-400 mt-1 font-semibold">IPs currently blacklisted</div>
+        </div>
+
+        <!-- Card 4: Rate-Limiting status -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm">
+            <div class="flex justify-between text-slate-400 text-xs font-bold mb-2">
+                <span>RATE LIMIT THR</span>
+                <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i>
+            </div>
+            <div class="text-2xl font-black text-slate-900 dark:text-white">Active</div>
+            <div class="text-[10px] text-slate-400 mt-1 font-semibold">DRF anon/user throttles active</div>
+        </div>
+    </div>
+
+    <!-- Security Chart & Recent Logins -->
+    <div class="grid lg:grid-cols-3 gap-6">
+        <!-- Auth Attempt Chart -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm lg:col-span-2">
+            <h3 class="font-bold text-sm text-slate-800 dark:text-white mb-4 flex items-center gap-1.5">
+                <i data-lucide="trending-up" class="w-4 h-4 text-red-500"></i> Access Attempt Trends
+            </h3>
+            <div class="h-64 relative">
+                <canvas id="security-chart"></canvas>
+            </div>
+        </div>
+
+        <!-- System Firewall Rules Status -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm">
+            <h3 class="font-bold text-sm text-slate-800 dark:text-white mb-4 flex items-center gap-1.5">
+                <i data-lucide="lock" class="w-4 h-4 text-blue-500"></i> Active Security Rules
+            </h3>
+            <div class="space-y-3.5 text-xs text-slate-500 dark:text-slate-400">
+                <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <span>Brute Force Protection</span>
+                    <span class="text-green-500 font-bold">Enabled</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <span>2FA Verification</span>
+                    <span class="text-green-500 font-bold">Enforced</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <span>Gemini Prompt Firewall</span>
+                    <span class="text-green-500 font-bold">Active</span>
+                </div>
+                <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <span>IP Lockout (3 attempts)</span>
+                    <span class="text-red-500 font-bold">Enabled</span>
+                </div>
+                <div class="flex justify-between pb-2">
+                    <span>SSL Certificate</span>
+                    <span class="text-green-500 font-bold">Active (Let's Encrypt)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Login / Access Failures Table -->
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+        <h3 class="font-bold text-sm text-slate-800 dark:text-white mb-4 flex items-center gap-1.5">
+            <i data-lucide="list" class="w-4 h-4 text-indigo-500"></i> Authentication Attempt Log
+        </h3>
+        
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+                <thead>
+                    <tr class="border-b border-slate-100 dark:border-slate-800 text-slate-400">
+                        <th class="py-3 font-bold">USERNAME</th>
+                        <th class="py-3 font-bold">IP ADDRESS</th>
+                        <th class="py-3 font-bold">USER AGENT</th>
+                        <th class="py-3 font-bold">TIMESTAMP</th>
+                        <th class="py-3 font-bold text-center">TRUSTED / SUCCESS</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                    {% for attempt in recent_attempts %}
+                    <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/20 text-slate-700 dark:text-slate-350">
+                        <td class="py-3 font-bold text-slate-800 dark:text-white">{{ attempt.username }}</td>
+                        <td class="py-3">{{ attempt.ip_address }}</td>
+                        <td class="py-3 truncate max-w-[200px]" title="{{ attempt.user_agent }}">{{ attempt.user_agent }}</td>
+                        <td class="py-3">{{ attempt.timestamp }}</td>
+                        <td class="py-3 text-center">
+                            {% if attempt.trusted %}
+                            <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 font-bold text-[9px] uppercase">Success</span>
+                            {% else %}
+                            <span class="px-2 py-0.5 rounded-full bg-red-500/10 text-red-500 font-bold text-[9px] uppercase">Blocked / Suspect</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="py-4 text-center text-slate-450 italic">No authentication attempts logged in the database yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Load Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        new Chart(document.getElementById("security-chart"), {
+            type: 'line',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                datasets: [
+                    {
+                        label: 'Successful Logins',
+                        data: [12, 19, 15, 17, 14, 8, 9],
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        borderColor: 'rgb(59, 130, 246)',
+                        borderWidth: 2,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Blocked Attacks',
+                        data: [1, 2, 0, 4, 3, 1, 0],
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        borderColor: 'rgb(239, 68, 68)',
+                        borderWidth: 2,
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#94a3b8'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.05)'
+                        },
+                        ticks: {
+                            color: '#94a3b8'
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.05)'
+                        },
+                        ticks: {
+                            color: '#94a3b8'
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+    <!-- Definitions for gradients and shadows -->
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FCFCFD" />
+            <stop offset="100%" stop-color="#EEF2F6" />
+        </linearGradient>
+        <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#7C3AED" />
+            <stop offset="100%" stop-color="#A78BFA" />
+        </linearGradient>
+        <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#2563EB" />
+            <stop offset="100%" stop-color="#3B82F6" />
+        </linearGradient>
+        <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.0" />
+        </linearGradient>
+        <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#7C3AED" flood-opacity="0.04" />
+        </filter>
+        <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04" />
+        </filter>
+    </defs>
+
+    <!-- Background Canvas -->
+    <rect width="800" height="600" rx="16" fill="url(#bgGrad)" />
+
+    <!-- Left Navigation Sidebar -->
+    <rect x="0" y="0" width="180" height="600" rx="16" fill="#FFFFFF" filter="url(#shadow)" />
+    
+    <!-- Sidebar Branding (Cyber Shield logo type) -->
+    <rect x="28" y="28" width="24" height="24" rx="6" fill="url(#accentGrad)" />
+    <path d="M34 33 C34 33 34 38 40 43 C46 38 46 33 46 33 C46 33 40 31 34 33 Z M40 33 V41" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    <rect x="62" y="32" width="80" height="8" rx="4" fill="#0F172A" />
+    <rect x="62" y="44" width="50" height="5" rx="2" fill="#94A3B8" />
+
+    <!-- Sidebar Menu Items -->
+    <g transform="translate(20, 90)">
+        <!-- Security Shield (Active) -->
+        <rect x="0" y="0" width="140" height="32" rx="8" fill="#F5F3FF" />
+        <rect x="8" y="8" width="16" height="16" rx="4" fill="#7C3AED" />
+        <rect x="36" y="12" width="70" height="8" rx="4" fill="#6D28D9" />
+        
+        <!-- Firewall Telemetry -->
+        <g transform="translate(0, 44)">
+            <rect x="8" y="8" width="16" height="16" rx="4" fill="#E2E8F0" />
+            <rect x="36" y="12" width="60" height="8" rx="4" fill="#64748B" />
+        </g>
+        
+        <!-- Identity Keys (Zero-Trust) -->
+        <g transform="translate(0, 80)">
+            <rect x="8" y="8" width="16" height="16" rx="4" fill="#E2E8F0" />
+            <rect x="36" y="12" width="75" height="8" rx="4" fill="#64748B" />
+        </g>
+
+        <!-- Threat Intelligence -->
+        <g transform="translate(0, 116)">
+            <rect x="8" y="8" width="16" height="16" rx="4" fill="#E2E8F0" />
+            <rect x="36" y="12" width="65" height="8" rx="4" fill="#64748B" />
+        </g>
+
+        <!-- System Audit -->
+        <g transform="translate(0, 152)">
+            <rect x="8" y="8" width="16" height="16" rx="4" fill="#E2E8F0" />
+            <rect x="36" y="12" width="70" height="8" rx="4" fill="#64748B" />
+        </g>
+    </g>
+
+    <!-- Top Navigation Header -->
+    <rect x="180" y="0" width="620" height="70" fill="#FFFFFF" filter="url(#shadow)" />
+    <!-- Page Title -->
+    <text x="210" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="bold" fill="#0F172A">Zero-Trust Threat Operations Center</text>
+    <!-- Live Shield Active Badge -->
+    <rect x="520" y="24" width="80" height="22" rx="11" fill="#ECFDF5" />
+    <circle cx="532" cy="35" r="4" fill="#10B981" />
+    <text x="542" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="bold" fill="#047857">SECURE</text>
+
+    <!-- Main Content Area Grid -->
+    
+    <!-- Row 1: Security KPI Stats -->
+    <g transform="translate(200, 90)">
+        <!-- Card 1: Compliance -->
+        <g transform="translate(10, 0)" filter="url(#cardShadow)">
+            <rect width="180" height="80" rx="12" fill="#FFFFFF" />
+            <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748B">Security Compliance</text>
+            <text x="16" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#10B981">100% Secure</text>
+            <circle cx="147" cy="40" r="18" fill="#ECFDF5" />
+            <path d="M141 40 L145 44 L153 36" stroke="#10B981" stroke-width="3" stroke-linecap="round" fill="none" />
+        </g>
+
+        <!-- Card 2: Monitoring Uptime -->
+        <g transform="translate(205, 0)" filter="url(#cardShadow)">
+            <rect width="180" height="80" rx="12" fill="#FFFFFF" />
+            <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748B">Threat Detection SOC</text>
+            <text x="16" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#0F172A">24/7 Active</text>
+            <circle cx="147" cy="40" r="18" fill="#F5F3FF" />
+            <circle cx="147" cy="40" r="12" fill="none" stroke="#7C3AED" stroke-width="2" />
+            <circle cx="147" cy="40" r="4" fill="#7C3AED" />
+        </g>
+
+        <!-- Card 3: Encrypted Tunnels -->
+        <g transform="translate(400, 0)" filter="url(#cardShadow)">
+            <rect width="180" height="80" rx="12" fill="#FFFFFF" />
+            <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748B">Zero-Trust Tunnels</text>
+            <text x="16" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#0F172A">4,820 Nodes</text>
+            <circle cx="147" cy="40" r="18" fill="#EFF6FF" />
+            <path d="M141 43 L145 37 L149 43 M145 37 V48" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </g>
+    </g>
+
+    <!-- Row 2: Cryptographic Identity & Authentication Map Panel -->
+    <g transform="translate(210, 190)" filter="url(#cardShadow)">
+        <rect width="570" height="240" rx="12" fill="#FFFFFF" />
+        <text x="20" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" fill="#0F172A">Zero-Trust Cryptographic Access Node Map &amp; Firewall Logs</text>
+        
+        <!-- Zero-Trust visualization mockup -->
+        <g transform="translate(20, 50)">
+            <!-- Stylized shield nodes connected -->
+            <rect width="530" height="170" rx="8" fill="#F8FAFC" />
+            
+            <!-- Connection web lines -->
+            <path d="M100 85 L220 85 M220 85 L350 85 M350 85 L440 85" stroke="#E2E8F0" stroke-width="3" />
+            <path d="M220 85 L220 140 M350 85 L350 140" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="4,4" />
+
+            <!-- Access Node 1 -->
+            <g transform="translate(80, 65)">
+                <rect width="40" height="40" rx="20" fill="#ECFDF5" stroke="#10B981" stroke-width="2" />
+                <path d="M15 15 C15 15 15 20 20 25 C25 20 25 15 25 15" stroke="#10B981" stroke-width="2" fill="none" />
+            </g>
+            
+            <!-- Access Node 2 (Center Gate) -->
+            <g transform="translate(200, 65)">
+                <rect width="40" height="40" rx="20" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5" />
+                <path d="M16 18 H24 V26 H16 Z" stroke="#7C3AED" stroke-width="2" fill="none" />
+                <circle cx="20" cy="15" r="3" fill="none" stroke="#7C3AED" stroke-width="2" />
+            </g>
+
+            <!-- Access Node 3 -->
+            <g transform="translate(330, 65)">
+                <rect width="40" height="40" rx="20" fill="#ECFDF5" stroke="#10B981" stroke-width="2" />
+                <path d="M15 15 C15 15 15 20 20 25 C25 20 25 15 25 15" stroke="#10B981" stroke-width="2" fill="none" />
+            </g>
+
+            <!-- Access Node 4 -->
+            <g transform="translate(420, 65)">
+                <rect width="40" height="40" rx="20" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2" />
+                <path d="M20 13 V27 M13 20 H27" stroke="#3B82F6" stroke-width="2" fill="none" />
+            </g>
+            
+            <!-- Gateway Status indicators -->
+            <rect x="180" y="125" width="80" height="18" rx="4" fill="#0F172A" />
+            <text x="188" y="137" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#FFFFFF">ACTIVE GATEWAY</text>
+            
+            <!-- Threat Block status indicators -->
+            <rect x="310" y="125" width="80" height="18" rx="4" fill="#EF4444" />
+            <text x="323" y="137" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#FFFFFF">0 THREATS</text>
+        </g>
+    </g>
+
+    <!-- Row 3: Security Logs & Audit Sparklines Panel -->
+    <g transform="translate(210, 450)" filter="url(#cardShadow)">
+        <rect width="570" height="130" rx="12" fill="#FFFFFF" />
+        <text x="20" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" fill="#0F172A">Real-time Automated Threat Scanning Progress logs</text>
+        
+        <!-- Smooth area chart (scanning volume) -->
+        <path d="M30 80 Q 110 50 190 75 T 350 40 T 510 55 L 550 25" fill="none" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" />
+        <path d="M30 80 Q 110 50 190 75 T 350 40 T 510 55 L 550 25 L 550 115 L 30 115 Z" fill="url(#chartGrad)" />
+        
+        <!-- Baseline lines -->
+        <line x1="30" y1="115" x2="550" y2="115" stroke="#E2E8F0" stroke-width="1.5" />
+        <line x1="30" y1="65" x2="550" y2="65" stroke="#F1F5F9" stroke-width="1" />
+        <line x1="30" y1="35" x2="550" y2="35" stroke="#F1F5F9" stroke-width="1" />
+
+        <circle cx="350" cy="40" r="4" fill="#6D28D9" />
+        <circle cx="550" cy="25" r="4" fill="#7C3AED" />
+    </g>
+</svg>

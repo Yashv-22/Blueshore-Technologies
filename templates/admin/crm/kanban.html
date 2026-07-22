@@ -1,0 +1,171 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block content %}
+<div class="space-y-6 pb-12">
+    <!-- Header Banner -->
+    <div class="relative overflow-hidden bg-gradient-to-r from-slate-900 to-indigo-950 border border-slate-200 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-semibold tracking-wider uppercase mb-2">
+                    <i data-lucide="kanban" class="w-3.5 h-3.5"></i> CRM Pipeline
+                </div>
+                <h1 class="text-2xl font-extrabold text-white font-sans tracking-tight">Interactive CRM Kanban Board</h1>
+                <p class="text-xs text-slate-400 max-w-xl">
+                    Drag and drop leads between lifecycle stages. Statuses synchronize instantly with database CRM records.
+                </p>
+            </div>
+            <div class="flex gap-2">
+                <a href="/admin/crm/lead/" class="px-4 py-2.5 bg-slate-850 hover:bg-slate-800 border border-slate-700 text-white rounded-xl text-xs font-semibold transition">
+                    View CRM Tables
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kanban Stages Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4 items-start overflow-x-auto pb-4">
+        {% for stage in stages %}
+        <div class="bg-slate-100/50 dark:bg-slate-900/60 border border-slate-250/30 dark:border-slate-800/40 rounded-2xl p-4 flex flex-col min-h-[70vh] shrink-0" 
+             id="stage-{{ stage|slugify }}" 
+             ondragover="allowDrop(event)" 
+             ondrop="drop(event, '{{ stage }}')">
+            
+            <!-- Stage Title Header -->
+            <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-200 dark:border-slate-800/60">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full 
+                        {% if stage == 'New' %}bg-blue-500
+                        {% elif stage == 'Contacted' %}bg-cyan-500
+                        {% elif stage == 'Qualified' %}bg-emerald-500
+                        {% elif stage == 'Proposal Sent' %}bg-amber-500
+                        {% elif stage == 'Won' %}bg-green-500
+                        {% elif stage == 'Lost' %}bg-red-500
+                        {% else %}bg-slate-400{% endif %}">
+                    </span>
+                    <span class="text-xs font-bold text-slate-750 dark:text-slate-200 uppercase tracking-wider">{{ stage }}</span>
+                </div>
+                <span class="px-2 py-0.5 bg-slate-200 dark:bg-slate-800 text-[10px] font-bold rounded-md text-slate-550 dark:text-slate-400 count-badge">0</span>
+            </div>
+
+            <!-- Card stack container -->
+            <div class="space-y-3 flex-1 cards-container">
+                {% for lead in leads %}
+                    {% if lead.status == stage %}
+                    <div class="bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800/60 rounded-xl p-4 shadow-sm hover:shadow-md transition cursor-grab active:cursor-grabbing draggable-card relative group" 
+                         id="lead-{{ lead.id }}" 
+                         draggable="true" 
+                         ondragstart="drag(event)">
+                        
+                        <div class="flex justify-between items-start gap-2 mb-2">
+                            <h4 class="text-xs font-bold text-slate-850 dark:text-slate-100 group-hover:text-blue-500 transition">{{ lead.name }}</h4>
+                        </div>
+                        
+                        <!-- Company & Budget -->
+                        <div class="text-[10px] text-slate-400 font-semibold mb-3 flex items-center justify-between">
+                            <span class="truncate max-w-[120px]">{{ lead.company }}</span>
+                            <span class="text-blue-500 dark:text-blue-400 font-bold bg-blue-500/5 px-1.5 py-0.5 rounded">{{ lead.budget }}</span>
+                        </div>
+
+                        <!-- Service Details -->
+                        <div class="text-[11px] text-slate-500 dark:text-slate-400 leading-normal line-clamp-2 bg-slate-50 dark:bg-slate-900/40 p-2 rounded-lg mb-3 border border-slate-100 dark:border-slate-800/30">
+                            <strong>{{ lead.service }}</strong>: {{ lead.message }}
+                        </div>
+
+                        <!-- Date Captured -->
+                        <div class="flex items-center justify-between text-[9px] text-slate-400 border-t border-slate-100 dark:border-slate-800/40 pt-2">
+                            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> {{ lead.created_at|date:"M d, Y" }}</span>
+                            <a href="/admin/crm/lead/{{ lead.id }}/change/" class="text-blue-500 hover:underline font-bold">Edit Details</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text/plain", ev.target.id);
+        ev.target.classList.add('opacity-50');
+    }
+
+    document.addEventListener('dragend', (ev) => {
+        if (ev.target.classList) {
+            ev.target.classList.remove('opacity-50');
+        }
+    });
+
+    function drop(ev, newStatus) {
+        ev.preventDefault();
+        const cardId = ev.dataTransfer.getData("text/plain");
+        const cardEl = document.getElementById(cardId);
+        if (!cardEl) return;
+
+        // Find targets
+        const stageSlug = newStatus.toLowerCase().replace(' ', '-');
+        const container = document.querySelector(`#stage-${stageSlug} .cards-container`);
+        if (!container) return;
+
+        // Extract internal DB lead ID
+        const leadId = cardId.replace('lead-', '');
+
+        // Loading indicator visual lock
+        cardEl.classList.add('pointer-events-none');
+        cardEl.style.border = '1px dashed #3b82f6';
+
+        // Post request to DB status API
+        fetch(`/admin/crm/lead/${leadId}/update-status/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({ status: newStatus })
+        })
+        .then(r => r.json())
+        .then(data => {
+            cardEl.classList.remove('pointer-events-none');
+            cardEl.style.border = '';
+            if (data.success) {
+                // Move elements locally
+                container.appendChild(cardEl);
+                updateCounts();
+            } else {
+                alert("Failed to sync stage transition: " + data.message);
+                window.location.reload();
+            }
+        })
+        .catch(err => {
+            cardEl.classList.remove('pointer-events-none');
+            cardEl.style.border = '';
+            alert("Network connection error synchronizing stage change.");
+            window.location.reload();
+        });
+    }
+
+    function updateCounts() {
+        document.querySelectorAll('[id^="stage-"]').forEach(col => {
+            const count = col.querySelectorAll('.draggable-card').length;
+            const badge = col.querySelector('.count-badge');
+            if (badge) {
+                badge.innerText = count;
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        updateCounts();
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    });
+</script>
+{% endblock %}

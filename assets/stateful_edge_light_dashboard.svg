@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+    <!-- Definitions for gradients and shadows -->
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FCFCFD" />
+            <stop offset="100%" stop-color="#F0F9FF" />
+        </linearGradient>
+        <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0EA5E9" />
+            <stop offset="100%" stop-color="#2563EB" />
+        </linearGradient>
+        <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#06B6D4" />
+            <stop offset="100%" stop-color="#22D3EE" />
+        </linearGradient>
+        <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0.0" />
+        </linearGradient>
+        <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0284C7" flood-opacity="0.04" />
+        </filter>
+        <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.04" />
+        </filter>
+    </defs>
+
+    <!-- Background Canvas -->
+    <rect width="800" height="600" rx="16" fill="url(#bgGrad)" />
+
+    <!-- Left Navigation Sidebar -->
+    <rect x="0" y="0" width="180" height="600" rx="16" fill="#FFFFFF" filter="url(#shadow)" />
+    
+    <!-- Sidebar Branding (Edge Node icon type) -->
+    <rect x="28" y="28" width="24" height="24" rx="6" fill="url(#accentGrad)" />
+    <circle cx="40" cy="40" r="5" fill="#FFFFFF" />
+    <circle cx="34" cy="40" r="2.5" fill="#FFFFFF" />
+    <circle cx="46" cy="40" r="2.5" fill="#FFFFFF" />
+    <line x1="34" y1="40" x2="46" y2="40" stroke="#FFFFFF" stroke-width="1" />
+    <rect x="62" y="32" width="80" height="8" rx="4" fill="#0F172A" />
+    <rect x="62" y="44" width="50" height="5" rx="2" fill="#94A3B8" />
+
+    <!-- Sidebar Menu Items -->
+    <g transform="translate(20, 90)">
+        <!-- Edge Monitor (Active) -->
+        <rect x="0" y="0" width="140" height="32" rx="8" fill="#F0F9FF" />
+        <rect x="8" y="8" width="16" height="16" rx="4" fill="#0EA5E9" />
+        <rect x="36" y="12" width="70" height="8" rx="4" fill="#0284C7" />
+        
+        <!-- Stateful Databases -->
+        <g transform="translate(0, 44)">
+            <rect x="8" y="8" width="16" height="16" rx="4" fill="#E2E8F0" />
+            <rect x="36" y="12" width="80" height="8" rx="4" fill="#64748B" />
+        </g>
+        
+        <!-- Replication Logs -->
+        <g transform="translate(0, 80)">
+            <rect x="8" y="8" width="16" height="16" rx="4" fill="#E2E8F0" />
+            <rect x="36" y="12" width="75" height="8" rx="4" fill="#64748B" />
+        </g>
+
+        <!-- Latency Maps -->
+        <g transform="translate(0, 116)">
+            <rect x="8" y="8" width="16" height="16" rx="4" fill="#E2E8F0" />
+            <rect x="36" y="12" width="60" height="8" rx="4" fill="#64748B" />
+        </g>
+    </g>
+
+    <!-- Top Navigation Header -->
+    <rect x="180" y="0" width="620" height="70" fill="#FFFFFF" filter="url(#shadow)" />
+    <!-- Page Title -->
+    <text x="210" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="bold" fill="#0F172A">Stateful Edge Computing Console</text>
+    <!-- Latency Badge -->
+    <rect x="520" y="24" width="80" height="22" rx="11" fill="#ECFDF5" />
+    <circle cx="532" cy="35" r="4" fill="#10B981" />
+    <text x="542" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="bold" fill="#047857">1.2ms AVG</text>
+
+    <!-- Main Content Area Grid -->
+    
+    <!-- Row 1: KPI Stats Cards -->
+    <g transform="translate(200, 90)">
+        <!-- Card 1: Edge Nodes -->
+        <g transform="translate(10, 0)" filter="url(#cardShadow)">
+            <rect width="180" height="80" rx="12" fill="#FFFFFF" />
+            <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748B">Active Edge Nodes</text>
+            <text x="16" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#0F172A">12,480</text>
+            <rect x="130" y="16" width="34" height="48" rx="6" fill="#F0F9FF" />
+            <path d="M147 28 L138 44 H156 Z" fill="#0EA5E9" />
+        </g>
+
+        <!-- Card 2: DB Replication -->
+        <g transform="translate(205, 0)" filter="url(#cardShadow)">
+            <rect width="180" height="80" rx="12" fill="#FFFFFF" />
+            <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748B">Sync Consistency</text>
+            <text x="16" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#10B981">99.9997%</text>
+            <circle cx="147" cy="40" r="18" fill="#ECFDF5" />
+            <path d="M141 40 L145 44 L153 36" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </g>
+
+        <!-- Card 3: Memory Hit Rate -->
+        <g transform="translate(400, 0)" filter="url(#cardShadow)">
+            <rect width="180" height="80" rx="12" fill="#FFFFFF" />
+            <text x="16" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748B">Cache Hit Ratio</text>
+            <text x="16" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#0F172A">98.4%</text>
+            <circle cx="147" cy="40" r="18" fill="#FFFBEB" />
+            <text x="143" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="bold" fill="#D97706">⚡</text>
+        </g>
+    </g>
+
+    <!-- Row 2: Distributed State Node Map Panel -->
+    <g transform="translate(210, 190)" filter="url(#cardShadow)">
+        <rect width="570" height="240" rx="12" fill="#FFFFFF" />
+        <text x="20" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" fill="#0F172A">Edge Database Latency Nodes &amp; State Replication Pools</text>
+        
+        <!-- Edge Node Visualization -->
+        <rect x="20" y="50" width="530" height="170" rx="8" fill="#F8FAFC" />
+        
+        <!-- Distributed Cluster Web -->
+        <path d="M120 130 L230 70 M230 70 L350 140 M350 140 L450 75 L350 140" stroke="#E2E8F0" stroke-width="2.5" />
+        <path d="M120 130 L350 140 M230 70 L450 75" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4,4" />
+
+        <!-- Node 1: Seattle -->
+        <circle cx="120" cy="130" r="6" fill="#0EA5E9" />
+        <circle cx="120" cy="130" r="11" fill="none" stroke="#0EA5E9" stroke-opacity="0.4" stroke-width="1.5" />
+        <text x="100" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="bold" fill="#64748B">US-WEST (1.1ms)</text>
+
+        <!-- Node 2: New York -->
+        <circle cx="230" cy="70" r="6" fill="#0EA5E9" />
+        <circle cx="230" cy="70" r="11" fill="none" stroke="#0EA5E9" stroke-opacity="0.4" stroke-width="1.5" />
+        <text x="210" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="bold" fill="#64748B">US-EAST (0.8ms)</text>
+
+        <!-- Node 3: London -->
+        <circle cx="350" cy="140" r="6" fill="#0EA5E9" />
+        <circle cx="350" cy="140" r="11" fill="none" stroke="#0EA5E9" stroke-opacity="0.4" stroke-width="1.5" />
+        <text x="330" y="162" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="bold" fill="#64748B">EU-WEST (1.4ms)</text>
+
+        <!-- Node 4: Tokyo -->
+        <circle cx="450" cy="75" r="6" fill="#06B6D4" />
+        <circle cx="450" cy="75" r="11" fill="none" stroke="#06B6D4" stroke-opacity="0.4" stroke-width="1.5" />
+        <text x="430" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="bold" fill="#64748B">AP-NORTHEAST (1.8ms)</text>
+
+        <!-- Sync Active indicator -->
+        <rect x="235" y="110" width="80" height="20" rx="4" fill="#ECFDF5" />
+        <circle cx="245" cy="120" r="3" fill="#10B981" />
+        <text x="254" y="123" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="bold" fill="#047857">SYNC ACTIVE</text>
+    </g>
+
+    <!-- Row 3: Sub-millisecond latency sparklines -->
+    <g transform="translate(210, 450)" filter="url(#cardShadow)">
+        <rect width="570" height="130" rx="12" fill="#FFFFFF" />
+        <text x="20" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="bold" fill="#0F172A">State Replication Latency Profile (Stateful Edge DB)</text>
+        
+        <!-- Latency curve -->
+        <path d="M30 90 Q 110 95 190 70 T 350 45 T 510 50 L 550 45" fill="none" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round" />
+        <path d="M30 90 Q 110 95 190 70 T 350 45 T 510 50 L 550 45 L 550 115 L 30 115 Z" fill="url(#chartGrad)" />
+        
+        <!-- Baseline lines -->
+        <line x1="30" y1="115" x2="550" y2="115" stroke="#E2E8F0" stroke-width="1.5" />
+        <line x1="30" y1="80" x2="550" y2="80" stroke="#F1F5F9" stroke-width="1" />
+        <line x1="30" y1="45" x2="550" y2="45" stroke="#F1F5F9" stroke-width="1" />
+
+        <circle cx="350" cy="45" r="4.5" fill="#0284C7" />
+        <circle cx="550" cy="45" r="4.5" fill="#0EA5E9" />
+    </g>
+</svg>

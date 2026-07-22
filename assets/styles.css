@@ -1,0 +1,1970 @@
+/* ==========================================================================
+   Blueshore Technologies â€” Global Responsive Overrides
+   Breakpoints: Mobile (<768), Tablet (768-1023), Desktop (1024+)
+   
+   IMPORTANT: Tailwind CDN injects styles at runtime AFTER this stylesheet.
+   All responsive overrides MUST use !important to win the specificity war.
+   ========================================================================== */
+
+/* ===== GLOBAL: Stats Strip â€” always a slim horizontal ribbon ===== */
+#stats-strip {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}
+
+#stats-strip-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    width: 100% !important;
+    gap: 0 !important;
+}
+
+#stats-strip-inner>div {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+}
+
+#stats-strip .stat-number,
+#stats-strip .font-headline-lg {
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+}
+
+#stats-strip .font-label-md,
+#stats-strip .text-label-md {
+    font-size: 12px !important;
+    line-height: 16px !important;
+}
+
+/* ===== GLOBAL: Expertise Cards â€” centre all content ===== */
+.expertise-card {
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Centre the icon box */
+.expertise-card .expertise-icon {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Centre list items (Custom Software card) */
+.expertise-card ul {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.expertise-card ul li {
+    justify-content: center !important;
+}
+
+/* Centre the Growth card's inner text wrapper */
+.expertise-card .relative.z-10.flex.flex-col.flex-1 {
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Centre the "Explore Strategy" inline link */
+.expertise-card .inline-flex {
+    justify-content: center !important;
+}
+
+/* ===== GLOBAL: Global Presence Cards â€” centre all content ===== */
+.global-presence-card {
+    text-align: center !important;
+    align-items: center !important;
+}
+
+.global-presence-card .material-symbols-outlined {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ===== FOOTER: Always dark for brand contrast ===== */
+/* Footer background and text behavior is now handled by light-theme.css 
+   and the base HTML classes to ensure high-contrast brand visibility. */
+
+
+/* --- FOOTER: Global Dark Theme (Both light and dark modes) --- */
+
+footer,
+html.dark footer {
+    background-color: #020813 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+    footer>div[style*="radial-gradient"],
+html.dark footer>div[style*="radial-gradient"] {
+    opacity: 0.04 !important;
+    background-image: radial-gradient(circle, #ffffff 1px, transparent 1px) !important;
+}
+
+footer .border-b,
+html.dark footer .border-b {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* --- Section Headers: Center align on mobile --- */
+@media (max-width: 767px) {
+    .mb-16.text-center, 
+    .text-center.mb-16,
+    .flex.justify-between.items-end {
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* --- Proposal Card Padding --- */
+    .bg-white.dark\:bg-\[\#0B1221\].rounded-2xl.p-10 {
+        padding: 24px !important;
+    }
+
+    /* --- FAQ Summary Padding --- */
+    details summary {
+        padding: 16px !important;
+        font-size: 16px !important;
+    }
+
+    /* --- Hero Badge --- */
+    .hero-enter-1 {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: fit-content !important;
+    }
+
+    /* --- Ensure navbar brand doesn't wrap awkwardly --- */
+    nav .text-xl {
+        font-size: 14px !important;
+    }
+}
+
+footer .text-white,
+footer h2,
+footer h4,
+html.dark footer .text-white,
+html.dark footer h2,
+html.dark footer h4 {
+    color: #ffffff !important;
+}
+
+footer .text-xl,
+html.dark footer .text-xl {
+    color: #ffffff !important;
+}
+
+footer .text-slate-400,
+html.dark footer .text-slate-400 {
+    color: #94a3b8 !important;
+}
+
+footer .text-slate-500,
+html.dark footer .text-slate-500 {
+    color: #64748b !important;
+}
+
+footer span:not(.material-symbols-outlined):not(.w-1) {
+    color: #94a3b8;
+}
+
+footer ul li a,
+html.dark footer ul li a {
+    color: #94a3b8 !important;
+}
+
+footer ul li a:hover,
+html.dark footer ul li a:hover {
+    color: #ffffff !important;
+}
+
+footer .space-y-3 a,
+html.dark footer .space-y-3 a {
+    color: #94a3b8 !important;
+}
+
+footer .space-y-3 a:hover,
+html.dark footer .space-y-3 a:hover {
+    color: #3790ff !important;
+}
+
+footer a.rounded-lg,
+html.dark footer a.rounded-lg {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #94a3b8 !important;
+    box-shadow: none !important;
+}
+
+footer .border-t,
+html.dark footer .border-t {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+footer .border-t a,
+html.dark footer .border-t a {
+    color: #64748b !important;
+}
+
+footer .border-t a:hover,
+html.dark footer .border-t a:hover {
+    color: #3790ff !important;
+}
+
+
+/* ===== GLOBAL: Prevent Horizontal Overflow ===== */
+html {
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    position: relative;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box !important;
+}
+
+/* ===== Ensure images never overflow ===== */
+img,
+video,
+svg,
+canvas {
+    max-width: 100% !important;
+    height: auto;
+}
+
+/* ===== Mobile Navigation Drawer ===== */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 8, 22, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 60;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    height: 100dvh;
+    background: #0B1221;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -6px 0 40px rgba(0, 0, 0, 0.5);
+    z-index: 70;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    /* Curtain effect: reveal from right to left */
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+    transition: clip-path 0.45s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu-drawer.active {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mobile-menu-close {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-close .material-symbols-outlined {
+    font-size: 16px;
+    line-height: 1;
+    font-variation-settings: 'wght' 300;
+}
+
+.mobile-menu-close:hover {
+    background: rgba(55,144,255, 0.08);
+    border-color: rgba(55,144,255, 0.5);
+    color: #3790ff;
+    transform: rotate(90deg) scale(1.05);
+    box-shadow: 0 0 10px rgba(55,144,255, 0.2);
+}
+
+/* Staggered fade-in for menu links when curtain reveals rightâ†’left */
+.mobile-menu-drawer.active .mobile-menu-links a,
+.mobile-menu-drawer.active .mobile-menu-links button {
+    animation: curtainItemIn 0.35s ease both;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(1),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(1) {
+    animation-delay: 0.18s;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(2),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(2) {
+    animation-delay: 0.23s;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(3),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(3) {
+    animation-delay: 0.28s;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(4),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(4) {
+    animation-delay: 0.33s;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(5),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(5) {
+    animation-delay: 0.38s;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(6),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(6) {
+    animation-delay: 0.43s;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(7),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(7) {
+    animation-delay: 0.48s;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(8),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(8) {
+    animation-delay: 0.53s;
+}
+
+.mobile-menu-drawer.active .mobile-menu-links a:nth-child(9),
+.mobile-menu-drawer.active .mobile-menu-links button:nth-child(9) {
+    animation-delay: 0.58s;
+}
+
+@keyframes curtainItemIn {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu-links {
+    padding: 16px 24px;
+}
+
+.mobile-menu-links a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 14px 0;
+    color: #cbd5e1;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s;
+    text-align: left;
+}
+
+.mobile-menu-links button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 0;
+    color: #cbd5e1;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s;
+    text-align: left;
+}
+
+.mobile-menu-links a:hover,
+.mobile-menu-links button:hover {
+    color: #3790ff;
+}
+
+.mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 16px;
+}
+
+.mobile-submenu.open {
+    max-height: 500px;
+}
+
+.mobile-submenu a {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.mobile-submenu a:hover {
+    color: #3790ff;
+}
+
+.mobile-menu-cta {
+    padding: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.mobile-menu-cta a {
+    display: block;
+    text-align: center;
+    background: #3790ff;
+    color: #030816;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 0 15px rgba(55,144,255, 0.3);
+}
+
+.mobile-menu-cta a:hover {
+    background: #5da2ff;
+    transform: translateY(-1px);
+}
+
+.mobile-menu-cta .phone-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px;
+    color: #cbd5e1;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.hamburger-btn:hover {
+    background: rgba(55,144,255, 0.1);
+    border-color: #3790ff;
+    color: #3790ff;
+}
+
+@media (max-width: 1023px) {
+    .hamburger-btn {
+        display: flex !important;
+    }
+}
+
+/* ===== Hide desktop nav dropdowns on tablet/mobile ===== */
+@media (max-width: 1023px) {
+    nav .relative.group>div[class*="absolute"] {
+        display: none !important;
+    }
+}
+
+/* ===== Smooth scroll ===== */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+
+/* ==========================================================================
+   MOBILE STYLES (max-width: 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+
+    /* --- Typography Scaling --- */
+    .text-headline-display,
+    .font-headline-display,
+    [class*="text-headline-display"],
+    [class*="font-headline-display"] {
+        font-size: 30px !important;
+        line-height: 38px !important;
+    }
+
+    .text-headline-lg,
+    .font-headline-lg,
+    [class*="text-headline-lg"],
+    [class*="font-headline-lg"] {
+        font-size: 26px !important;
+        line-height: 34px !important;
+    }
+
+    .text-headline-md,
+    .font-headline-md {
+        font-size: 22px !important;
+        line-height: 30px !important;
+    }
+
+    .text-headline-sm,
+    .font-headline-sm {
+        font-size: 18px !important;
+        line-height: 26px !important;
+    }
+
+    .text-body-lg,
+    .font-body-lg {
+        font-size: 15px !important;
+        line-height: 23px !important;
+    }
+
+    .text-5xl {
+        font-size: 28px !important;
+        line-height: 36px !important;
+    }
+
+    .text-4xl {
+        font-size: 24px !important;
+        line-height: 32px !important;
+    }
+
+    .text-3xl {
+        font-size: 22px !important;
+        line-height: 30px !important;
+    }
+
+    /* Hero title with hardcoded size */
+    h1[class*="text-[60px]"],
+    .text-\[60px\] {
+        font-size: 28px !important;
+        line-height: 36px !important;
+    }
+
+    .text-\[20px\] {
+        font-size: 15px !important;
+        line-height: 23px !important;
+    }
+
+    h1 br {
+        display: none !important;
+    }
+
+
+    /* --- Section Spacing --- */
+    section[class*="py-[120px]"],
+    .py-\[120px\] {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+    }
+
+    .py-24 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .py-16 {
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .pt-20 {
+        padding-top: 40px !important;
+    }
+
+
+    /* --- Container Padding: Kill px-8 (32px) on mobile â†’ 16px --- */
+    .px-8 {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    [class*="max-w-"][class*="px-8"],
+    div[class*="max-w-[1280px]"],
+    div[class*="max-w-7xl"],
+    div[class*="max-w-[1400px]"],
+    div[class*="max-w-[800px]"] {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+
+    /* --- Navbar --- */
+    nav[class*="fixed"]>div {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    nav .text-xl {
+        font-size: 15px !important;
+    }
+
+    /* Hide "Let's Talk" and phone on mobile - hamburger handles it */
+    nav .hidden.sm\:inline-block,
+    nav .hidden.md\:flex {
+        display: none !important;
+    }
+
+
+    /* --- Gap Overrides --- */
+    .gap-20 {
+        gap: 24px !important;
+    }
+
+    .gap-16 {
+        gap: 24px !important;
+    }
+
+    .gap-12 {
+        gap: 20px !important;
+    }
+
+    .gap-8 {
+        gap: 16px !important;
+    }
+
+    .mb-20 {
+        margin-bottom: 32px !important;
+    }
+
+    .mb-16 {
+        margin-bottom: 28px !important;
+    }
+
+    .mb-12 {
+        margin-bottom: 24px !important;
+    }
+
+
+    /* --- Hero Section: auto height on mobile to prevent button clipping --- */
+    .ai-hero-full {
+        height: auto !important;
+        min-height: 78dvh !important;
+        max-height: none !important;
+        padding-top: 90px !important;
+        padding-bottom: 40px !important;
+        overflow: visible !important;
+        align-items: center !important;
+    }
+
+    .hero-enter-4 {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 8px !important;
+    }
+
+    .hero-enter-4 a {
+        flex: 1 1 0% !important;
+        min-width: 0 !important;
+        width: auto !important;
+        min-height: 44px !important;
+        padding: 10px 8px !important;
+        font-size: 11px !important;
+        margin: 0 !important;
+    }
+
+
+
+    /* --- Stats Strip: 2x2 grid on mobile for better readability --- */
+    #stats-strip {
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        display: block !important;
+    }
+
+    #stats-strip-inner {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 24px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    #stats-strip-inner>div {
+        flex: none !important;
+        width: 100% !important;
+    }
+
+    /* Compact number & label sizes for grid layout */
+    #stats-strip .stat-number,
+    #stats-strip .font-headline-lg {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
+
+    #stats-strip .font-label-md,
+    #stats-strip .text-label-md {
+        font-size: 11px !important;
+        line-height: 15px !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    .robot-box {
+        display: none !important;
+    }
+
+    .-mt-24 {
+        margin-top: 0 !important;
+    }
+
+    section[class*="h-[600px]"],
+    section.h-\[600px\] {
+        height: auto !important;
+        min-height: 350px !important;
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+    }
+
+    section[class*="h-[400px]"],
+    section.h-\[400px\] {
+        height: auto !important;
+        min-height: 250px !important;
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .h-96 {
+        height: 250px !important;
+    }
+
+
+    /* --- ALL GRIDS: Force single column on mobile --- */
+    .grid[class*="md:grid-cols-2"],
+    .grid[class*="md:grid-cols-3"],
+    .grid[class*="md:grid-cols-4"],
+    .grid[class*="lg:grid-cols-4"],
+    .grid[class*="lg:grid-cols-5"],
+    .grid[class*="lg:grid-cols-6"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Stats grid: keep 2 columns */
+    .grid.grid-cols-2[class*="md:grid-cols-4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Industries 6-col grid: 2 columns on mobile */
+    .grid.grid-cols-2[class*="md:grid-cols-3"][class*="lg:grid-cols-6"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    /* Awards grid: 2 columns */
+    .grid.grid-cols-2[class*="md:grid-cols-4"][class*="items-center"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Force any col-span to span full width */
+    [class*="md:col-span-2"],
+    [class*="md:col-span-3"],
+    [class*="md:col-span-4"],
+    [class*="lg:col-span-2"] {
+        grid-column: span 1 !important;
+    }
+
+    /* Bento grid: single column */
+    .grid.grid-cols-1[class*="md:grid-cols-4"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    .grid.grid-cols-1[class*="md:grid-cols-4"]>[class*="md:col-span-2"] {
+        grid-column: span 1 !important;
+    }
+
+    /* Inline form grid: stack vertically */
+    form .grid.grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 3-col stats (about page) */
+    .grid.grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    /* Flex layout for "Latest Industry Insights" header */
+    .flex.justify-between.items-end {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+
+    /* Footer grid */
+    footer .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    footer [class*="lg:col-span-2"] {
+        grid-column: span 1 !important;
+    }
+
+    footer .mb-16 {
+        margin-bottom: 32px !important;
+    }
+
+
+    /* --- Padding Overrides --- */
+    .p-10 {
+        padding: 20px !important;
+    }
+
+    .p-12 {
+        padding: 20px !important;
+    }
+
+    .p-16 {
+        padding: 20px !important;
+    }
+
+    .p-8 {
+        padding: 20px !important;
+    }
+
+
+    /* --- Featured Case Studies: uniform card sizing on mobile --- */
+    .caseStudiesSwiper .swiper-slide {
+        width: calc(100vw - 48px) !important;
+        /* full width minus left+right gutter */
+        max-width: 340px !important;
+        min-width: 0 !important;
+    }
+
+    /* Every card inner wrapper fills 100% of the slide */
+    .caseStudiesSwiper .swiper-slide>div {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Uniform image height */
+    .caseStudiesSwiper .swiper-slide .h-64 {
+        height: 200px !important;
+    }
+
+    /* Consistent card padding */
+    .caseStudiesSwiper .swiper-slide .p-8 {
+        padding: 18px !important;
+    }
+
+    /* Ensure text area has a minimum height so short descriptions don't look uneven */
+    .caseStudiesSwiper .swiper-slide .p-8 p {
+        min-height: 60px !important;
+    }
+
+    /* Other swiper slides (non case-study) */
+    .swiper-slide:not(.caseStudiesSwiper .swiper-slide) {
+        width: 85vw !important;
+        max-width: 320px !important;
+    }
+
+
+    /* --- FAQ --- */
+    details summary {
+        font-size: 15px !important;
+        padding: 14px !important;
+    }
+
+    details .px-6 {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+
+    /* --- WhatsApp Button --- */
+    a[href*="wa.me"] {
+        width: 48px !important;
+        height: 48px !important;
+        bottom: 16px !important;
+        right: 16px !important;
+    }
+
+    a[href*="wa.me"] svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+
+    /* Hide tooltip on mobile */
+    a[href*="wa.me"] span {
+        display: none !important;
+    }
+
+
+    /* --- Aspect Ratio Images --- */
+    .aspect-square {
+        aspect-ratio: 4/3 !important;
+    }
+
+    .aspect-\[4\/5\] {
+        aspect-ratio: 1/1 !important;
+    }
+
+
+    /* --- About page quote overlay --- */
+    .absolute.-bottom-10.-left-10 {
+        display: none !important;
+    }
+
+    /* Mission section blockquote */
+    blockquote[class*="font-headline-md"] {
+        font-size: 20px !important;
+        line-height: 30px !important;
+    }
+
+
+    /* --- Hero CTA buttons: perfectly centred on mobile --- */
+    .flex.flex-nowrap.items-stretch.gap-3 a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0 10px !important;
+        font-size: 11px !important;
+        min-height: 40px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    .flex.flex-wrap.gap-4 a {
+        width: auto !important;
+        padding: 8px 18px !important;
+        font-size: 13px !important;
+        min-height: 38px !important;
+        line-height: 1.2 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .flex.flex-col.sm\:flex-row a,
+    .flex.flex-col.sm\:flex-row button {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Bottom footer bar */
+    footer .flex.flex-col.md\:flex-row {
+        text-align: center !important;
+    }
+
+    footer .flex-wrap {
+        gap: 12px !important;
+        justify-content: center !important;
+    }
+
+    /* Careers page hero image */
+    .relative.h-96 {
+        height: 200px !important;
+    }
+
+    /* Contact page */
+    .grid[class*="md:grid-cols-2"][class*="gap-16"] {
+        gap: 24px !important;
+    }
+
+    /* --- Section overflow containment --- */
+    section {
+        overflow-x: hidden !important;
+    }
+
+    .overflow-visible {
+        overflow: hidden !important;
+    }
+
+    .swiper {
+        overflow: hidden !important;
+    }
+
+    /* --- Contain max-width elements --- */
+    .max-w-2xl,
+    .max-w-3xl,
+    .max-w-4xl,
+    .max-w-md {
+        max-width: 100% !important;
+    }
+
+    .w-\[600px\] {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Footer bottom bar direction */
+    footer .flex.flex-col.md\:flex-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important;
+    }
+
+    footer .flex-wrap {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    footer .grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+
+    footer .flex.gap-4 {
+        justify-content: center !important;
+        margin: 0 auto 24px !important;
+        width: fit-content !important;
+    }
+
+    footer .max-w-md {
+        margin: 0 auto 24px !important;
+        text-align: center !important;
+    }
+
+    /* Industry & Awards Grids: Force single column on mobile */
+    .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-6,
+    .grid.grid-cols-2.md\:grid-cols-4.items-center {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+}
+
+
+/* ==========================================================================
+   TABLET STYLES (768px - 1023px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* --- Typography --- */
+    .text-headline-display,
+    .font-headline-display {
+        font-size: 42px !important;
+        line-height: 50px !important;
+    }
+
+    .text-headline-lg,
+    .font-headline-lg {
+        font-size: 34px !important;
+        line-height: 42px !important;
+    }
+
+    h1[class*="text-[60px]"],
+    .text-\[60px\] {
+        font-size: 42px !important;
+        line-height: 50px !important;
+    }
+
+
+    /* --- Section Spacing --- */
+    section[class*="py-[120px]"],
+    .py-\[120px\] {
+        padding-top: 64px !important;
+        padding-bottom: 64px !important;
+    }
+
+
+    /* --- Hero --- */
+    .ai-hero-full {
+        min-height: auto !important;
+        padding: 100px 0 80px !important;
+    }
+
+    section[class*="h-[600px]"],
+    section.h-\[600px\] {
+        height: auto !important;
+        min-height: 450px !important;
+    }
+
+    section[class*="h-[400px]"],
+    section.h-\[400px\] {
+        height: auto !important;
+        min-height: 300px !important;
+    }
+
+
+    /* --- Grids: 2-column on tablet --- */
+    .grid[class*="md:grid-cols-4"],
+    .grid[class*="lg:grid-cols-5"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .grid[class*="lg:grid-cols-6"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* Force col-spans to behave */
+    [class*="md:col-span-2"] {
+        grid-column: span 2 !important;
+    }
+
+    /* Bento grid on tablet */
+    .grid.grid-cols-1[class*="md:grid-cols-4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+
+/* ==========================================================================
+   TOUCH-FRIENDLY TAP TARGETS
+   ========================================================================== */
+@media (max-width: 1023px) {
+
+    a,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Exceptions for inline links */
+    p a,
+    li a,
+    span a,
+    .mobile-submenu a,
+    .mobile-menu-links a,
+    footer a,
+    footer .flex-wrap a {
+        min-height: auto;
+        min-width: auto;
+    }
+}
+
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+@media print {
+
+    nav,
+    footer,
+    .hamburger-btn,
+    a[href*="wa.me"] {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* ==========================================================================
+   GLOBAL MOBILE RESPONSIVENESS (FALLBACK & OVERRIDES)
+   ========================================================================== */
+@media (max-width: 767px) {
+    /* Prevent horizontal scrolling globally */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+
+    /* Ensure responsive images and media */
+    img, video, canvas, svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Override large fixed widths that break mobile view */
+    .w-\[600px\], .w-\[500px\], .w-\[450px\], .w-\[400px\], .w-\[800px\] {
+        max-width: 100% !important;
+    }
+
+    /* Force generic grids to stack if they don't have md: prefix */
+    .grid-cols-2, .grid-cols-3, .grid-cols-4, .grid-cols-5, .grid-cols-6 {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    /* Text wrapping to prevent overflow */
+    p, h1, h2, h3, h4, h5, h6, a, span, div {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Reduce huge paddings on mobile */
+    .py-\[120px\] {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    .py-24 {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+    }
+
+    /* Reduce display text sizes for smaller screens */
+    .text-headline-display, .font-headline-display {
+        font-size: 36px !important;
+        line-height: 44px !important;
+    }
+    .text-headline-lg, .font-headline-lg {
+        font-size: 28px !important;
+        line-height: 36px !important;
+    }
+    .text-5xl {
+        font-size: 32px !important;
+        line-height: 40px !important;
+    }
+
+    /* ---- Case Studies Carousel: center cards on mobile ---- */
+    .caseStudiesSwiper {
+        overflow: hidden !important;
+        padding: 0 16px !important;
+    }
+    .caseStudiesSwiper .swiper-slide {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* ---- Contact Page: center steps & info on mobile ---- */
+
+    /* "What happens after you reach out" steps */
+    .step-num {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Contact split section â€” stack and center on mobile */
+    [class*="lg:grid-cols-"][class*="items-start"] > .space-y-6 {
+        text-align: center !important;
+    }
+    [class*="lg:grid-cols-"][class*="items-start"] > .space-y-6 .mb-2 {
+        text-align: center !important;
+    }
+    [class*="lg:grid-cols-"][class*="items-start"] > .space-y-6 .mb-2 p,
+    [class*="lg:grid-cols-"][class*="items-start"] > .space-y-6 .mb-2 h2 {
+        text-align: center !important;
+    }
+
+    /* Info cards (Global Offices / Office Hours) â€” stack and center */
+    .gb-card {
+        text-align: center !important;
+    }
+    .gb-card .gb-card-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Contact methods list â€” center content */
+    .contact-list-row {
+        justify-content: center !important;
+    }
+
+    /* Response badge (Online Now) â€” center */
+    .response-badge {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* ---- Contact Page Hero: let banner grow to fit content ---- */
+    .ai-hero-full {
+        min-height: auto !important;
+        height: auto !important;
+        padding-top: 100px !important;
+        padding-bottom: 60px !important;
+    }
+    .ai-hero-full h1 {
+        font-size: 36px !important;
+        line-height: 1.12 !important;
+    }
+}
+/* ==========================================================================
+   Blueshore Technologies â€” Light Theme Overrides
+   Active when: <html> does NOT have class "dark"
+   Strategy: Override hard-coded dark colors using attribute selectors
+             and element-specific rules so light mode looks polished.
+   ========================================================================== */
+
+/* ===========================================================================
+   THEME TOGGLE BUTTON â€” works in both dark and light modes
+   =========================================================================== */
+.theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    color: #cbd5e1;
+    flex-shrink: 0;
+    outline: none;
+}
+
+html:not(.dark) .theme-toggle-btn {
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    color: #374151 !important;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(55,144,255, 0.12) !important;
+    border-color: #3790ff !important;
+    color: #3790ff !important;
+}
+
+/* ===========================================================================
+   BASE â€” HTML & BODY
+   =========================================================================== */
+html:not(.dark) {
+    color-scheme: light;
+}
+
+html:not(.dark) body {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+/* ===========================================================================
+   DARK BACKGROUND OVERRIDES
+   Using [class*="..."] attribute substring selectors to catch Tailwind
+   arbitrary values like bg-[#030816], bg-[#030816]/90, etc.
+   =========================================================================== */
+
+/* Deepest dark â†’ light blue-gray */
+html:not(.dark) [class*="bg-[#030816]"] {
+    background-color: #f8fafc !important;
+}
+
+/* Card dark bg â†’ white */
+html:not(.dark) [class*="bg-[#0B1221]"],
+html:not(.dark) [class*="bg-[#0b1221]"] {
+    background-color: #ffffff !important;
+}
+
+/* Elevated surfaces â†’ slate-100 */
+html:not(.dark) [class*="bg-[#131B2F]"],
+html:not(.dark) [class*="bg-[#131b2f]"] {
+    background-color: #f1f5f9 !important;
+}
+
+/* Dark overlay */
+html:not(.dark) [class*="bg-[#1a233a]"] {
+    background-color: #f1f5f9 !important;
+}
+
+/* Other dark shades used across pages */
+html:not(.dark) [class*="bg-[#02040f]"],
+html:not(.dark) [class*="bg-[#02050f]"],
+html:not(.dark) [class*="bg-[#0b1c30]"],
+html:not(.dark) [class*="bg-[#0e1f32]"],
+html:not(.dark) [class*="bg-[#243448]"] {
+    background-color: #f1f5f9 !important;
+}
+
+/* Semi-transparent white overlays on dark â†’ subtle on light */
+html:not(.dark) [class*="bg-white/5"],
+html:not(.dark) [class*="bg-white/10"],
+html:not(.dark) [class*="bg-white/20"] {
+    background-color: rgba(0, 0, 0, 0.025) !important;
+}
+
+/* ===========================================================================
+   TEXT COLOR OVERRIDES
+   =========================================================================== */
+
+/* White text â†’ near-black on light backgrounds */
+html:not(.dark) .text-white {
+    color: #0f172a !important;
+}
+
+/* Light gray â†’ readable medium gray */
+html:not(.dark) .text-slate-300 {
+    color: #475569 !important;
+}
+
+html:not(.dark) .text-slate-400 {
+    color: #64748b !important;
+}
+
+/* Cyan accent labels â†’ darker for readability on white */
+html:not(.dark) [class*="text-[#3790ff]"] {
+    color: #3790ff !important;
+}
+
+/* Gold accent â€” keep as-is (warm, visible on light bg) */
+/* html:not(.dark) [class*="text-[#3790ff]"] â€” intentionally not overriding */
+
+/* Cyan background badges â†’ very light cyan tint */
+html:not(.dark) [class*="bg-[#3790ff]/10"],
+html:not(.dark) [class*="bg-[#3790ff]/20"] {
+    background-color: rgba(55, 144, 255, 0.08) !important;
+}
+
+/* ===========================================================================
+   BORDER OVERRIDES
+   =========================================================================== */
+
+html:not(.dark) [class*="border-white/5"] {
+    border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) [class*="border-white/10"] {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) [class*="border-white/20"] {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) [class*="border-white/30"] {
+    border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Dividers */
+html:not(.dark) [class*="divide-white/"]>*+* {
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Ring utilities */
+html:not(.dark) [class*="ring-white/"] {
+    --tw-ring-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ===========================================================================
+   NAVIGATION
+   =========================================================================== */
+
+/* Hard-coded dark nav backgrounds (about.html, services.html, etc.) */
+html:not(.dark) nav[class*="bg-[#030816]"] {
+    background-color: rgba(248, 250, 252, 0.96) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Nav text that's hard-coded white */
+html:not(.dark) nav .text-white {
+    color: #0f172a !important;
+}
+
+html:not(.dark) nav .text-slate-300 {
+    color: #374151 !important;
+}
+
+/* Nav text and icons default/hover states */
+html:not(.dark) nav.fixed.top-0 .text-slate-600 {
+    color: #000000 !important;
+}
+
+html:not(.dark) nav.fixed.top-0 .text-slate-600:hover,
+html:not(.dark) nav.fixed.top-0 .group:hover > a {
+    color: #3790ff !important;
+}
+
+/* Dropdown menus */
+html:not(.dark) nav [class*="bg-[#0B1221]"],
+html:not(.dark) nav [class*="bg-[#0b1221]"] {
+    background-color: #ffffff !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hamburger button */
+html:not(.dark) .hamburger-btn {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.12) !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) .hamburger-btn:hover {
+    background: rgba(55,144,255, 0.08) !important;
+}
+
+/* ===========================================================================
+   HERO CTA BUTTONS
+   Premium button styles for the hero section (always on dark #030816 bg)
+   =========================================================================== */
+
+/* Primary CTA — Gold gradient with glow */
+.hero-cta-primary {
+    background: linear-gradient(135deg, #3790ff 0%, #2563eb 50%, #1d4ed8 100%);
+    color: #030816 !important;
+    box-shadow: 0 4px 20px rgba(55,144,255, 0.35),
+                0 1px 3px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.02em;
+}
+
+.hero-cta-primary:hover {
+    background: linear-gradient(135deg, #60a5fa 0%, #3790ff 50%, #2563eb 100%);
+    color: #030816 !important;
+    box-shadow: 0 8px 32px rgba(55,144,255, 0.5),
+                0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary CTA — Frosted glass with subtle border */
+.hero-cta-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    color: #e2e8f0 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    letter-spacing: 0.01em;
+}
+
+.hero-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #3790ff !important;
+    border-color: rgba(55,144,255, 0.45);
+    box-shadow: 0 4px 20px rgba(55,144,255, 0.15),
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hero-cta-tertiary {
+    background: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    color: #e2e8f0 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    letter-spacing: 0.01em;
+}
+
+.hero-cta-tertiary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #3790ff !important;
+    border-color: rgba(55,144,255, 0.45);
+    box-shadow: 0 4px 20px rgba(55,144,255, 0.15),
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ===========================================================================
+   HERO SECTIONS
+   Overrides inline <style> tag rules via !important + higher specificity
+   =========================================================================== */
+
+/* Keep hero background exactly as it appears in dark mode */
+html:not(.dark) .ai-hero-full {
+    background: #030816 !important;
+}
+
+/* neural-bg and robot-box: no overrides â€” stay at their original opacity/style */
+
+/* Gradient text: keep original goldâ†’cyan animation (reads fine on dark hero) */
+html:not(.dark) .hero-title-animated {
+    background: linear-gradient(90deg, #5da2ff, #3790ff, #3790ff, #3790ff) !important;
+    background-size: 300% auto !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Restore all text inside the hero to light colours.
+   Needed because the general light-mode rules turn text-white â†’ dark,
+   and index.html uses "text-slate-900 dark:text-white" which in light mode
+   would render dark text on a dark background without these overrides. */
+html:not(.dark) .ai-hero-full .text-white,
+html:not(.dark) .ai-hero-full .text-slate-900 {
+    color: #ffffff !important;
+}
+
+html:not(.dark) .ai-hero-full .text-slate-300,
+html:not(.dark) .ai-hero-full .text-slate-600 {
+    color: #cbd5e1 !important;
+}
+
+html:not(.dark) .ai-hero-full .text-slate-400 {
+    color: #94a3b8 !important;
+}
+
+/* Cyan labels inside hero stay bright */
+html:not(.dark) .ai-hero-full [class*="text-[#3790ff]"] {
+    color: #3790ff !important;
+}
+
+/* Hero button borders: restore white/subtle borders on dark bg */
+html:not(.dark) .ai-hero-full [class*="border-white/"],
+html:not(.dark) .ai-hero-full [class*="border-black/"] {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Gold CTA border stays as-is (already correct) */
+html:not(.dark) .ai-hero-full [class*="border-[#3790ff]"] {
+    border-color: #3790ff !important;
+}
+
+/* Prevent global bg overrides from affecting hero internals.
+   The global rule [class*="bg-[#0B1221]"] matches dark:bg-[#0B1221]/10
+   in the raw class string, incorrectly giving hero elements a white bg.
+   Reset to transparent so buttons/badge look correct on the dark hero. */
+html:not(.dark) .ai-hero-full [class*="bg-[#0B1221]"],
+html:not(.dark) .ai-hero-full [class*="bg-[#0b1221]"] {
+    background-color: transparent !important;
+}
+
+/* Badge "Enterprise Digital Solutions": restore subtle dark-tinted bg */
+html:not(.dark) .ai-hero-full [class*="bg-black/5"] {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Protect hero CTA buttons from global light-mode text overrides */
+html:not(.dark) .ai-hero-full .hero-cta-primary {
+    color: #030816 !important;
+}
+
+html:not(.dark) .ai-hero-full .hero-cta-secondary {
+    color: #e2e8f0 !important;
+}
+
+html:not(.dark) .ai-hero-full .hero-cta-secondary:hover {
+    color: #3790ff !important;
+}
+
+html:not(.dark) .ai-hero-full .hero-cta-tertiary {
+    color: #e2e8f0 !important;
+}
+
+html:not(.dark) .ai-hero-full .hero-cta-tertiary:hover {
+    color: #3790ff !important;
+}
+
+/* ===========================================================================
+   GRADIENT COLOR OVERRIDES
+   Changes Tailwind CSS custom properties used by gradient utilities
+   =========================================================================== */
+
+html:not(.dark) [class*="from-[#030816]"] {
+    --tw-gradient-from: #f8fafc !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important;
+}
+
+html:not(.dark) [class*="via-[#030816]"] {
+    --tw-gradient-via: #f8fafc !important;
+    --tw-gradient-stops: var(--tw-gradient-from), #f8fafc, var(--tw-gradient-to, rgba(248, 250, 252, 0)) !important;
+}
+
+html:not(.dark) [class*="to-[#030816]"] {
+    --tw-gradient-to: #f8fafc !important;
+}
+
+html:not(.dark) [class*="from-[#0B1221]"],
+html:not(.dark) [class*="from-[#0b1221]"] {
+    --tw-gradient-from: #ffffff !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0)) !important;
+}
+
+html:not(.dark) [class*="to-[#0B1221]"],
+html:not(.dark) [class*="to-[#0b1221]"] {
+    --tw-gradient-to: #ffffff !important;
+}
+
+html:not(.dark) [class*="from-[#131B2F]"],
+html:not(.dark) [class*="from-[#131b2f]"] {
+    --tw-gradient-from: #f1f5f9 !important;
+}
+
+html:not(.dark) [class*="to-[#131B2F]"],
+html:not(.dark) [class*="to-[#131b2f]"] {
+    --tw-gradient-to: #f1f5f9 !important;
+}
+
+/* Dot-pattern backgrounds (radial-gradient dots) â†’ lighter dots */
+html:not(.dark) [style*="radial-gradient(circle at center, #1f477b"] {
+    background-image: radial-gradient(circle at center, rgba(30, 64, 175, 0.1) 1px, transparent 1px) !important;
+}
+
+/* ===========================================================================
+   IMAGE FILTER OVERRIDES
+   Blog card images have dark-mode CSS filters applied as inline styles.
+   !important on author stylesheet overrides inline styles per CSS cascade.
+   =========================================================================== */
+
+html:not(.dark) img[style*="filter"],
+html:not(.dark) [style*="filter: contrast"] {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* ===========================================================================
+   MOBILE MENU
+   =========================================================================== */
+
+html:not(.dark) .mobile-menu-overlay {
+    background: rgba(15, 23, 42, 0.4) !important;
+}
+
+html:not(.dark) .mobile-menu-drawer {
+    background: #ffffff !important;
+    border-left-color: rgba(0, 0, 0, 0.08) !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) .mobile-menu-header {
+    border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Brand name in mobile menu (has inline style="color: white") */
+html:not(.dark) .mobile-menu-header [style*="color: white"],
+html:not(.dark) .mobile-menu-header [style*="color:white"] {
+    color: #0f172a !important;
+}
+
+html:not(.dark) .mobile-menu-close {
+    background: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) .mobile-menu-links a,
+html:not(.dark) .mobile-menu-links button {
+    color: #000000 !important;
+    border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not(.dark) .mobile-menu-links a:hover,
+html:not(.dark) .mobile-menu-links button:hover {
+    color: #3790ff !important;
+}
+
+html:not(.dark) .mobile-submenu {
+    background: transparent !important;
+}
+
+html:not(.dark) .mobile-submenu a {
+    color: #64748b !important;
+    border-bottom-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) .mobile-submenu a:hover {
+    color: #3790ff !important;
+}
+
+html:not(.dark) .mobile-menu-cta {
+    border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) .mobile-menu-cta .phone-link {
+    color: #000000 !important;
+}
+
+/* ===========================================================================
+   SPECIFIC COMPONENTS
+   =========================================================================== */
+
+/* Swiper custom navigation buttons */
+html:not(.dark) .swiper-button-next-custom,
+html:not(.dark) .swiper-button-prev-custom {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    color: #374151 !important;
+}
+
+html:not(.dark) .swiper-button-next-custom:hover,
+html:not(.dark) .swiper-button-prev-custom:hover {
+    border-color: #3790ff !important;
+    color: #3790ff !important;
+}
+
+/* Swiper pagination */
+html:not(.dark) .swiper-pagination-bullet {
+    background: #94a3b8 !important;
+}
+
+html:not(.dark) .swiper-pagination-bullet-active {
+    background: #3790ff !important;
+}
+
+/* FAQ details/summary */
+html:not(.dark) details {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) details summary {
+    color: #0f172a !important;
+}
+
+html:not(.dark) details[open] summary {
+    color: #3790ff !important;
+}
+
+html:not(.dark) details p,
+html:not(.dark) details div {
+    color: #475569 !important;
+}
+
+/* Form inputs */
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+html:not(.dark) input:focus,
+html:not(.dark) textarea:focus,
+html:not(.dark) select:focus {
+    border-color: #3790ff !important;
+    box-shadow: 0 0 0 3px rgba(55,144,255, 0.15) !important;
+}
+
+ /* ===========================================================================
+   FOOTER (Light Theme)
+   Keep the footer in light theme until the dark theme is toggled.
+   Overrides responsive.css and inline styles that force the footer dark.
+   =========================================================================== */
+
+html:not(.dark) footer,
+html:not(.dark) footer.bg-slate-900 {
+    background-color: #f8fafc !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) footer .border-b {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) footer>div[style*="radial-gradient"] {
+    opacity: 0.8 !important;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px) !important;
+}
+
+html:not(.dark) footer h2,
+html:not(.dark) footer h4,
+html:not(.dark) footer .text-white,
+html:not(.dark) footer .text-xl {
+    color: #0f172a !important;
+}
+
+html:not(.dark) footer .text-slate-400 {
+    color: #475569 !important;
+}
+
+html:not(.dark) footer .text-slate-500 {
+    color: #64748b !important;
+}
+
+html:not(.dark) footer span:not(.material-symbols-outlined):not(.w-1) {
+    color: #64748b !important;
+}
+
+html:not(.dark) footer ul li a,
+html:not(.dark) footer .space-y-3 a {
+    color: #475569 !important;
+}
+
+html:not(.dark) footer ul li a:hover,
+html:not(.dark) footer .space-y-3 a:hover {
+    color: #3790ff !important;
+}
+
+html:not(.dark) footer a.rounded-lg {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    color: #475569 !important;
+}
+
+html:not(.dark) footer a.rounded-lg:hover {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+    color: #3790ff !important;
+}
+
+html:not(.dark) footer .border-t {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) footer .border-t a {
+    color: #64748b !important;
+}
+
+html:not(.dark) footer .border-t a:hover {
+    color: #3790ff !important;
+}
+
+/* AI HERO SECTIONS */
+html:not(.dark) .ai-hero-full { background-color: #030816 !important; }
+html:not(.dark) .ai-hero-full .text-white, html:not(.dark) .ai-hero-full h1 { color: #ffffff !important; }
+html:not(.dark) .ai-hero-full p { color: #94a3b8 !important; }
+html:not(.dark) .ai-hero-full .hero-badge { background: rgba(55,144,255,0.12) !important; border-color: rgba(55,144,255,0.3) !important; color: #3790ff !important; }
+
+/* CMS Inline Page Editor Hover Styles */
+.group\/cms-block:hover {
+    outline: 2px dashed rgba(59, 130, 246, 0.5) !important;
+    outline-offset: 4px !important;
+    border-radius: 4px !important;
+}
+

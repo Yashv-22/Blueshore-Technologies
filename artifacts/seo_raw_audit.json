@@ -1,0 +1,375 @@
+[
+  {
+    "filename": "about.html",
+    "title": "About Us | We Build Digital Systems That Drive Business Growth \u2014 Blueshore Technologies",
+    "title_length": 87,
+    "description": "Meet Blueshore Technologies. We build scalable growth systems and custom AI automation solutions for startups and enterprise clients.",
+    "description_length": 133,
+    "canonical": "https://www.blueshoretech.com/about.html",
+    "h1_count": 1,
+    "h1s": [
+      "We Build Digital Systems That Drive Business Growth"
+    ],
+    "h2_count": 6,
+    "h3_count": 11,
+    "h4_count": 19,
+    "total_images": 5,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "About Us | We Build Digital Systems That Drive Business Growth \u2014 Blueshore Technologies",
+    "og_description": "Meet Blueshore Technologies. We build scalable growth systems and custom AI automation solutions for startups and enterprise clients.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 4,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "AboutPage",
+      "FAQPage"
+    ],
+    "total_links": 53,
+    "internal_links_count": 52,
+    "external_links_count": 1
+  },
+  {
+    "filename": "blog.html",
+    "title": "AI, SEO & Growth Marketing Insights \u2014 Blueshore Technologies",
+    "title_length": 60,
+    "description": "Read expert articles on AI automation, SEO strategies, digital marketing, website speed optimization, branding psychology, and startup growth.",
+    "description_length": 142,
+    "canonical": "https://www.blueshoretech.com/blog.html",
+    "h1_count": 1,
+    "h1s": [
+      "The Blueshore Journal."
+    ],
+    "h2_count": 4,
+    "h3_count": 21,
+    "h4_count": 12,
+    "total_images": 19,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "AI, SEO & Growth Marketing Insights \u2014 Blueshore Technologies",
+    "og_description": "Read expert articles on AI automation, SEO strategies, digital marketing, website speed optimization, branding psychology, and startup growth.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 5,
+    "json_ld_types": [
+      "BreadcrumbList",
+      "Blog",
+      "FAQPage",
+      "BlogPosting",
+      "WebPage"
+    ],
+    "total_links": 64,
+    "internal_links_count": 64,
+    "external_links_count": 0
+  },
+  {
+    "filename": "careers.html",
+    "title": "Careers | Join Our Tech & Growth Team \u2014 Blueshore Technologies",
+    "title_length": 62,
+    "description": "Build high-converting experiences and AI systems. Join Blueshore Technologies. Explore remote software development and marketing careers.",
+    "description_length": 137,
+    "canonical": "https://www.blueshoretech.com/careers.html",
+    "h1_count": 1,
+    "h1s": [
+      "Do your best work. From anywhere."
+    ],
+    "h2_count": 3,
+    "h3_count": 10,
+    "h4_count": 10,
+    "total_images": 3,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Careers | Join Our Tech & Growth Team \u2014 Blueshore Technologies",
+    "og_description": "Build high-converting experiences and AI systems. Join Blueshore Technologies. Explore remote software development and marketing careers.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 4,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "AboutPage",
+      "FAQPage"
+    ],
+    "total_links": 51,
+    "internal_links_count": 50,
+    "external_links_count": 1
+  },
+  {
+    "filename": "contact.html",
+    "title": "Let's Build Something That Grows Your Business \u2014 Blueshore Technologies",
+    "title_length": 71,
+    "description": "Ready to scale? Contact Blueshore Technologies for high-performance websites, AI-powered automation systems, and growth marketing. Book a consultation.",
+    "description_length": 151,
+    "canonical": "https://www.blueshoretech.com/contact.html",
+    "h1_count": 1,
+    "h1s": [
+      "Let\u2019s Build Something That Actually Grows Your Business"
+    ],
+    "h2_count": 3,
+    "h3_count": 7,
+    "h4_count": 12,
+    "total_images": 3,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Let's Build Something That Grows Your Business \u2014 Blueshore Technologies",
+    "og_description": "Ready to scale? Contact Blueshore Technologies for high-performance websites, AI-powered automation systems, and growth marketing. Book a consultation.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 4,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "FAQPage",
+      "ContactPage"
+    ],
+    "total_links": 54,
+    "internal_links_count": 53,
+    "external_links_count": 1
+  },
+  {
+    "filename": "cookie.html",
+    "title": "Cookie Policy & Preferences \u2014 Blueshore Technologies",
+    "title_length": 52,
+    "description": "Learn how we use cookies to optimize your experience on the Blueshore Technologies marketing website.",
+    "description_length": 101,
+    "canonical": "https://www.blueshoretech.com/cookie.html",
+    "h1_count": 1,
+    "h1s": [
+      "Cookie Policy"
+    ],
+    "h2_count": 7,
+    "h3_count": 5,
+    "h4_count": 9,
+    "total_images": 3,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Cookie Policy & Preferences \u2014 Blueshore Technologies",
+    "og_description": "Learn how we use cookies to optimize your experience on the Blueshore Technologies marketing website.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 3,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "total_links": 60,
+    "internal_links_count": 59,
+    "external_links_count": 1
+  },
+  {
+    "filename": "index.html",
+    "title": "Blueshore Technologies | AI Automation & Web Development",
+    "title_length": 56,
+    "description": "Blueshore Technologies helps businesses scale through high-performance web development, SEO, AI automation, branding, and performance marketing solutions.",
+    "description_length": 154,
+    "canonical": "https://www.blueshoretech.com/",
+    "h1_count": 1,
+    "h1s": [
+      "Build Faster. Scale Smarter. Dominate Digitally."
+    ],
+    "h2_count": 11,
+    "h3_count": 30,
+    "h4_count": 20,
+    "total_images": 13,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Blueshore Technologies | AI Automation & Web Development",
+    "og_description": "Blueshore Technologies helps businesses scale through high-performance web development, SEO, AI automation, branding, and performance marketing solutions.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 5,
+    "json_ld_types": [
+      "SoftwareApplication",
+      "FAQPage",
+      "Organization",
+      "WebSite",
+      "WebPage"
+    ],
+    "total_links": 78,
+    "internal_links_count": 77,
+    "external_links_count": 1
+  },
+  {
+    "filename": "industries.html",
+    "title": "Industries We Transform | Digital Growth Solutions \u2014 Blueshore Technologies",
+    "title_length": 75,
+    "description": "Tailored technology and growth marketing strategies for Real Estate, Healthcare, Finance, Ecommerce, Logistics, Education, SaaS, Manufacturing, and Startups.",
+    "description_length": 157,
+    "canonical": "https://www.blueshoretech.com/industries.html",
+    "h1_count": 1,
+    "h1s": [
+      "Powering Global Industries."
+    ],
+    "h2_count": 7,
+    "h3_count": 4,
+    "h4_count": 9,
+    "total_images": 12,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Industries We Transform | Digital Growth Solutions \u2014 Blueshore Technologies",
+    "og_description": "Tailored technology and growth marketing strategies for Real Estate, Healthcare, Finance, Ecommerce, Logistics, Education, SaaS, Manufacturing, and Startups.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 4,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "ItemList",
+      "FAQPage"
+    ],
+    "total_links": 56,
+    "internal_links_count": 55,
+    "external_links_count": 1
+  },
+  {
+    "filename": "portfolio.html",
+    "title": "Real Strategy, Real Results | Case Studies \u2014 Blueshore Technologies",
+    "title_length": 67,
+    "description": "Read our success stories. Discover how we helped businesses increase organic traffic by 312%, reduce acquisition costs, and boost conversion rates.",
+    "description_length": 147,
+    "canonical": "https://www.blueshoretech.com/portfolio.html",
+    "h1_count": 1,
+    "h1s": [
+      "Impact Realized."
+    ],
+    "h2_count": 7,
+    "h3_count": 4,
+    "h4_count": 9,
+    "total_images": 13,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Real Strategy, Real Results | Case Studies \u2014 Blueshore Technologies",
+    "og_description": "Read our success stories. Discover how we helped businesses increase organic traffic by 312%, reduce acquisition costs, and boost conversion rates.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 4,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "FAQPage",
+      "CollectionPage"
+    ],
+    "total_links": 52,
+    "internal_links_count": 51,
+    "external_links_count": 1
+  },
+  {
+    "filename": "privacy.html",
+    "title": "Privacy Policy | GDPR Compliance \u2014 Blueshore Technologies",
+    "title_length": 57,
+    "description": "Read our privacy policy to learn how Blueshore Technologies collects, processes, and safeguards user and client data.",
+    "description_length": 117,
+    "canonical": "https://www.blueshoretech.com/privacy.html",
+    "h1_count": 1,
+    "h1s": [
+      "Privacy Policy"
+    ],
+    "h2_count": 10,
+    "h3_count": 5,
+    "h4_count": 9,
+    "total_images": 3,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Privacy Policy | GDPR Compliance \u2014 Blueshore Technologies",
+    "og_description": "Read our privacy policy to learn how Blueshore Technologies collects, processes, and safeguards user and client data.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 3,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "total_links": 63,
+    "internal_links_count": 62,
+    "external_links_count": 1
+  },
+  {
+    "filename": "services.html",
+    "title": "Solutions Designed For Real Business Growth \u2014 Blueshore Technologies",
+    "title_length": 68,
+    "description": "Explore our growth-focused services: high-converting web development, result-oriented SEO, ROI-driven performance marketing, and custom AI-powered business automation.",
+    "description_length": 167,
+    "canonical": "https://www.blueshoretech.com/services.html",
+    "h1_count": 1,
+    "h1s": [
+      "Engineering Excellence."
+    ],
+    "h2_count": 11,
+    "h3_count": 4,
+    "h4_count": 12,
+    "total_images": 18,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Solutions Designed For Real Business Growth \u2014 Blueshore Technologies",
+    "og_description": "Explore our growth-focused services: high-converting web development, result-oriented SEO, ROI-driven performance marketing, and custom AI-powered business automation.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 6,
+    "json_ld_types": [
+      "BreadcrumbList",
+      "SoftwareApplication",
+      "FAQPage",
+      "HowTo",
+      "WebPage",
+      "ItemList"
+    ],
+    "total_links": 59,
+    "internal_links_count": 58,
+    "external_links_count": 1
+  },
+  {
+    "filename": "submit-portfolio.html",
+    "title": "Join Our Elite Roster | Freelance Contracts \u2014 Blueshore Technologies",
+    "title_length": 68,
+    "description": "Submit your portfolio. Partner with Blueshore Technologies on premium custom website development, AI, branding, and performance marketing projects.",
+    "description_length": 147,
+    "canonical": "https://www.blueshoretech.com/submit-portfolio.html",
+    "h1_count": 1,
+    "h1s": [
+      "Don't see your exact role?"
+    ],
+    "h2_count": 4,
+    "h3_count": 12,
+    "h4_count": 12,
+    "total_images": 3,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Join Our Elite Roster | Freelance Contracts \u2014 Blueshore Technologies",
+    "og_description": "Submit your portfolio. Partner with Blueshore Technologies on premium custom website development, AI, branding, and performance marketing projects.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 4,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "AboutPage",
+      "FAQPage"
+    ],
+    "total_links": 52,
+    "internal_links_count": 51,
+    "external_links_count": 1
+  },
+  {
+    "filename": "terms.html",
+    "title": "Terms of Service & Engagement Guidelines \u2014 Blueshore Technologies",
+    "title_length": 65,
+    "description": "Review the terms and conditions governing usage of our website and client project engagement standards.",
+    "description_length": 103,
+    "canonical": "https://www.blueshoretech.com/terms.html",
+    "h1_count": 1,
+    "h1s": [
+      "Terms of Service"
+    ],
+    "h2_count": 11,
+    "h3_count": 5,
+    "h4_count": 9,
+    "total_images": 3,
+    "missing_alt_count": 0,
+    "missing_alt_sources": [],
+    "og_title": "Terms of Service & Engagement Guidelines \u2014 Blueshore Technologies",
+    "og_description": "Review the terms and conditions governing usage of our website and client project engagement standards.",
+    "og_image": "https://www.blueshoretech.com/assets/og-image.png",
+    "json_ld_count": 3,
+    "json_ld_types": [
+      "WebPage",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "total_links": 64,
+    "internal_links_count": 63,
+    "external_links_count": 1
+  }
+]

@@ -1,0 +1,629 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block content %}
+<div class="h-[calc(100vh-160px)] flex bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+    <!-- Left Column: Conversations List -->
+    <div class="w-80 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0 bg-slate-50/50 dark:bg-slate-950/20">
+        <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <h2 class="font-bold text-sm text-slate-800 dark:text-white uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="message-square" class="w-4 h-4 text-blue-500"></i> Active Chats
+            </h2>
+            <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-500 text-[10px] font-bold" id="chat-count">0</span>
+        </div>
+        <div class="flex-1 overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60" id="conversations-list">
+            <!-- Loading indicator -->
+            <div class="p-6 text-center text-slate-400 text-xs">
+                Loading conversations...
+            </div>
+        </div>
+    </div>
+
+    <!-- Center Column: Active Chat Feed -->
+    <div class="flex-1 flex flex-col min-w-0" id="chat-feed-container">
+        <!-- Empty State -->
+        <div id="chat-empty-state" class="flex-1 flex flex-col items-center justify-center p-8 text-center bg-slate-50/30 dark:bg-slate-950/5">
+            <i data-lucide="messages-square" class="w-12 h-12 text-slate-300 dark:text-slate-700 mb-3 animate-bounce"></i>
+            <h3 class="text-sm font-bold text-slate-700 dark:text-slate-350">Select a conversation</h3>
+            <p class="text-xs text-slate-400 max-w-xs mt-1">Select an active visitor conversation from the left panel to take over and assist them.</p>
+        </div>
+
+        <!-- Chat Feed UI (Hidden by default, shown when conversation is selected) -->
+        <div id="chat-active-ui" class="flex-1 flex flex-col hidden overflow-hidden">
+            <!-- Feed Header -->
+            <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-950/20">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" id="header-status-dot"></span>
+                    <div>
+                        <h3 class="font-bold text-sm text-slate-800 dark:text-white" id="header-visitor-name">Visitor</h3>
+                        <div class="text-[10px] text-slate-400" id="header-visitor-meta">Session ID: -</div>
+                    </div>
+                </div>
+                <!-- Chat Mode Control Panel -->
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-slate-400 font-semibold mr-1">Chat Mode:</span>
+                    <div class="inline-flex rounded-lg border border-slate-200 dark:border-slate-800 p-0.5 bg-slate-100 dark:bg-slate-955 gap-0.5">
+                        <button onclick="setChatMode('AI')" id="btn-mode-ai" class="px-2.5 py-1 text-[10px] font-bold rounded-md transition-all">AI Agent</button>
+                        <button onclick="setChatMode('Human')" id="btn-mode-human" class="px-2.5 py-1 text-[10px] font-bold rounded-md transition-all">Human Takeover</button>
+                        <button onclick="setChatMode('Hybrid')" id="btn-mode-hybrid" class="px-2.5 py-1 text-[10px] font-bold rounded-md transition-all">Hybrid</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Stream -->
+            <div class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/10 dark:bg-slate-900/10 flex flex-col" id="chat-messages-stream">
+                <!-- Dynamically populated messages -->
+            </div>
+
+            <!-- Typing indicator -->
+            <div id="visitor-typing-indicator" class="px-4 py-2 text-xs text-slate-400 font-medium italic hidden flex items-center gap-1">
+                <span class="flex h-1.5 w-1.5 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-500"></span>
+                </span>
+                Visitor is typing...
+            </div>
+
+            <!-- AI Suggested Replies (Feature 11) -->
+            <div id="ai-suggestions-panel" class="px-4 py-2 border-t border-slate-100 dark:border-slate-800/40 bg-slate-50/50 dark:bg-slate-950/10 hidden">
+                <div class="text-[10px] uppercase font-bold tracking-wider text-slate-400 mb-1.5 flex items-center gap-1">
+                    <i data-lucide="sparkles" class="w-3 h-3 text-blue-500"></i> Gemini suggested responses
+                </div>
+                <div class="flex flex-wrap gap-2" id="suggestions-container">
+                    <!-- Suggested reply pills -->
+                </div>
+            </div>
+
+            <!-- Message Input Composer -->
+            <div class="p-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50/20 dark:bg-slate-950/20">
+                <div class="flex items-center gap-2">
+                    <input type="text" id="chat-composer-input" placeholder="Type a message to reply..." class="flex-1 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-blue-500 dark:text-white" oninput="sendTypingIndicator(true)" onblur="sendTypingIndicator(false)">
+                    <button onclick="sendAdminMessage()" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs flex items-center gap-1.5 shadow-sm shadow-blue-500/10">
+                        <span>Send</span>
+                        <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Column: Visitor Insights & Telemetry -->
+    <div class="w-80 border-l border-slate-200 dark:border-slate-800 flex flex-col shrink-0 overflow-y-auto p-4 space-y-5 bg-slate-50/30 dark:bg-slate-950/10 hidden" id="visitor-insights-panel">
+        <h2 class="font-bold text-xs text-slate-400 uppercase tracking-wider">Visitor Insights</h2>
+        
+        <!-- Lead Score Card -->
+        <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-4 text-white shadow-sm relative overflow-hidden">
+            <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+            <div class="text-[10px] uppercase font-extrabold tracking-widest text-blue-200">Engagement Score</div>
+            <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-3xl font-black" id="insight-lead-score">0</span>
+                <span class="text-xs text-blue-200">/ 100</span>
+            </div>
+            <div class="text-[10px] text-blue-100 mt-2 font-medium" id="insight-score-summary">Visitor is showing high interest.</div>
+        </div>
+
+        <!-- Predictive AI Intelligence Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-sm text-xs space-y-3">
+            <div class="text-[10px] uppercase font-extrabold tracking-wider text-blue-500 dark:text-blue-400 flex items-center gap-1">
+                <i data-lucide="brain" class="w-3.5 h-3.5"></i> Predictive Lead AI
+            </div>
+            <div class="space-y-2 text-slate-500 dark:text-slate-400">
+                <div class="flex justify-between items-center">
+                    <span>Conv. Probability:</span>
+                    <span class="font-extrabold text-slate-800 dark:text-white bg-blue-500/10 px-2 py-0.5 rounded" id="predictive-probability">10%</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Rec. Service:</span>
+                    <span class="font-bold text-slate-800 dark:text-white truncate max-w-[120px]" id="predictive-service" title="-">-</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Est. Budget:</span>
+                    <span class="font-bold text-slate-800 dark:text-white" id="predictive-budget">-</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Urgency Level:</span>
+                    <span class="font-extrabold px-2 py-0.5 rounded text-[10px] uppercase" id="predictive-urgency">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRM Contact details -->
+        <div class="space-y-2">
+            <h3 class="font-bold text-xs text-slate-800 dark:text-white flex items-center gap-1">
+                <i data-lucide="contact" class="w-3.5 h-3.5 text-slate-400"></i> CRM Contact Profile
+            </h3>
+            <div class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs space-y-1.5" id="insight-crm-card">
+                <!-- CRM details -->
+            </div>
+        </div>
+
+        <!-- Device & Spec details -->
+        <div class="space-y-2">
+            <h3 class="font-bold text-xs text-slate-800 dark:text-white flex items-center gap-1">
+                <i data-lucide="monitor" class="w-3.5 h-3.5 text-slate-400"></i> Specs & Location
+            </h3>
+            <div class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs space-y-2 text-slate-500">
+                <div class="flex justify-between"><span>Browser:</span> <span class="font-bold text-slate-800 dark:text-slate-200" id="insight-browser">-</span></div>
+                <div class="flex justify-between"><span>OS:</span> <span class="font-bold text-slate-800 dark:text-slate-200" id="insight-os">-</span></div>
+                <div class="flex justify-between"><span>IP:</span> <span class="font-bold text-slate-800 dark:text-slate-200" id="insight-ip">-</span></div>
+                <div class="flex justify-between"><span>Country:</span> <span class="font-bold text-slate-800 dark:text-slate-200" id="insight-country">-</span></div>
+                <div class="flex justify-between"><span>City:</span> <span class="font-bold text-slate-800 dark:text-slate-200" id="insight-city">-</span></div>
+            </div>
+        </div>
+
+        <!-- Real-Time Scroll and Page telemetry -->
+        <div class="space-y-2">
+            <h3 class="font-bold text-xs text-slate-800 dark:text-white flex items-center gap-1">
+                <i data-lucide="navigation-2" class="w-3.5 h-3.5 text-slate-400"></i> Live Position Tracking
+            </h3>
+            <div class="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs space-y-3">
+                <div>
+                    <div class="flex justify-between text-slate-500 mb-1">
+                        <span>Current URL:</span>
+                    </div>
+                    <div class="font-bold text-slate-800 dark:text-slate-200 truncate" id="insight-current-url">-</div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-slate-500 mb-1">
+                        <span>Scroll Progress:</span>
+                        <span class="font-bold text-slate-800 dark:text-slate-200" id="insight-scroll-pct">0%</span>
+                    </div>
+                    <!-- Visual slider progress bar -->
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+                        <div class="bg-blue-600 h-full transition-all duration-350" style="width: 0%" id="insight-scroll-bar"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-slate-500">
+                        <span>Active Section:</span>
+                        <span class="font-bold text-blue-600" id="insight-current-section">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chronological Timeline Journey -->
+        <div class="space-y-2">
+            <h3 class="font-bold text-xs text-slate-800 dark:text-white flex items-center gap-1">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400"></i> Session Journey Timeline
+            </h3>
+            <div class="relative pl-4 border-l border-slate-200 dark:border-slate-800 space-y-4 text-xs mt-2" id="insight-timeline">
+                <!-- Timeline events list -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let activeSessionId = null;
+        let socket = null;
+        let sessionsMap = new Map();
+        
+        // Initial data injected from Django
+        const initialData = [
+            {% for c in conversations_data %}
+            {
+                session_id: "{{ c.session.session_id }}",
+                visitor_id: "{{ c.session.visitor_id }}",
+                lead_name: "{{ c.session.lead.name|default_if_none:'' }}",
+                lead_email: "{{ c.session.lead.email|default_if_none:'' }}",
+                lead_phone: "{{ c.session.lead.phone|default_if_none:'' }}",
+                lead_company: "{{ c.session.lead.company|default_if_none:'' }}",
+                chat_mode: "{{ c.session.chat_mode }}",
+                chat_status: "{{ c.session.chat_status }}",
+                lead_score: {{ c.session.lead_score }},
+                browser: "{{ c.session.browser }}",
+                os: "{{ c.session.os }}",
+                device: "{{ c.session.device }}",
+                ip_address: "{{ c.session.ip_address }}",
+                country: "{{ c.session.country }}",
+                city: "{{ c.session.city }}",
+                current_url: "{{ c.session.current_url }}",
+                scroll_percentage: {{ c.session.scroll_percentage }},
+                current_section: "{{ c.session.current_section }}",
+                is_online: {{ c.session.is_online|yesno:"true,false" }},
+                is_idle: {{ c.session.is_idle|yesno:"true,false" }},
+                last_message: "{{ c.last_message|escapejs }}",
+                messages: JSON.parse("{{ c.messages_json|escapejs }}"),
+                conversion_probability: {{ c.session.conversion_probability }},
+                recommended_service: "{{ c.session.recommended_service|escapejs }}",
+                estimated_budget: "{{ c.session.estimated_budget|escapejs }}",
+                urgency: "{{ c.session.urgency|escapejs }}"
+            },
+            {% endfor %}
+        ];
+
+        // Populate initial map
+        initialData.forEach(item => {
+            sessionsMap.set(item.session_id, item);
+        });
+
+        // Set up WebSockets
+        const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+        const wsUrl = `${protocol}//${window.location.host}/ws/intelligence/admin/`;
+        
+        socket = new WebSocket(wsUrl);
+
+        socket.onopen = () => {
+            console.log("Admin Dashboard socket connected");
+            renderConversationsList();
+        };
+
+        socket.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            const msgType = data.type;
+
+            if (msgType === "session_update") {
+                const updated = data.session;
+                let existing = sessionsMap.get(updated.session_id);
+                if (existing) {
+                    // Update fields
+                    existing.is_online = updated.is_online;
+                    existing.lead_score = updated.lead_score;
+                    existing.scroll_percentage = updated.scroll_percentage;
+                    existing.current_section = updated.current_section;
+                    existing.current_url = updated.current_url;
+                    existing.is_idle = updated.is_idle;
+                    existing.chat_mode = updated.chat_mode;
+                    existing.chat_status = updated.chat_status;
+                    existing.lead_name = updated.lead_name || existing.lead_name;
+                    existing.conversion_probability = updated.conversion_probability;
+                    existing.recommended_service = updated.recommended_service;
+                    existing.estimated_budget = updated.estimated_budget;
+                    existing.urgency = updated.urgency;
+                    sessionsMap.set(updated.session_id, existing);
+                } else {
+                    // Create new conversation item
+                    updated.messages = [];
+                    updated.last_message = "";
+                    sessionsMap.set(updated.session_id, updated);
+                }
+                
+                renderConversationsList();
+                if (activeSessionId === updated.session_id) {
+                    updateInsightsPanel(updated.session_id);
+                    updateModeButtons(updated.chat_mode);
+                }
+            } else if (msgType === "visitor_offline") {
+                const sid = data.session_id;
+                let existing = sessionsMap.get(sid);
+                if (existing) {
+                    existing.is_online = false;
+                    sessionsMap.set(sid, existing);
+                    renderConversationsList();
+                    if (activeSessionId === sid) {
+                        document.getElementById("header-status-dot").className = "w-2.5 h-2.5 rounded-full bg-slate-400";
+                    }
+                }
+            } else if (msgType === "new_chat_message") {
+                const sid = data.session_id;
+                const msg = data.message;
+                let existing = sessionsMap.get(sid);
+                if (existing) {
+                    existing.messages.push(msg);
+                    existing.last_message = msg.text;
+                    sessionsMap.set(sid, existing);
+                    
+                    renderConversationsList();
+                    if (activeSessionId === sid) {
+                        appendMessageToStream(msg);
+                        scrollToBottom();
+                    }
+                }
+            } else if (msgType === "visitor_typing") {
+                const sid = data.session_id;
+                const isTyping = data.is_typing;
+                if (activeSessionId === sid) {
+                    const indicator = document.getElementById("visitor-typing-indicator");
+                    if (isTyping) {
+                        indicator.classList.remove("hidden");
+                    } else {
+                        indicator.classList.add("hidden");
+                    }
+                }
+            } else if (msgType === "ai_suggestions") {
+                const sid = data.session_id;
+                const suggestions = data.suggestions;
+                if (activeSessionId === sid) {
+                    renderAISuggestions(suggestions);
+                }
+            }
+        };
+
+        socket.onclose = () => {
+            console.log("Telemetry socket closed, reconnecting...");
+            setTimeout(() => {
+                socket = new WebSocket(wsUrl);
+            }, 5000);
+        };
+
+        function renderConversationsList() {
+            const listContainer = document.getElementById("conversations-list");
+            listContainer.innerHTML = "";
+
+            let count = 0;
+            sessionsMap.forEach(s => {
+                count++;
+                const isSelected = s.session_id === activeSessionId;
+                
+                const item = document.createElement("div");
+                item.className = `p-4 cursor-pointer hover:bg-slate-100/50 dark:hover:bg-slate-800/40 transition-colors ${isSelected ? 'bg-blue-50/50 dark:bg-slate-800/80 border-l-4 border-blue-500' : ''}`;
+                item.onclick = () => selectConversation(s.session_id);
+
+                item.innerHTML = `
+                    <div class="flex items-center justify-between mb-1">
+                        <div class="flex items-center gap-1.5 min-w-0">
+                            <span class="w-2 h-2 rounded-full ${s.is_online ? 'bg-green-500 animate-pulse' : 'bg-slate-400'}"></span>
+                            <span class="font-bold text-xs text-slate-800 dark:text-slate-200 truncate">${s.lead_name || 'Anonymous Visitor'}</span>
+                        </div>
+                        <span class="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-500">${s.chat_mode}</span>
+                    </div>
+                    <div class="text-[11px] text-slate-400 truncate mt-1">${s.last_message || 'No messages yet'}</div>
+                `;
+                listContainer.appendChild(item);
+            });
+
+            document.getElementById("chat-count").textContent = count;
+        }
+
+        function selectConversation(sid) {
+            activeSessionId = sid;
+            renderConversationsList();
+
+            const s = sessionsMap.get(sid);
+            if (!s) return;
+
+            // Show UI panels
+            document.getElementById("chat-empty-state").classList.add("hidden");
+            document.getElementById("chat-active-ui").classList.remove("hidden");
+            document.getElementById("visitor-insights-panel").classList.remove("hidden");
+
+            // Header info
+            document.getElementById("header-visitor-name").textContent = s.lead_name || 'Anonymous Visitor';
+            document.getElementById("header-visitor-meta").textContent = `Session ID: ${s.session_id}`;
+            document.getElementById("header-status-dot").className = s.is_online ? "w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" : "w-2.5 h-2.5 rounded-full bg-slate-400";
+
+            // Update Mode buttons
+            updateModeButtons(s.chat_mode);
+
+            // Populate messages
+            const stream = document.getElementById("chat-messages-stream");
+            stream.innerHTML = "";
+            s.messages.forEach(msg => {
+                appendMessageToStream(msg);
+            });
+            scrollToBottom();
+
+            // Populate insights right column
+            updateInsightsPanel(sid);
+            
+            // Hide typing indicator initially
+            document.getElementById("visitor-typing-indicator").classList.add("hidden");
+            document.getElementById("ai-suggestions-panel").classList.add("hidden");
+            
+            // Fetch Timeline Events (via API or local mock)
+            fetchTimelineEvents(sid);
+        }
+
+        function updateModeButtons(mode) {
+            const btnAI = document.getElementById("btn-mode-ai");
+            const btnHuman = document.getElementById("btn-mode-human");
+            const btnHybrid = document.getElementById("btn-mode-hybrid");
+
+            [btnAI, btnHuman, btnHybrid].forEach(b => {
+                b.className = "px-2.5 py-1 text-[10px] font-bold rounded-md bg-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-all";
+            });
+
+            if (mode === "AI") {
+                btnAI.className = "px-2.5 py-1 text-[10px] font-bold rounded-md bg-blue-500 text-white shadow-sm";
+            } else if (mode === "Human") {
+                btnHuman.className = "px-2.5 py-1 text-[10px] font-bold rounded-md bg-blue-500 text-white shadow-sm";
+            } else if (mode === "Hybrid") {
+                btnHybrid.className = "px-2.5 py-1 text-[10px] font-bold rounded-md bg-blue-500 text-white shadow-sm";
+            }
+        }
+
+        window.setChatMode = (mode) => {
+            if (!activeSessionId) return;
+            socket.send(JSON.stringify({
+                type: "takeover_action",
+                session_id: activeSessionId,
+                chat_mode: mode
+            }));
+        };
+
+        function appendMessageToStream(msg) {
+            const stream = document.getElementById("chat-messages-stream");
+            
+            const isUser = msg.sender === "User";
+            const isAdmin = msg.sender === "Admin";
+            const isAI = msg.sender === "AI";
+
+            let bubbleClass = "bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200";
+            let containerClass = "justify-start";
+            
+            if (isUser) {
+                bubbleClass = "bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200";
+                containerClass = "justify-start";
+            } else if (isAdmin) {
+                bubbleClass = "bg-blue-600 text-white border border-blue-600";
+                containerClass = "justify-end";
+            } else if (isAI) {
+                bubbleClass = "bg-green-600/10 text-green-700 dark:text-green-400 border border-green-500/20";
+                containerClass = "justify-start";
+            }
+
+            const item = document.createElement("div");
+            item.className = `flex ${containerClass}`;
+            item.innerHTML = `
+                <div class="max-w-[70%] rounded-xl px-4 py-2.5 text-xs shadow-sm ${bubbleClass}">
+                    <div class="font-bold text-[9px] uppercase tracking-wider mb-0.5 ${isAdmin ? 'text-blue-200' : (isAI ? 'text-green-500' : 'text-slate-400')}">
+                        ${msg.sender}
+                    </div>
+                    <div>${msg.text}</div>
+                    <div class="text-[8px] mt-1 text-right opacity-60">${msg.created_at}</div>
+                </div>
+            `;
+            stream.appendChild(item);
+        }
+
+        window.sendAdminMessage = () => {
+            const input = document.getElementById("chat-composer-input");
+            const text = input.value.trim();
+            if (!text || !activeSessionId) return;
+
+            socket.send(JSON.stringify({
+                type: "admin_message",
+                session_id: activeSessionId,
+                text: text
+            }));
+
+            input.value = "";
+            sendTypingIndicator(false);
+        };
+
+        document.getElementById("chat-composer-input").addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                sendAdminMessage();
+            }
+        });
+
+        // Typing Status
+        let typingTimer = null;
+        window.sendTypingIndicator = (isTyping) => {
+            if (!activeSessionId) return;
+            if (typingTimer) clearTimeout(typingTimer);
+
+            socket.send(JSON.stringify({
+                type: "typing_status",
+                session_id: activeSessionId,
+                is_typing: isTyping
+            }));
+
+            if (isTyping) {
+                typingTimer = setTimeout(() => {
+                    sendTypingIndicator(false);
+                }, 3000);
+            }
+        };
+
+        function renderAISuggestions(suggestions) {
+            const container = document.getElementById("suggestions-container");
+            container.innerHTML = "";
+            
+            if (suggestions && suggestions.length > 0) {
+                document.getElementById("ai-suggestions-panel").classList.remove("hidden");
+                suggestions.forEach(s => {
+                    const button = document.createElement("button");
+                    button.className = "px-3 py-1.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-[11px] font-medium rounded-lg hover:border-blue-500 dark:hover:border-blue-400 transition-colors shadow-sm";
+                    button.textContent = s;
+                    button.onclick = () => {
+                        const input = document.getElementById("chat-composer-input");
+                        input.value = s;
+                        input.focus();
+                    };
+                    container.appendChild(button);
+                });
+            } else {
+                document.getElementById("ai-suggestions-panel").classList.add("hidden");
+            }
+            lucide.createIcons();
+        }
+
+        function updateInsightsPanel(sid) {
+            const s = sessionsMap.get(sid);
+            if (!s) return;
+
+            // Score
+            document.getElementById("insight-lead-score").textContent = s.lead_score;
+            let summary = "Visitor has low engagement.";
+            if (s.lead_score >= 80) summary = "Very high intent lead. Instant conversion candidate.";
+            else if (s.lead_score >= 50) summary = "Moderate intent, looking around services.";
+            document.getElementById("insight-score-summary").textContent = summary;
+
+            // Predictive AI
+            document.getElementById("predictive-probability").textContent = `${s.conversion_probability || 10}%`;
+            document.getElementById("predictive-service").textContent = s.recommended_service || '-';
+            document.getElementById("predictive-service").title = s.recommended_service || '-';
+            document.getElementById("predictive-budget").textContent = s.estimated_budget || '-';
+            
+            const urgencyEl = document.getElementById("predictive-urgency");
+            urgencyEl.textContent = s.urgency || 'Low';
+            if (s.urgency === 'Critical') {
+                urgencyEl.className = "font-extrabold px-2 py-0.5 rounded text-[10px] uppercase bg-red-500/10 text-red-500";
+            } else if (s.urgency === 'High') {
+                urgencyEl.className = "font-extrabold px-2 py-0.5 rounded text-[10px] uppercase bg-amber-500/10 text-amber-500";
+            } else if (s.urgency === 'Medium') {
+                urgencyEl.className = "font-extrabold px-2 py-0.5 rounded text-[10px] uppercase bg-blue-500/10 text-blue-500";
+            } else {
+                urgencyEl.className = "font-extrabold px-2 py-0.5 rounded text-[10px] uppercase bg-slate-500/10 text-slate-500";
+            }
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            // CRM Contact details
+            const crmCard = document.getElementById("insight-crm-card");
+            if (s.lead_name) {
+                crmCard.innerHTML = `
+                    <div class="font-bold text-slate-800 dark:text-white">${s.lead_name}</div>
+                    <div>Email: ${s.lead_email || 'Not provided'}</div>
+                    <div>Phone: ${s.lead_phone || 'Not provided'}</div>
+                    <div>Company: ${s.lead_company || 'Not provided'}</div>
+                `;
+            } else {
+                crmCard.innerHTML = `
+                    <div class="text-slate-400 italic">No CRM lead associated yet. (Form has not been filled).</div>
+                `;
+            }
+
+            // Specs
+            document.getElementById("insight-browser").textContent = s.browser;
+            document.getElementById("insight-os").textContent = s.os;
+            document.getElementById("insight-ip").textContent = s.ip_address;
+            document.getElementById("insight-country").textContent = s.country;
+            document.getElementById("insight-city").textContent = s.city;
+
+            // Navigation
+            document.getElementById("insight-current-url").textContent = s.current_url;
+            document.getElementById("insight-scroll-pct").textContent = `${s.scroll_percentage}%`;
+            document.getElementById("insight-scroll-bar").style.width = `${s.scroll_percentage}%`;
+            document.getElementById("insight-current-section").textContent = s.current_section;
+        }
+
+        function fetchTimelineEvents(sid) {
+            const timelineContainer = document.getElementById("insight-timeline");
+            timelineContainer.innerHTML = `<div class="text-slate-400 italic">Loading timeline...</div>`;
+
+            fetch(`/admin/live-visitors/timeline/?session_id=${sid}`)
+                .then(res => res.json())
+                .then(data => {
+                    timelineContainer.innerHTML = "";
+                    const events = data.events || [];
+                    if (events.length === 0) {
+                        timelineContainer.innerHTML = `<div class="text-slate-400 italic">No events recorded.</div>`;
+                        return;
+                    }
+                    
+                    events.forEach(e => {
+                        const div = document.createElement("div");
+                        div.className = "relative pl-3";
+                        div.innerHTML = `
+                            <span class="absolute left-[-19px] top-1.5 w-2 h-2 rounded-full bg-blue-500 border-2 border-white dark:border-slate-900"></span>
+                            <div class="font-bold text-slate-800 dark:text-slate-200">${e.event_type}</div>
+                            <div class="text-slate-400">${e.description}</div>
+                            <div class="text-[9px] text-slate-500">${e.created_at}</div>
+                        `;
+                        timelineContainer.appendChild(div);
+                    });
+                });
+        }
+
+        function scrollToBottom() {
+            const stream = document.getElementById("chat-messages-stream");
+            stream.scrollTop = stream.scrollHeight;
+        }
+    });
+</script>
+{% endblock %}

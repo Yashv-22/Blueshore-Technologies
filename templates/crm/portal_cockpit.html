@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Cockpit - Blueshore Technologies</title>
+    <!-- Load Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen relative overflow-hidden flex flex-col">
+    <!-- Background visual elements -->
+    <div class="absolute -left-48 -bottom-48 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-3xl"></div>
+    <div class="absolute -right-48 -top-48 w-[500px] h-[500px] bg-indigo-600/5 rounded-full blur-3xl"></div>
+
+    <!-- Header Navbar -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md relative z-10">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+                <span class="font-black text-sm uppercase tracking-wider text-white">Blueshore Cockpit</span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <span class="text-xs text-slate-400 font-semibold">Logged in as: <strong class="text-white">{{ request.user.username }}</strong></span>
+                <a href="/portal/logout/" class="px-3.5 py-1.5 border border-slate-800 hover:border-red-500/20 hover:bg-red-500/10 text-slate-400 hover:text-red-400 rounded-xl text-xs font-semibold transition flex items-center gap-1.5">
+                    <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Sign Out
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace Dashboard Grid -->
+    <main class="max-w-7xl mx-auto px-6 py-8 flex-1 w-full relative z-10 space-y-6">
+        
+        <!-- Welcome Jumbotron Banner -->
+        <div class="relative overflow-hidden bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-slate-800 rounded-3xl p-8 shadow-xl">
+            <div class="absolute -right-16 -top-16 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-semibold tracking-wider uppercase mb-3">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Client Workspace
+                </div>
+                <h1 class="text-3xl font-black text-white tracking-tight">
+                    {% if client %}Welcome, {{ client.contact_person }}{% else %}Welcome, Client Partner{% endif %}
+                </h1>
+                <p class="text-xs text-slate-400 max-w-xl mt-1.5">
+                    {% if client %}Account associated with **{{ client.company_name }}**. {% endif %}Here is a consolidated overview of your project progress, proposals, and invoices.
+                </p>
+            </div>
+        </div>
+
+        <!-- Project Status Tracker Card -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Left 2 Cols: Active Project details -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl lg:col-span-2 space-y-6">
+                <h3 class="font-extrabold text-sm text-white flex items-center gap-1.5 border-b border-slate-800 pb-3">
+                    <i data-lucide="git-branch" class="w-4 h-4 text-blue-500"></i> Active Project & Delivery Progress
+                </h3>
+
+                {% for p in projects %}
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h4 class="text-base font-extrabold text-white">{{ p.title }}</h4>
+                            <span class="text-[10px] text-slate-500">Start Date: {{ p.start_date|default:"TBD" }} | Est. End Date: {{ p.end_date|default:"TBD" }}</span>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 font-extrabold rounded-xl text-xs uppercase tracking-wider">
+                            {{ p.status }}
+                        </span>
+                    </div>
+
+                    <!-- Progress slider visual -->
+                    <div class="space-y-1.5">
+                        <div class="flex justify-between text-xs text-slate-400">
+                            <span>Sprint Completion Progress</span>
+                            <span class="font-bold text-white">
+                                {% if p.status == 'Planning' %}15%
+                                {% elif p.status == 'Development' %}50%
+                                {% elif p.status == 'Testing' %}80%
+                                {% elif p.status == 'Live' %}100%
+                                {% elif p.status == 'Completed' %}100%
+                                {% else %}5%{% endif %}
+                            </span>
+                        </div>
+                        <div class="w-full bg-slate-950 rounded-full h-3 overflow-hidden border border-slate-800">
+                            <div class="bg-blue-600 h-full transition-all duration-500" 
+                                 style="width: {% if p.status == 'Planning' %}15%{% elif p.status == 'Development' %}50%{% elif p.status == 'Testing' %}80%{% elif p.status == 'Live' or p.status == 'Completed' %}100%{% else %}5%{% endif %}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Notes -->
+                    {% if p.notes %}
+                    <div class="bg-slate-950/80 border border-slate-850 rounded-2xl p-4 text-xs space-y-1">
+                        <div class="font-bold text-slate-400">Project Manager Remarks:</div>
+                        <p class="text-slate-400 leading-relaxed">{{ p.notes }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+                {% empty %}
+                <div class="text-slate-500 italic text-xs text-center py-6">No active projects associated with this client profile.</div>
+                {% endfor %}
+            </div>
+
+            <!-- Right 1 Col: Quick support contacts -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+                <h3 class="font-extrabold text-sm text-white flex items-center gap-1.5 border-b border-slate-800 pb-3">
+                    <i data-lucide="help-circle" class="w-4 h-4 text-indigo-500"></i> Support & Consulting
+                </h3>
+                
+                <div class="space-y-3.5 text-xs text-slate-400">
+                    <div class="p-3 bg-slate-950/80 border border-slate-850 rounded-xl space-y-1">
+                        <div class="font-bold text-white">Consulting Team Contact</div>
+                        <div>Email: partners@blueshoretech.com</div>
+                        <div>Phone: +91 98765 43210</div>
+                    </div>
+                    
+                    <div class="p-3 bg-slate-950/80 border border-slate-850 rounded-xl space-y-1">
+                        <div class="font-bold text-white">SLA Turnaround</div>
+                        <div>Standard support: Under 4 hours</div>
+                        <div>Critical incidents: Under 1 hour</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proposals & Invoices Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left side: Proposals -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+                <h3 class="font-extrabold text-sm text-white flex items-center gap-1.5 border-b border-slate-800 pb-3">
+                    <i data-lucide="file-text" class="w-4 h-4 text-emerald-500"></i> Active Proposals & Contracts
+                </h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800 pb-2">
+                                <th class="py-2 font-bold">TITLE</th>
+                                <th class="py-2 font-bold">STATUS</th>
+                                <th class="py-2 font-bold text-right">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/40">
+                            {% for prop in proposals %}
+                            <tr class="text-slate-300">
+                                <td class="py-3 font-bold text-white">{{ prop.title }}</td>
+                                <td class="py-3">
+                                    {% if prop.status == 'Accepted' %}
+                                    <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded text-[10px]">Accepted</span>
+                                    {% else %}
+                                    <span class="text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded text-[10px]">Review</span>
+                                    {% endif %}
+                                </td>
+                                <td class="py-3 text-right">
+                                    <a href="/admin/crm/proposal/{{ prop.id }}/pdf/" target="_blank" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 text-white font-bold text-[10px] rounded-lg shadow-sm transition">
+                                        View Proposal
+                                    </a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="3" class="py-4 text-center text-slate-500 italic">No proposals created yet.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right side: Invoices -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+                <h3 class="font-extrabold text-sm text-white flex items-center gap-1.5 border-b border-slate-800 pb-3">
+                    <i data-lucide="credit-card" class="w-4 h-4 text-amber-500"></i> Financial Invoices
+                </h3>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800 pb-2">
+                                <th class="py-2 font-bold">INVOICE NO</th>
+                                <th class="py-2 font-bold">AMOUNT</th>
+                                <th class="py-2 font-bold">STATUS</th>
+                                <th class="py-2 font-bold text-right">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/40">
+                            {% for inv in invoices %}
+                            <tr class="text-slate-300">
+                                <td class="py-3 font-bold text-white">{{ inv.invoice_number }}</td>
+                                <td class="py-3 font-semibold">${{ inv.total_amount|floatformat:2 }}</td>
+                                <td class="py-3">
+                                    {% if inv.status == 'Paid' %}
+                                    <span class="text-emerald-500 font-bold bg-emerald-500/10 px-2 py-0.5 rounded text-[10px]">Paid</span>
+                                    {% elif inv.status == 'Overdue' %}
+                                    <span class="text-red-500 font-bold bg-red-500/10 px-2 py-0.5 rounded text-[10px]">Overdue</span>
+                                    {% else %}
+                                    <span class="text-amber-500 font-bold bg-amber-500/10 px-2 py-0.5 rounded text-[10px]">Sent</span>
+                                    {% endif %}
+                                </td>
+                                <td class="py-3 text-right">
+                                    <a href="/admin/crm/invoice/{{ inv.id }}/pdf/" target="_blank" class="px-2.5 py-1 bg-blue-600 hover:bg-blue-500 text-white font-bold text-[10px] rounded-lg shadow-sm transition">
+                                        Download PDF
+                                    </a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="py-4 text-center text-slate-500 italic">No invoices issued yet.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500 relative z-10">
+        &copy; 2026 Blueshore Technologies. All Rights Reserved. Secure SSL Encryption Enabled.
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

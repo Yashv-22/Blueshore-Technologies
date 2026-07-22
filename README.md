@@ -1,418 +1,453 @@
-<div align="center">
-
-# 🚀 BlueShore Technologies
-
-### Enterprise AI-Powered Full-Stack SaaS Platform
-
-**Build. Automate. Scale.**
-
-Enterprise-grade CRM, AI-powered automation, analytics, visitor intelligence, and business growth platform built with modern cloud-native technologies.
-
-<p>
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
+<p align="center">
+  <img src="assets/hero-banner.png" alt="BlueShore Technologies Banner" width="100%">
 </p>
 
-<p>
+# BlueShore Technologies — Enterprise AI-Powered Full-Stack SaaS Platform
 
-<a href="https://www.blueshoretech.com">
-<img src="https://img.shields.io/badge/🌐 Live Demo-Visit Website-blue?style=for-the-badge">
-</a>
+[![Latest Release](https://img.shields.io/github/v/release/Yashv-22/BlueShore-Technologies?color=blue&logo=github)](https://github.com/Yashv-22/BlueShore-Technologies/releases)
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Django 5.0](https://img.shields.io/badge/Django-5.0-092E20.svg?logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Docker Ready](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
+[![PostgreSQL 15](https://img.shields.io/badge/PostgreSQL-15-4169E1.svg?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Redis 7.0](https://img.shields.io/badge/Redis-7.0-DC382D.svg?logo=redis&logoColor=white)](https://redis.io/)
+[![CI Status](https://github.com/Yashv-22/BlueShore-Technologies/actions/workflows/ci.yml/badge.svg)](https://github.com/Yashv-22/BlueShore-Technologies/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Yashv-22/BlueShore-Technologies?style=social)](https://github.com/Yashv-22/BlueShore-Technologies/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/Yashv-22/BlueShore-Technologies)](https://github.com/Yashv-22/BlueShore-Technologies/issues)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/Yashv-22/BlueShore-Technologies)](https://github.com/Yashv-22/BlueShore-Technologies/commits/main)
 
-</p>
+**BlueShore Technologies** is a production-grade, enterprise-ready full-stack SaaS platform designed for high-performance business automation, AI client interaction, real-time telemetry, lead management, and automated SEO publishing. 
 
----
-
-### ⭐ Enterprise Software • AI Automation • CRM • Analytics • Business Growth
-
-</div>
-
----
-
-# 📖 Overview
-
-BlueShore Technologies is an **enterprise-grade full-stack SaaS platform** designed to help businesses automate operations, manage customer relationships, improve online visibility, and leverage AI to streamline workflows.
-
-Rather than functioning as a traditional business website, BlueShore combines multiple business systems into one unified platform.
-
-The platform provides powerful capabilities including:
-
-- Enterprise CRM
-- AI-powered chatbot
-- Business automation
-- Visitor intelligence
-- Analytics dashboard
-- Lead management
-- Proposal generation
-- Contract management
-- Invoice management
-- Blog & CMS
-- Careers Portal
-- Newsletter System
-- Technical SEO Engine
-- AI-ready architecture
-- Cloud-native deployment
-
-BlueShore is designed with scalability, maintainability, and production-readiness as core engineering principles.
+Built on **Django 5.0**, **Django Channels**, **Redis**, **PostgreSQL**, **Celery**, **Nginx**, **Docker**, and **Google Gemini AI**, the platform offers a cohesive ecosystem connecting client-facing web applications with internal CRM operations, real-time analytics, and automated background workflows.
 
 ---
 
-# ✨ Key Features
+## 🌐 Live Demo & Quick Links
 
-## 🤖 Artificial Intelligence
-
-- AI-powered chatbot
-- Google Gemini integration
-- Retrieval-Augmented Generation (RAG)
-- Intelligent lead assistance
-- AI content workflows
-- Context-aware conversations
+- **Live Website**: [https://www.blueshoretech.com](https://www.blueshoretech.com)
+- **GitHub Repository**: [https://github.com/Yashv-22/BlueShore-Technologies](https://github.com/Yashv-22/BlueShore-Technologies)
+- **Latest Release**: [Release v1.0.0](https://github.com/Yashv-22/BlueShore-Technologies/releases/tag/v1.0.0)
 
 ---
 
-## 👥 Customer Relationship Management
+## 📑 Table of Contents
 
-- Lead Inbox
-- Client Accounts
-- CRM Notes
-- Kanban Pipeline
-- Proposal Management
-- Contract Management
-- Invoice Generation
-- Workspace Calendar
-
----
-
-## 📊 Visitor Intelligence
-
-- Live Visitors
-- Live Conversations
-- Visitor Analytics
-- Session Tracking
-- Lead Attribution
-- User Engagement Monitoring
-
----
-
-## 📈 Analytics
-
-- Dashboard Reporting
-- Business Insights
-- Lead Analytics
-- AI Conversation Analytics
-- Newsletter Growth
-- Activity Monitoring
-
----
-
-## 🌐 Website Management
-
-- Portfolio
-- Blog
-- Careers
-- Contact Management
-- Newsletter
-- SEO Pages
-- Service Pages
-- Industry Pages
+- [Why BlueShore?](#-why-blueshore)
+- [Platform Overview](#-platform-overview)
+- [Repository at a Glance](#-repository-at-a-glance)
+- [Key Modules & Feature Matrix](#-key-modules--feature-matrix)
+- [Feature Highlights](#-feature-highlights)
+  - [Staff CRM & Sales Operations](#1-staff-crm--sales-operations)
+  - [Google Gemini AI Chatbot](#2-google-gemini-ai-chatbot)
+  - [Real-Time Visitor Telemetry](#3-real-time-visitor-telemetry)
+  - [Programmatic SEO Engine](#4-programmatic-seo-engine)
+  - [Blog CMS & Case Studies](#5-blog-cms--case-studies)
+  - [Job Board & Malware-Scanned Resumes](#6-job-board--malware-scanned-resumes)
+- [Platform Preview](#-platform-preview)
+- [System Architecture](#-system-architecture)
+- [Technology Stack](#-technology-stack)
+- [REST API Overview](#-rest-api-overview)
+- [Repository Structure](#-repository-structure)
+- [Getting Started & Installation](#-getting-started--installation)
+  - [Prerequisites](#prerequisites)
+  - [Local Virtual Environment Setup](#local-virtual-environment-setup)
+  - [Environment Variables Configuration](#environment-variables-configuration)
+  - [Database Setup & Migrations](#database-setup--migrations)
+  - [Running Tests & System Checks](#running-tests--system-checks)
+  - [Development Server](#development-server)
+- [Docker Production Deployment](#-docker-production-deployment)
+- [Security Architecture](#-security-architecture)
+- [Performance & Optimization](#-performance--optimization)
+- [Project Roadmap](#-project-roadmap)
+- [Documentation & Resources](#-documentation--resources)
+- [Contributing](#-contributing)
+- [License & Contact](#-license--contact)
 
 ---
 
-## 🔒 Security
+## 🎯 Why BlueShore?
 
-- Authentication
-- Role-Based Access Control
-- Secure APIs
-- Environment Configuration
-- Docker Deployment
-- Production-ready Architecture
+Modern technology businesses and growing digital agencies often rely on separate, fragmented software tools for CRM lead tracking, visitor analytics, customer engagement, SEO optimization, content management, and AI chatbot assistance. 
+
+**BlueShore Technologies** unifies these critical business operations into a single, cohesive enterprise platform—reducing operational complexity while enabling intelligent client conversion, real-time analytics, and automated revenue pipeline management.
 
 ---
 
-# 🏗 Tech Stack
+## 🔍 Platform Overview
 
-## Backend
+BlueShore Technologies addresses the operational challenges of digital services providers by uniting client acquisition, intelligent lead conversion, real-time analytics, and backend management into a unified architecture.
 
-- Python
-- Django
-- Django REST Framework
-- FastAPI
-- Celery
-- REST APIs
-
----
-
-## Frontend
-
-- HTML5
-- CSS3
-- JavaScript
-- Tailwind CSS
-- Bootstrap
+Key capabilities include:
+- **Intelligent Lead Conversion**: AI chatbots integrated directly with prompt guardrails and CRM ingestion pipelines.
+- **Live Visitor Telemetry**: Low-latency WebSocket connections streaming real-time visitor behaviors, active pages, scroll depth, and geolocations.
+- **Full Lead Lifecycle Management**: Visual Kanban board, automated proposal/contract generation, and client portals.
+- **Automated Content Operations**: Programmatic location-based landing pages, dynamic XML sitemaps, and rich blog CMS.
+- **Hardened Security**: Multi-tier defense with role-based access control (RBAC), 2FA TOTP authentication, rate limiting, brute-force blocking, and ClamAV virus scanning for file uploads.
 
 ---
 
-## Artificial Intelligence
+## 📊 Repository at a Glance
 
-- Google Gemini
-- Large Language Models (LLMs)
-- Retrieval-Augmented Generation (RAG)
-- AI Chatbot
-- AI Automation
-
----
-
-## Database
-
-- PostgreSQL
-- Redis
-- SQLite (Development)
+| Metric | Value | Details |
+|---|---|---|
+| **Django Apps** | `10` | Modular packages (`core`, `crm`, `chatbot`, `intelligence`, `seo`, etc.) |
+| **REST API Endpoints** | `20+` | Endpoints for Auth, CRM, AI Chatbot, Careers, Contact & Newsletter |
+| **Architecture Diagrams** | `6` | System, Request Flow, AI, CRM, Database Schema & Security diagrams |
+| **Platform Screenshots** | `7` | Interface previews of Homepage, Dashboard, CRM, Analytics, AI & SEO |
+| **Docker Services** | `6` | Orchestrated containers (`web`, `db`, `redis`, `celery`, `clamav`, `nginx`) |
+| **Automated Test Suite** | `48` | Unit tests passing cleanly (`python manage.py test`) |
+| **CI Pipeline** | `GitHub Actions` | Automated checks & testing on push/PR (`ci.yml`) |
+| **Production Status** | `Ready` | Containerized stack with non-root isolation and Nginx SSL proxy |
 
 ---
 
-## Infrastructure
+## ⚡ Key Modules & Feature Matrix
 
-- Docker
-- Docker Compose
-- Gunicorn
-- Nginx
-- Linux
-
----
-
-## Cloud
-
-- AWS
-- EC2
-- S3
-- IAM
+| Module | App Namespace | Status | Key Functionality |
+|---|---|---|---|
+| **Core Authentication** | `apps.core` | `Production` | User RBAC, 2FA TOTP, custom password policies, security headers middleware. |
+| **Staff CRM** | `apps.crm` | `Production` | Lead tracking, Kanban pipeline, calendar events, proposal/contract/invoice PDF generation. |
+| **AI Chatbot Rep** | `apps.chatbot` | `Production` | Google Gemini API integration, prompt guardrails, auto lead capture. |
+| **Visitor Intelligence** | `apps.intelligence` | `Production` | WebSockets (Django Channels), live visitor map, active session tracking, scroll analytics. |
+| **SEO & Landing Pages** | `apps.seo` | `Production` | Programmatic local landing pages, dynamic XML sitemaps, robots.txt management, meta tag injection. |
+| **Blog & Case Studies** | `apps.blog` | `Production` | Rich article publishing, category tagging, author profiles, case study showcases. |
+| **Careers & Resumes** | `apps.careers` | `Production` | Open position listings, applicant tracking system (ATS), ClamAV virus scanning on PDFs. |
+| **Contact Ingestion** | `apps.contact` | `Production` | Inbound form processing, spam filtering, email notification dispatch via Celery. |
+| **Portfolio Showcase** | `apps.portfolio` | `Production` | Client project gallery, interactive filters, tech stack tagging. |
+| **Newsletter Engine** | `apps.newsletter` | `Production` | Subscriber management, double opt-in, automated welcome emails. |
 
 ---
 
-## Development Tools
+## 💡 Feature Highlights
 
-- Git
-- GitHub
-- VS Code
-- Postman
+### 1. Staff CRM & Sales Operations
+- **Interactive Kanban Pipeline**: Drag-and-drop status transitions across New, Contacted, Qualified, Proposal, Won, and Lost stages.
+- **Document Engine**: Dynamic HTML-to-PDF rendering for proposals, contracts, and invoices.
+- **Calendar & Scheduling**: Appointment tracking linked directly to client profiles.
 
----
+### 2. Google Gemini AI Chatbot
+- **Context-Aware Assistance**: Powered by Google Gemini API to respond intelligently to service inquiries.
+- **Automated Lead Capture**: Converts user queries into structured CRM lead records during conversation.
+- **Security & Privacy Guardrails**: Regex-based filtering to prevent prompt injection and API key leakage.
 
-# 📸 Platform Preview
+### 3. Real-Time Visitor Telemetry
+- **WebSocket Streaming**: Built on Django Channels 4.1 and Daphne ASGI server.
+- **Live Operations Cockpit**: Tracks concurrent active users, current URLs, time-on-page, and geographic origin.
+- **Zero Database Bloat**: Ephemeral event caching powered by Redis pub/sub.
 
-> *(Screenshots will be added here.)*
+### 4. Programmatic SEO Engine
+- **Scalable Geo-Targeting**: Generates location-tailored service pages dynamically from pillar templates.
+- **Automated Sitemaps**: Dynamic XML sitemap generator supporting Google indexing rules.
+- **Custom Meta Overlays**: Injects page-specific Open Graph and Twitter card tags without modifying templates.
 
-### Dashboard
+### 5. Blog CMS & Case Studies
+- **Rich Content Management**: Category organization, search filtering, and markdown rendering.
+- **Author Attribution**: Profile links, social handles, and author bio sections.
 
-Enterprise analytics dashboard with CRM insights, visitor intelligence, AI conversations, and business metrics.
-
----
-
-### CRM
-
-Manage leads, clients, proposals, contracts, and invoices from a unified interface.
-
----
-
-### AI Assistant
-
-Google Gemini-powered AI chatbot integrated into the platform.
-
----
-
-### Analytics
-
-Real-time reporting and performance monitoring for business growth.
+### 6. Job Board & Malware-Scanned Resumes
+- **Applicant Tracking**: Structured job postings with direct application submission.
+- **ClamAV Integration**: Automatic background virus scanning of uploaded resume files before storage.
 
 ---
 
-# 🎯 Project Vision
+## 📸 Platform Preview
 
-BlueShore Technologies was designed to demonstrate how modern businesses can unify CRM, AI automation, analytics, marketing, and customer engagement into a single enterprise platform.
-
-The architecture prioritizes:
-
-- Scalability
-- Maintainability
-- Security
-- Performance
-- Modular Design
-- Cloud Readiness
-
-This repository showcases engineering practices used to build production-ready business software using modern full-stack technologies.
+> [!TIP]
+> **🎥 Product Demo Walkthrough**  
+> Explore the live walkthrough of BlueShore Technologies in action—featuring real-time WebSockets telemetry, the Gemini AI Assistant, and the Staff CRM Kanban pipeline.
 
 ---
 
-# 📂 Project Structure
+### 🌐 Homepage
+The public-facing portal designed for conversion, showcasing core services, client success stories, and interactive consultation tools.
 
-```text
-BlueShore-Technologies
-│
-├── architecture/              # System architecture diagrams
-│
-├── assets/                    # Logos, banners & branding assets
-│
-├── docs/                      # Project documentation
-│   ├── API.md
-│   ├── ARCHITECTURE.md
-│   ├── DATABASE.md
-│   ├── DEPLOYMENT.md
-│   ├── SECURITY.md
-│   ├── ROADMAP.md
-│   └── CHANGELOG.md
-│
-├── screenshots/               # Product screenshots
-│
-├── templates/                 # Frontend Templates
-│
-├── static/                    # Static assets
-│
-├── media/                     # Uploaded media
-│
-├── apps/
-│   ├── blog/
-│   ├── careers/
-│   ├── chatbot/
-│   ├── contact/
-│   ├── crm/
-│   ├── intelligence/
-│   ├── newsletter/
-│   ├── portfolio/
-│   └── seo/
-│
-├── docker/
-│
-├── nginx/
-│
-├── requirements.txt
-├── manage.py
-├── docker-compose.yml
-├── Dockerfile
-└── README.md
+![Homepage](screenshots/homepage.png)
+
+---
+
+### 📊 Enterprise Dashboard
+Centralized operational command center displaying CRM pipeline metrics, real-time telemetry, newsletter growth, and revenue analytics.
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### 👥 CRM Management
+Lead tracking, deal stage management, client contact records, and scheduling workflows.
+
+![CRM Management](screenshots/crm.png)
+
+---
+
+### 📈 Visitor Intelligence & Analytics
+Real-time tracking of active visitor sessions, page navigation paths, and engagement metrics.
+
+![Visitor Analytics](screenshots/analytics.png)
+
+---
+
+### 🤖 AI Assistant
+Google Gemini powered conversational interface assisting prospects with instant service consultations and scheduling.
+
+![AI Chatbot](screenshots/chatbot.png)
+
+---
+
+### 📝 Blog & Content Management
+Content creation suite for publishing technical articles, industry insights, and client case studies.
+
+![Blog CMS](screenshots/blog-cms.png)
+
+---
+
+### 🚀 SEO Management
+Admin overlay for controlling programmatic page metadata, target keywords, XML sitemaps, and indexing rules.
+
+![SEO Dashboard](screenshots/seo-dashboard.png)
+
+---
+
+## 🏛 System Architecture
+
+BlueShore Technologies is architected as a modular, decoupled application stack engineered for high availability and low latency.
+
+### High-Level System Architecture
+Overview of application layers, gateway entrypoints, async worker nodes, and persistence layers.
+
+![System Architecture](architecture/system-architecture.png)
+
+---
+
+### Request Flow
+Step-by-step path of HTTP and WebSocket requests through Nginx, Daphne/Gunicorn, Django apps, Redis, PostgreSQL, and background Celery workers.
+
+![Request Flow](architecture/request-flow.png)
+
+---
+
+### AI Integration Architecture
+Detailed view of how user prompts pass through validation guardrails, Google Gemini API, context providers, and CRM lead creation pipelines.
+
+![AI Architecture](architecture/ai-architecture.png)
+
+---
+
+### CRM Workflow
+Complete lifecycle of a client from initial contact form or AI chat to contract generation, project delivery, and invoicing.
+
+![CRM Workflow](architecture/crm-workflow.png)
+
+---
+
+### Database Design & Schema ERD
+Entity relationships linking core authentication, CRM entities, blog posts, portfolio submissions, and analytics records.
+
+![Database Design](architecture/database-design.png)
+
+---
+
+### Security & Defense Workflow
+Multilayered request validation, token authentication, rate limiting, 2FA validation, and malware scanning flow.
+
+![Security Workflow](architecture/security-workflow.png)
+
+---
+
+## 🛠 Technology Stack
+
+```
+                     ┌──────────────────────────────────────────┐
+                     │          Client / Browser Tier           │
+                     └────────────────────┬─────────────────────┘
+                                          │
+                     ┌────────────────────▼─────────────────────┐
+                     │        Nginx Reverse Proxy / SSL         │
+                     └──────────┬────────────────────┬──────────┘
+                                │ (HTTP)             │ (WebSockets)
+                     ┌──────────▼──────────┐ ┌───────▼──────────┐
+                     │   Gunicorn WSGI     │ │   Daphne ASGI    │
+                     └──────────┬──────────┘ └───────┬──────────┘
+                                │                    │
+                     ┌──────────▼────────────────────▼──────────┐
+                     │          Django 5.0 Core Apps            │
+                     └────┬──────────┬───────────┬───────────┬──┘
+                          │          │           │           │
+           ┌──────────────▼───┐  ┌───▼───────┐ ┌─▼─────────┐ ┌▼──────────┐
+           │ PostgreSQL 15 DB │  │ Redis 7.0 │ │ Celery 5.4│ │ Google   │
+           │                  │  │ Cache/Pub │ │ Workers   │ │ Gemini   │
+           └──────────────────┘  └───────────┘ └───────────┘ └──────────┘
+```
+
+| Layer | Component | Technologies |
+|---|---|---|
+| **Backend Core** | Server Framework | Python 3.11, Django 5.0, Django REST Framework 3.15 |
+| **Async & Real-time** | WebSockets & ASGI | Django Channels 4.1, Daphne 4.1, Redis Channel Layer |
+| **Database Tier** | Primary RDBMS | PostgreSQL 15 (Production), SQLite3 (Local Dev Fallback) |
+| **Cache & Task Queue** | Memory & Background | Redis 7.0, Celery 5.4 |
+| **Artificial Intelligence**| AI Engine | Google Gemini API (`google-generativeai`) |
+| **Security & Scanning** | File & Auth Security | ClamAV 1.0, Django-Axes 6.0, Django-OTP 1.3 |
+| **Gateway & Hosting** | Web Server | Nginx (Alpine Linux), Gunicorn 22.0 |
+| **Frontend UI** | Styling & Scripts | HTML5, Tailwind CSS 3, Vanilla JavaScript (ES6+), Material Symbols |
+
+---
+
+## 🔌 REST API Overview
+
+The platform exposes structured RESTful API endpoints powered by **Django REST Framework** and authenticated via **JSON Web Tokens (JWT)** or **Session Authentication**.
+
+### Authentication Headers
+```http
+Authorization: Bearer <jwt_access_token>
+```
+
+### Key API Endpoint Namespaces
+
+| Namespace | Method | Description | Access Level |
+|---|---|---|---|
+| `/api/token/` | `POST` | Obtain JWT access and refresh token pair | Public |
+| `/api/token/refresh/` | `POST` | Refresh expired JWT access token | Public |
+| `/api/chatbot/chat/` | `POST` | Send message to AI Chatbot & capture lead | Public |
+| `/api/crm/leads/` | `GET`, `POST` | List leads or ingest new lead | Staff / Authenticated |
+| `/api/crm/leads/<id>/` | `PUT`, `DELETE` | Update lead status or details | Staff / Authenticated |
+| `/api/contact/` | `POST` | Submit general contact form inquiry | Public (Throttled) |
+| `/api/careers/apply/` | `POST` | Submit job application with resume PDF | Public (Throttled + ClamAV) |
+| `/api/newsletter/subscribe/`| `POST` | Subscribe email address to newsletter | Public (Throttled) |
+
+---
+
+## 📁 Repository Structure
+
+```
+.
+├── .github/                 # GitHub Actions CI Workflows & Issue Templates
+│   ├── ISSUE_TEMPLATE/      # Bug report & feature request forms
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/
+│       └── ci.yml           # Automated CI pipeline
+├── apps/                    # Modular Django Applications
+│   ├── blog/                # Article publishing, case studies & author profiles
+│   ├── careers/             # Job postings & malware-scanned resume processing
+│   ├── chatbot/             # Google Gemini AI integration & prompt safety
+│   ├── contact/             # Form submission processing & email dispatch
+│   ├── core/                # Core authentication, RBAC, 2FA TOTP & security headers
+│   ├── crm/                 # Staff dashboard, Kanban sales pipeline & PDF engines
+│   ├── intelligence/        # WebSockets consumers for live telemetry
+│   ├── newsletter/          # Email subscription management
+│   ├── portfolio/           # Interactive project showcase
+│   └── seo/                 # Programmatic landing pages & sitemaps
+├── architecture/            # Architecture diagrams (.png format)
+├── assets/                  # Frontend static CSS, JavaScript, hero banner & WebP images
+├── blueshore_server/        # Django core settings, WSGI, ASGI & Celery configurations
+├── docs/                    # Architectural & deployment manuals
+│   ├── ARCHITECTURE.md      # Deep-dive system architecture document
+│   └── DEPLOYMENT.md        # Production Docker & Nginx deployment guide
+├── media/                   # Media uploads (authors, blog assets, uploads)
+├── nginx/                   # Nginx reverse proxy configuration
+│   └── default.conf         # Upstream proxy rules & static caching headers
+├── private_tools/           # Private deployment & diagnostic scripts (git-ignored)
+├── screenshots/             # Interface preview screenshots (.png format)
+├── templates/               # Server-rendered HTML templates & admin UI
+├── .env.example             # Template for environment configuration
+├── .gitignore               # Production ignore rules for Python, Node, IDEs & secrets
+├── CODE_OF_CONDUCT.md       # Contributor Code of Conduct
+├── CONTRIBUTING.md          # Guidelines for contributing
+├── Dockerfile               # Production multi-stage Docker build file
+├── docker-compose.yml       # Production stack orchestration
+├── HANDOVER.md              # Technical handover & developer manual
+├── LICENSE                  # MIT Open Source License
+├── manage.py                # Django CLI management script
+├── PUBLIC_RELEASE_REPORT.md # Audit and release verification report
+├── requirements.txt         # Python package dependencies
+└── SECURITY.md              # Security & vulnerability disclosure policy
 ```
 
 ---
 
-# ⚙️ System Requirements
+## 🚀 Getting Started & Installation
 
-Before running BlueShore Technologies locally, ensure the following software is installed.
+### Prerequisites
 
-| Software | Version |
-|-----------|---------|
-| Python | 3.11+ |
-| PostgreSQL | 15+ |
-| Redis | Latest |
-| Docker | Latest |
-| Docker Compose | Latest |
-| Git | Latest |
+Ensure the following tools are installed on your local environment:
+- **Python**: `3.11` or higher
+- **Git**: `2.30` or higher
+- **PostgreSQL**: `15+` (Optional for local development; SQLite fallback enabled by default)
+- **Redis**: `7.0+` (Optional for local development; LocMem cache fallback enabled by default)
+- **Docker & Docker Compose**: (Required for containerized setup)
 
 ---
 
-# 🚀 Getting Started
+### Local Virtual Environment Setup
 
-Clone the repository
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Yashv-22/BlueShore-Technologies.git
+   cd BlueShore-Technologies
+   ```
+
+2. **Create Python Virtual Environment**:
+   ```bash
+   # On macOS/Linux
+   python3 -m venv .venv
+   source .venv/bin/activate
+
+   # On Windows (PowerShell)
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+3. **Install Dependencies**:
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+---
+
+### Environment Variables Configuration
+
+Copy `.env.example` to `.env` in the root directory:
 
 ```bash
-git clone https://github.com/Yashv-22/BlueShore-Technologies.git
+cp .env.example .env
 ```
 
-Move into the project
+Key environment configuration parameters:
 
-```bash
-cd BlueShore-Technologies
-```
+```ini
+# Django Settings
+DJANGO_SECRET_KEY=your-custom-production-secret-key-min-50-characters
+DJANGO_DEBUG=True
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
 
----
+# Database Configuration (Set USE_POSTGRES=True to use PostgreSQL)
+USE_POSTGRES=False
+DB_NAME=blueshore_db
+DB_USER=blueshore_admin
+DB_PASSWORD=blueshore_secure_pass
+DB_HOST=127.0.0.1
+DB_PORT=5432
 
-# 🐍 Create Virtual Environment
+# Redis & Cache (Set USE_REDIS=True to use Redis)
+USE_REDIS=False
+REDIS_URL=redis://127.0.0.1:6379/1
+CELERY_BROKER_URL=redis://127.0.0.1:6379/0
 
-Windows
-
-```bash
-python -m venv .venv
-```
-
-Activate
-
-```bash
-.venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
+# AI Services
+GEMINI_API_KEY=your-google-gemini-api-key
+OPENAI_API_KEY=your-openai-api-key
 ```
 
 ---
 
-# 📦 Install Dependencies
+### Database Setup & Migrations
 
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# 🔐 Environment Variables
-
-Create
-
-```text
-.env
-```
-
-Example
-
-```env
-DEBUG=True
-
-SECRET_KEY=your-secret-key
-
-DATABASE_URL=postgres://postgres:password@db:5432/blueshore
-
-REDIS_URL=redis://redis:6379
-
-GEMINI_API_KEY=your-api-key
-
-ALLOWED_HOSTS=localhost,127.0.0.1
-
-EMAIL_HOST=
-
-EMAIL_PORT=
-
-EMAIL_HOST_USER=
-
-EMAIL_HOST_PASSWORD=
-```
-
-> Never commit your `.env` file to GitHub.
-
----
-
-# 🗄 Database Setup
-
-Create migrations
-
-```bash
-python manage.py makemigrations
-```
-
-Apply migrations
+Execute initial database migrations to initialize app models and schemas:
 
 ```bash
 python manage.py migrate
 ```
 
-Create admin user
+To create an administrative user with full access:
 
 ```bash
 python manage.py createsuperuser
@@ -420,624 +455,143 @@ python manage.py createsuperuser
 
 ---
 
-# ▶️ Run Development Server
+### Running Tests & System Checks
+
+Run Django system diagnostic checks to ensure environment integrity:
 
 ```bash
-python manage.py runserver
+python manage.py check
 ```
 
-Open
-
-```
-http://127.0.0.1:8000
-```
-
----
-
-# 🐳 Docker Installation
-
-Build containers
-
-```bash
-docker compose build
-```
-
-Start services
-
-```bash
-docker compose up
-```
-
-Run in detached mode
-
-```bash
-docker compose up -d
-```
-
-Stop services
-
-```bash
-docker compose down
-```
-
----
-
-# 🌐 Production Deployment
-
-BlueShore Technologies is designed for cloud-native deployment.
-
-Supported platforms
-
-- AWS EC2
-- Docker
-- Nginx
-- Gunicorn
-- PostgreSQL
-- Redis
-
-Deployment documentation is available inside
-
-```text
-docs/DEPLOYMENT.md
-```
-
----
-
-# 🔧 Development Workflow
-
-Typical development lifecycle
-
-```text
-Feature Development
-
-↓
-
-Git Branch
-
-↓
-
-Code Review
-
-↓
-
-Testing
-
-↓
-
-Docker Build
-
-↓
-
-Production Deployment
-```
-
----
-
-# 🧪 Running Tests
-
-Run all tests
+Run the complete test suite (all 48 unit tests):
 
 ```bash
 python manage.py test
 ```
 
-Specific application
+---
+
+### Development Server
+
+Start the local development server:
 
 ```bash
-python manage.py test crm
+python manage.py runserver
 ```
 
-Coverage
+Open your browser and navigate to `http://127.0.0.1:8000/`.
+
+---
+
+## 🐳 Docker Production Deployment
+
+For full production execution matching cloud staging environments, launch the multi-container stack via Docker Compose:
 
 ```bash
-coverage run manage.py test
-coverage report
+# 1. Prepare production environment file
+cp .env.example .env
+
+# 2. Build and start services in detached mode
+docker compose up -d --build
+
+# 3. Monitor container health
+docker compose ps
+
+# 4. Tail application logs
+docker compose logs -f web
 ```
 
----
-
-# 📖 Documentation
-
-Additional documentation is available inside the `docs` directory.
-
-- Architecture
-- API Documentation
-- Database Design
-- Deployment Guide
-- Security Guide
-- Roadmap
-- Changelog
+### Services Launched in Docker Stack:
+- `web`: Daphne ASGI application server on port 8000.
+- `db`: PostgreSQL 15 Alpine database instance.
+- `redis`: Redis 7 Alpine cache and event bus.
+- `celery_worker`: Background task worker.
+- `clamav`: Antivirus daemon for file scanning.
+- `nginx`: Alpine Nginx reverse proxy exposed on ports 80 & 443.
 
 ---
 
-# 🏗 System Architecture
+## 🛡️ Security Architecture
 
-BlueShore Technologies follows a modular, service-oriented architecture designed for scalability, maintainability, and future growth.
+Security is built directly into every tier of the BlueShore Technologies platform:
 
-```text
-                         Internet
-                             │
-                             ▼
-                     Nginx Reverse Proxy
-                             │
-                             ▼
-                    Django Application Layer
-                             │
-        ┌────────────────────┼────────────────────┐
-        ▼                    ▼                    ▼
-      CRM Module        AI Services          Portfolio
-        │                    │                    │
-        ▼                    ▼                    ▼
-     Blog Module      Chatbot Engine      Visitor Analytics
-        │                    │                    │
-        └────────────────────┼────────────────────┘
-                             ▼
-                     Service Layer
-                             │
-         ┌───────────────────┼────────────────────┐
-         ▼                   ▼                    ▼
-     PostgreSQL          Redis Cache         Celery Tasks
-                             │
-                             ▼
-                     Google Gemini AI
-```
+- **Role-Based Access Control (RBAC)**: Fine-grained staff permissions across CRM, AI, SEO, Operations, and Security SOC panels.
+- **Two-Factor Authentication (2FA)**: TOTP integration via `django-otp` for administrative user logins.
+- **Brute-Force Protection**: Integrated `django-axes` monitoring failed login attempts by IP and username.
+- **CSRF & Security Headers**: Strict CSRF token validation, X-Frame-Options (`DENY`), Content-Type-Options (`nosniff`), and HSTS support via `SecurityHeadersMiddleware`.
+- **Malware Prevention**: Automatic ClamAV socket scanning on all submitted candidate resume attachments (`apps/careers`).
+- **Container Isolation**: Non-root `django` user isolation in Docker runtime images.
+- **Rate Limiting**: DRF API throttling on public form submissions and AI endpoints.
 
 ---
 
-# 🤖 AI Architecture
+## ⚡ Performance & Optimization
 
-BlueShore integrates Artificial Intelligence throughout the platform instead of treating it as an isolated feature.
-
-### AI Capabilities
-
-- AI Chatbot
-- Intelligent Customer Support
-- Lead Qualification
-- Content Assistance
-- Context-aware Responses
-- Business Automation
-- Retrieval-Augmented Generation (RAG)
-- Google Gemini Integration
-
-### AI Flow
-
-```text
-User Question
-      │
-      ▼
-Chat Interface
-      │
-      ▼
-Prompt Builder
-      │
-      ▼
-Context Retrieval
-      │
-      ▼
-Google Gemini
-      │
-      ▼
-Formatted Response
-      │
-      ▼
-User
-```
+- **Multi-Level Caching**: Redis-backed cache layer with local memory fallback for high-frequency queries.
+- **Async Event Bus**: Background execution via Celery for email dispatches and analytical telemetry processing.
+- **Database Optimization**: Indexed foreign keys, select_related, and prefetch_related query optimizations to prevent N+1 queries.
+- **Static Asset Delivery**: WebP compressed image assets and Nginx static file caching headers (`Cache-Control: public, max-age=31536000`).
 
 ---
 
-# 📊 Database Architecture
+## 🗺️ Project Roadmap
 
-BlueShore uses PostgreSQL as its primary database with Redis for caching and session management.
+### Completed (Release v1.0.0)
+- [x] Core Django 5.0 modular architecture & PostgreSQL schema.
+- [x] Staff CRM with Kanban pipeline and dynamic PDF contract/invoice generation.
+- [x] Real-time visitor telemetry via WebSockets and Django Channels.
+- [x] Google Gemini AI Chatbot integration with prompt safety filters.
+- [x] ClamAV malware scanning pipeline for resume uploads.
+- [x] Programmatic SEO page generation and dynamic XML sitemaps.
+- [x] Multi-stage Docker container build and Nginx reverse proxy.
+- [x] CI/CD pipeline with GitHub Actions.
 
-### Core Modules
+### In Progress
+- [ ] Upgrade to `google.genai` SDK for next-gen Gemini models.
+- [ ] Granular CRM reporting and email campaign analytics dashboard.
 
-- Authentication
-- CRM
-- Blog
-- Portfolio
-- Careers
-- Contact
-- Newsletter
-- Analytics
-- AI Conversations
-- Visitor Intelligence
-- SEO
-
----
-
-### Primary Relationships
-
-```text
-Users
- │
- ├── Leads
- │      ├── Proposals
- │      ├── Contracts
- │      └── Invoices
- │
- ├── Blog Posts
- │
- ├── Projects
- │
- ├── Portfolio
- │
- ├── AI Conversations
- │
- └── Analytics
-```
+### Planned Features
+- [ ] Multi-tenant organization support for SaaS white-labeling.
+- [ ] Native mobile push notifications for staff CRM lead alerts.
 
 ---
 
-# 🌐 API Architecture
+## 📚 Documentation & Resources
 
-BlueShore exposes modular REST APIs designed around resource-based architecture.
-
-Example endpoints
-
-```text
-/api/auth/
-
-/api/crm/
-
-/api/blog/
-
-/api/portfolio/
-
-/api/contact/
-
-/api/chatbot/
-
-/api/newsletter/
-
-/api/analytics/
-
-/api/seo/
-```
-
-Every endpoint follows:
-
-- REST Principles
-- JSON Responses
-- Authentication
-- Validation
-- Error Handling
+- [Architecture Guide](docs/ARCHITECTURE.md) — Comprehensive explanation of system design, WebSockets, and AI workflows.
+- [Deployment Guide](docs/DEPLOYMENT.md) — VPS hosting, Docker setup, and SSL certificate installation.
+- [Technical Handover](HANDOVER.md) — Developer reference guide and operational instructions.
+- [Security Policy](SECURITY.md) — Vulnerability reporting guidelines and security practices.
+- [Contributing Guidelines](CONTRIBUTING.md) — Standards for code contributions, issues, and pull requests.
+- [Code of Conduct](CODE_OF_CONDUCT.md) — Contributor Covenant standards.
+- [Audit & Release Report](PUBLIC_RELEASE_REPORT.md) — Comprehensive audit report for public release v1.0.0.
 
 ---
 
-# ⚡ Performance Optimizations
+## 🤝 Contributing
 
-BlueShore has been engineered with performance in mind.
+We welcome contributions from the community!
 
-### Backend
+1. Fork the repository on GitHub.
+2. Create a feature branch (`git checkout -b feature/amazing-feature`).
+3. Commit your changes following conventional commit syntax (`git commit -m 'feat: add amazing feature'`).
+4. Ensure all tests pass (`python manage.py test`).
+5. Push to your branch (`git push origin feature/amazing-feature`).
+6. Open a Pull Request using the repository [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md).
 
-- Django ORM Optimization
-- Query Optimization
-- Pagination
-- Lazy Loading
-- Service Layer Architecture
-
-### Database
-
-- PostgreSQL Indexing
-- Normalized Database
-- Optimized Relationships
-
-### Cache
-
-- Redis
-- Session Cache
-- Query Cache
-
-### Frontend
-
-- Optimized Assets
-- Lazy Loading
-- Responsive Design
-- Minified Static Files
-
----
-
-# 🔐 Security
-
-Security is built into every layer of the application.
-
-Implemented features include:
-
-- Role-Based Access Control (RBAC)
-- CSRF Protection
-- XSS Protection
-- SQL Injection Protection
-- Secure Authentication
-- Password Hashing
-- Environment Variables
-- Docker Isolation
-- HTTPS Ready Deployment
-
----
-
-# 📈 Platform Modules
-
-| Module | Status |
-|---------|--------|
-| Dashboard | ✅ |
-| CRM | ✅ |
-| AI Chatbot | ✅ |
-| Visitor Intelligence | ✅ |
-| Analytics | ✅ |
-| Portfolio | ✅ |
-| Blog | ✅ |
-| Careers | ✅ |
-| Newsletter | ✅ |
-| Contact | ✅ |
-| SEO Engine | ✅ |
-| Business Automation | ✅ |
-
----
-
-# 🎯 Engineering Highlights
-
-✔ Enterprise Full-Stack Architecture
-
-✔ AI-Powered Business Platform
-
-✔ Modular Django Applications
-
-✔ Dockerized Infrastructure
-
-✔ Cloud-Native Ready
-
-✔ Production Deployment
-
-✔ Responsive User Experience
-
-✔ REST API Driven
-
-✔ Scalable Database Design
-
-✔ Enterprise Security
-
----
-
-# 📸 Screenshots
-
-## Dashboard
-
-> *(Insert Dashboard Screenshot)*
-
----
-
-## CRM
-
-> *(Insert CRM Screenshot)*
-
----
-
-## AI Chatbot
-
-> *(Insert AI Chatbot Screenshot)*
-
----
-
-## Visitor Intelligence
-
-> *(Insert Visitor Analytics Screenshot)*
-
----
-
-## Analytics Dashboard
-
-> *(Insert Analytics Screenshot)*
-
----
-
-# 🚀 Why BlueShore?
-
-Unlike traditional business websites, BlueShore combines CRM, AI, analytics, marketing, automation, and content management into one integrated platform.
-
-The goal is to help organizations centralize operations, improve customer engagement, and scale through intelligent software rather than disconnected tools.
-
----
-
-# 🛣 Roadmap
-
-## ✅ Version 1.0
-
-- Enterprise Website
-- CRM
-- Portfolio
-- Careers Portal
-- Contact Management
-- Newsletter
-- Analytics Dashboard
-- AI Chatbot
-- Docker Deployment
-- Redis Integration
-- PostgreSQL
-- SEO Engine
-
----
-
-## 🚀 Version 2.0
-
-- Multi-Tenant Architecture
-- Organization Management
-- Team Collaboration
-- Notification Center
-- Workflow Builder
-- AI Lead Scoring
-- Advanced Analytics
-
----
-
-## 🔮 Future Vision
-
-- AI Agent Orchestration
-- Voice Assistant
-- Multi-language Support
-- AI Sales Assistant
-- Customer Journey Intelligence
-- Mobile Application
-- Kubernetes Deployment
-- Microservice Architecture
-
----
-
-# 📊 Development Status
-
-| Component | Status |
-|-----------|--------|
-| Backend | ✅ Production Ready |
-| Frontend | ✅ Production Ready |
-| CRM | ✅ Complete |
-| AI Chatbot | ✅ Complete |
-| Visitor Intelligence | ✅ Complete |
-| Analytics | ✅ Complete |
-| Blog CMS | ✅ Complete |
-| Careers Portal | ✅ Complete |
-| Portfolio | ✅ Complete |
-| SEO Engine | ✅ Complete |
-| Docker Deployment | ✅ Complete |
-
----
-
-# 🌟 Highlights
-
-- Enterprise-grade Full-Stack Architecture
-- AI-Powered Business Platform
-- Modular Django Applications
-- REST API Driven
-- Production Ready
-- Dockerized Infrastructure
-- PostgreSQL + Redis
-- Google Gemini Integration
-- SEO Optimized
-- Cloud Native Design
-
----
-
-# 📚 Documentation
-
-Detailed project documentation is available inside the `docs/` directory.
-
-| Document | Description |
-|----------|-------------|
-| ARCHITECTURE.md | System Architecture |
-| API.md | API Documentation |
-| DATABASE.md | Database Design |
-| DEPLOYMENT.md | Production Deployment |
-| SECURITY.md | Security Practices |
-| ROADMAP.md | Future Roadmap |
-| CHANGELOG.md | Release History |
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome.
-
-If you'd like to improve BlueShore Technologies:
-
-1. Fork the repository
-2. Create a feature branch
-
-```bash
-git checkout -b feature/amazing-feature
-```
-
-3. Commit your changes
-
-```bash
-git commit -m "Add amazing feature"
-```
-
-4. Push your branch
-
-```bash
-git push origin feature/amazing-feature
-```
-
-5. Open a Pull Request
-
----
-
-# 🐞 Bug Reports
-
-If you discover a bug, please open an issue and include:
-
-- Description
-- Steps to reproduce
-- Expected behavior
-- Screenshots (if applicable)
-- Environment details
-
----
-
-# 💡 Feature Requests
-
-Have an idea?
-
-Open an issue describing:
-
-- Problem
-- Proposed solution
-- Expected outcome
-
----
-
-# 🔐 Security
-
-If you discover a security issue, please report it responsibly.
-
-Do **not** publish vulnerabilities publicly before they have been addressed.
-
----
-
-# 📜 License
-
-This project is licensed under the MIT License.
-
-See the `LICENSE` file for details.
-
----
-
-# 🙏 Acknowledgements
-
-Special thanks to the open-source community and the maintainers of:
-
-- Django
-- Django REST Framework
-- FastAPI
-- PostgreSQL
-- Redis
-- Docker
-- Nginx
-- Gunicorn
-- Google Gemini
-- Bootstrap
-- Tailwind CSS
-
----
-
-# 📬 Contact
-
-**Developer:** Yashvardhan Mishra
-
-- 🌐 Website: https://www.blueshoretech.com
-- 💼 LinkedIn: https://linkedin.com/in/yashvardhanmishra
-- 💻 GitHub: https://github.com/Yashv-22
+For detailed rules, please review [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
 <div align="center">
 
-# ⭐ If you found this project interesting, consider giving it a star.
+### **BlueShore Technologies**
+*Enterprise AI-Powered Full-Stack SaaS Platform*
 
-It helps others discover the project and supports continued development.
+`Python` • `Django` • `PostgreSQL` • `Redis` • `Docker` • `Google Gemini AI`
 
----
+If this repository helped you or inspired your work, **⭐ consider starring the project on GitHub!**
 
-### Built with ❤️ using Python, Django, AI & Cloud Technologies
-
-**BlueShore Technologies — Enterprise AI-Powered Full-Stack SaaS Platform**
+[MIT License](LICENSE) • [Website](https://www.blueshoretech.com) • [LinkedIn](https://www.linkedin.com/company/blueshore-technologies/) • [GitHub](https://github.com/Yashv-22/BlueShore-Technologies)
 
 </div>

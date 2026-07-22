@@ -1,0 +1,1773 @@
+{% load i18n static %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}" class="h-full">
+<head>
+<title>{% block title %}{% endblock %}</title>
+
+<!-- Tailwind CSS & Google Fonts -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        },
+        colors: {
+          slate: {
+            950: '#060814',
+            900: '#0b0f19',
+            800: '#151c2c',
+            700: '#223049',
+          }
+        }
+      }
+    }
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<!-- Django Default Styles (for compatibility, heavily overridden below) -->
+<link rel="stylesheet" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}">
+{% block dark-mode-vars %}
+  <link rel="stylesheet" href="{% static "admin/css/dark_mode.css" %}">
+{% endblock %}
+{% block responsive %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block extrahead %}{% endblock %}
+
+<style>
+    /* Modern visual variables system to fix text visibility and override Django base CSS variables */
+    :root {
+        --primary-brand: #3b82f6;
+        --primary-brand-hover: #2563eb;
+        --bg-primary: #f8fafc;
+        --bg-card: #ffffff;
+        --border-color: #e2e8f0;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --bg-table-header: #f8fafc;
+        --bg-table-hover: #f1f5f9;
+        --bg-input: #ffffff;
+        --fg-input: #0f172a;
+
+        /* Force Django's native variables in Light Mode */
+        --body-bg: #f8fafc;
+        --body-fg: #0f172a;
+        --body-quiet-color: #64748b;
+        --row-bg-1: #ffffff;
+        --row-bg-2: #f8fafc;
+        --row-hover-bg: #f1f5f9;
+        --border-color: #e2e8f0;
+        --primary: #3b82f6;
+        --primary-hover: #2563eb;
+        --breadcrumbs-bg: transparent;
+        --breadcrumbs-link-fg: #64748b;
+        --breadcrumbs-fg: #0f172a;
+        --header-bg: #ffffff;
+        --header-color: #0f172a;
+        --header-link-color: #3b82f6;
+        --selected-bg: #eff6ff;
+        --selected-row-bg: #f8fafc;
+    }
+    
+    .dark {
+        --primary-brand: #3b82f6;
+        --primary-brand-hover: #60a5fa;
+        --bg-primary: #060814;
+        --bg-card: #0b0f19;
+        --border-color: #223049;
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --bg-table-header: #151c2c;
+        --bg-table-hover: rgba(21, 28, 44, 0.4);
+        --bg-input: #151c2c;
+        --fg-input: #f8fafc;
+
+        /* Force Django's native variables in Dark Mode */
+        --body-bg: #060814;
+        --body-fg: #f8fafc;
+        --body-quiet-color: #94a3b8;
+        --row-bg-1: #0b0f19;
+        --row-bg-2: rgba(21, 28, 44, 0.4);
+        --row-hover-bg: #151c2c;
+        --border-color: #223049;
+        --primary: #3b82f6;
+        --primary-hover: #60a5fa;
+        --breadcrumbs-bg: transparent;
+        --breadcrumbs-link-fg: #94a3b8;
+        --breadcrumbs-fg: #f8fafc;
+        --header-bg: #0b0f19;
+        --header-color: #f8fafc;
+        --header-link-color: #3b82f6;
+        --selected-bg: #1e293b;
+        --selected-row-bg: #1e293b;
+    }
+
+    /* Force global body and container text visibility overrides */
+    body {
+        background-color: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+    }
+
+    /* Fix text colors globally across Django admin content blocks */
+    #content-main, #content, .module, .module table, .app-list {
+        color: var(--text-primary);
+    }
+
+    h1, h2, h3, h4, h5, h6, .module caption, .module caption a {
+        color: var(--text-primary);
+    }
+
+    /* Table headers & cells */
+    .results table th, .results table th a, .results table th a:link, .results table th a:visited {
+        color: var(--text-secondary) !important;
+    }
+    .results table td {
+        color: var(--text-primary) !important;
+    }
+
+    /* Form fields, inputs, labels, and read-only text */
+    .form-row, .inline-related {
+        color: var(--text-primary) !important;
+    }
+    .form-row label, .form-row legend, .form-row label.required {
+        color: var(--text-secondary) !important;
+    }
+    .form-row .help, .help-inline, .help-block, .description {
+        color: var(--text-muted) !important;
+    }
+    .readonly {
+        color: var(--text-primary) !important;
+        font-weight: 500 !important;
+    }
+
+    /* Django standard search form & search labels */
+    #changelist-search label, #changelist-search .quiet {
+        color: var(--text-secondary) !important;
+    }
+
+    /* Filter sidebar text visibility */
+    #changelist-filter {
+        color: var(--text-secondary) !important;
+    }
+    #changelist-filter h2, #changelist-filter h3 {
+        color: var(--text-primary) !important;
+    }
+    #changelist-filter ul li a {
+        color: var(--text-muted) !important;
+    }
+    #changelist-filter ul li.selected a {
+        color: var(--primary-brand) !important;
+    }
+
+    /* Tabular inlines & Inline forms */
+    .inline-group, .inline-related {
+        background-color: var(--bg-card) !important;
+        border-color: var(--border-color) !important;
+    }
+    .inline-group h2 {
+        background-color: var(--bg-table-header) !important;
+        color: var(--text-primary) !important;
+        border-bottom-color: var(--border-color) !important;
+    }
+    .inline-related h3 {
+        background-color: var(--bg-table-header) !important;
+        color: var(--text-primary) !important;
+    }
+    .inline-related h3 a {
+        color: var(--primary-brand) !important;
+    }
+    
+    /* Django's FilteredSelectMultiple (Many-to-Many search widget) */
+    .selector, .selector-available, .selector-chosen {
+        color: var(--text-primary) !important;
+        background-color: var(--bg-card) !important;
+    }
+    .selector .selector-available h2, .selector .selector-chosen h2 {
+        background-color: var(--bg-table-header) !important;
+        color: var(--text-primary) !important;
+        border-color: var(--border-color) !important;
+    }
+    .selector select {
+        background-color: var(--bg-card) !important;
+        color: var(--text-primary) !important;
+        border-color: var(--border-color) !important;
+    }
+    .selector select option {
+        background-color: var(--bg-card) !important;
+        color: var(--text-primary) !important;
+    }
+    .selector-filter {
+        background-color: var(--bg-table-header) !important;
+        border-color: var(--border-color) !important;
+    }
+    .selector-filter input {
+        background-color: var(--bg-card) !important;
+        color: var(--text-primary) !important;
+        border-color: var(--border-color) !important;
+    }
+    .selector-chooser li a {
+        background-color: var(--bg-table-header) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    /* Calendar & Clock widgets (DateTime picker popup) */
+    .calendarbox, .clockbox {
+        background-color: var(--bg-card) !important;
+        color: var(--text-primary) !important;
+        border-color: var(--border-color) !important;
+    }
+    .calendarbox h2, .clockbox h2 {
+        background-color: var(--bg-table-header) !important;
+        color: var(--text-primary) !important;
+    }
+    .calendarbox table th, .calendarbox table td {
+        color: var(--text-primary) !important;
+    }
+    .calendarbox table th {
+        background-color: var(--bg-table-header) !important;
+        color: var(--text-secondary) !important;
+    }
+    .calendarbox table td.noday {
+        background-color: var(--bg-primary) !important;
+        color: var(--text-muted) !important;
+    }
+    .calendarbox table td.selected a {
+        background-color: var(--primary-brand) !important;
+        color: #ffffff !important;
+    }
+    .calendarbox .calendar-cancel, .clockbox .calendar-cancel {
+        background-color: #ef4444 !important;
+        color: #ffffff !important;
+    }
+
+    /* History & Log tables text */
+    #change-history table th, #change-history table td {
+        color: var(--text-primary) !important;
+    }
+
+    /* Submit row buttons (Save, Save and continue, Save and add another) */
+    .submit-row input[type=submit], .submit-row input[type=button], .submit-row a.closelink {
+        color: #ffffff !important; /* Always white text on colored buttons */
+    }
+    .submit-row a.deletelink {
+        color: #ffffff !important;
+    }
+
+    /* Django messages/toasts list */
+    ul.messagelist li {
+        color: inherit;
+    }
+
+    /* Django model directory list */
+    #content-main .module caption, #content-main .module caption a {
+        color: var(--text-primary) !important;
+        font-weight: 700 !important;
+    }
+    #content-main .module th a, #content-main .module td a {
+        color: var(--text-primary) !important;
+    }
+
+    /* Filters panel links */
+    #changelist-filter a {
+        color: var(--text-secondary) !important;
+    }
+    #changelist-filter li.selected a {
+        color: var(--primary-brand) !important;
+    }
+
+    /* Breadcrumbs text */
+    .breadcrumbs {
+        display: flex !important;
+        align-items: center !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        color: var(--text-secondary) !important;
+        gap: 6px !important;
+        box-shadow: none !important;
+    }
+    .breadcrumbs a {
+        color: var(--text-secondary) !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+        transition: color 0.15s !important;
+    }
+    .breadcrumbs a:hover {
+        color: var(--primary-brand) !important;
+    }
+    .breadcrumbs span, .breadcrumbs strong, .breadcrumbs .current {
+        font-weight: 600 !important;
+        color: var(--text-primary) !important;
+    }
+
+    /* Search bar results summary */
+    .xfull, .quiet, .quiet a {
+        color: var(--text-secondary) !important;
+    }
+
+    /* Standard links */
+    a:link, a:visited {
+        color: var(--primary-brand);
+    }
+    a:hover {
+        color: var(--primary-brand-hover);
+    }
+
+
+    /* Sidebar overflow clipping and transition rules */
+    #main-sidebar {
+        transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+        overflow: hidden !important;
+    }
+
+    /* Force theme toggler to be always visible (Django default CSS hides it by default) */
+    button.theme-toggle, .theme-toggle {
+        display: inline-flex !important;
+    }
+
+    /* Mobile responsive drawer overlay & positioning */
+    @media (max-width: 767px) {
+        #main-sidebar {
+            position: fixed !important;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 256px !important;
+            transform: translateX(-100%) !important;
+            z-index: 50 !important;
+        }
+        #main-sidebar.mobile-open {
+            transform: translateX(0) !important;
+            box-shadow: 4px 0 25px rgba(0, 0, 0, 0.4) !important;
+        }
+    }
+
+
+    
+    /* Hide Django's native layout wrapper elements */
+    #header, #nav-sidebar, .toggle-nav-sidebar, #footer, .skip-to-content-link {
+        display: none !important;
+    }
+    
+    #container {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+    
+    #main {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    #content {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+    }
+
+    /* Style Django Messages */
+    ul.messagelist {
+        padding: 0 !important;
+        margin: 0 0 24px 0 !important;
+        list-style: none !important;
+    }
+    ul.messagelist li {
+        display: flex !important;
+        align-items: center !important;
+        padding: 12px 16px !important;
+        border-radius: 8px !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        margin-bottom: 8px !important;
+        border: 1px solid transparent !important;
+        background-image: none !important;
+    }
+    ul.messagelist li.success {
+        background-color: #f0fdf4 !important;
+        color: #166534 !important;
+        border-color: #bbf7d0 !important;
+    }
+    .dark ul.messagelist li.success {
+        background-color: rgba(22, 101, 52, 0.15) !important;
+        color: #4ade80 !important;
+        border-color: rgba(74, 222, 128, 0.2) !important;
+    }
+    ul.messagelist li.warning {
+        background-color: #fffbeb !important;
+        color: #92400e !important;
+        border-color: #fef3c7 !important;
+    }
+    .dark ul.messagelist li.warning {
+        background-color: rgba(146, 64, 14, 0.15) !important;
+        color: #fbbf24 !important;
+        border-color: rgba(251, 191, 36, 0.2) !important;
+    }
+    ul.messagelist li.error {
+        background-color: #fef2f2 !important;
+        color: #991b1b !important;
+        border-color: #fee2e2 !important;
+    }
+    .dark ul.messagelist li.error {
+        background-color: rgba(153, 27, 27, 0.15) !important;
+        color: #f87171 !important;
+        border-color: rgba(248, 113, 113, 0.2) !important;
+    }
+
+    /* Style forms & inputs globally */
+    input[type=text], input[type=email], input[type=url], input[type=password], input[type=number], select, textarea {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+        width: 100% !important;
+        max-width: 640px !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        transition: all 0.2s ease !important;
+        outline: none !important;
+    }
+    .dark input[type=text], .dark input[type=email], .dark input[type=url], .dark input[type=password], .dark input[type=number], .dark select, .dark textarea {
+        background-color: #151c2c !important;
+        color: #f8fafc !important;
+        border: 1px solid #223049 !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    }
+    input[type=text]:focus, input[type=email]:focus, input[type=url]:focus, input[type=password]:focus, input[type=number]:focus, select:focus, textarea:focus {
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+    }
+    .dark input[type=text]:focus, .dark input[type=email]:focus, .dark input[type=url]:focus, .dark input[type=password]:focus, .dark input[type=number]:focus, .dark select:focus, .dark textarea:focus {
+        border-color: #60a5fa !important;
+        box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15) !important;
+    }
+
+    /* Style form rows */
+    .form-row {
+        border-bottom: 1px solid #f1f5f9 !important;
+        padding: 16px 0 !important;
+        background: transparent !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+    .dark .form-row {
+        border-bottom: 1px solid #151c2c !important;
+    }
+    @media (min-width: 768px) {
+        .form-row {
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            gap: 20px !important;
+        }
+        .form-row > label {
+            width: 200px !important;
+            min-width: 200px !important;
+            padding-top: 10px !important;
+            font-weight: 600 !important;
+            color: #475569 !important;
+            font-size: 13px !important;
+        }
+        .dark .form-row > label {
+            color: #94a3b8 !important;
+        }
+    }
+    
+    .form-row .help {
+        font-size: 12px !important;
+        color: #64748b !important;
+        margin-top: 4px !important;
+    }
+    .dark .form-row .help {
+        color: #64748b !important;
+    }
+
+    /* Modern submit buttons */
+    .button, input[type=submit], input[type=button] {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        border-radius: 6px !important;
+        border: none !important;
+        cursor: pointer !important;
+        transition: all 0.2s !important;
+        background-color: #3b82f6 !important;
+        color: #ffffff !important;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+    }
+    .button:hover, input[type=submit]:hover {
+        background-color: #2563eb !important;
+        transform: translateY(-0.5px) !important;
+    }
+    
+    .button.default, input[type=submit].default {
+        background-color: #4f46e5 !important;
+    }
+    .button.default:hover, input[type=submit].default:hover {
+        background-color: #4338ca !important;
+    }
+    
+    .deletelink {
+        background-color: #ef4444 !important;
+        color: #ffffff !important;
+        padding: 8px 16px !important;
+        border-radius: 6px !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        height: auto !important;
+        background-image: none !important;
+        text-decoration: none !important;
+    }
+    .deletelink:hover {
+        background-color: #dc2626 !important;
+    }
+
+    /* Change List Table Customization */
+    #changelist {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .results {
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+        overflow-x: auto !important; /* Allow horizontal table scrolling on mobile */
+        margin-bottom: 24px !important;
+    }
+    .dark .results {
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3) !important;
+    }
+    
+    .results table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin: 0 !important;
+    }
+
+    /* Universal Table Row and Cell backgrounds for all Django Admin tables (fixes hybrid theme visibility issues) */
+    table tr.row1, tr.row1,
+    table tr.row2, tr.row2,
+    .module table tr,
+    #change-history table tr,
+    .inline-group table tr,
+    .results table tr {
+        background-color: var(--bg-card) !important;
+    }
+    
+    table td,
+    .module table td,
+    #change-history table td,
+    .inline-group table td,
+    .results table td {
+        background-color: var(--bg-card) !important;
+        color: var(--text-primary) !important;
+        padding: 14px 16px !important;
+        border-bottom: 1px solid var(--border-color) !important;
+        font-size: 13px !important;
+    }
+    
+    table th,
+    .module table th,
+    #change-history table th,
+    .inline-group table th,
+    .results table th {
+        background-color: var(--bg-table-header) !important;
+        color: var(--text-secondary) !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        font-size: 11px !important;
+        letter-spacing: 0.05em !important;
+        padding: 14px 16px !important;
+        border-bottom: 2px solid var(--border-color) !important;
+    }
+    
+    /* Hover state for all table rows */
+    table tr:hover, table tr:hover td,
+    tr.row1:hover, tr.row1:hover td,
+    tr.row2:hover, tr.row2:hover td,
+    .module table tr:hover td,
+    .results table tr:hover td {
+        background-color: var(--bg-table-hover) !important;
+    }
+    
+    .results table th.sorted .sortoptions {
+        display: inline-block !important;
+        vertical-align: middle !important;
+    }
+
+    /* Actions bar */
+    .actions {
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 8px !important;
+        padding: 12px 16px !important;
+        margin-bottom: 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        font-size: 13px !important;
+        color: var(--text-secondary) !important;
+    }
+    .actions select {
+        width: auto !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+    }
+    
+    /* Search Bar */
+    #toolbar {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 20px !important;
+    }
+    #searchbar {
+        height: auto !important;
+        max-width: 400px !important;
+        border-radius: 8px 0 0 8px !important;
+    }
+    #changelist-search input[type=submit] {
+        border-radius: 0 8px 8px 0 !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    
+    /* Filters sidebar styling */
+    #changelist-filter {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        margin-left: 20px !important;
+        padding: 20px !important;
+        width: 240px !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+    }
+    .dark #changelist-filter {
+        background: #0b0f19 !important;
+        border: 1px solid #223049 !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3) !important;
+    }
+    #changelist-filter h2 {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        color: #0f172a !important;
+        margin-bottom: 12px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+    }
+    .dark #changelist-filter h2 {
+        color: #ffffff !important;
+    }
+    #changelist-filter h3 {
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        color: #475569 !important;
+        margin-top: 16px !important;
+        margin-bottom: 8px !important;
+    }
+    .dark #changelist-filter h3 {
+        color: #cbd5e1 !important;
+    }
+    #changelist-filter ul {
+        padding-left: 0 !important;
+        list-style: none !important;
+    }
+    #changelist-filter li {
+        margin-bottom: 6px !important;
+    }
+    #changelist-filter li a {
+        color: #64748b !important;
+        text-decoration: none !important;
+        font-size: 13px !important;
+        transition: color 0.15s !important;
+    }
+    #changelist-filter li.selected a {
+        color: #3b82f6 !important;
+        font-weight: 600 !important;
+    }
+    .dark #changelist-filter li a {
+        color: #94a3b8 !important;
+    }
+    .dark #changelist-filter li.selected a {
+        color: #60a5fa !important;
+    }
+
+    /* Submit row bar sticky at bottom of forms */
+    .submit-row {
+        background: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border-top: 1px solid #e2e8f0 !important;
+        padding: 16px 24px !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 12px !important;
+        position: sticky !important;
+        bottom: 16px !important;
+        z-index: 30 !important;
+        box-shadow: 0 -4px 10px rgba(0,0,0,0.02) !important;
+        margin-top: 30px !important;
+    }
+    .dark .submit-row {
+        background: rgba(11, 15, 25, 0.85) !important;
+        border-top: 1px solid #223049 !important;
+        box-shadow: 0 -4px 10px rgba(0,0,0,0.3) !important;
+    }
+
+    /* Pagination */
+    .paginator {
+        border-top: 1px solid #e2e8f0 !important;
+        padding: 16px !important;
+        font-size: 13px !important;
+        color: #64748b !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        background: #ffffff !important;
+        border-radius: 0 0 12px 12px !important;
+    }
+    .dark .paginator {
+        border-top: 1px solid #151c2c !important;
+        color: #94a3b8 !important;
+        background: #0b0f19 !important;
+    }
+    
+    /* Inline fieldsets & groups */
+    .inline-group {
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        background: #ffffff !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02) !important;
+        overflow: hidden !important;
+        margin-top: 30px !important;
+    }
+    .dark .inline-group {
+        border: 1px solid #223049 !important;
+        background: #0b0f19 !important;
+    }
+    .inline-group h2 {
+        background: #f8fafc !important;
+        color: #0f172a !important;
+        font-weight: 700 !important;
+        font-size: 14px !important;
+        padding: 14px 20px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+    }
+    .dark .inline-group h2 {
+        background: #151c2c !important;
+        color: #ffffff !important;
+        border-bottom: 1px solid #223049 !important;
+    }
+
+    /* Login Page Styling Overrides */
+    body.login {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 100vh !important;
+        background-color: var(--bg-primary) !important;
+    }
+    body.login #container {
+        width: 100% !important;
+        max-width: 420px !important;
+        margin: 0 auto !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    body.login #content-main {
+        background-color: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 16px !important;
+        padding: 32px !important;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+        color: var(--text-primary) !important;
+        width: 100% !important;
+    }
+    .dark body.login #content-main {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3) !important;
+    }
+    body.login .form-row {
+        border: none !important;
+        padding: 10px 0 !important;
+    }
+    body.login .submit-row {
+        background: transparent !important;
+        border: none !important;
+        padding: 16px 0 0 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        position: static !important;
+        display: block !important;
+    }
+    body.login .submit-row input[type=submit] {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+</style>
+</head>
+
+<body class="h-full bg-slate-50 dark:bg-slate-950 transition-colors duration-200">
+
+<!-- Complete Enterprise UI Shell Wrapper -->
+<div class="{% if is_popup or not user.is_authenticated or not user.is_staff %}p-6 h-full{% else %}flex h-screen overflow-hidden{% endif %}">
+  
+  {% if not is_popup and user.is_authenticated and user.is_staff %}
+    <!-- Collapsible Sidebar -->
+    <aside id="main-sidebar" class="flex flex-col w-64 bg-[#0a0f1d] border-r border-slate-800/80 text-slate-400 shrink-0 transition-all duration-300 z-40">
+      
+      <!-- Sidebar Header (Logo & Brand) -->
+      <div class="flex items-center justify-between px-5 h-16 border-b border-slate-800/60 shrink-0">
+        <a href="{% url 'admin-dashboard' %}" class="flex items-center gap-3 decoration-none">
+          <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-600 shadow-lg shadow-blue-600/30">
+            <span class="font-extrabold text-white text-sm font-sans tracking-tight">BT</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-white text-sm tracking-wide font-sans leading-tight">Blueshore</span>
+            <span class="text-[10px] text-slate-400 font-medium tracking-wide leading-none">Technologies</span>
+          </div>
+        </a>
+        <button id="sidebar-collapse-btn" class="p-1 rounded hover:bg-slate-800 hover:text-white transition-colors border-none bg-transparent cursor-pointer text-slate-400">
+          <i data-lucide="chevrons-left" class="w-4.5 h-4.5"></i>
+        </button>
+      </div>
+
+      <!-- Navigation groups container -->
+      <div class="flex-1 overflow-y-auto p-4 space-y-6 scrollbar-thin">
+        
+        <!-- MAIN NAVIGATION Section -->
+        <div>
+          <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-2 py-1 mb-2">Main Navigation</div>
+          <a href="{% url 'admin-dashboard' %}" id="sidebar-dashboard-link" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs decoration-none transition-all">
+            <i data-lucide="layout-dashboard" class="w-4.5 h-4.5"></i>
+            <span>Dashboard</span>
+          </a>
+        </div>
+
+        <!-- Search bar for navigation filtering -->
+        <div class="relative mb-2">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-500">
+            <i data-lucide="search" class="w-4 h-4"></i>
+          </span>
+          <input type="search" id="sidebar-nav-filter" 
+                 placeholder="Search models... (Ctrl+K)" 
+                 class="w-full bg-[#050811] border border-slate-800/80 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-300 placeholder-slate-650 focus:outline-none focus:border-blue-500 transition-colors">
+        </div>
+
+        <nav id="nav-groups-container" class="space-y-5">
+           <!-- Dynamic Sidebar groups injected here via JS -->
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer (Platform Status, Time, Collapse) -->
+      <div class="p-5 border-t border-slate-800/60 shrink-0 bg-[#070b14]/50 space-y-5 text-slate-400">
+        <!-- Platform Status -->
+        <div class="flex flex-col gap-1.5">
+          <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Platform Status</span>
+          <div class="flex items-center gap-2 text-xs font-semibold text-white">
+            <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+            <span>All Systems Operational</span>
+          </div>
+        </div>
+
+        <!-- Server Time -->
+        <div class="flex flex-col gap-1.5">
+          <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Server Time</span>
+          <div id="sidebar-server-clock" class="text-[11px] font-mono font-semibold text-slate-300">
+            Jun 30, 2026 03:45 PM (IST)
+          </div>
+        </div>
+
+        <!-- Collapse Sidebar Link -->
+        <div class="border-t border-slate-800/50 pt-3">
+          <button id="sidebar-collapse-link-btn" class="w-full flex items-center gap-2.5 py-1 text-xs font-semibold text-slate-400 hover:text-white bg-transparent border-none cursor-pointer transition-colors text-left focus:outline-none">
+            <i data-lucide="chevrons-left" class="w-4 h-4"></i>
+            <span>Collapse Sidebar</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+  {% endif %}
+
+  <!-- Main Workspace Container -->
+  <div class="{% if is_popup or not user.is_authenticated or not user.is_staff %}bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-lg h-full overflow-y-auto{% else %}flex flex-col flex-1 h-screen overflow-hidden min-w-0{% endif %}">
+    
+    {% if not is_popup and user.is_authenticated and user.is_staff %}
+      <!-- Top Header Panel -->
+      <header class="flex items-center justify-between px-6 h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shrink-0 z-30 transition-colors">
+        
+        <!-- Toggle button and Breadcrumbs -->
+        <div class="flex items-center gap-4">
+          <button id="sidebar-expand-btn" class="hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 border-none bg-transparent cursor-pointer">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          
+          {% block breadcrumbs %}
+            <div class="breadcrumbs">
+              <a href="{% url 'admin:index' %}">Home</a>
+              {% if title %}
+                &rsaquo; <span class="current">{{ title }}</span>
+              {% endif %}
+            </div>
+          {% endblock %}
+        </div>
+
+        <!-- Right Side Widgets & Theme Toggle -->
+        <div class="flex items-center gap-3">
+          
+          <!-- System Status Badge -->
+          <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800/40 text-green-700 dark:text-green-400 text-xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+            <span>API Online</span>
+          </div>
+
+          <!-- Color Theme Toggle Trigger -->
+          <button class="theme-toggle p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 transition-colors border-none bg-transparent cursor-pointer" title="Toggle Theme">
+            <!-- Render light/dark icons -->
+            <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+            <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+          </button>
+
+          <!-- User Quick Actions & Menu -->
+          <div class="relative" id="profile-menu-container">
+            <button id="profile-menu-btn" class="flex items-center gap-2 p-1 rounded-full border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 focus:outline-none transition-colors bg-transparent cursor-pointer">
+              <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xs">
+                {{ user.get_username|slice:":2"|upper }}
+              </div>
+            </button>
+            
+            <!-- Profile dropdown -->
+            <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-lg py-1 text-xs text-slate-700 dark:text-slate-300 z-50">
+              <div class="px-4 py-2 border-b border-slate-100 dark:border-slate-800 font-semibold text-slate-900 dark:text-white truncate">
+                Signed in as {{ user.get_username }}
+              </div>
+              <a href="{% url 'admin:password_change' %}" class="block px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium decoration-none text-slate-700 dark:text-slate-300">
+                <i data-lucide="key" class="w-3.5 h-3.5 inline mr-2 text-slate-400"></i> Change Password
+              </a>
+              {% if site_url %}
+                <a href="{{ site_url }}" class="block px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium decoration-none text-slate-700 dark:text-slate-300">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 inline mr-2 text-slate-400"></i> View Website
+                </a>
+              {% endif %}
+              <div class="border-t border-slate-100 dark:border-slate-800 my-1"></div>
+              <form method="post" action="{% url 'admin:logout' %}" class="m-0">
+                {% csrf_token %}
+                <button type="submit" class="w-full text-left px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-red-600 dark:text-red-400 font-semibold bg-transparent border-none cursor-pointer">
+                  <i data-lucide="log-out" class="w-3.5 h-3.5 inline mr-2"></i> Log Out
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </header>
+    {% endif %}
+
+    <!-- Main Workspace Scrollable Panel -->
+    <main class="{% if not is_popup and user.is_authenticated and user.is_staff %}flex-1 overflow-y-auto p-6 md:p-8 bg-slate-50 dark:bg-slate-955 transition-colors{% endif %}">
+      
+      <!-- Standard Django Toast / Notification Area -->
+      {% block messages %}
+        {% if messages %}
+          <ul class="messagelist">
+            {% for message in messages %}
+              <li class="{{ message.tags }} shadow-sm">
+                {% if 'success' in message.tags %}
+                  <i data-lucide="check-circle" class="w-4 h-4 mr-2 shrink-0"></i>
+                {% elif 'warning' in message.tags %}
+                  <i data-lucide="alert-triangle" class="w-4 h-4 mr-2 shrink-0"></i>
+                {% else %}
+                  <i data-lucide="info" class="w-4 h-4 mr-2 shrink-0"></i>
+                {% endif %}
+                <span>{{ message|capfirst }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endblock %}
+
+      <!-- Content Area -->
+      <div id="content" class="{% block coltype %}colM{% endblock %} space-y-6">
+        
+        <!-- Modern page title block -->
+        <div class="mb-6">
+          {% block pretitle %}{% endblock %}
+          {% block content_title %}
+            {% if title %}
+              <h1 class="text-2xl font-extrabold font-sans text-slate-900 dark:text-white leading-tight tracking-tight">{{ title }}</h1>
+            {% endif %}
+          {% endblock %}
+          {% block content_subtitle %}
+            {% if subtitle %}
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ subtitle }}</p>
+            {% endif %}
+          {% endblock %}
+        </div>
+
+        <div class="relative">
+          <!-- Custom floating action buttons (e.g. Add Lead, History) -->
+          {% block object-tools %}{% endblock %}
+          
+          <!-- Standard Django layout content placeholder -->
+          {% block content %}
+            {{ content }}
+          {% endblock %}
+        </div>
+        
+        {% block sidebar %}{% endblock %}
+      </div>
+    </main>
+
+  </div>
+</div>
+
+<!-- Available Apps JSON script (Safe serialization of models & urls for sidebar layout) -->
+<!-- Custom serialization of available_apps to avoid ModelBase serialization error in Django 5.x -->
+<script id="available-apps-data" type="application/json">
+  [
+    {% for app in available_apps %}
+      {
+        "name": "{{ app.name|escapejs }}",
+        "app_label": "{{ app.app_label|escapejs }}",
+        "app_url": "{{ app.app_url|escapejs }}",
+        "has_module_perms": {{ app.has_module_perms|yesno:"true,false" }},
+        "models": [
+          {% for model in app.models %}
+            {
+              "name": "{{ model.name|escapejs }}",
+              "object_name": "{{ model.object_name|escapejs }}",
+              "admin_url": "{{ model.admin_url|escapejs }}",
+              "add_url": "{% if model.add_url %}{{ model.add_url|escapejs }}{% endif %}",
+              "view_only": {{ model.view_only|yesno:"true,false" }}
+            }{% if not forloop.last %},{% endif %}
+          {% endfor %}
+        ]
+      }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ]
+</script>
+
+
+<script>
+  // Function to cycle themes dynamically
+  function cycleTheme() {
+    const currentTheme = localStorage.getItem("theme") || "auto";
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    let nextTheme = "auto";
+
+    if (prefersDark) {
+      if (currentTheme === "auto" || currentTheme === "dark") {
+        nextTheme = "light";
+      } else {
+        nextTheme = "dark";
+      }
+    } else {
+      if (currentTheme === "auto" || currentTheme === "light") {
+        nextTheme = "dark";
+      } else {
+        nextTheme = "light";
+      }
+    }
+
+    document.documentElement.dataset.theme = nextTheme;
+    localStorage.setItem("theme", nextTheme);
+    syncTheme();
+  }
+
+  // Core theme mapping to Tailwind class
+  function syncTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || 
+                   (document.documentElement.getAttribute('data-theme') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+  
+  const themeObserver = new MutationObserver(syncTheme);
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', syncTheme);
+  syncTheme();
+
+  // Initialize Lucide icons
+  document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+    buildSidebar();
+    setupSidebarToggle();
+    setupProfileMenu();
+    setupCommandPalette();
+
+    // Highlight dashboard active state
+    const dashLink = document.getElementById('sidebar-dashboard-link');
+    if (dashLink) {
+      if (window.location.pathname === '/admin/' || window.location.pathname === '/admin/default/') {
+        dashLink.className = 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs decoration-none transition-all bg-blue-655 bg-blue-600 text-white font-semibold shadow-lg shadow-blue-600/20';
+      } else {
+        dashLink.className = 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs decoration-none transition-all hover:bg-slate-800/60 hover:text-slate-200 text-slate-400';
+      }
+    }
+
+    // Dynamic clock
+    function updateSidebarClock() {
+      const clockElement = document.getElementById('sidebar-server-clock');
+      if (clockElement) {
+        const now = new Date();
+        const options = {
+          month: 'short',
+          day: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true
+        };
+        let formatted = now.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) + ' ' + 
+                        now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        clockElement.textContent = `${formatted} (IST)`;
+      }
+    }
+    setInterval(updateSidebarClock, 1000);
+    updateSidebarClock();
+
+    // Bind click events to theme toggle buttons
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    themeToggles.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        cycleTheme();
+      });
+    });
+  });
+
+  // Sidebar grouping configurations (icon, label mappings)
+  const navSchema = {
+    'Visitor Intelligence': {
+      icon: 'eye',
+      items: [
+        { label: 'Live Visitors', url: '/admin/live-visitors/' },
+        { label: 'Live Conversations', url: '/admin/live-conversations/' },
+        { label: 'Visitor Analytics', url: '/admin/visitor-analytics/' }
+      ]
+    },
+    'CRM Systems': {
+      icon: 'users',
+      items: [
+        { label: 'Leads Inbox', app: 'crm', model: 'lead' },
+        { label: 'Client Accounts', app: 'crm', model: 'client' },
+        { label: 'Active Projects', app: 'crm', model: 'project' },
+        { label: 'CRM Notes & Logs', app: 'crm', model: 'crmnote' },
+        { label: 'CRM Kanban Board', url: '/admin/crm/kanban/' },
+        { label: 'Workspace Calendar', url: '/admin/crm/calendar/' },
+        { label: 'Proposals', app: 'crm', model: 'proposal' },
+        { label: 'Contracts', app: 'crm', model: 'contract' },
+        { label: 'Invoices', app: 'crm', model: 'invoice' }
+      ]
+    },
+    'AI Assistant': {
+      icon: 'bot',
+      items: [
+        { label: 'Chatbot Leads', app: 'chatbot', model: 'chatbotlead' },
+        { label: 'Conversations', app: 'chatbot', model: 'chatconversation' },
+        { label: 'Message Logs', app: 'chatbot', model: 'chatmessage' }
+      ]
+    },
+    'Content Management': {
+      icon: 'file-text',
+      items: [
+        { label: 'Blog Posts', app: 'blog', model: 'blogpost' },
+        { label: 'Categories', app: 'blog', model: 'blogcategory' },
+        { label: 'Tags', app: 'blog', model: 'blogtag' },
+        { label: 'Portfolio CMS', app: 'portfolio', model: 'portfolioproject' },
+        { label: 'Subscribers', app: 'newsletter', model: 'newslettersubscriber' },
+        { label: 'Drip Campaigns', app: 'newsletter', model: 'dripcampaign' },
+        { label: 'SEO Configs', app: 'seo', model: 'seopage' },
+        { label: 'Robots Directives', app: 'seo', model: 'robotsrule' },
+        { label: 'Page Content CMS', app: 'core', model: 'pagecontent' },
+        { label: 'SEO Diagnostic', url: '/admin/seo/seopage/dashboard/' }
+      ]
+    },
+    'System & Security': {
+      icon: 'shield',
+      items: [
+        { label: 'Users & Groups', app: 'auth', model: 'user' },
+        { label: 'Access Logs (Axes)', app: 'axes', model: 'accesslog' },
+        { label: 'Settings', url: '/admin/settings/' },
+        { label: 'System Health', url: '/admin/system-health/' },
+        { label: 'SOC Security Center', url: '/admin/security/soc/' },
+        { label: 'Access Attempts', app: 'axes', model: 'accessattempt' },
+        { label: 'Lockout Rules', app: 'axes', model: 'accessfailurelog' },
+        { label: 'OTP Devices', app: 'otp_totp', model: 'totpdevice' }
+      ]
+    }
+  };
+
+  // Build the gorgeous SaaS sidebar dynamically
+  function buildSidebar(filterQuery = '') {
+    const container = document.getElementById('nav-groups-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    let apps = [];
+    try {
+      const scriptElement = document.getElementById('available-apps-data');
+      if (scriptElement && scriptElement.textContent.trim()) {
+        apps = JSON.parse(scriptElement.textContent);
+      }
+    } catch (e) {
+      console.warn("Failed to parse available apps context.", e);
+    }
+
+    const query = filterQuery.toLowerCase().trim();
+
+    // Map list of available models to look up easily
+    const availableModelsMap = {};
+    apps.forEach(app => {
+      app.models.forEach(model => {
+        const key = `${app.app_label}.${model.object_name.toLowerCase()}`;
+        availableModelsMap[key] = model;
+      });
+    });
+
+    // 1. Loop through pre-defined dashboard groupings
+    Object.entries(navSchema).forEach(([groupName, groupDef]) => {
+      let groupHasItems = false;
+      let groupIsActive = false;
+      
+      const groupList = document.createElement('div');
+      groupList.className = 'space-y-1';
+      
+      const groupHeader = document.createElement('button');
+      groupHeader.type = 'button';
+      groupHeader.className = 'w-full text-left font-bold text-[10px] text-slate-500 dark:text-slate-600 uppercase tracking-widest px-2 py-1.5 hover:bg-slate-800/40 hover:text-slate-200 rounded-lg flex items-center justify-between cursor-pointer transition-colors bg-transparent border-none focus:outline-none';
+      
+      // Group Icon + Name (left)
+      const headerLeft = document.createElement('div');
+      headerLeft.className = 'flex items-center gap-2';
+      const iconSpan = document.createElement('i');
+      iconSpan.setAttribute('data-lucide', groupDef.icon);
+      iconSpan.className = 'w-3.5 h-3.5';
+      headerLeft.appendChild(iconSpan);
+      headerLeft.appendChild(document.createTextNode(' ' + groupName));
+      groupHeader.appendChild(headerLeft);
+
+      // Chevron indicator (right)
+      const chevron = document.createElement('i');
+      chevron.setAttribute('data-lucide', 'chevron-down');
+      chevron.className = 'w-3.5 h-3.5 transition-transform duration-200';
+      groupHeader.appendChild(chevron);
+      
+      groupList.appendChild(groupHeader);
+
+      const ul = document.createElement('ul');
+      ul.className = 'space-y-1 mt-1 pl-1';
+
+      groupDef.items.forEach(item => {
+        let label = item.label;
+        let url = '';
+        let addUrl = '';
+        
+        if (item.url) {
+          url = item.url;
+        } else {
+          const key = `${item.app}.${item.model}`;
+          const modelData = availableModelsMap[key];
+          if (modelData) {
+            url = modelData.admin_url;
+            addUrl = modelData.add_url;
+          }
+        }
+
+        // If the route or label does not match the search query filter
+        if (query && !label.toLowerCase().includes(query) && !groupName.toLowerCase().includes(query)) {
+          return;
+        }
+
+        // If the user has permission/access to this link
+        if (url) {
+          groupHasItems = true;
+          const li = document.createElement('li');
+          
+          // Check if current page is active
+          const isCurrent = window.location.pathname.startsWith(url);
+          if (isCurrent) {
+            groupIsActive = true;
+          }
+          const activeClass = isCurrent 
+            ? 'bg-blue-600 text-white font-semibold shadow-sm shadow-blue-600/20' 
+            : 'hover:bg-slate-800/60 hover:text-slate-200';
+
+          li.innerHTML = `
+            <div class="flex items-center justify-between rounded-lg ${activeClass} transition-colors group/nav">
+              <a href="${url}" class="flex-1 px-3 py-2 text-xs flex items-center gap-2 decoration-none text-current">
+                <span class="w-1.5 h-1.5 rounded-full ${isCurrent ? 'bg-white' : 'bg-slate-700 group-hover/nav:bg-slate-400'}"></span>
+                <span>${label}</span>
+              </a>
+              ${addUrl ? `
+                <a href="${addUrl}" title="Add New" class="px-2 py-1.5 mr-1 rounded hover:bg-slate-800 text-slate-500 hover:text-white transition-colors">
+                  <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                </a>
+              ` : ''}
+            </div>
+          `;
+          ul.appendChild(li);
+        }
+      });
+
+      // Expand group if active or filter query matches
+      if (groupIsActive || query) {
+        ul.classList.remove('hidden');
+        chevron.classList.remove('-rotate-90');
+      } else {
+        ul.classList.add('hidden');
+        chevron.classList.add('-rotate-90');
+      }
+
+      // Add click handler to toggle collapse state
+      groupHeader.addEventListener('click', () => {
+        const isHidden = ul.classList.contains('hidden');
+        if (isHidden) {
+          ul.classList.remove('hidden');
+          chevron.classList.remove('-rotate-90');
+        } else {
+          ul.classList.add('hidden');
+          chevron.classList.add('-rotate-90');
+        }
+      });
+
+      if (groupHasItems) {
+        groupList.appendChild(ul);
+        container.appendChild(groupList);
+      }
+    });
+
+    // 2. Fallback for other apps not inside pre-defined groups
+    const matchedKeys = [];
+    Object.values(navSchema).forEach(group => {
+      group.items.forEach(item => {
+        if (!item.url) matchedKeys.push(`${item.app}.${item.model}`);
+      });
+    });
+
+    let hasUnmappedItems = false;
+    let unmappedGroupIsActive = false;
+    const unmappedDiv = document.createElement('div');
+    unmappedDiv.className = 'space-y-1.5';
+    
+    const unmappedHeader = document.createElement('button');
+    unmappedHeader.type = 'button';
+    unmappedHeader.className = 'w-full text-left font-bold text-[10px] text-slate-500 dark:text-slate-600 uppercase tracking-widest px-2 py-1.5 hover:bg-slate-800/40 hover:text-slate-200 rounded-lg flex items-center justify-between cursor-pointer transition-colors bg-transparent border-none focus:outline-none';
+    
+    const unmappedLeft = document.createElement('div');
+    unmappedLeft.className = 'flex items-center gap-2';
+    const unmappedIcon = document.createElement('i');
+    unmappedIcon.setAttribute('data-lucide', 'layers');
+    unmappedIcon.className = 'w-3.5 h-3.5';
+    unmappedLeft.appendChild(unmappedIcon);
+    unmappedLeft.appendChild(document.createTextNode(' Other Components'));
+    unmappedHeader.appendChild(unmappedLeft);
+
+    const unmappedChevron = document.createElement('i');
+    unmappedChevron.setAttribute('data-lucide', 'chevron-down');
+    unmappedChevron.className = 'w-3.5 h-3.5 transition-transform duration-200';
+    unmappedHeader.appendChild(unmappedChevron);
+    
+    unmappedDiv.appendChild(unmappedHeader);
+
+    const unmappedUl = document.createElement('ul');
+    unmappedUl.className = 'space-y-1 mt-1 pl-1';
+
+    apps.forEach(app => {
+      app.models.forEach(model => {
+        const key = `${app.app_label}.${model.object_name.toLowerCase()}`;
+        if (!matchedKeys.includes(key)) {
+          let label = model.name;
+          let url = model.admin_url;
+          let addUrl = model.add_url;
+
+          if (query && !label.toLowerCase().includes(query) && !app.name.toLowerCase().includes(query)) {
+            return;
+          }
+
+          hasUnmappedItems = true;
+          const li = document.createElement('li');
+          const isCurrent = window.location.pathname.startsWith(url);
+          if (isCurrent) {
+            unmappedGroupIsActive = true;
+          }
+          const activeClass = isCurrent 
+            ? 'bg-blue-600 text-white font-semibold shadow-sm' 
+            : 'hover:bg-slate-800/60 hover:text-slate-200';
+
+          li.innerHTML = `
+            <div class="flex items-center justify-between rounded-lg ${activeClass} transition-colors group/nav">
+              <a href="${url}" class="flex-1 px-3 py-2 text-xs flex items-center gap-2 decoration-none text-current">
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                <span class="truncate">${label} (${app.name})</span>
+              </a>
+              ${addUrl ? `
+                <a href="${addUrl}" title="Add New" class="px-2 py-1.5 mr-1 rounded hover:bg-slate-800 text-slate-500 hover:text-white transition-colors">
+                  <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                </a>
+              ` : ''}
+            </div>
+          `;
+          unmappedUl.appendChild(li);
+        }
+      });
+    });
+
+    if (unmappedGroupIsActive || query) {
+      unmappedUl.classList.remove('hidden');
+      unmappedChevron.classList.remove('-rotate-90');
+    } else {
+      unmappedUl.classList.add('hidden');
+      unmappedChevron.classList.add('-rotate-90');
+    }
+
+    unmappedHeader.addEventListener('click', () => {
+      const isHidden = unmappedUl.classList.contains('hidden');
+      if (isHidden) {
+        unmappedUl.classList.remove('hidden');
+        unmappedChevron.classList.remove('-rotate-90');
+      } else {
+        unmappedUl.classList.add('hidden');
+        unmappedChevron.classList.add('-rotate-90');
+      }
+    });
+
+    if (hasUnmappedItems) {
+      unmappedDiv.appendChild(unmappedUl);
+      container.appendChild(unmappedDiv);
+    }
+
+    // Refresh icons inside dynamically appended elements
+    lucide.createIcons();
+  }
+
+  // Sidebar expand/collapse behavior for desktop and mobile drawer
+  function setupSidebarToggle() {
+    const sidebar = document.getElementById('main-sidebar');
+    const collapseBtn = document.getElementById('sidebar-collapse-btn');
+    const collapseLinkBtn = document.getElementById('sidebar-collapse-link-btn');
+    const expandBtn = document.getElementById('sidebar-expand-btn');
+    
+    // Create mobile backdrop overlay if it doesn't exist
+    let backdrop = document.getElementById('sidebar-backdrop');
+    if (!backdrop && sidebar) {
+      backdrop = document.createElement('div');
+      backdrop.id = 'sidebar-backdrop';
+      backdrop.className = 'fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 hidden transition-opacity duration-300';
+      sidebar.parentNode.insertBefore(backdrop, sidebar);
+    }
+
+    if (!sidebar || !collapseBtn || !expandBtn || !backdrop) return;
+
+    // Toggle for mobile view drawer
+    function toggleMobileSidebar(open) {
+      if (open) {
+        sidebar.classList.add('mobile-open');
+        backdrop.classList.remove('hidden');
+        // Let it layout, then animate opacity
+        setTimeout(() => {
+          backdrop.classList.add('opacity-100');
+        }, 10);
+      } else {
+        sidebar.classList.remove('mobile-open');
+        backdrop.classList.remove('opacity-100');
+        setTimeout(() => {
+          backdrop.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    const onCollapse = () => {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        toggleMobileSidebar(false);
+      } else {
+        // Desktop collapse width transition
+        sidebar.classList.remove('w-64');
+        sidebar.classList.add('w-0', 'border-r-0');
+        expandBtn.classList.remove('hidden');
+      }
+    };
+
+    collapseBtn.addEventListener('click', onCollapse);
+    if (collapseLinkBtn) {
+      collapseLinkBtn.addEventListener('click', onCollapse);
+    }
+
+    expandBtn.addEventListener('click', () => {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        toggleMobileSidebar(true);
+      } else {
+        // Desktop expand width transition
+        sidebar.classList.remove('w-0', 'border-r-0');
+        sidebar.classList.add('w-64');
+        expandBtn.classList.add('hidden');
+      }
+    });
+
+    // Close mobile drawer when clicking backdrop
+    backdrop.addEventListener('click', () => {
+      toggleMobileSidebar(false);
+    });
+
+    // Handle screen resize transitions
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('mobile-open');
+        backdrop.classList.add('hidden');
+        backdrop.classList.remove('opacity-100');
+        if (!sidebar.classList.contains('w-0')) {
+          sidebar.classList.add('w-64');
+        }
+      } else {
+        // Ensure burger menu button is visible on mobile
+        expandBtn.classList.remove('hidden');
+      }
+    });
+
+    // Initial load check for burger menu visibility
+    if (window.innerWidth < 768) {
+      expandBtn.classList.remove('hidden');
+    }
+  }
+
+  // Profile actions menu trigger
+  function setupProfileMenu() {
+    const btn = document.getElementById('profile-menu-btn');
+    const dropdown = document.getElementById('profile-dropdown');
+    
+    if (!btn || !dropdown) return;
+    
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      dropdown.classList.add('hidden');
+    });
+  }
+
+  // Quick Command Palette & Global AI Copilot Modal Integration
+  function setupCommandPalette() {
+    const sidebarInput = document.getElementById('sidebar-nav-filter');
+    if (sidebarInput) {
+      sidebarInput.addEventListener('input', (e) => {
+        buildSidebar(e.target.value);
+      });
+    }
+
+    const copilotModal = document.getElementById('ai-copilot-modal');
+    const copilotInput = document.getElementById('copilot-search-input');
+    const copilotResponse = document.getElementById('copilot-response-container');
+    const copilotDefaults = document.getElementById('copilot-defaults');
+    const copilotLoader = document.getElementById('copilot-loader');
+
+    window.openCommandPalette = function() {
+      if (copilotModal) {
+        copilotModal.classList.remove('hidden');
+        if (copilotInput) {
+          copilotInput.value = '';
+          copilotInput.focus();
+        }
+        if (copilotResponse) copilotResponse.classList.add('hidden');
+        if (copilotDefaults) copilotDefaults.classList.remove('hidden');
+      }
+    };
+
+    window.closeCommandPalette = function() {
+      if (copilotModal) {
+        copilotModal.classList.add('hidden');
+      }
+    };
+
+    window.setCopilotQuery = function(val) {
+      if (copilotInput) {
+        copilotInput.value = val;
+        submitCopilotQuery();
+      }
+    };
+
+    function formatMarkdown(text) {
+      let html = text;
+      // Simple bold conversion
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-extrabold text-blue-500">$1</strong>');
+      // Simple bullet list conversion
+      html = html.replace(/^\s*-\s+(.*)$/gm, '<li class="ml-5 list-disc my-1 text-xs">$1</li>');
+      // Simple table builder from markdown | cell | cell |
+      const lines = html.split('\n');
+      let inTable = false;
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
+        if (line.startsWith('|')) {
+          if (!inTable) {
+            inTable = true;
+            lines[i] = '<table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800 border border-slate-100 dark:border-slate-800 my-4 rounded-lg overflow-hidden"><tbody class="divide-y divide-slate-200 dark:divide-slate-800">' + renderTableRow(line, true);
+          } else {
+            lines[i] = renderTableRow(line, false);
+          }
+        } else {
+          if (inTable) {
+            inTable = false;
+            lines[i] = '</tbody></table>' + lines[i];
+          }
+        }
+      }
+      return lines.join('\n').replace(/\n/g, '<br>');
+    }
+
+    function renderTableRow(line, isHeader) {
+      let cells = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+      let rowHtml = '<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">';
+      cells.forEach(cell => {
+        if (isHeader) {
+          rowHtml += `<th class="px-4 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/50">${cell}</th>`;
+        } else {
+          rowHtml += `<td class="px-4 py-2 text-xs font-medium text-slate-600 dark:text-slate-400">${cell}</td>`;
+        }
+      });
+      return rowHtml + '</tr>';
+    }
+
+    window.submitCopilotQuery = function() {
+      if (!copilotInput || !copilotInput.value.trim()) return;
+      const query = copilotInput.value.trim();
+      
+      if (copilotLoader) copilotLoader.classList.remove('hidden');
+      if (copilotResponse) copilotResponse.classList.add('hidden');
+      if (copilotDefaults) copilotDefaults.classList.add('hidden');
+      
+      fetch('/api/admin/copilot/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({ prompt: query })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (copilotLoader) copilotLoader.classList.add('hidden');
+        if (data.success) {
+          if (copilotResponse) {
+            copilotResponse.innerHTML = formatMarkdown(data.reply);
+            copilotResponse.classList.remove('hidden');
+          }
+        } else {
+          if (copilotResponse) {
+            copilotResponse.innerHTML = `<div class="text-red-500 font-semibold p-4">Error: ${data.message || 'Unknown error'}</div>`;
+            copilotResponse.classList.remove('hidden');
+          }
+        }
+      })
+      .catch(err => {
+        if (copilotLoader) copilotLoader.classList.add('hidden');
+        if (copilotResponse) {
+          copilotResponse.innerHTML = `<div class="text-red-500 font-semibold p-4">Connection Error: Failed to contact Copilot server.</div>`;
+          copilotResponse.classList.remove('hidden');
+        }
+      });
+    };
+
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        openCommandPalette();
+      }
+      if (e.key === 'Escape') {
+        closeCommandPalette();
+      }
+    });
+
+    if (copilotInput) {
+      copilotInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          submitCopilotQuery();
+        }
+      });
+    }
+
+    // Close when clicking modal backdrop
+    if (copilotModal) {
+      copilotModal.addEventListener('click', (e) => {
+        if (e.target === copilotModal) {
+          closeCommandPalette();
+        }
+      });
+    }
+  }
+</script>
+
+<!-- Custom Global AI Copilot & Command Palette Modal Markup -->
+<div id="ai-copilot-modal" class="fixed inset-0 z-50 flex items-start justify-center p-4 pt-[10vh] bg-slate-950/60 backdrop-blur-sm hidden" role="dialog" aria-modal="true">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+        <!-- Search bar/input -->
+        <div class="flex items-center border-b border-slate-250 dark:border-slate-800 p-4 gap-3 bg-slate-50/50 dark:bg-slate-950/50">
+            <i data-lucide="bot" class="w-5 h-5 text-blue-500"></i>
+            <input type="text" id="copilot-search-input" placeholder="Ask AI Copilot: 'Show hot leads' or 'Find projects delayed'..." class="w-full bg-transparent border-0 focus:ring-0 text-slate-800 dark:text-slate-100 text-sm font-medium focus:outline-none" style="border: none; outline: none; box-shadow: none;" />
+            <button onclick="submitCopilotQuery()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-semibold shadow-sm transition">Ask</button>
+            <button onclick="closeCommandPalette()" class="text-slate-450 hover:text-slate-600 dark:hover:text-slate-300 text-xs font-semibold px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">ESC</button>
+        </div>
+        
+        <!-- Results panel -->
+        <div id="copilot-results-panel" class="max-h-[60vh] overflow-y-auto p-5 space-y-4">
+            <!-- Loading state -->
+            <div id="copilot-loader" class="hidden text-center py-10">
+                <div class="inline-block animate-spin w-6 h-6 border-3 border-blue-500/20 border-t-blue-500 rounded-full mb-2"></div>
+                <div class="text-xs text-slate-400 font-semibold">Consulting database schemas and records...</div>
+            </div>
+
+            <!-- Default Suggestion Prompts -->
+            <div id="copilot-defaults" class="space-y-3">
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Suggested Queries</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div onclick="setCopilotQuery(this.innerText)" class="p-3 bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 rounded-xl hover:bg-blue-500/10 hover:text-blue-500 transition cursor-pointer text-xs font-semibold text-slate-700 dark:text-slate-350">Show today's hot leads.</div>
+                    <div onclick="setCopilotQuery(this.innerText)" class="p-3 bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 rounded-xl hover:bg-blue-500/10 hover:text-blue-500 transition cursor-pointer text-xs font-semibold text-slate-700 dark:text-slate-350">Summarize visitor conversations.</div>
+                    <div onclick="setCopilotQuery(this.innerText)" class="p-3 bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 rounded-xl hover:bg-blue-500/10 hover:text-blue-500 transition cursor-pointer text-xs font-semibold text-slate-700 dark:text-slate-350">Generate SEO metadata recommendation.</div>
+                    <div onclick="setCopilotQuery(this.innerText)" class="p-3 bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/80 rounded-xl hover:bg-blue-500/10 hover:text-blue-500 transition cursor-pointer text-xs font-semibold text-slate-700 dark:text-slate-350">Find active projects and budgets.</div>
+                </div>
+            </div>
+
+            <!-- Dynamic Markdown Response -->
+            <div id="copilot-response-container" class="hidden text-sm text-slate-850 dark:text-slate-200 leading-relaxed font-sans prose prose-sm dark:prose-invert max-w-none">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extrabody %}{% endblock extrabody %}
+</body>
+</html>

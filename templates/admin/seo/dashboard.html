@@ -1,0 +1,134 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<!-- Tailwind utility compatibility tweaks -->
+{% endblock %}
+
+{% block content %}
+<div class="space-y-8 font-sans">
+  
+  <!-- Diagnostic Metrics Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+    
+    <!-- Health Card -->
+    <div class="bg-gradient-to-br from-slate-900 to-indigo-950 dark:from-slate-950 dark:to-indigo-950 border border-indigo-500/20 rounded-xl p-6 shadow-md flex flex-col justify-between relative overflow-hidden group">
+      <div class="absolute -right-10 -bottom-10 w-28 h-28 bg-indigo-500/10 rounded-full blur-2xl"></div>
+      <div>
+        <div class="flex items-center justify-between text-slate-400 mb-4">
+          <span class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">SEO Optimization Health</span>
+          <i data-lucide="heart" class="w-4.5 h-4.5 text-indigo-400 group-hover:scale-110 transition-transform"></i>
+        </div>
+        <div class="text-4xl font-extrabold text-white">{{ health_score }}%</div>
+      </div>
+      
+      <div class="mt-4 space-y-2">
+        <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+          <div class="h-full rounded-full {% if health_score > 80 %}bg-green-500{% elif health_score > 50 %}bg-amber-500{% else %}bg-red-500{% endif %}" style="width: {{ health_score }}%"></div>
+        </div>
+        <div class="text-[10px] text-slate-400">
+          {% if health_score > 80 %}Excellent metadata and index readiness{% else %}Needs optimization actions{% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Active SEO Pages -->
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 shadow-sm hover:border-blue-500/60 transition-colors group">
+      <div class="flex items-center justify-between text-slate-400 mb-4">
+        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Active SEO Pages</span>
+        <i data-lucide="globe" class="w-4.5 h-4.5 text-slate-400 group-hover:text-blue-500 transition-colors"></i>
+      </div>
+      <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ seopage_count }}</div>
+      <div class="text-[10px] text-slate-450 dark:text-slate-500 font-semibold mt-2">Dynamic routes registered</div>
+    </div>
+
+    <!-- GEO / AEO Blocks -->
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 shadow-sm hover:border-violet-500/60 transition-colors group">
+      <div class="flex items-center justify-between text-slate-400 mb-4">
+        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">GEO AI Overrides</span>
+        <i data-lucide="cpu" class="w-4.5 h-4.5 text-slate-400 group-hover:text-violet-500 transition-colors"></i>
+      </div>
+      <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ geoblock_count }}</div>
+      <div class="text-[10px] text-slate-450 dark:text-slate-500 font-semibold mt-2">AI overview target blocks</div>
+    </div>
+
+    <!-- FAQs -->
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 shadow-sm hover:border-cyan-500/60 transition-colors group">
+      <div class="flex items-center justify-between text-slate-400 mb-4">
+        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Active FAQs</span>
+        <i data-lucide="help-circle" class="w-4.5 h-4.5 text-slate-400 group-hover:text-cyan-500 transition-colors"></i>
+      </div>
+      <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ faq_count }}</div>
+      <div class="text-[10px] text-slate-450 dark:text-slate-500 font-semibold mt-2">Structured FAQ schemas</div>
+    </div>
+
+    <!-- Robots Directives -->
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 shadow-sm hover:border-amber-500/60 transition-colors group">
+      <div class="flex items-center justify-between text-slate-400 mb-4">
+        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Robots Rules</span>
+        <i data-lucide="shield" class="w-4.5 h-4.5 text-slate-400 group-hover:text-amber-500 transition-colors"></i>
+      </div>
+      <div class="text-3xl font-extrabold text-slate-900 dark:text-white">{{ robots_count }}</div>
+      <div class="text-[10px] text-slate-450 dark:text-slate-500 font-semibold mt-2">Dynamic crawler safety rules</div>
+    </div>
+
+  </div>
+
+  <!-- Diagnostic audit report panel -->
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-xl p-6 shadow-sm">
+    <div class="border-b border-slate-100 dark:border-slate-800 pb-4 mb-5">
+      <h2 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+        <i data-lucide="alert-circle" class="w-5 h-5 text-blue-500 animate-pulse"></i> SEO &amp; Search Engine Index Diagnostic Reports
+      </h2>
+      <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+        Dynamic page inspections to discover missing search attributes, broken schemas, or crawler optimization blocks.
+      </p>
+    </div>
+
+    {% if warnings %}
+      <div class="overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-800/80">
+        <table class="w-full border-collapse text-left text-xs text-slate-600 dark:text-slate-350">
+          <thead>
+            <tr class="bg-slate-50 dark:bg-slate-950 text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-slate-800">
+              <th class="px-4 py-3 w-28">Severity</th>
+              <th class="px-4 py-3 w-40">Category</th>
+              <th class="px-4 py-3">Audit Message</th>
+              <th class="px-4 py-3">Recommended Fix</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-850">
+            {% for w in warnings %}
+              <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+                <td class="px-4 py-3">
+                  {% if w.level == 'warning' or w.level == 'WARNING' %}
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-900/30 uppercase">Warning</span>
+                  {% else %}
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/30 uppercase">{{ w.level }}</span>
+                  {% endif %}
+                </td>
+                <td class="px-4 py-3 font-semibold text-slate-850 dark:text-slate-200">{{ w.category }}</td>
+                <td class="px-4 py-3 text-slate-700 dark:text-slate-300 leading-relaxed">{{ w.item }}</td>
+                <td class="px-4 py-3 text-slate-500 dark:text-slate-400 leading-relaxed">{{ w.solution }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <div class="flex flex-col items-center justify-center text-center py-10 px-4 space-y-4">
+        <div class="w-12 h-12 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center shadow-inner">
+          <i data-lucide="check" class="w-6 h-6"></i>
+        </div>
+        <div class="space-y-1">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Passed All Checks</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 max-w-sm">
+            Excellent work! No missing metadata, schema gaps, or search errors found. All pages are ready for indexing.
+          </p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

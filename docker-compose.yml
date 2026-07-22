@@ -1,0 +1,151 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: blueshore_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=${DB_NAME:-blueshore}
+      - POSTGRES_USER=${DB_USER:-blueshore_user}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-blueshore_pass}
+    ports:
+      # Restrict db access strictly to local host loopback interface
+      - "127.0.0.1:5432:5432"
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-blueshore_user} -d ${DB_NAME:-blueshore}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: blueshore_redis
+    # Run Redis requiring a secure password
+    command: redis-server --requirepass ${REDIS_PASSWORD:-blueshore_redis_secure_pass}
+    ports:
+      # Restrict redis access strictly to local host loopback interface
+      - "127.0.0.1:6379:6379"
+    restart: always
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-blueshore_redis_secure_pass}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  clamav:
+    image: clamav/clamav:latest
+    container_name: blueshore_clamav
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "echo PING | nc -w 2 localhost 3310 | grep PONG"]
+      interval: 20s
+      timeout: 10s
+      retries: 3
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blueshore_web
+    env_file:
+      - .env
+    command: >
+      sh -c "python manage.py migrate --noinput &&
+             python manage.py collectstatic --noinput &&
+             daphne -b 0.0.0.0 -p 8000 blueshore_server.asgi:application"
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    environment:
+      - DJANGO_SETTINGS_MODULE=blueshore_server.settings
+      - DJANGO_DEBUG=False
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY:-prod-secret-key-change-me-in-env}
+      - DJANGO_ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1,web}
+      - USE_POSTGRES=True
+      - DB_NAME=${DB_NAME:-blueshore}
+      - DB_USER=${DB_USER:-blueshore_user}
+      - DB_PASSWORD=${DB_PASSWORD:-blueshore_pass}
+      - DB_HOST=db
+      - DB_PORT=5432
+      - USE_REDIS=True
+      # Authenticated Redis and Celery connections
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-blueshore_redis_secure_pass}@redis:6379/1
+      - CELERY_BROKER_URL=redis://:${REDIS_PASSWORD:-blueshore_redis_secure_pass}@redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://:${REDIS_PASSWORD:-blueshore_redis_secure_pass}@redis:6379/0
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # ClamAV environment settings
+      - CLAMAV_ENABLED=True
+      - CLAMAV_HOST=clamav
+      - CLAMAV_PORT=3310
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      clamav:
+        condition: service_healthy
+    restart: always
+
+  celery_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blueshore_celery
+    env_file:
+      - .env
+    command: celery -A blueshore_server worker --loglevel=info
+    volumes:
+      - media_volume:/app/media
+    environment:
+      - DJANGO_SETTINGS_MODULE=blueshore_server.settings
+      - DJANGO_DEBUG=False
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY:-prod-secret-key-change-me-in-env}
+      - USE_POSTGRES=True
+      - DB_NAME=${DB_NAME:-blueshore}
+      - DB_USER=${DB_USER:-blueshore_user}
+      - DB_PASSWORD=${DB_PASSWORD:-blueshore_pass}
+      - DB_HOST=db
+      - DB_PORT=5432
+      - USE_REDIS=True
+      # Authenticated Redis and Celery connections
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-blueshore_redis_secure_pass}@redis:6379/1
+      - CELERY_BROKER_URL=redis://:${REDIS_PASSWORD:-blueshore_redis_secure_pass}@redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://:${REDIS_PASSWORD:-blueshore_redis_secure_pass}@redis:6379/0
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # ClamAV environment settings
+      - CLAMAV_ENABLED=True
+      - CLAMAV_HOST=clamav
+      - CLAMAV_PORT=3310
+    depends_on:
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+      clamav:
+        condition: service_healthy
+    restart: always
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: blueshore_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - static_volume:/app/staticfiles:ro
+      - media_volume:/app/media:ro
+    depends_on:
+      - web
+    restart: always
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:

@@ -1,0 +1,505 @@
+{% load core_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ post.title }} | Blueshore Technologies</title>
+    <meta name="description" content="{{ post.summary }}" />
+    <link rel="stylesheet" href="/assets/tailwind.min.css?v=5" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/responsive.css" />
+    
+    
+    
+    <link rel="stylesheet" href="/assets/ai-chat.css" />
+    <link rel="stylesheet" href="/assets/light-theme.css" />
+    <script>(function () { var t = localStorage.getItem("blueshore-theme-pref"); if (t === "dark") document.documentElement.classList.add("dark"); else document.documentElement.classList.remove("dark"); })();</script>
+    <style>
+        .blog-hero-section {
+            background-color: #030816;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        html:not(.dark) .blog-hero-section {
+            background-color: #f8fafc;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .prose img {
+            border-radius: 1rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        html:not(.dark) .prose img {
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+    </style>
+    <!-- Structured Data JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{ post.title|escapejs }}",
+      "description": "{{ post.summary|escapejs }}",
+      "datePublished": "{% if post.published_at %}{{ post.published_at|date:'c' }}{% else %}{{ post.created_at|date:'c' }}{% endif %}",
+      "dateModified": "{{ post.updated_at|date:'c' }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ post.author.get_full_name|default:post.author.username|escapejs }}",
+        "url": "https://www.blueshoretech.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Blueshore Technologies",
+        "url": "https://www.blueshoretech.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.blueshoretech.com/assets/BST-Logo.webp"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.blueshoretech.com{% url 'blog-detail' post.slug %}"
+      }
+      {% if post.featured_image %},
+      "image": "https://www.blueshoretech.com{{ post.featured_image.url }}"
+      {% endif %}
+    }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-[#030816] text-slate-600 dark:text-slate-300 selection:bg-[#3790ff]/30 selection:text-white font-body-md transition-colors duration-300">
+
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-50/90 dark:bg-[#030816]/90 backdrop-blur-lg border-b border-black/10 dark:border-white/10 shadow-lg">
+        <div class="max-w-[1280px] mx-auto flex justify-between items-center px-8 py-2.5">
+            <a href="/" class="flex items-center gap-2">
+                <img class="w-12 h-12 rounded object-contain" src="/assets/BST-Logo.webp" alt="Blueshore Technologies Logo" title="Blueshore Technologies Logo" width="48" height="48" loading="eager"/>
+                <div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white">Blueshore Technologies</div>
+            </a>
+            <div class="hidden lg:flex items-center gap-8 font-['Inter'] text-sm font-medium tracking-wide">
+                <a class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200" href="/">Home</a>
+                <div class="relative group">
+                    <a href="/services.html" class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Services <span class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-[850px] bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-6 grid grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Engineering</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/services.html#software" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">code</span> Custom Software</a></li>
+                                <li><a href="/services.html#mobile" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">smartphone</span> Mobile Apps</a></li>
+                                <li><a href="/services.html#software" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">language</span> Web Development</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Transformation</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/services.html#cloud" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">cloud</span> Cloud & DevOps</a></li>
+                                <li><a href="/services.html#data" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">smart_toy</span> AI & Automation</a></li>
+                                <li><a href="/services.html#software" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">palette</span> UI/UX Design</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Growth & Partners</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/services.html#aeo-geo" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">psychology</span> AEO & GEO Optimization</a></li>
+                                <li><a href="/services.html#growth" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">trending_up</span> Growth & SEO</a></li>
+                                <li><a href="/services.html#support" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2"><span class="material-symbols-outlined text-lg">support_agent</span> Ongoing Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a href="/industries.html" class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Industries <span class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+                        <ul class="space-y-3">
+                            <li><a href="/industries.html#finance-sector" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Finance & Banking</a></li>
+                            <li><a href="/industries.html#healthcare-sector" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Healthcare</a></li>
+                            <li><a href="/industries.html#ecommerce-sector" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Retail & E-Commerce</a></li>
+                            <li><a href="/industries.html#logistics-sector" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Logistics</a></li>
+                            <li><a href="/industries.html#education-sector" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Education & EdTech</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a href="/about.html" class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Company <span class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+                        <ul class="space-y-3">
+                            <li><a href="/about.html" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">About Us</a></li>
+                            <li><a href="/careers.html" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Careers</a></li>
+                            <li><a href="/portfolio.html" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Case Studies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200" href="/blog.html">Insights</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+919990712555" class="hidden md:flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] text-sm font-medium transition-colors">
+                    <span class="material-symbols-outlined text-lg">call</span> +91 99907 12555
+                </a>
+                <button onclick="window.location.href='/contact.html'" class="hidden sm:inline-block bg-[#3790ff] text-[#030816] px-6 py-2.5 rounded hover:bg-[#5da2ff] hover:translate-y-[-1px] transition-all duration-200 font-bold text-sm shadow-[0_0_15px_rgba(55,144,255,0.3)]">
+                    Let's Talk
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-[72px]">
+        <!-- Article Header Hero -->
+        <section class="blog-hero-section relative py-12 md:py-20">
+            <div class="max-w-[1280px] mx-auto px-8 relative z-10 w-full">
+                <div class="max-w-4xl">
+                    <!-- Breadcrumbs -->
+                    <nav class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6">
+                        <a href="/" class="hover:text-[#3790ff] transition-colors">Home</a>
+                        <span class="material-symbols-outlined text-xs">chevron_right</span>
+                        <a href="/blog.html" class="hover:text-[#3790ff] transition-colors">Insights</a>
+                        <span class="material-symbols-outlined text-xs">chevron_right</span>
+                        <span class="text-[#3790ff] font-medium truncate">{{ post.title }}</span>
+                    </nav>
+
+                    <!-- Category Badge -->
+                    <span class="inline-block px-3 py-1 mb-4 rounded bg-[#3790ff] text-[#030816] text-xs font-bold uppercase tracking-wider">{{ post.category.name }}</span>
+                    
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+                        {{ post.title }}
+                    </h1>
+
+                    <div class="flex flex-wrap items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg text-[#3790ff]">person</span>
+                            {% if post.author.blog_profile %}
+                            <a href="{{ post.author.blog_profile.profile_url }}" class="hover:text-[#3790ff] hover:underline transition-colors">{{ post.author.get_full_name|default:post.author.username }}</a>
+                            {% else %}
+                            <span>{{ post.author.get_full_name|default:post.author.username }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg text-[#3790ff]">calendar_today</span>
+                            <span>{% if post.published_at %}{{ post.published_at|date:"F d, Y" }}{% else %}{{ post.created_at|date:"F d, Y" }}{% endif %}</span>
+                        </div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg text-[#22c55e]">schedule</span>
+                            <span>{{ post.read_time_minutes }} min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="py-12 lg:py-16 bg-white dark:bg-[#0B1221]">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="flex flex-col lg:flex-row gap-16 justify-center">
+                    
+                    <!-- Document Body -->
+                    <div class="w-full lg:max-w-4xl">
+                        {% if post.featured_image %}
+                        <div class="mb-10 rounded-2xl overflow-hidden shadow-xl border border-black/10 dark:border-white/10">
+                            <img class="w-full object-cover max-h-[480px]" src="{{ post.featured_image.url }}" alt="{{ post.title }}" width="{{ post.featured_image|img_width }}" height="{{ post.featured_image|img_height }}">
+                        </div>
+                        {% endif %}
+
+                        <div class="prose prose-slate dark:prose-invert prose-lg max-w-none 
+                                    prose-headings:font-bold prose-headings:text-slate-900 dark:prose-headings:text-white
+                                    prose-p:text-slate-600 dark:prose-p:text-slate-400 prose-p:leading-relaxed
+                                    prose-a:text-[#3790ff] hover:prose-a:text-[#3790ff] prose-a:transition-colors
+                                    prose-li:text-slate-600 dark:prose-li:text-slate-400
+                                    prose-strong:text-slate-900 dark:prose-strong:text-white">
+                            {{ post.content|markdown }}
+                        </div>
+
+                        <!-- Author Bio Card -->
+                        {% if post.author.blog_profile %}
+                        <div class="mt-16 p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/[0.06] flex flex-col md:flex-row gap-6 items-center md:items-start transition-all duration-300">
+                            {% if post.author.blog_profile.avatar %}
+                            <a href="{{ post.author.blog_profile.profile_url }}" class="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#3790ff]/20 shadow-lg hover:border-[#3790ff] transition-colors">
+                                <img src="{{ post.author.blog_profile.avatar.url }}" alt="{{ post.author.get_full_name|default:post.author.username }}" class="w-full h-full object-cover" width="96" height="96">
+                            </a>
+                            {% endif %}
+                            <div class="flex-1 text-center md:text-left space-y-3">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                                            <a href="{{ post.author.blog_profile.profile_url }}" class="hover:text-[#3790ff] transition-colors">{{ post.author.get_full_name|default:post.author.username }}</a>
+                                        </h3>
+                                        <p class="text-xs font-semibold text-[#3790ff] tracking-wider uppercase mt-0.5">{{ post.author.blog_profile.role }} <span class="text-slate-400 dark:text-slate-500 font-normal">|</span> {{ post.author.blog_profile.expertise }}</p>
+                                    </div>
+                                    {% if post.author.blog_profile.linkedin_url %}
+                                    <a href="{{ post.author.blog_profile.linkedin_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#3790ff] hover:text-[#2563eb] transition-colors self-center md:self-start">
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                        LinkedIn
+                                    </a>
+                                    {% endif %}
+                                </div>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+                                    {{ post.author.blog_profile.bio }}
+                                </p>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Posts Section -->
+        {% if related_posts %}
+        <section class="py-16 bg-slate-50 dark:bg-[#030816] border-t border-black/10 dark:border-white/10">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-10 text-center md:text-left">Related Insights</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {% for item in related_posts %}
+                    <article class="bg-white dark:bg-[#0B1221] rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 shadow-[0px_4px_20px_rgba(0,51,102,0.05)] group hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer" onclick="window.location.href='{% url 'blog-detail' item.slug %}'">
+                        <div class="h-48 overflow-hidden relative">
+                            {% if item.featured_image %}
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ item.featured_image.url }}" alt="{{ item.title }}" width="{{ item.featured_image|img_width }}" height="{{ item.featured_image|img_height }}" />
+                            {% else %}
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="/assets/ai_enterprise_insight_light.webp" alt="{{ item.title }}" width="{{ '/assets/ai_enterprise_insight_light.webp'|img_width }}" height="{{ '/assets/ai_enterprise_insight_light.webp'|img_height }}" />
+                            {% endif %}
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded bg-[#3790ff] text-[#030816] text-xs font-bold uppercase">{{ item.category.name }}</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-headline-sm text-base text-slate-900 dark:text-white mb-2 group-hover:text-[#3790ff] transition-colors line-clamp-2">{{ item.title }}</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mb-4 line-clamp-3">{{ item.summary }}</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-black/5 dark:border-white/5 text-xs text-slate-500">
+                                <span>{% if item.published_at %}{{ item.published_at|date:"M d, Y" }}{% else %}{{ item.created_at|date:"M d, Y" }}{% endif %}</span>
+                                <a href="{% url 'blog-detail' item.slug %}" class="text-[#3790ff] font-bold hover:underline">Read →</a>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-slate-900 dark:bg-[#020813] relative overflow-hidden">
+
+        <!-- Subtle dot-grid background -->
+        <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style="background-image:radial-gradient(circle,#ffffff 1px,transparent 1px);background-size:28px 28px;">
+        </div>
+
+        <!-- Top golden gradient line -->
+        <div
+            class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3790ff] to-transparent opacity-60">
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="relative border-b border-white/10">
+            <div class="max-w-[1280px] mx-auto px-8 py-14 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left">
+                    <p class="text-xs font-bold tracking-[0.2em] uppercase text-[#3790ff] mb-2">Ready to Scale?</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight">Let's Build Something<br
+                            class="hidden md:block"> Extraordinary Together</h2>
+                </div>
+                <a href="/contact.html"
+                    class="flex-shrink-0 inline-flex items-center gap-3 bg-[#3790ff] hover:bg-[#2563eb] text-slate-900 font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_32px_rgba(55,144,255,0.35)] hover:-translate-y-0.5 text-sm tracking-wide">
+                    Start a Project
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Footer Grid -->
+        <div class="max-w-[1280px] mx-auto px-8 pt-16 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+
+                <!-- Brand Column (spans 2) -->
+                <div class="lg:col-span-2 flex flex-col gap-6">
+                    <div class="text-center md:text-left">
+                        <div class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-1">Blueshore
+                            Technologies</div>
+                        <div class="w-10 h-0.5 bg-[#3790ff] rounded-full mb-4 mx-auto md:mx-0"></div>
+                        <p class="text-sm text-slate-400 leading-relaxed max-w-sm mx-auto md:mx-0">
+                            Award-winning enterprise software company engineering high-performance digital solutions and
+                            scalable cloud architectures for global businesses.
+                        </p>
+                    </div>
+                    <!-- Contact quick-info -->
+                    <div class="space-y-3 text-sm text-slate-400 text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">mail</span>
+                            <a href="mailto:info@blueshoretech.com"
+                                class="hover:text-[#3790ff] transition-colors">info@blueshoretech.com</a>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">call</span>
+                            <a href="tel:+919990712555" class="hover:text-[#3790ff] transition-colors">+91 99907
+                                12555</a>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">location_on</span>
+                            <span>Delhi NCR, India</span>
+                        </div>
+                    </div>
+                    <!-- Social Icons -->
+                    <div class="flex justify-center md:justify-start gap-3 pt-1">
+                        <a href="https://www.linkedin.com/company/blueshore-technologies-pvt-ltd/" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn"
+                            class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"
+                            class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                            class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/blueshoretech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                            class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Company</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/about.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Our
+                                Company</a></li>
+                        <li><a href="/portfolio.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Valued
+                                Clients</a></li>
+                        <li><a href="/about.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Industry
+                                Partners</a></li>
+                        <li><a href="/careers.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Careers</a>
+                        </li>
+                        <li><a href="/blog.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Insights
+                                &amp; Blog</a></li>
+                        <li><a href="/portfolio.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Success
+                                Stories</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Services</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/services.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Custom
+                                Software</a></li>
+                        <li><a href="/services.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Cloud
+                                &amp; Infrastructure</a></li>
+                        <li><a href="/services.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Mobile
+                                App Development</a></li>
+                        <li><a href="/services.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>UI/UX
+                                Design</a></li>
+                        <li><a href="/services.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Automation
+                                Services</a></li>
+                        <li><a href="/services.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Growth
+                                &amp; Digital Enablement</a></li>
+                    </ul>
+                </div>
+
+                <!-- Industries -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Industries</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/industries.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Finance
+                                &amp; Banking</a></li>
+                        <li><a href="/industries.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Healthcare</a>
+                        </li>
+                        <li><a href="/industries.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Retail
+                                &amp; E-Commerce</a></li>
+                        <li><a href="/industries.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Logistics</a>
+                        </li>
+                        <li><a href="/industries.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Education</a>
+                        </li>
+                        <li><a href="/industries.html"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Real
+                                Estate</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10">
+            <div class="max-w-[1280px] mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-slate-500 text-center md:text-left">© 2026 Blueshore Technologies Pvt. Ltd. All
+                    rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-500">
+                    <a href="/privacy.html" class="hover:text-[#3790ff] transition-colors">Privacy Policy</a>
+                    <a href="/terms.html" class="hover:text-[#3790ff] transition-colors">Terms of Service</a>
+                    <a href="/cookie.html" class="hover:text-[#3790ff] transition-colors">Cookie Policy</a>
+                    <a href="/contact.html" class="hover:text-[#3790ff] transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="/assets/responsive.js"></script>
+    <script src="/assets/ai-chat.js?v=2.1" defer></script>
+    <script src="/assets/theme-toggle.js"></script>
+</body>
+</html>

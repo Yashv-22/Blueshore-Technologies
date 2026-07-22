@@ -1,0 +1,275 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block content %}
+<div class="space-y-6">
+    <!-- Header Banner -->
+    <div class="relative overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-semibold tracking-wider uppercase mb-2">
+                    <i data-lucide="eye" class="w-3.5 h-3.5"></i> Live visitor telemetry
+                </div>
+                <h1 class="text-2xl font-extrabold text-white font-sans tracking-tight">Real-Time Visitor Intelligence</h1>
+                <p class="text-xs text-slate-400 max-w-xl">
+                    Monitor active traffic, track reading engagement, analyze scroll depths, and take over chatbot sessions in one click.
+                </p>
+            </div>
+            <div class="flex gap-4 items-center bg-slate-800/50 dark:bg-slate-900/50 border border-slate-700 px-5 py-3 rounded-xl shrink-0">
+                <div>
+                    <div class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Active Visitors</div>
+                    <div id="live-visitor-counter" class="text-2xl font-black text-blue-400">0</div>
+                </div>
+                <span class="flex h-3 w-3 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Grid -->
+    <div id="visitors-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <!-- Loading state -->
+        <div id="grid-loader" class="col-span-full py-20 text-center text-slate-400">
+            <div class="inline-block animate-spin w-8 h-8 border-4 border-blue-500/20 border-t-blue-500 rounded-full mb-3"></div>
+            <div>Establishing secure telemetry socket connection...</div>
+        </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden col-span-full py-16 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
+        <i data-lucide="users-round" class="w-12 h-12 mx-auto text-slate-300 dark:text-slate-700 mb-3"></i>
+        <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200">No active visitors online</h3>
+        <p class="text-xs text-slate-400 max-w-xs mx-auto mt-1">Visitors will automatically appear here in real-time when they browse the site.</p>
+    </div>
+</div>
+
+<!-- Details Modal -->
+<div id="details-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm hidden" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 cursor-pointer" onclick="closeDetailsModal()"></div>
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto shadow-2xl relative p-6 transform scale-95 transition-all duration-300 z-10">
+        <button onclick="closeDetailsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+            <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+        <div id="modal-content" class="space-y-6">
+            <!-- Dynamically populated -->
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let visitorsMap = new Map();
+        let socket = null;
+
+        // Establish WebSocket connection
+        const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+        const wsUrl = `${protocol}//${window.location.host}/ws/intelligence/admin/`;
+        
+        socket = new WebSocket(wsUrl);
+
+        socket.onopen = () => {
+            console.log("Telemetry socket connected");
+            const loader = document.getElementById("grid-loader");
+            if (loader) loader.classList.add("hidden");
+        };
+
+        socket.onclose = () => {
+            console.log("Telemetry socket disconnected");
+            setTimeout(reconnect, 5000);
+        };
+
+        socket.onmessage = (event) => {
+            const data = jsonParseSafe(event.data);
+            if (!data) return;
+
+            const msgType = data.type;
+
+            if (msgType === "session_update") {
+                const session = data.session;
+                visitorsMap.set(session.session_id, session);
+                renderVisitorCard(session);
+                updateLiveCounter();
+            } else if (msgType === "visitor_offline") {
+                const sid = data.session_id;
+                const card = document.getElementById(`visitor-card-${sid}`);
+                if (card) {
+                    card.classList.add("opacity-60");
+                    const statusDot = card.querySelector(".status-dot");
+                    if (statusDot) {
+                        statusDot.classList.remove("bg-green-500");
+                        statusDot.classList.add("bg-slate-400");
+                    }
+                    const statusText = card.querySelector(".status-text");
+                    if (statusText) statusText.textContent = "Offline";
+                }
+                const session = visitorsMap.get(sid);
+                if (session) {
+                    session.is_online = false;
+                    visitorsMap.set(sid, session);
+                }
+                updateLiveCounter();
+            }
+        };
+
+        function reconnect() {
+            console.log("Attempting socket reconnect...");
+            socket = new WebSocket(wsUrl);
+        }
+
+        function jsonParseSafe(str) {
+            try { return JSON.parse(str); } catch (e) { return null; }
+        }
+
+        function updateLiveCounter() {
+            let onlineCount = 0;
+            visitorsMap.forEach(v => { if (v.is_online) onlineCount++; });
+            document.getElementById("live-visitor-counter").textContent = onlineCount;
+
+            const grid = document.getElementById("visitors-grid");
+            const emptyState = document.getElementById("empty-state");
+            if (visitorsMap.size === 0) {
+                emptyState.classList.remove("hidden");
+            } else {
+                emptyState.classList.add("hidden");
+            }
+        }
+
+        function renderVisitorCard(session) {
+            const sid = session.session_id;
+            let card = document.getElementById(`visitor-card-${sid}`);
+            
+            const cardHtml = `
+                <div class="flex items-center justify-between mb-3 border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full status-dot ${session.is_online ? 'bg-green-500 animate-pulse' : 'bg-slate-400'}"></span>
+                        <span class="text-[10px] font-bold text-slate-500 uppercase status-text">${session.is_online ? 'Online' : 'Offline'}</span>
+                    </div>
+                    <div class="px-2 py-0.5 rounded-lg bg-blue-500/10 text-blue-500 text-[10px] font-bold">
+                        Lead Score: ${session.lead_score}
+                    </div>
+                </div>
+                <div class="space-y-2 mb-4">
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-1">
+                        <i data-lucide="user" class="w-3.5 h-3.5 text-slate-400"></i>
+                        ${session.lead_name || 'Anonymous Visitor'}
+                    </h3>
+                    <div class="text-xs text-slate-555 dark:text-slate-400 space-y-2.5">
+                        <!-- URL path and title -->
+                        <div class="bg-slate-50 dark:bg-slate-850 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+                            <div class="text-[9px] text-slate-400 dark:text-slate-550 font-extrabold uppercase tracking-wider mb-1">Active Page & URL</div>
+                            <div class="flex flex-col gap-0.5">
+                                <a href="${session.current_url}" target="_blank" class="font-bold text-blue-600 dark:text-blue-400 hover:underline truncate max-w-[240px] decoration-none text-xs block" title="${session.current_url}">
+                                    <span class="text-slate-400 dark:text-slate-600 font-normal">${session.current_url.match(/https?:\/\/[^\/]+/)?.[0] || ''}</span>${session.current_url.replace(/https?:\/\/[^\/]+/, '') || '/'}
+                                </a>
+                                <span class="text-[10px] text-slate-500 dark:text-slate-450 truncate font-semibold" title="${session.page_title || session.page_title}">
+                                    ${session.page_title || 'Home Page'}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Grid for Section and Scroll Depth -->
+                        <div class="grid grid-cols-2 gap-2 pt-0.5">
+                            <div class="flex flex-col bg-slate-50/50 dark:bg-slate-850/50 p-1.5 rounded border border-slate-100 dark:border-slate-800/40">
+                                <span class="text-[9px] text-slate-400 dark:text-slate-550 font-extrabold uppercase tracking-wider">Active Section</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200 mt-0.5 truncate text-[11px]" title="${session.current_section || 'Hero'}">
+                                    ${session.current_section || 'Hero'}
+                                </span>
+                            </div>
+                            <div class="flex flex-col bg-slate-50/50 dark:bg-slate-850/50 p-1.5 rounded border border-slate-100 dark:border-slate-800/40">
+                                <span class="text-[9px] text-slate-400 dark:text-slate-550 font-extrabold uppercase tracking-wider">Scroll Depth</span>
+                                <div class="flex items-center justify-between gap-1.5 mt-0.5">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-[11px]">${session.scroll_percentage}%</span>
+                                    <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-1.5 max-w-[40px] overflow-hidden">
+                                        <div class="bg-blue-500 h-1.5 rounded-full" style="width: ${session.scroll_percentage}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center pt-1.5 border-t border-slate-100 dark:border-slate-800/60">
+                            <span class="text-[9px] text-slate-400 dark:text-slate-500 font-extrabold uppercase tracking-wider">Location</span>
+                            <span class="font-bold text-slate-800 dark:text-slate-200 text-xs">${session.city || 'Unknown'}, ${session.country || 'Unknown'}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <a href="/admin/live-conversations/?session_id=${sid}" class="flex-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-center text-xs decoration-none">
+                        Chat
+                    </a>
+                    <button onclick="viewVisitorDetails('${sid}')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-850 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold rounded-lg text-xs">
+                        Details
+                    </button>
+                </div>
+            `;
+
+            if (!card) {
+                card = document.createElement("div");
+                card.id = `visitor-card-${sid}`;
+                card.className = "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-200";
+                document.getElementById("visitors-grid").appendChild(card);
+            }
+            card.innerHTML = cardHtml;
+            lucide.createIcons();
+        }
+
+        window.viewVisitorDetails = (sid) => {
+            const session = visitorsMap.get(sid);
+            if (!session) return;
+
+            const modalContent = `
+                <div class="flex justify-between items-start border-b border-slate-100 dark:border-slate-800 pb-3">
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900 dark:text-white">${session.lead_name || 'Anonymous Visitor'}</h2>
+                        <div class="text-xs text-slate-400 mt-0.5">Session ID: ${session.session_id}</div>
+                    </div>
+                    <div class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold">
+                        Lead Score: ${session.lead_score}
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-xs">
+                    <div class="space-y-2">
+                        <div><span class="text-slate-400">Device:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.device}</span></div>
+                        <div><span class="text-slate-400">Browser:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.browser}</span></div>
+                        <div><span class="text-slate-400">OS:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.os}</span></div>
+                        <div><span class="text-slate-400">IP Address:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.ip_address}</span></div>
+                    </div>
+                    <div class="space-y-2">
+                        <div><span class="text-slate-400">Country:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.country}</span></div>
+                        <div><span class="text-slate-400">City:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.city}</span></div>
+                        <div><span class="text-slate-400">Referral:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.referrer || 'Direct'}</span></div>
+                        <div><span class="text-slate-400">First Visit:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.first_visit ? 'Yes' : 'No (Returning)'}</span></div>
+                    </div>
+                </div>
+                <div class="border-t border-slate-100 dark:border-slate-800 pt-4">
+                    <h3 class="font-bold text-xs text-slate-900 dark:text-white uppercase tracking-wider mb-2">Navigation Tracking</h3>
+                    <div class="space-y-1 text-xs">
+                        <div><span class="text-slate-400">Current URL:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.current_url}</span></div>
+                        <div><span class="text-slate-400">Previous URL:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.referrer || 'None'}</span></div>
+                        <div><span class="text-slate-400">Scroll Depth:</span> <span class="font-semibold text-slate-800 dark:text-slate-200">${session.scroll_percentage}% (Max: ${session.max_scroll}%)</span></div>
+                    </div>
+                </div>
+                <div class="flex gap-3 border-t border-slate-100 dark:border-slate-800 pt-4">
+                    <a href="/admin/live-conversations/?session_id=${sid}" class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-xs text-center decoration-none flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-square" class="w-3.5 h-3.5"></i> Live Chat Panel
+                    </a>
+                </div>
+            `;
+
+            document.getElementById("modal-content").innerHTML = modalContent;
+            document.getElementById("details-modal").classList.remove("hidden");
+            lucide.createIcons();
+        };
+
+        window.closeDetailsModal = () => {
+            document.getElementById("details-modal").classList.add("hidden");
+        };
+
+
+    });
+</script>
+{% endblock %}
