@@ -14,20 +14,26 @@ def page_val(context, page, section, key, default='', content_type='text', descr
             key=key,
             defaults={
                 'content_type': content_type,
-                'text_value': default if content_type != 'image' else '',
+                'text_value': default,
                 'description': description
             }
         )
     except Exception:
-        return default
-
-    if content_obj.content_type == 'image':
-        return content_obj.image_value.url if content_obj.image_value else default
+        val = default
     else:
-        val = content_obj.text_value if content_obj.text_value is not None else default
-        if content_obj.content_type == 'html':
-            return mark_safe(val)
-        return val
+        if content_obj.content_type == 'image':
+            val = content_obj.image_value.url if content_obj.image_value else (content_obj.text_value or default)
+        else:
+            val = content_obj.text_value if (content_obj.text_value is not None and content_obj.text_value != '') else default
+
+    if content_type == 'image' and val:
+        val = str(val).strip()
+        if not val.startswith('/') and not val.startswith('http') and not val.startswith('data:'):
+            val = '/' + val
+
+    if content_type == 'html':
+        return mark_safe(val)
+    return val
 
 @register.simple_tag(takes_context=True)
 def page_block(context, page, section, key, default='', content_type='text', description=''):
@@ -38,17 +44,22 @@ def page_block(context, page, section, key, default='', content_type='text', des
             key=key,
             defaults={
                 'content_type': content_type,
-                'text_value': default if content_type != 'image' else '',
+                'text_value': default,
                 'description': description
             }
         )
     except Exception:
-        return default
-
-    if content_obj.content_type == 'image':
-        val = content_obj.image_value.url if content_obj.image_value else default
+        val = default
     else:
-        val = content_obj.text_value if content_obj.text_value is not None else default
+        if content_obj.content_type == 'image':
+            val = content_obj.image_value.url if content_obj.image_value else (content_obj.text_value or default)
+        else:
+            val = content_obj.text_value if (content_obj.text_value is not None and content_obj.text_value != '') else default
+
+    if content_type == 'image' and val:
+        val = str(val).strip()
+        if not val.startswith('/') and not val.startswith('http') and not val.startswith('data:'):
+            val = '/' + val
 
     request = context.get('request')
     is_staff = request and request.user and request.user.is_staff
