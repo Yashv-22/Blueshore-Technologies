@@ -22,12 +22,20 @@ def page_val(context, page, section, key, default='', content_type='text', descr
         val = default
     else:
         if content_obj.content_type == 'image':
-            val = content_obj.image_value.url if content_obj.image_value else (content_obj.text_value or default)
+            if content_obj.image_value:
+                val = content_obj.image_value.url
+            elif content_obj.text_value and str(content_obj.text_value).strip():
+                val = str(content_obj.text_value).strip()
+            else:
+                val = default
         else:
-            val = content_obj.text_value if (content_obj.text_value is not None and content_obj.text_value != '') else default
+            val = content_obj.text_value if (content_obj.text_value is not None and str(content_obj.text_value).strip() != '') else default
+
+    val = str(val or default).strip()
+    if not val:
+        val = str(default).strip()
 
     if content_type == 'image' and val:
-        val = str(val).strip()
         if not val.startswith('/') and not val.startswith('http') and not val.startswith('data:'):
             val = '/' + val
 
@@ -52,12 +60,20 @@ def page_block(context, page, section, key, default='', content_type='text', des
         val = default
     else:
         if content_obj.content_type == 'image':
-            val = content_obj.image_value.url if content_obj.image_value else (content_obj.text_value or default)
+            if content_obj.image_value:
+                val = content_obj.image_value.url
+            elif content_obj.text_value and str(content_obj.text_value).strip():
+                val = str(content_obj.text_value).strip()
+            else:
+                val = default
         else:
-            val = content_obj.text_value if (content_obj.text_value is not None and content_obj.text_value != '') else default
+            val = content_obj.text_value if (content_obj.text_value is not None and str(content_obj.text_value).strip() != '') else default
+
+    val = str(val or default).strip()
+    if not val:
+        val = str(default).strip()
 
     if content_type == 'image' and val:
-        val = str(val).strip()
         if not val.startswith('/') and not val.startswith('http') and not val.startswith('data:'):
             val = '/' + val
 
