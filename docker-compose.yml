@@ -136,6 +136,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./assets:/app/assets:ro
       - static_volume:/app/staticfiles:ro
       - media_volume:/app/media:ro
     depends_on:
