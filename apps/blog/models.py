@@ -122,6 +122,8 @@ class AuthorProfile(models.Model):
     role = models.CharField(max_length=100, blank=True, help_text="e.g. Co-Founder & Director")
     expertise = models.CharField(max_length=255, blank=True, help_text="e.g. Enterprise Software Architect")
     linkedin_url = models.URLField(blank=True, help_text="Full LinkedIn profile URL")
+    github_url = models.URLField(blank=True, help_text="Full GitHub profile URL")
+    twitter_url = models.URLField(blank=True, help_text="Full X/Twitter profile URL")
     organization = models.CharField(max_length=255, default="Blueshore Technologies")
     bio = models.TextField(blank=True, help_text="Author biography")
     avatar = models.ImageField(upload_to='authors/', blank=True, null=True)

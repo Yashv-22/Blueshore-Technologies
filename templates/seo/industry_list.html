@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="https://www.blueshoretech.com/industry/">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {{ breadcrumbs|safe }}
+  </script>
+</head>
+<body class="bg-slate-950 text-white font-sans antialiased">
+  <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-3">
+        <img src="/assets/BST-Logo.webp" alt="Blueshore Logo" class="h-10 w-auto">
+        <span class="text-xl font-extrabold text-white tracking-tight">Blueshore <span class="text-blue-500">Technologies</span></span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="/services.html" class="text-slate-300 hover:text-blue-400 transition">Services</a>
+        <a href="/technology/" class="text-slate-300 hover:text-blue-400 transition">Technology</a>
+        <a href="/industry/" class="text-slate-300 hover:text-blue-400 transition">Industries</a>
+        <a href="/glossary/" class="text-slate-300 hover:text-blue-400 transition">Glossary</a>
+        <a href="/compare/" class="text-slate-300 hover:text-blue-400 transition">Compare</a>
+        <a href="/blog.html" class="text-slate-300 hover:text-blue-400 transition">Blog</a>
+        <a href="/contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl transition font-semibold">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative pt-36 pb-20 bg-slate-900 text-white border-b border-slate-800 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="inline-block py-1 px-3 rounded-full text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-900/40 border border-blue-500/30 mb-4">Industry Verticals</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Domain-Specific B2B Engineering Solutions</h1>
+        <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">Tailored software development, AI automation, and compliance solutions engineered for regulated and high-growth industry sectors.</p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-950 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {% for ind in industries %}
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/50 transition flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-950 px-2.5 py-1 rounded">Compliance: {{ ind.compliance_frameworks }}</span>
+              <h2 class="text-2xl font-bold text-white mt-4 mb-3"><a href="/industry/{{ ind.slug }}/" class="hover:text-blue-400 transition">{{ ind.name }}</a></h2>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">{{ ind.description }}</p>
+            </div>
+            <a href="/industry/{{ ind.slug }}/" class="text-blue-400 font-semibold hover:text-blue-300 inline-flex items-center text-sm">
+              Explore {{ ind.name }} Solutions &rarr;
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 border-t border-slate-800 py-12 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; 2026 Blueshore Technologies Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

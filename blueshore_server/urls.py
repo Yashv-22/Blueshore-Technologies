@@ -44,11 +44,23 @@ from apps.core.views import (
 )
 from apps.contact.views import contact_view, ContactRequestCreateAPIView
 from apps.careers.views import careers_view, submit_portfolio_view, JobApplicationCreateAPIView
-from apps.portfolio.views import portfolio_view
+from apps.portfolio.views import portfolio_view, portfolio_detail_view
 from apps.blog.views import blog_view, blog_detail_view, author_detail_view
 from apps.newsletter.views import NewsletterSubscribeAPIView
 from apps.chatbot.views import ChatProxyAPIView, AdminCopilotAPIView
-from apps.seo.views import dynamic_sitemap_view, dynamic_robots_view, programmatic_seo_view, service_pillar_view
+from apps.seo.views import (
+    dynamic_sitemap_view, dynamic_robots_view, programmatic_seo_view, service_pillar_view,
+    parent_service_hub_view, author_list_view, author_detail_view, glossary_list_view, glossary_detail_view,
+    comparison_list_view, comparison_detail_view, resource_list_view, resource_detail_view,
+    technology_list_view, technology_detail_view, industry_list_view, industry_detail_view,
+    seo_audit_report_view, seo_os_admin_dashboard_view, llms_txt_view
+)
+from apps.seo.sitemaps import (
+    sitemap_index_view, sitemap_pages_view, sitemap_services_view, sitemap_blogs_view,
+    sitemap_technology_view, sitemap_industry_view, sitemap_glossary_view,
+    sitemap_comparisons_view, sitemap_resources_view, sitemap_case_studies_view
+)
+from apps.seo.tools_views import roi_calculator_view, cloud_cost_calculator_view, crm_readiness_view
 
 urlpatterns = [
     # Visitor Intelligence Admin Views (Must be before admin.site.urls)
@@ -73,9 +85,11 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     
-    # Robots and Sitemap
+    # Robots, Sitemap, and LLMs.txt
     path('robots.txt', dynamic_robots_view, name='dynamic-robots'),
+    path('llms.txt', llms_txt_view, name='llms-txt'),
     path('sitemap.xml', dynamic_sitemap_view, name='dynamic-sitemap'),
+    path('sitemap-index.xml', sitemap_index_view, name='dynamic-sitemap-index'),
     
     # Core pages
     path('', index_view, name='index'),
@@ -112,12 +126,12 @@ urlpatterns = [
     path('careers.html', careers_view, name='careers'),
     path('submit-portfolio.html', submit_portfolio_view, name='submit-portfolio'),
     path('portfolio.html', portfolio_view, name='portfolio'),
+    path('portfolio/<slug:slug>/', portfolio_detail_view, name='portfolio-detail'),
     
     # Blog URLs
     path('blog.html', blog_view, name='blog'),
     path('blog/<slug:slug>/', blog_detail_view, name='blog-detail'),
-    path('authors/<slug:slug>/', author_detail_view, name='author-detail'),
-    
+
     # API endpoints
     path('api/contact/submit/', ContactRequestCreateAPIView.as_view(), name='api-contact-submit'),
     path('api/careers/apply/', JobApplicationCreateAPIView.as_view(), name='api-careers-apply'),
@@ -129,11 +143,57 @@ urlpatterns = [
     path('portal/login/', client_portal_login_view, name='client-portal-login'),
     path('portal/logout/', client_portal_logout_view, name='client-portal-logout'),
     path('portal/', client_portal_view, name='client-portal'),
-    
+
+    # SEO & Growth OS Admin Dashboard
+    path('admin/seo/dashboard/', staff_member_required(seo_os_admin_dashboard_view), name='seo-os-admin-dashboard'),
+    path('admin/seo/audit-report/', seo_audit_report_view, name='seo-audit-report'),
+
+    # Multi-Sitemap Index & Individual Sitemaps
+    path('sitemap.xml', sitemap_index_view, name='dynamic-sitemap-index'),
+    path('sitemaps/pages.xml', sitemap_pages_view, name='sitemap-pages'),
+    path('sitemaps/services.xml', sitemap_services_view, name='sitemap-services'),
+    path('sitemaps/blogs.xml', sitemap_blogs_view, name='sitemap-blogs'),
+    path('sitemaps/technology.xml', sitemap_technology_view, name='sitemap-technology'),
+    path('sitemaps/industry.xml', sitemap_industry_view, name='sitemap-industry'),
+    path('sitemaps/glossary.xml', sitemap_glossary_view, name='sitemap-glossary'),
+    path('sitemaps/comparisons.xml', sitemap_comparisons_view, name='sitemap-comparisons'),
+    path('sitemaps/resources.xml', sitemap_resources_view, name='sitemap-resources'),
+    path('sitemaps/case-studies.xml', sitemap_case_studies_view, name='sitemap-case-studies'),
+
+    # Authors Hub
+    path('authors/', author_list_view, name='author-list'),
+    path('authors/<slug:slug>/', author_detail_view, name='author-detail'),
+
+    # Glossary Hub
+    path('glossary/', glossary_list_view, name='glossary-list'),
+    path('glossary/<slug:slug>/', glossary_detail_view, name='glossary-detail'),
+
+    # Comparison Hub
+    path('compare/', comparison_list_view, name='comparison-list'),
+    path('compare/<slug:slug>/', comparison_detail_view, name='comparison-detail'),
+
+    # Resource Center
+    path('resources/', resource_list_view, name='resource-list'),
+    path('resources/<slug:slug>/', resource_detail_view, name='resource-detail'),
+
+    # Technology Hub
+    path('technology/', technology_list_view, name='technology-list'),
+    path('technology/<slug:slug>/', technology_detail_view, name='technology-detail'),
+
+    # Industry Hub
+    path('industry/', industry_list_view, name='industry-list'),
+    path('industry/<slug:slug>/', industry_detail_view, name='industry-detail'),
+
+    # Interactive B2B Tools
+    path('tools/roi-calculator/', roi_calculator_view, name='tool-roi-calculator'),
+    path('tools/cloud-cost-calculator/', cloud_cost_calculator_view, name='tool-cloud-cost-calculator'),
+    path('tools/crm-readiness-assessment/', crm_readiness_view, name='tool-crm-readiness'),
+
     # Dynamic Service Pillar Hub Pages
     path('services/<slug:service_slug>/', service_pillar_view, name='service-pillar'),
     
-    # Programmatic SEO Location & Service landing routes (Wildcard rule placed at the bottom to avoid static route collisions)
+    # Programmatic SEO Location & Service landing routes (Wildcard rules placed at the bottom to avoid static route collisions)
+    path('<slug:service_slug>/', parent_service_hub_view, name='parent-service-hub'),
     path('<slug:service_slug>/<slug:location_slug>/', programmatic_seo_view, name='programmatic-seo-landing'),
 ]
 

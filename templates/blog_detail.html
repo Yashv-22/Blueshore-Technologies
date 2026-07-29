@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ post.title }} | Blueshore Technologies</title>
     <meta name="description" content="{{ post.summary }}" />
-    <link rel="stylesheet" href="/assets/tailwind.min.css?v=5" />
+    <link rel="preload" href="/assets/tailwind.min.css?v=5" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/tailwind.min.css?v=5"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/responsive.css" />
@@ -82,7 +82,7 @@
     <nav class="fixed top-0 w-full z-50 bg-slate-50/90 dark:bg-[#030816]/90 backdrop-blur-lg border-b border-black/10 dark:border-white/10 shadow-lg">
         <div class="max-w-[1280px] mx-auto flex justify-between items-center px-8 py-2.5">
             <a href="/" class="flex items-center gap-2">
-                <img class="w-12 h-12 rounded object-contain" src="/assets/BST-Logo.webp" alt="Blueshore Technologies Logo" title="Blueshore Technologies Logo" width="48" height="48" loading="eager"/>
+                <img class="w-12 h-12 rounded object-contain" src="/assets/BST-Logo.webp" alt="Blueshore Technologies Logo" title="Blueshore Technologies Logo" width="48" height="48" loading="eager" fetchpriority="high"/>
                 <div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white">Blueshore Technologies</div>
             </a>
             <div class="hidden lg:flex items-center gap-8 font-['Inter'] text-sm font-medium tracking-wide">
@@ -500,6 +500,6 @@
 
     <script src="/assets/responsive.js"></script>
     <script src="/assets/ai-chat.js?v=2.1" defer></script>
-    <script src="/assets/theme-toggle.js"></script>
+    <script src="/assets/theme-toggle.js" defer></script>
 </body>
 </html>

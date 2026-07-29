@@ -1,3 +1,4 @@
+import os
 from apps.seo.models import SEOPage, GEOBlock, FAQ
 
 DEFAULT_PAGE_SEO = {
@@ -244,4 +245,12 @@ def seo_metadata(request):
             context['twitter_description'] = fallback['description']
             context['twitter_image'] = "https://www.blueshoretech.com/assets/og-image.png"
             
+    # Measurement & Search Console Verification IDs from environment or settings
+    context['ga_measurement_id'] = os.getenv('GA_MEASUREMENT_ID', '')
+    context['gtm_container_id'] = os.getenv('GTM_CONTAINER_ID', '')
+    context['clarity_project_id'] = os.getenv('CLARITY_PROJECT_ID', '')
+    context['gsc_verification_code'] = os.getenv('GSC_VERIFICATION_CODE', '')
+    context['bing_verification_code'] = os.getenv('BING_VERIFICATION_CODE', '')
+
     return context
+

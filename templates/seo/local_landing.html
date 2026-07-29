@@ -9,7 +9,7 @@
     <meta name="description" content="{{ page.seo_description }}">
     <meta name="keywords" content="{{ page.seo_keywords }}">
     <meta name="author" content="Blueshore Technologies">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="{{ page.robots|default:'index, follow' }}">
     <link rel="canonical" href="{{ page.canonical_url }}">
 
     <!-- Open Graph Tags -->
@@ -261,7 +261,7 @@
                 <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black mb-6">Ready to scale your business in {{ page.location_name }}?</h2>
                 <p class="text-white/80 max-w-2xl mx-auto mb-8 text-sm md:text-base leading-relaxed">Book a free, 30-minute discovery call with our co-founders to review your software bottlenecks and design an optimization architecture.</p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="/contact.html" class="inline-flex items-center px-6 h-12 rounded-xl bg-white text-[#3790ff] hover:bg-slate-100 font-bold transition-all shadow-lg hover:-translate-y-0.5 duration-200">Book Free Strategy Call</a>
+                    <a href="/contact.html" class="inline-flex items-center px-6 h-12 rounded-xl bg-white text-[#3790ff] hover:bg-slate-100 font-bold transition-all shadow-lg hover:-translate-y-0.5 duration-200">Get Started</a>
                     <a href="https://wa.me/919990712555" class="inline-flex items-center gap-2 px-6 h-12 rounded-xl border border-white/30 hover:bg-white/10 text-white font-bold transition-all">Chat on WhatsApp</a>
                 </div>
             </div>

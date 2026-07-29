@@ -146,7 +146,7 @@ class ServicePillar(models.Model):
     testimonials_json = models.JSONField(blank=True, null=True, help_text="List of client testimonials: [{'client': '...', 'text': '...'}]")
     case_studies_json = models.JSONField(blank=True, null=True, help_text="List of case studies: [{'title': '...', 'metric': '...', 'desc': '...'}]")
     
-    cta_text = models.CharField(max_length=255, default="Book Free Strategy Call")
+    cta_text = models.CharField(max_length=255, default="Get Started")
     cta_link = models.CharField(max_length=255, default="/contact.html")
     
     created_at = models.DateTimeField(auto_now_add=True)
@@ -163,6 +163,321 @@ class ServicePillar(models.Model):
 @receiver([post_save, post_delete], sender=ServicePillar)
 def clear_pillar_cache(sender, **kwargs):
     cache.clear()
+
+
+# ==============================================================================
+# SEO & GROWTH OPERATING SYSTEM (OS) ENTITY GRAPH & CONTENT HUBS
+# ==============================================================================
+
+class SEOEntity(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255, unique=True, help_text="Canonical Entity Name (e.g. 'RAG', 'Docker', 'Django')")
+    slug = models.SlugField(max_length=255, unique=True)
+    entity_type = models.CharField(max_length=100, choices=[
+        ('technology', 'Technology / Framework'),
+        ('concept', 'Architectural Concept'),
+        ('industry', 'Industry Vertical'),
+        ('compliance', 'Compliance / Standard'),
+        ('solution', 'Solution Type')
+    ], default='technology')
+    description = models.TextField(blank=True, help_text="Machine-readable entity definition")
+    wikidata_url = models.URLField(blank=True, max_length=500)
+    wikipedia_url = models.URLField(blank=True, max_length=500)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "SEO Entity"
+        verbose_name_plural = "SEO Entities"
+        ordering = ['name']
+
+    def __str__(self):
+        return f"{self.name} ({self.get_entity_type_display()})"
+
+
+class GlossaryTerm(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    term = models.CharField(max_length=255, unique=True, help_text="Term name, e.g. 'Retrieval Augmented Generation (RAG)'")
+    slug = models.SlugField(max_length=255, unique=True)
+    short_definition = models.TextField(help_text="20-40 word direct AEO definition for Google Featured Snippets & AI Overviews")
+    detailed_explanation = models.TextField(help_text="Comprehensive technical explanation (Markdown/HTML)")
+    code_example = models.TextField(blank=True, help_text="Optional Python/JS/Config snippet")
+    architecture_diagram_mermaid = models.TextField(blank=True, help_text="Optional Mermaid JS diagram syntax")
+    category = models.CharField(max_length=100, default="AI & Automation")
+    
+    entities = models.ManyToManyField(SEOEntity, blank=True, related_name='glossary_terms')
+    related_services = models.ManyToManyField(ServicePillar, blank=True, related_name='glossary_terms')
+    
+    is_published = models.BooleanField(default=True)
+    views_count = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Glossary Term"
+        verbose_name_plural = "Glossary Terms"
+        ordering = ['term']
+
+    def __str__(self):
+        return f"Glossary: {self.term} (/glossary/{self.slug}/)"
+
+
+class ComparisonPage(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=255, help_text="Comparison title, e.g. 'FastAPI vs Django: B2B Architecture Comparison'")
+    slug = models.SlugField(max_length=255, unique=True)
+    entity_a = models.CharField(max_length=100, help_text="First tech/solution name, e.g. 'FastAPI'")
+    entity_b = models.CharField(max_length=100, help_text="Second tech/solution name, e.g. 'Django'")
+    verdict_summary = models.TextField(help_text="Executive summary and architectural recommendation")
+    comparison_matrix_json = models.JSONField(blank=True, null=True, help_text="[{'feature': 'Performance', 'a': '...', 'b': '...'}]")
+    detailed_breakdown = models.TextField(help_text="Full comparison body copy (HTML/Markdown)")
+    
+    related_entities = models.ManyToManyField(SEOEntity, blank=True, related_name='comparisons')
+    related_services = models.ManyToManyField(ServicePillar, blank=True, related_name='comparisons')
+    
+    is_published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Comparison Page"
+        verbose_name_plural = "Comparison Pages"
+        ordering = ['title']
+
+    def __str__(self):
+        return f"Compare: {self.title} (/compare/{self.slug}/)"
+
+
+class B2BResource(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=255, help_text="Resource title, e.g. 'Enterprise SOC 2 Compliance & Architecture Guide'")
+    slug = models.SlugField(max_length=255, unique=True)
+    resource_type = models.CharField(max_length=100, choices=[
+        ('guide', 'Architecture Guide'),
+        ('checklist', 'Security Checklist'),
+        ('whitepaper', 'Technical Whitepaper'),
+        ('template', 'Code Template'),
+        ('playbook', 'Engineering Playbook')
+    ], default='guide')
+    summary = models.TextField(help_text="Overview of resource benefits")
+    file_url = models.CharField(max_length=500, blank=True, help_text="Path or external link to resource asset")
+    reading_time_min = models.IntegerField(default=10)
+    
+    related_services = models.ManyToManyField(ServicePillar, blank=True, related_name='resources')
+    
+    is_published = models.BooleanField(default=True)
+    download_count = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "B2B Resource"
+        verbose_name_plural = "B2B Resources"
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"Resource: {self.title} (/resources/{self.slug}/)"
+
+
+class TechnologyHubPage(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255, help_text="Technology name, e.g. 'Django Enterprise Framework'")
+    slug = models.SlugField(max_length=255, unique=True)
+    hero_title = models.CharField(max_length=255)
+    description = models.TextField(help_text="Meta description and hero snippet")
+    architectural_benefits = models.TextField(help_text="Core advantages for B2B applications")
+    code_example = models.TextField(blank=True, help_text="Production-grade implementation snippet")
+    use_cases_json = models.JSONField(blank=True, null=True, help_text="[{'title': '...', 'desc': '...'}]")
+    
+    related_services = models.ManyToManyField(ServicePillar, blank=True, related_name='technologies')
+    
+    is_published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Technology Hub Page"
+        verbose_name_plural = "Technology Hub Pages"
+        ordering = ['name']
+
+    def __str__(self):
+        return f"Tech Hub: {self.name} (/technology/{self.slug}/)"
+
+
+class IndustryHubPage(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255, help_text="Industry vertical, e.g. 'Healthcare & Telehealth'")
+    slug = models.SlugField(max_length=255, unique=True)
+    hero_title = models.CharField(max_length=255)
+    description = models.TextField()
+    compliance_frameworks = models.CharField(max_length=255, default="HIPAA, SOC 2, ISO 27001", help_text="Comma-separated frameworks")
+    key_challenges = models.TextField(help_text="Specific operational bottlenecks in this sector")
+    tailored_solutions_json = models.JSONField(blank=True, null=True)
+    
+    related_services = models.ManyToManyField(ServicePillar, blank=True, related_name='industries')
+    
+    is_published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Industry Hub Page"
+        verbose_name_plural = "Industry Hub Pages"
+        ordering = ['name']
+
+    def __str__(self):
+        return f"Industry Hub: {self.name} (/industry/{self.slug}/)"
+
+
+# ==============================================================================
+# COMPETITOR INTELLIGENCE & BACKLINK CRM
+# ==============================================================================
+
+class Competitor(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255)
+    domain = models.CharField(max_length=255, unique=True)
+    estimated_domain_authority = models.IntegerField(default=50)
+    notes = models.TextField(blank=True)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Competitor Domain"
+        verbose_name_plural = "Competitor Domains"
+
+    def __str__(self):
+        return f"Competitor: {self.name} ({self.domain})"
+
+
+class BacklinkProspect(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    domain = models.CharField(max_length=255)
+    contact_email = models.EmailField(blank=True)
+    status = models.CharField(max_length=50, choices=[
+        ('prospect', 'Prospect Identified'),
+        ('contacted', 'Outreach Sent'),
+        ('negotiating', 'In Discussion'),
+        ('earned', 'Backlink Earned'),
+        ('declined', 'Declined')
+    ], default='prospect')
+    da_score = models.IntegerField(default=40)
+    target_url = models.CharField(max_length=500, blank=True, help_text="Blueshore target page URL")
+    earned_link_url = models.URLField(blank=True, max_length=500, help_text="Live backlink URL")
+    notes = models.TextField(blank=True)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Backlink Prospect"
+        verbose_name_plural = "Backlink Prospects"
+
+    def __str__(self):
+        return f"Backlink: {self.domain} [{self.get_status_display()}]"
+
+
+# ==============================================================================
+# ANALYTICAL SNAPSHOTS & CONTENT GOVERNANCE
+# ==============================================================================
+
+class SearchConsoleMetric(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    date = models.DateField()
+    page_route = models.CharField(max_length=255)
+    query = models.CharField(max_length=255)
+    clicks = models.IntegerField(default=0)
+    impressions = models.IntegerField(default=0)
+    ctr = models.FloatField(default=0.0)
+    position = models.FloatField(default=0.0)
+
+    class Meta:
+        verbose_name = "Search Console Metric"
+        verbose_name_plural = "Search Console Metrics"
+        unique_together = ['date', 'page_route', 'query']
+
+    def __str__(self):
+        return f"GSC: {self.query} on {self.page_route} ({self.date})"
+
+
+class LighthouseAuditSnapshot(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    page_route = models.CharField(max_length=255)
+    device = models.CharField(max_length=20, choices=[('desktop', 'Desktop'), ('mobile', 'Mobile')], default='desktop')
+    performance_score = models.IntegerField(default=100)
+    accessibility_score = models.IntegerField(default=100)
+    best_practices_score = models.IntegerField(default=100)
+    seo_score = models.IntegerField(default=100)
+    lcp_ms = models.IntegerField(default=1200, help_text="Largest Contentful Paint in ms")
+    cls_score = models.FloatField(default=0.0, help_text="Cumulative Layout Shift")
+    inp_ms = models.IntegerField(default=50, help_text="Interaction to Next Paint in ms")
+
+    class Meta:
+        verbose_name = "Lighthouse Audit Snapshot"
+        verbose_name_plural = "Lighthouse Audit Snapshots"
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"Audit ({self.device}): {self.page_route} - Perf: {self.performance_score}"
+
+
+class ContentDecayQueue(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    page_route = models.CharField(max_length=255, unique=True)
+    last_substantive_update = models.DateField()
+    traffic_drop_percentage = models.FloatField(default=0.0)
+    status = models.CharField(max_length=50, choices=[
+        ('detected', 'Decay Detected'),
+        ('in_review', 'In Editorial Review'),
+        ('updated', 'Content Refresh Completed')
+    ], default='detected')
+    refresh_notes = models.TextField(blank=True)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Content Decay Item"
+        verbose_name_plural = "Content Decay Queue"
+
+    def __str__(self):
+        return f"Decay: {self.page_route} (-{self.traffic_drop_percentage}%)"
+
+
+class EditorialCalendarItem(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=255)
+    target_entity = models.ForeignKey(SEOEntity, on_delete=models.SET_NULL, null=True, blank=True)
+    content_type = models.CharField(max_length=50, choices=[
+        ('pillar', 'Service Pillar'),
+        ('blog', 'Blog Article'),
+        ('glossary', 'Glossary Term'),
+        ('comparison', 'Commercial Comparison'),
+        ('resource', 'B2B Resource')
+    ], default='blog')
+    target_publish_date = models.DateField()
+    status = models.CharField(max_length=50, choices=[
+        ('planned', 'Planned'),
+        ('ai_drafted', 'AI Drafted'),
+        ('review', 'In Review'),
+        ('published', 'Published')
+    ], default='planned')
+    notes = models.TextField(blank=True)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Editorial Calendar Item"
+        verbose_name_plural = "Editorial Calendar Items"
+        ordering = ['target_publish_date']
+
+    def __str__(self):
+        return f"Calendar: {self.title} [{self.get_status_display()}]"
+
 
 
 

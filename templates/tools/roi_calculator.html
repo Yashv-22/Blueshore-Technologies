@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="https://www.blueshoretech.com/tools/roi-calculator/">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {{ breadcrumbs|safe }}
+  </script>
+</head>
+<body class="bg-slate-950 text-white font-sans antialiased">
+  <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-3">
+        <img src="/assets/BST-Logo.webp" alt="Blueshore Logo" class="h-10 w-auto">
+        <span class="text-xl font-extrabold text-white tracking-tight">Blueshore <span class="text-blue-500">Technologies</span></span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="/services.html" class="text-slate-300 hover:text-blue-400 transition">Services</a>
+        <a href="/technology/" class="text-slate-300 hover:text-blue-400 transition">Technology</a>
+        <a href="/industry/" class="text-slate-300 hover:text-blue-400 transition">Industries</a>
+        <a href="/glossary/" class="text-slate-300 hover:text-blue-400 transition">Glossary</a>
+        <a href="/contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl transition font-semibold">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative pt-36 pb-16 bg-slate-900 text-white text-center border-b border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="inline-block py-1 px-3 rounded-full text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-900/40 border border-blue-500/30 mb-4">Interactive B2B Engineering Tool</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">AI & Automation ROI Calculator</h1>
+        <p class="text-lg text-slate-300">Quantify your team's manual task cost savings and annual ROI from custom workflow automation.</p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-slate-950 text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label class="block text-sm font-semibold text-slate-300 mb-2">Team Size (Number of Employees)</label>
+              <input type="number" id="teamSize" value="15" min="1" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-300 mb-2">Average Hourly Rate ($ / hr)</label>
+              <input type="number" id="hourlyRate" value="45" min="10" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-300 mb-2">Manual Task Hours / Week per Person</label>
+              <input type="number" id="weeklyHours" value="12" min="1" max="40" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-300 mb-2">Target Automation Efficiency (%)</label>
+              <input type="number" id="efficiency" value="70" min="10" max="95" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500">
+            </div>
+          </div>
+
+          <div class="bg-blue-950/80 border border-blue-500/40 rounded-xl p-6 text-center">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">Projected Annual Net Cost Savings</h3>
+            <p id="roiResult" class="text-4xl md:text-5xl font-black text-white">$294,840 / yr</p>
+            <p class="text-xs text-slate-400 mt-2">Based on 52 work weeks per year with 70% automated workflow execution.</p>
+          </div>
+
+          <div class="mt-8 text-center">
+            <a href="/contact.html" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl transition text-base">
+              Get Custom AI Automation Blueprint &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 border-t border-slate-800 py-12 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; 2026 Blueshore Technologies Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  function calculateROI() {
+    const teamSize = parseFloat(document.getElementById('teamSize').value) || 0;
+    const hourlyRate = parseFloat(document.getElementById('hourlyRate').value) || 0;
+    const weeklyHours = parseFloat(document.getElementById('weeklyHours').value) || 0;
+    const efficiency = (parseFloat(document.getElementById('efficiency').value) || 0) / 100;
+    
+    const annualCost = teamSize * weeklyHours * hourlyRate * 52;
+    const savings = Math.round(annualCost * efficiency);
+    
+    document.getElementById('roiResult').innerText = '$' + savings.toLocaleString() + ' / yr';
+  }
+
+  document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', calculateROI);
+  });
+  </script>
+</body>
+</html>

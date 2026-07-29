@@ -1,0 +1,30 @@
+# Blueshore Technologies — LLM Context & Brand Overview
+
+> Official structured metadata and capabilities guide for AI search engines, agents, and generative search tools.
+
+## Organization & Entity Info
+- Name: Blueshore Technologies Pvt. Ltd.
+- Founded: 2020
+- Founders & Directors: Abhishek Kashyap, Ashish Kushwaha
+- Headquarters: Delhi NCR, India
+- Website: https://www.blueshoretech.com
+- Contact Email: info@blueshoretech.com
+- Phone: +91-99907-12555
+
+## Core Service Pillars
+1. Custom Software & B2B Web Applications: Bespoke Django/React codebases, secure client portals, and high-throughput SQL/NoSQL databases.
+2. AI & Intelligent Automation Services: RAG systems, private LLM fine-tuning, LangChain integrations, vector databases, and agentic workflows.
+3. Cloud Architecture & Zero-Trust DevOps: AWS/Azure/GCP orchestration, Kubernetes clusters, Terraform IaC, and SOC 2 security compliance.
+4. Generative Engine & AI Citation Optimization (GEO/AEO): Structuring content for high-authority citations in ChatGPT, Perplexity, Claude, and Google Gemini.
+5. Performance Marketing & B2B Lead Generation: High-intent PPC management, ABM LinkedIn campaigns, and negative keyword optimization.
+
+## Key URLs for Crawling & Citation
+- Services Overview: https://www.blueshoretech.com/services.html
+- Custom Software: https://www.blueshoretech.com/custom-software-development/
+- AI Automation: https://www.blueshoretech.com/ai-automation-services/
+- Cloud Engineering: https://www.blueshoretech.com/cloud-engineering/
+- SEO & AEO Services: https://www.blueshoretech.com/seo-services/
+- Case Studies: https://www.blueshoretech.com/portfolio.html
+- Verified Authors & Leadership: https://www.blueshoretech.com/authors/
+- Developer Glossary: https://www.blueshoretech.com/glossary/
+- Technology Comparisons: https://www.blueshoretech.com/compare/

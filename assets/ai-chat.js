@@ -1,8 +1,6 @@
-/* ── Blueshore AI Agent — Real-Time Chat Engine ── */
+
 (function () {
     'use strict';
-
-    /* ——————— State ——————— */
     var GEMINI_KEY = localStorage.getItem('blueshore-gemini-key') || '';
     var conversationHistory = [];
     var isStreaming = false;
@@ -11,7 +9,6 @@
         session_id = 'session_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         localStorage.setItem('blueshore-chat-session-id', session_id);
     }
-
     function getCookie(name) {
         var cookieValue = null;
         if (document.cookie && document.cookie !== '') {
@@ -26,7 +23,6 @@
         }
         return cookieValue;
     }
-
     var SYSTEM_PROMPT = [
         "You are Blueshore AI, the official AI business consultant and virtual sales representative of Blueshore Technologies Pvt. Ltd.",
         "",
@@ -67,10 +63,7 @@
         "",
         "Always maintain a professional, consultative, and conversion-focused tone."
     ].join('\n');
-
-    /* ——————— Utility: simple Markdown → HTML ——————— */
     function renderMarkdown(text) {
-        // Parse button tags [button:Label]
         var buttonRegex = /\[button:(.+?)\]/g;
         if (buttonRegex.test(text)) {
             text = text.replace(buttonRegex, function(match, label) {
@@ -85,17 +78,13 @@
             .replace(/(<li[^>]*>.*<\/li>\n?)+/g, function(m){ return '<ul style="margin:6px 0;">'+m+'</ul>'; })
             .replace(/\n/g, '<br>');
     }
-
-    /* ——————— Toggle Widget ——————— */
     window.toggleAIAgent = function () {
         var widget = document.getElementById('ai-agent-widget');
         if (!widget) return;
         widget.classList.toggle('active');
-        
         var waBtn = document.querySelector('a[href*="wa.me"]');
         var toggleBtn = document.getElementById('ai-agent-toggle-btn');
         var isActive = widget.classList.contains('active');
-
         if (waBtn) {
             waBtn.style.opacity = isActive ? '0' : '1';
             waBtn.style.pointerEvents = isActive ? 'none' : 'auto';
@@ -104,7 +93,6 @@
             toggleBtn.style.opacity = isActive ? '0' : '1';
             toggleBtn.style.pointerEvents = isActive ? 'none' : 'auto';
         }
-
         if (isActive) {
             var msgs = document.getElementById('ai-chat-messages');
             if (msgs) msgs.scrollTop = msgs.scrollHeight;
@@ -114,20 +102,16 @@
             }, 200);
         }
     };
-
     window.toggleWelcomeDropdown = function() {
         var trigger = document.getElementById('ai-chat-welcome-trigger');
         var content = document.getElementById('ai-chat-welcome-content');
         if (!trigger || !content) return;
-        
         trigger.classList.toggle('active');
         content.classList.toggle('show');
-        
         var arrow = trigger.querySelector('.dropdown-arrow');
         if (arrow) {
             arrow.textContent = trigger.classList.contains('active') ? '▲' : '▼';
         }
-        
         var msgs = document.getElementById('ai-chat-messages');
         if (msgs) {
             setTimeout(function() {
@@ -135,13 +119,10 @@
             }, 50);
         }
     };
-
-    /* ——————— API Key Config ——————— */
     window.openApiKeySetup = function () {
         var panel = document.getElementById('api-key-panel');
         if (panel) panel.classList.toggle('hidden');
     };
-
     window.saveApiKey = function () {
         var inp = document.getElementById('gemini-key-input');
         var key = inp ? inp.value.trim() : '';
@@ -155,11 +136,9 @@
                 badge.textContent = '⚡ AI Powered';
                 badge.className = 'ai-mode-badge ai-connected';
             }
-            /* Inject a confirmation agent message */
             appendAgentMessage('⚡ AI engine connected! I\'m now powered by real-time intelligence. Ask me anything about Blueshore Technologies — projects, stacks, pricing, timelines.');
         }
     };
-
     window.clearApiKey = function () {
         GEMINI_KEY = '';
         localStorage.removeItem('blueshore-gemini-key');
@@ -172,17 +151,13 @@
         if (panel) panel.classList.add('hidden');
         appendAgentMessage('API key removed. I\'m now using smart preset replies. You can reconnect anytime via the ⚙ settings icon.');
     };
-
-    /* ——————— Helpers ——————— */
     function getMessagesContainer() {
         return document.getElementById('ai-chat-messages');
     }
-
     function scrollToBottom() {
         var mc = getMessagesContainer();
         if (mc) mc.scrollTop = mc.scrollHeight;
     }
-
     function appendAgentMessage(html, sender) {
         var mc = getMessagesContainer();
         var msg = document.createElement('div');
@@ -195,7 +170,6 @@
         mc.appendChild(msg);
         scrollToBottom();
     }
-
     function showTyping() {
         var mc = getMessagesContainer();
         var el = document.createElement('div');
@@ -205,23 +179,18 @@
         mc.appendChild(el);
         scrollToBottom();
     }
-
     function removeTyping() {
         var el = document.getElementById('ai-typing-indicator');
         if (el) el.remove();
     }
-
     function setInputEnabled(enabled) {
         var inp = document.getElementById('ai-chat-input-el');
         var btn = document.getElementById('ai-send-btn');
         if (inp) { inp.disabled = !enabled; if (enabled) inp.focus(); }
         if (btn) btn.disabled = !enabled;
     }
-
-    /* ——————— Fallback: Smart Pattern Matching ——————— */
     function generateFallbackReply(txt) {
         var t = txt.toLowerCase().trim();
-        
         if (t.indexOf('custom software') !== -1) {
             return 'We offer enterprise-grade **Custom Software Development** to help you build faster and scale smarter. Our expertise covers:\n\n- **Enterprise Applications:** SaaS platforms, CRM & ERP systems, internal business tools.\n- **API & Integrations:** Custom API development and business process automation.\n\nChoose an option to continue:\n\n[button:SaaS Platforms] [button:CRM & ERP Systems] [button:Custom API Integrations] [button:Main Menu]';
         }
@@ -277,22 +246,16 @@
         if (/budget|cost|price|pricing|rate|charge|fee|afford|invest|quote|estimate/.test(t)) {
             return 'Pricing depends on the scope, complexity, and timeline of your project. For projects under $1,000, we recommend a phased approach. For projects between $1,000 and $3,000 (WARM) or above $3,000 (HOT), we recommend scheduling a direct strategy call.\n\nCould you share your approximate budget range, or would you like to **book a free strategy call**? [button:Main Menu]';
         }
-        
         return 'I\'m currently in free-form conversation mode. How can I help you today? Please feel free to ask about our projects, development stacks, team, or how to get started.\n\nYou can also return to the main menu at any time: [button:Main Menu]';
     }
-
-    /* ——————— Gemini API: Streaming Fetch ——————— */
     async function callGeminiStreaming(userText, agentMsgEl) {
         conversationHistory.push({ role: 'user', parts: [{ text: userText }] });
-
         var url = '/api/chatbot/chat/';
         var csrfToken = getCookie('csrftoken') || '';
-
         var body = {
             session_id: session_id,
             contents: conversationHistory
         };
-
         var response = await fetch(url, {
             method: 'POST',
             headers: { 
@@ -301,31 +264,25 @@
             },
             body: JSON.stringify(body)
         });
-
         if (!response.ok) {
             var errText = await response.text();
             throw new Error('Server ' + response.status + ': ' + errText.substring(0, 200));
         }
-
         var reader = response.body.getReader();
         var decoder = new TextDecoder();
         var fullText = '';
         var buffer = '';
-
         while (true) {
             var result = await reader.read();
             if (result.done) break;
-
             buffer += decoder.decode(result.value, { stream: true });
             var lines = buffer.split('\n');
             buffer = lines.pop() || '';
-
             for (var i = 0; i < lines.length; i++) {
                 var line = lines[i].trim();
                 if (!line.startsWith('data: ')) continue;
                 var jsonStr = line.slice(6);
                 if (jsonStr === '[DONE]') continue;
-
                 try {
                     var data = JSON.parse(jsonStr);
                     if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
@@ -338,67 +295,47 @@
                             }
                         }
                     }
-                } catch (e) { /* skip malformed chunks */ }
+                } catch (e) {  }
             }
         }
-
-        /* Final render without cursor */
         agentMsgEl.innerHTML = renderMarkdown(fullText);
         conversationHistory.push({ role: 'model', parts: [{ text: fullText }] });
-
         if (conversationHistory.length > 40) {
             conversationHistory = conversationHistory.slice(-40);
         }
-
         return fullText;
     }
-
-    /* ——————— Send Message (Main Entry) ——————— */
     window.sendChatMessage = async function () {
         if (isStreaming) return;
-
         var input = document.getElementById('ai-chat-input-el');
         var txt = input.value.trim();
         if (!txt) return;
         input.value = '';
-
         var mc = getMessagesContainer();
-
-        /* Append user message */
         var userMsg = document.createElement('div');
         userMsg.className = 'ai-chat-msg user';
         userMsg.textContent = txt;
         mc.appendChild(userMsg);
         scrollToBottom();
-
-        // Send to WebSocket so telemetry/live-view knows
         if (telemetrySocket && telemetrySocket.readyState === WebSocket.OPEN) {
             telemetrySocket.send(JSON.stringify({
                 type: 'chat_message',
                 text: txt
             }));
         }
-
-        // If mode is Human, we stop here and wait for admin's reply via WS!
         if (currentChatMode === 'Human') {
             return;
         }
-
         isStreaming = true;
         setInputEnabled(false);
-
-        /* ── Real-time AI Mode via Django Server Proxy ── */
         showTyping();
-
         var agentMsg = document.createElement('div');
         agentMsg.className = 'ai-chat-msg agent';
         agentMsg.innerHTML = '';
-
         try {
             removeTyping();
             mc.appendChild(agentMsg);
             scrollToBottom();
-
             await callGeminiStreaming(txt, agentMsg);
         } catch (err) {
             removeTyping();
@@ -408,11 +345,9 @@
                 appendAgentMessage(generateFallbackReply(txt), 'AI');
             }, 600);
         }
-
         isStreaming = false;
         setInputEnabled(true);
     };
-
     window.sendQuickAction = function (label) {
         if (isStreaming) return;
         var input = document.getElementById('ai-chat-input-el');
@@ -421,12 +356,8 @@
         }
         window.sendChatMessage();
     };
-
-    /* ——————— DOM Injections ── */
     function injectChatbot() {
         if (document.getElementById('ai-agent-widget')) return;
-
-        // 1. Create Widget HTML Structure
         var widgetHtml = 
             '<!-- Header -->' +
             '<div class="ai-chat-header text-left">' +
@@ -481,11 +412,9 @@
             '        <span class="material-symbols-outlined text-sm">send</span>' +
             '    </button>' +
             '</div>';
-
         var isBlogPage = window.location.pathname.indexOf('blog.html') !== -1;
         var chatbotBottomClass = isBlogPage ? 'bottom-[82px]' : 'bottom-8';
         var waBottomClass = isBlogPage ? 'bottom-[146px]' : 'bottom-24';
-
         var widgetEl = document.createElement('div');
         widgetEl.id = 'ai-agent-widget';
         widgetEl.className = 'ai-chat-window';
@@ -494,8 +423,6 @@
         }
         widgetEl.innerHTML = widgetHtml;
         document.body.appendChild(widgetEl);
-
-        // 2. Reposition WhatsApp Button and Append AI Chat Toggle Button
         var waBtn = document.querySelector('a[href*="wa.me"]');
         var toggleBtn = document.createElement('button');
         toggleBtn.id = 'ai-agent-toggle-btn';
@@ -511,14 +438,11 @@
             '                <path d="M3 14H1.5M21 14h1.5"></path>' +
             '            </svg>' +
             '<span class="absolute right-16 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Chat with AI</span>';
-
         if (waBtn) {
-            // Position the WhatsApp button just above the chatbot toggle button
             waBtn.classList.remove('bottom-8');
             waBtn.classList.remove('bottom-24');
             waBtn.classList.add(waBottomClass);
         } else {
-            // If the page doesn't have it, create the WhatsApp button dynamically
             var newWaBtn = document.createElement('a');
             newWaBtn.href = 'https://wa.me/919990712555?text=Hello%20Blueshore%20Team,%20I\'d%20like%20to%20discuss%20a%20project.';
             newWaBtn.target = '_blank';
@@ -529,10 +453,7 @@
                 '<span class="absolute right-16 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Chat with us</span>';
             document.body.appendChild(newWaBtn);
         }
-
         document.body.appendChild(toggleBtn);
-
-        // 4. Create and Append Global Support Hub
         var hubContainer = document.createElement('div');
         hubContainer.id = 'support-hub';
         hubContainer.innerHTML = 
@@ -559,23 +480,18 @@
             '    <span class="material-symbols-outlined text-2xl" id="hub-trigger-icon" style="font-variation-settings: \'FILL\' 0, \'wght\' 400, \'GRAD\' 0, \'opsz\' 24;">forum</span>' +
             '</button>';
         document.body.appendChild(hubContainer);
-
         var hubTrigger = document.getElementById('support-hub-trigger');
         var hubMenu = document.getElementById('support-hub-menu');
         var hubIcon = document.getElementById('hub-trigger-icon');
-
         if (hubTrigger && hubMenu) {
             hubTrigger.onclick = function(e) {
                 e.stopPropagation();
-                
-                // If the AI chatbot is open, close it and open the hub menu
                 var widget = document.getElementById('ai-agent-widget');
                 if (widget && widget.classList.contains('active')) {
                     window.toggleAIAgent();
                     openHub();
                     return;
                 }
-
                 var isOpen = hubMenu.classList.contains('active');
                 if (isOpen) {
                     closeHub();
@@ -584,51 +500,39 @@
                 }
             };
         }
-
         window.handleHubAIChat = function() {
             closeHub();
             window.toggleAIAgent();
         };
-
         function openHub() {
             hubMenu.classList.add('active');
             hubTrigger.classList.add('active');
             if (hubIcon) hubIcon.textContent = 'close';
         }
-
         function closeHub() {
             hubMenu.classList.remove('active');
             hubTrigger.classList.remove('active');
             if (hubIcon) hubIcon.textContent = 'forum';
         }
-
-        // Close hub when clicking outside
         document.addEventListener('click', function(e) {
             if (hubMenu && !hubMenu.contains(e.target) && e.target !== hubTrigger) {
                 closeHub();
             }
         });
-
-        // 3. Initialize Gemini Badges / Forms if Key is present
-        // 3. Initialize Gemini Badges / Forms (Server-mediated by default)
         var badge = document.getElementById('ai-mode-badge');
         if (badge) {
             badge.textContent = '⚡ AI Powered';
             badge.className = 'ai-mode-badge ai-connected';
         }
     }
-
-    /* ——————— Visitor Telemetry & WebSockets ——————— */
     var visitor_id = localStorage.getItem('blueshore-visitor-id') || '';
     if (!visitor_id) {
         visitor_id = 'vis_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         localStorage.setItem('blueshore-visitor-id', visitor_id);
     }
-
     var telemetrySocket = null;
     var currentChatMode = 'AI';
     var mouseBuffer = [];
-
     function getBrowserName() {
         var ua = navigator.userAgent;
         if (ua.indexOf("Chrome") > -1) return "Google Chrome";
@@ -638,7 +542,6 @@
         if (ua.indexOf("Edge") > -1) return "Microsoft Edge";
         return "Browser";
     }
-
     function getOSName() {
         var pf = navigator.platform;
         if (pf.indexOf("Win") > -1) return "Windows";
@@ -646,14 +549,12 @@
         if (pf.indexOf("Linux") > -1) return "Linux";
         return "OS";
     }
-
     function getDeviceType() {
         var width = window.innerWidth;
         if (width < 768) return "Mobile";
         if (width < 1024) return "Tablet";
         return "Desktop";
     }
-
     function flushMouseBuffer() {
         if (telemetrySocket && telemetrySocket.readyState === WebSocket.OPEN && mouseBuffer.length > 0) {
             telemetrySocket.send(JSON.stringify({
@@ -663,7 +564,6 @@
             mouseBuffer = [];
         }
     }
-
     function initTelemetryListeners() {
         var lastScrollTime = 0;
         var lastScrollPct = 0;
@@ -678,7 +578,6 @@
                 lastScrollTime = now;
             }
         });
-
         var sections = document.querySelectorAll('section, header, footer, #contact-section');
         var activeSection = 'Hero';
         if ('IntersectionObserver' in window) {
@@ -700,7 +599,6 @@
                                 return word.charAt(0).toUpperCase() + word.slice(1);
                             }).join(' ');
                         }
-                        
                         if (id && id !== 'Ai Agent Widget' && id !== 'Support Hub') {
                             activeSection = id;
                             sendScrollUpdate(lastScrollPct);
@@ -710,7 +608,6 @@
             }, { threshold: 0.15 });
             sections.forEach(function (s) { observer.observe(s); });
         }
-
         function sendScrollUpdate(pct) {
             if (telemetrySocket && telemetrySocket.readyState === WebSocket.OPEN) {
                 telemetrySocket.send(JSON.stringify({
@@ -720,7 +617,6 @@
                 }));
             }
         }
-
         var lastMoveTime = 0;
         window.addEventListener('mousemove', function (e) {
             var now = Date.now();
@@ -735,7 +631,6 @@
                 lastMoveTime = now;
             }
         });
-
         window.addEventListener('click', function (e) {
             mouseBuffer.push({
                 x: e.clientX,
@@ -746,10 +641,8 @@
                 t: Date.now()
             });
         });
-
         var idleTimer = null;
         var isIdle = false;
-
         function resetIdleTimer() {
             if (isIdle) {
                 isIdle = false;
@@ -771,14 +664,12 @@
                 }
             }, 60000);
         }
-
         window.addEventListener('mousemove', resetIdleTimer);
         window.addEventListener('keypress', resetIdleTimer);
         window.addEventListener('click', resetIdleTimer);
         window.addEventListener('scroll', resetIdleTimer);
         resetIdleTimer();
     }
-
     function updateHeaderBadge(mode) {
         var badge = document.getElementById('ai-mode-badge');
         if (!badge) return;
@@ -793,71 +684,68 @@
             badge.className = 'ai-mode-badge hybrid-connected';
         }
     }
-
     function connectTelemetry() {
-        var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-        var wsUrl = protocol + '//' + window.location.host + '/ws/intelligence/visitor/';
-        
-        telemetrySocket = new WebSocket(wsUrl);
-
-        telemetrySocket.onopen = function () {
-            console.log("Visitor telemetry connected");
-            telemetrySocket.send(JSON.stringify({
-                type: 'init',
-                session_id: session_id,
-                visitor_id: visitor_id,
-                browser: getBrowserName(),
-                device: getDeviceType(),
-                os: getOSName(),
-                screen_size: window.innerWidth + 'x' + window.innerHeight,
-                referrer: document.referrer,
-                current_url: window.location.href,
-                page_title: document.title,
-                first_visit: !localStorage.getItem('blueshore-visited-before'),
-                is_returning: !!localStorage.getItem('blueshore-visited-before')
-            }));
-            localStorage.setItem('blueshore-visited-before', 'true');
-            
-            setInterval(flushMouseBuffer, 10000);
-            initTelemetryListeners();
-        };
-
-        telemetrySocket.onmessage = function (event) {
-            try {
-                var data = JSON.parse(event.data);
-                var type = data.type;
-
-                if (type === 'mode_change') {
-                    currentChatMode = data.chat_mode;
-                    updateHeaderBadge(currentChatMode);
-                } else if (type === 'chat_message') {
-                    var msg = data.message;
-                    appendAgentMessage(msg.text, msg.sender);
-                    if (msg.proactive) {
-                        var widget = document.getElementById('ai-agent-widget');
-                        if (widget && !widget.classList.contains('active')) {
-                            window.toggleAIAgent();
+        try {
+            var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            var host = window.location.host;
+            if (!host) return;
+            var wsUrl = protocol + '//' + host + '/ws/intelligence/visitor/';
+            telemetrySocket = new WebSocket(wsUrl);
+            telemetrySocket.onerror = function () {};
+            telemetrySocket.onopen = function () {
+                console.log("Visitor telemetry connected");
+                try {
+                    telemetrySocket.send(JSON.stringify({
+                        type: 'init',
+                        session_id: session_id,
+                        visitor_id: visitor_id,
+                        browser: getBrowserName(),
+                        device: getDeviceType(),
+                        os: getOSName(),
+                        screen_size: window.innerWidth + 'x' + window.innerHeight,
+                        referrer: document.referrer,
+                        current_url: window.location.href,
+                        page_title: document.title,
+                        first_visit: !localStorage.getItem('blueshore-visited-before'),
+                        is_returning: !!localStorage.getItem('blueshore-visited-before')
+                    }));
+                    localStorage.setItem('blueshore-visited-before', 'true');
+                } catch (err) {}
+                setInterval(flushMouseBuffer, 10000);
+                initTelemetryListeners();
+            };
+            telemetrySocket.onmessage = function (event) {
+                try {
+                    var data = JSON.parse(event.data);
+                    var type = data.type;
+                    if (type === 'mode_change') {
+                        currentChatMode = data.chat_mode;
+                        updateHeaderBadge(currentChatMode);
+                    } else if (type === 'chat_message') {
+                        var msg = data.message;
+                        appendAgentMessage(msg.text, msg.sender);
+                        if (msg.proactive) {
+                            var widget = document.getElementById('ai-agent-widget');
+                            if (widget && !widget.classList.contains('active')) {
+                                window.toggleAIAgent();
+                            }
+                        }
+                    } else if (type === 'typing_status') {
+                        if (data.is_typing) {
+                            showTyping();
+                        } else {
+                            removeTyping();
                         }
                     }
-                } else if (type === 'typing_status') {
-                    if (data.is_typing) {
-                        showTyping();
-                    } else {
-                        removeTyping();
-                    }
-                }
-            } catch (e) {
-                console.error("Error processing telemetry packet", e);
-            }
-        };
-
-        telemetrySocket.onclose = function () {
-            console.log("Telemetry socket closed, reconnecting...");
-            setTimeout(connectTelemetry, 5000);
-        };
+                } catch (e) {}
+            };
+            telemetrySocket.onerror = function (e) {
+            };
+            telemetrySocket.onclose = function () {
+                setTimeout(connectTelemetry, 10000);
+            };
+        } catch (e) {}
     }
-
-    // Run injection and connect telemetry when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             injectChatbot();
