@@ -49,13 +49,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: blueshore_web
-    env_file:
-      - .env
     command: >
       sh -c "python manage.py migrate --noinput &&
-             python manage.py collectstatic --noinput &&
-             daphne -b 0.0.0.0 -p 8000 blueshore_server.asgi:application"
+             python manage.py collectstatic --noinput --clear &&
+             gunicorn --bind 0.0.0.0:8000 --workers 3 blueshore_server.wsgi:application"
     volumes:
       - static_volume:/app/staticfiles
       - media_volume:/app/media
