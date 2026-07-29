@@ -157,7 +157,13 @@ def dynamic_robots_view(request):
 
 def llms_txt_view(request):
     """Serves /llms.txt plain text document for generative AI search engines"""
-    return render(request, 'llms.txt', content_type='text/plain; charset=utf-8')
+    llms_path = settings.BASE_DIR / 'templates' / 'llms.txt'
+    if llms_path.exists():
+        with open(llms_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        return HttpResponse(content, content_type='text/plain; charset=utf-8')
+    return HttpResponse("# Blueshore Technologies — LLM Context Overview\n", content_type='text/plain; charset=utf-8')
+
 
 
 
