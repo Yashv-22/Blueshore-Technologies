@@ -1,4 +1,5 @@
 import datetime
+from django.conf import settings
 from django.http import HttpResponse
 from django.utils import timezone
 from django.core.cache import cache
