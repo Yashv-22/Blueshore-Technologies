@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
+    
+    <title>Security &amp; Compliance | ISO 27001, SOC 2 &amp; GDPR Standards — Blueshore Technologies</title>
+    <meta name="description" content="Explore Blueshore Technologies enterprise security architecture, ISO 27001 certification, SOC 2 compliance, 256-bit AES encryption, data privacy governance, and vulnerability disclosure protocols.">
+    <meta name="keywords" content="enterprise security, ISO 27001, SOC 2 Type II, GDPR compliance, data security, 256-bit SSL, vulnerability disclosure, cloud security, Blueshore Technologies">
+    <meta name="author" content="Blueshore Technologies">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://www.blueshoretech.com/security">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.blueshoretech.com/security">
+    <meta property="og:site_name" content="Blueshore Technologies">
+    <meta property="og:title" content="Security &amp; Compliance Standards — Blueshore Technologies">
+    <meta property="og:description" content="Read about our zero-trust security infrastructure, ISO 27001 ISMS, SOC 2 Type II compliance, and enterprise data protection standards.">
+    <meta property="og:image" content="https://www.blueshoretech.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Blueshore Technologies - Enterprise Security &amp; Compliance">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@blueshoretechco">
+    <meta name="twitter:title" content="Security &amp; Compliance Standards — Blueshore Technologies">
+    <meta name="twitter:description" content="Read about our zero-trust security infrastructure, ISO 27001 ISMS, SOC 2 Type II compliance, and enterprise data protection standards.">
+    <meta name="twitter:image" content="https://www.blueshoretech.com/assets/og-image.png">
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Security & Compliance Standards — Blueshore Technologies",
+  "description": "Explore Blueshore Technologies enterprise security architecture, ISO 27001 certification, SOC 2 compliance, 256-bit AES encryption, data privacy governance, and vulnerability disclosure protocols.",
+  "url": "https://www.blueshoretech.com/security",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.blueshoretech.com/#organization"
+  }
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What security compliance certifications does Blueshore Technologies hold?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blueshore Technologies operates under strict compliance with ISO 27001:2022 Information Security Management System (ISMS) standards, SOC 2 Type II controls, GDPR, CCPA, and PCI-DSS data security frameworks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is client data encrypted both in transit and at rest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All client communications and API endpoints are encrypted in transit using TLS 1.3 cryptographic protocols with 256-bit SSL key exchanges. At rest, data is protected using AES-256 military-grade encryption across all databases, storage volumes, and backup archives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can security researchers report vulnerabilities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security researchers can submit responsible vulnerability disclosures directly to our dedicated Security Operations Team at security@blueshoretech.com. We acknowledge initial reports within 24 hours."
+      }
+    }
+  ]
+}
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/tailwind.min.css?v=5">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+    <script src="assets/responsive.js?v=3" defer></script>
+    <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="assets/light-theme.css">
+    <script src="assets/theme-toggle.js" defer></script>
+    
+    <link rel="stylesheet" href="assets/ai-chat.css">
+    <script src="assets/ai-chat.js?v=2.1" defer></script>
+
+    <style>
+        .golden-stars { color: #f59e0b !important; }
+        .security-badge-glow {
+            box-shadow: 0 0 25px rgba(55, 144, 255, 0.15);
+        }
+        .security-badge-glow:hover {
+            box-shadow: 0 0 35px rgba(55, 144, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-[#030816] text-slate-100 font-sans antialiased selection:bg-[#3790ff] selection:text-white transition-colors duration-300">
+
+    <!-- ═══ HEADER / NAVIGATION ═══ -->
+    <!-- TopNavBar -->
+    <!-- Enhanced Top Navigation Bar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-slate-50/90 dark:bg-[#030816]/90 backdrop-blur-lg border-b border-black/10 dark:border-white/10 shadow-lg">
+        <div class="max-w-[1280px] mx-auto flex justify-between items-center px-8 py-2.5">
+            <a href="/" class="flex items-center gap-2 relative group/cms-block">
+                <img class="w-12 h-12 rounded object-contain" fetchpriority="high" src="/assets/BST-Logo.webp?v=2" alt="Blueshore Technologies Logo" title="Blueshore Technologies Logo" width="48" height="48" loading="eager"/>
+                <div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                    Blueshore Technologies
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-8 font-['Inter'] text-sm font-medium tracking-wide">
+                <a class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200"
+                    href="/">Home</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                    <a href="/services"
+                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Services <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-[850px] bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-6 grid grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Engineering &amp; Software</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/custom-software-development/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">code</span> Custom Software Development</a></li>
+                                <li><a href="/web-development-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">language</span> Web Development Services</a></li>
+                                <li><a href="/cloud-engineering/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">cloud</span> Cloud Engineering</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">AI &amp; Automation</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/ai-automation-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">smart_toy</span> AI Automation Services</a></li>
+                                <li><a href="/ai-chatbot-development/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">forum</span> AI Chatbot Development</a></li>
+                                <li><a href="/workflow-automation/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">account_tree</span> Workflow Automation</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Growth &amp; Marketing</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/seo-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">trending_up</span> SEO Services</a></li>
+                                <li><a href="/performance-marketing/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">ads_click</span> Performance Marketing</a></li>
+                                <li><a href="/services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm font-semibold border-t border-slate-100 dark:border-slate-800 pt-2 mt-1"><span class="material-symbols-outlined text-lg">grid_view</span> View All Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industries Dropdown -->
+                <div class="relative group">
+                    <a href="/industries"
+                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Industries <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+                        <ul class="space-y-3">
+                            <li><a href="/industries#finance-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Finance &amp;
+                                    Banking</a></li>
+                            <li><a href="/industries#healthcare-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Healthcare</a>
+                            </li>
+                            <li><a href="/industries#ecommerce-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Retail &amp;
+                                    E-Commerce</a></li>
+                            <li><a href="/industries#logistics-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Logistics</a>
+                            </li>
+                            <li><a href="/industries#education-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Education &amp;
+                                    EdTech</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About Dropdown -->
+                <div class="relative group">
+                    <a href="/about"
+                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Company <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+                        <ul class="space-y-3">
+                            <li><a href="/about"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">About Us</a>
+                            </li>
+                            <li><a href="/careers"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Careers</a>
+                            </li>
+                            <li><a href="/portfolio"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Case
+                                    Studies</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200"
+                    href="/blog">Insights</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="/contact"
+                    class="hidden md:flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] text-sm font-medium transition-colors">
+                    <span class="material-symbols-outlined text-lg">call</span> +91 99907 12555
+                </a>
+                <button onclick="window.location.href='/contact'"
+                    class="hidden sm:inline-block bg-[#3790ff] text-[#030816] px-6 py-2.5 rounded hover:bg-[#5da2ff] hover:translate-y-[-1px] transition-all duration-200 font-bold text-sm shadow-[0_0_15px_rgba(55,144,255,0.3)]">
+                    Let's Talk
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ═══ HERO SECTION ═══ -->
+        <section id="security-hero" class="relative pt-32 pb-20 lg:pb-28 overflow-hidden border-b border-white/5 bg-[#030816] transition-colors duration-300">
+            <!-- Background Ambient Glow & Grid -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:radial-gradient(circle,#ffffff 1px,transparent 1px);background-size:32px 32px;"></div>
+            <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#3790ff]/15 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3790ff]/10 border border-[#3790ff]/30 text-[#3790ff] text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span> ZERO-TRUST ENTERPRISE INFRASTRUCTURE
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6 font-sans">
+                        Security, Compliance &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3790ff] via-blue-400 to-cyan-300">Data Trust Architecture</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-10 max-w-3xl mx-auto font-sans">
+                        At Blueshore Technologies, information security is not an afterthought — it is engineered into every system layer, microservice API, and AI model deployment. We adhere to rigorous global compliance frameworks to safeguard your mission-critical data.
+                    </p>
+
+                    <!-- Key Security Stats Bar -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-slate-900/80 border border-slate-800 backdrop-blur-xl shadow-xl max-w-4xl mx-auto text-left">
+                        <div class="p-3">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono text-[#3790ff]">256-Bit</div>
+                            <div class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1">AES Encryption</div>
+                        </div>
+                        <div class="p-3 border-l border-slate-800">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono text-emerald-400">99.99%</div>
+                            <div class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1">Uptime SLA</div>
+                        </div>
+                        <div class="p-3 border-l border-slate-800">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono text-cyan-400">SOC 2 / ISO</div>
+                            <div class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1">Audited Framework</div>
+                        </div>
+                        <div class="p-3 border-l border-slate-800">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono text-amber-400">24/7/365</div>
+                            <div class="text-xs text-slate-400 font-medium uppercase tracking-wider mt-1">Continuous SOC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ COMPLIANCE & CERTIFICATIONS GRID ═══ -->
+        <section class="py-20 lg:py-24 bg-slate-950/60 border-b border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-extrabold tracking-[0.2em] uppercase text-[#3790ff] mb-3">Certified Controls</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+                        Global Compliance &amp; Security Standards
+                    </h3>
+                    <p class="text-slate-400 text-sm sm:text-base mt-3">
+                        Our technical practices align with top international auditing standards, ensuring full regulatory compliance across North America, Europe, and Asia-Pacific.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- ISO 27001 -->
+                    <div class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-[#3790ff]/50 transition-all duration-300 security-badge-glow group">
+                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 border border-[#3790ff]/20 flex items-center justify-center text-[#3790ff] mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">verified_user</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2 font-sans">ISO 27001:2022 Certified</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Our Information Security Management System (ISMS) strictly governs data protection policies, asset security, physical safeguards, and continuous risk management.
+                        </p>
+                    </div>
+
+                    <!-- SOC 2 Type II -->
+                    <div class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-[#3790ff]/50 transition-all duration-300 security-badge-glow group">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">shield_locked</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2 font-sans">SOC 2 Type II Compliance</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Independently audited controls covering System Availability, Data Confidentiality, Processing Integrity, and Multi-Tenant Privacy Safeguards.
+                        </p>
+                    </div>
+
+                    <!-- GDPR & CCPA -->
+                    <div class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-[#3790ff]/50 transition-all duration-300 security-badge-glow group">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">policy</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2 font-sans">GDPR &amp; CCPA Readiness</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Complete alignment with European Union and California data privacy laws. Full support for Data Subject Access Requests (DSAR) and zero data-selling policy.
+                        </p>
+                    </div>
+
+                    <!-- 256-Bit SSL/TLS Cryptography -->
+                    <div class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-[#3790ff]/50 transition-all duration-300 security-badge-glow group">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">lock</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2 font-sans">256-Bit Cryptography</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            End-to-end data encryption in transit using TLS 1.3 and at rest using AES-256 encryption keys managed via HSM key vault infrastructure.
+                        </p>
+                    </div>
+
+                    <!-- HIPAA Compliance -->
+                    <div class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-[#3790ff]/50 transition-all duration-300 security-badge-glow group">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">health_and_safety</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2 font-sans">HIPAA Compliant Pipelines</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Protected Health Information (PHI) compliance architecture for healthcare and medtech software, complete with Business Associate Agreements (BAA).
+                        </p>
+                    </div>
+
+                    <!-- PCI-DSS Level 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-[#3790ff]/50 transition-all duration-300 security-badge-glow group">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">credit_card</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2 font-sans">PCI-DSS Payment Security</h4>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Tokenized payment gateway integrations ensuring zero raw credit card or financial credential exposure on client servers or databases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ DEEP SECURITY ARCHITECTURE PILLARS ═══ -->
+        <section class="py-20 lg:py-24 bg-[#030816] relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-extrabold tracking-[0.2em] uppercase text-[#3790ff] mb-3">Defense in Depth</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-sans">
+                        Our Enterprise Security Pillars
+                    </h3>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Pillar 1: Infrastructure -->
+                    <div class="p-8 lg:p-10 rounded-3xl bg-slate-900/70 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/15 text-[#3790ff] text-xs font-mono mb-3">PILLAR 01</div>
+                            <h4 class="text-2xl font-bold text-white font-sans mb-3">Infrastructure &amp; Network Hardening</h4>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Deployments execute within isolated Virtual Private Clouds (VPC) on AWS and Google Cloud Platform with automated DDoS protection, WAF inspection, and zero public database access.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                                <div class="text-xs font-bold text-[#3790ff] uppercase mb-1">VPC Isolation</div>
+                                <div class="text-xs text-slate-400">Strict network subnet partitioning &amp; private link endpoints.</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                                <div class="text-xs font-bold text-[#3790ff] uppercase mb-1">WAF &amp; DDoS Mitigation</div>
+                                <div class="text-xs text-slate-400">Real-time edge inspection blocking OWASP Top 10 exploits.</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                                <div class="text-xs font-bold text-[#3790ff] uppercase mb-1">Container Hardening</div>
+                                <div class="text-xs text-slate-400">Minimal distroless Docker builds scanned continuously for CVEs.</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                                <div class="text-xs font-bold text-[#3790ff] uppercase mb-1">Edge Encryption</div>
+                                <div class="text-xs text-slate-400">TLS 1.3 with Perfect Forward Secrecy across all web portals.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2: DevSecOps -->
+                    <div class="p-8 lg:p-10 rounded-3xl bg-slate-900/70 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-4">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/15 text-emerald-400 text-xs font-mono mb-3">PILLAR 02</div>
+                            <h4 class="text-2xl font-bold text-white font-sans mb-3">DevSecOps &amp; Code Protection</h4>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Security is embedded into our CI/CD pipelines. Every commit undergoes automated SAST, DAST, secret detection, and mandatory peer code review before reaching staging or production.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                                <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Automated SAST / DAST</div>
+                                <div class="text-xs text-slate-400">Continuous static &amp; dynamic code security analysis.</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                                <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Secret Detection</div>
+                                <div class="text-xs text-slate-400">Automated repository scanning preventing hardcoded API keys.</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                                <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Peer Code Review</div>
+                                <div class="text-xs text-slate-400">Two-factor engineer sign-off required for all production deployments.</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+                                <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Penetration Testing</div>
+                                <div class="text-xs text-slate-400">Bi-annual third-party ethical hacker vulnerability audits.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ VULNERABILITY DISCLOSURE CARD ═══ -->
+        <section class="py-16 bg-slate-950/80 border-t border-b border-white/5">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-slate-900 via-[#0b1221] to-slate-900 border border-[#3790ff]/30 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+                    <div class="max-w-2xl">
+                        <div class="inline-flex items-center gap-2 text-xs font-mono text-amber-400 mb-2 uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-sm">bug_report</span> Responsible Disclosure Policy
+                        </div>
+                        <h3 class="text-2xl font-bold text-white font-sans mb-2">Found a Security Vulnerability?</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            We value the security research community. If you discover a potential vulnerability in our systems or products, please report it to our Security Response Team. We respond within 24 hours.
+                        </p>
+                    </div>
+                    <div class="shrink-0">
+                        <a href="mailto:security@blueshoretech.com" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#3790ff] hover:bg-blue-600 text-white font-bold text-sm transition-all shadow-lg shadow-[#3790ff]/20">
+                            <span class="material-symbols-outlined text-lg">mail</span> Report Vulnerability
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ INTERACTIVE SECURITY FAQ SECTION ═══ -->
+        <section class="py-20 lg:py-24 bg-[#030816]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <h2 class="text-xs font-extrabold tracking-[0.2em] uppercase text-[#3790ff] mb-2">Got Questions?</h2>
+                    <h3 class="text-3xl font-extrabold text-white tracking-tight font-sans">Frequently Asked Security Questions</h3>
+                </div>
+
+                <div class="space-y-4 font-sans">
+                    <!-- FAQ Item 1 -->
+                    <details class="group p-6 rounded-2xl bg-slate-900/80 border border-slate-800 [&_summary::-webkit-details-marker]:hidden transition-colors">
+                        <summary class="flex items-center justify-between cursor-pointer text-base font-semibold text-white group-open:text-[#3790ff]">
+                            <span>How can enterprise customers request our SOC 2 Type II audit report?</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+                            Enterprise clients under NDA can request our latest SOC 2 Type II report, penetration test summaries, and ISO 27001 certificate directly by contacting their dedicated Account Executive or emailing <span class="text-[#3790ff]">security@blueshoretech.com</span>.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item 2 -->
+                    <details class="group p-6 rounded-2xl bg-slate-900/80 border border-slate-800 [&_summary::-webkit-details-marker]:hidden transition-colors">
+                        <summary class="flex items-center justify-between cursor-pointer text-base font-semibold text-white group-open:text-[#3790ff]">
+                            <span>Where is client data stored and what data residency options exist?</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+                            We support localized data residency across US-East (Virginia), EU-Central (Frankfurt), and Asia-Pacific (Mumbai/Singapore) cloud regions. Data never leaves your designated geographic region without explicit written consent.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item 3 -->
+                    <details class="group p-6 rounded-2xl bg-slate-900/80 border border-slate-800 [&_summary::-webkit-details-marker]:hidden transition-colors">
+                        <summary class="flex items-center justify-between cursor-pointer text-base font-semibold text-white group-open:text-[#3790ff]">
+                            <span>How often are database backups performed and tested?</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+                            We maintain point-in-time recovery (PITR) with automated continuous write-ahead logging and daily immutable encrypted cross-region snapshots. Disaster recovery restoration exercises are tested quarterly.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item 4 -->
+                    <details class="group p-6 rounded-2xl bg-slate-900/80 border border-slate-800 [&_summary::-webkit-details-marker]:hidden transition-colors">
+                        <summary class="flex items-center justify-between cursor-pointer text-base font-semibold text-white group-open:text-[#3790ff]">
+                            <span>Are employee background checks required for all technical staff?</span>
+                            <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+                            Yes. All Blueshore Technologies engineers undergo comprehensive background verification, sign strict Non-Disclosure Agreements (NDAs), and complete mandatory bi-annual security awareness training.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- State-of-the-Art Premium Master Footer (Adaptive & Ultra-Legible) -->
+    <!-- State-of-the-Art Premium Master Footer (Adaptive & Ultra-Legible) -->
+    <!-- State-of-the-Art Premium Master Footer (Adaptive & Ultra-Legible) -->
+    <!-- State-of-the-Art Premium Master Footer (Adaptive & Ultra-Legible) -->
+    <!-- State-of-the-Art Premium Master Footer (Adaptive & Ultra-Legible) -->
+    <!-- Premium Footer -->
+    <footer class="w-full bg-slate-900 dark:bg-[#020813] relative overflow-hidden">
+
+        <!-- Subtle dot-grid background -->
+        <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style="background-image:radial-gradient(circle,#ffffff 1px,transparent 1px);background-size:28px 28px;">
+        </div>
+
+        <!-- Top golden gradient line -->
+        <div
+            class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3790ff] to-transparent opacity-60">
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="relative border-b border-white/10">
+            <div class="max-w-[1280px] mx-auto px-8 py-14 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight">Let's Build Something<br
+                            class="hidden md:block"> Extraordinary Together</h2>
+                </div>
+                <a href="/contact"
+                    class="flex-shrink-0 inline-flex items-center gap-3 bg-[#3790ff] hover:bg-[#2563eb] text-slate-900 font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_32px_rgba(55,144,255,0.35)] hover:-translate-y-0.5 text-sm tracking-wide">
+                    Start a Project
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Footer Grid -->
+        <div class="max-w-[1280px] mx-auto px-8 pt-16 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+
+                <!-- Brand Column (spans 2) -->
+                <div class="lg:col-span-2 flex flex-col gap-6">
+                    <div class="text-center md:text-left">
+                        <div class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-1">Blueshore
+                            Technologies</div>
+                        <div class="w-10 h-0.5 bg-[#3790ff] rounded-full mb-4 mx-auto md:mx-0"></div>
+                        <p class="text-sm text-slate-400 leading-relaxed max-w-sm mx-auto md:mx-0">
+                            Blueshore Technologies helps businesses scale faster with high-converting digital
+                            experiences, performance marketing, AI-powered automation, and enterprise-grade technology
+                            solutions.
+                        </p>
+                    </div>
+                    <!-- Contact quick-info -->
+                    <div class="space-y-3 text-sm text-slate-400 text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">mail</span>
+                            <a href="mailto:info@blueshoretech.com"
+                                class="hover:text-[#3790ff] transition-colors">info@blueshoretech.com</a>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">call</span>
+                            <a href="tel:+919990712555" class="hover:text-[#3790ff] transition-colors">+91 99907
+                                12555</a>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">location_on</span>
+                            <span>Delhi NCR, India</span>
+                        </div>
+                    </div>
+                    <!-- Verified Profile Badges (Clutch, Trustpilot, Google Business) -->
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-2.5 pt-3">
+                        <!-- Clutch Card -->
+                        <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
+                            <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-amber-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                            </span>
+                            <div class="text-left">
+                                <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch</div>
+                                <div class="text-[10px] font-bold text-amber-500 dark:text-amber-400 flex items-center gap-0.5 leading-tight">
+                                    <span>5.0</span>
+                                    <span class="text-amber-400">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Trustpilot Card -->
+                        <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
+                            <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-emerald-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                            </span>
+                            <div class="text-left">
+                                <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot</div>
+                                <div class="text-[10px] font-bold text-emerald-500 dark:text-emerald-400 flex items-center gap-0.5 leading-tight">
+                                    <span>5.0</span>
+                                    <span class="text-emerald-400">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Google Business Card -->
+                        <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
+                            <span class="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-blue-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                            </span>
+                            <div class="text-left">
+                                <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google</div>
+                                <div class="text-[10px] font-bold text-blue-500 dark:text-blue-400 flex items-center gap-0.5 leading-tight">
+                                    <span>5.0</span>
+                                    <span class="text-blue-400">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- BACKUP OF ORIGINAL FOOTER SOCIAL ICONS (CODE BACKUP) -->
+                    <!--
+                    <div class="footer-social-icons-backup hidden">
+                        <a href="https://www.linkedin.com/company/blueshore-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://x.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/blueshoretech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                    -->
+                    <!--
+                    <div class="footer-social-icons-backup hidden">
+                        <a href="https://www.linkedin.com/company/blueshore-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://x.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/blueshoretech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                    -->
+                    <!--
+                    <div class="footer-social-icons-backup hidden">
+                        <a href="https://www.linkedin.com/company/blueshore-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://x.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/blueshoretech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                    -->
+                </div>
+
+                <!-- About -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Company</h3>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/about"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Our
+                                Company</a></li>
+                        <li><a href="/portfolio"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Valued
+                                Clients</a></li>
+                        <li><a href="/about"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Industry
+                                Partners</a></li>
+                        <li><a href="/careers"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Careers</a>
+                        </li>
+                        <li><a href="/blog"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Insights
+                                &amp; Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Services</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Custom
+                                Software</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Cloud
+                                &amp; Infrastructure</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Mobile
+                                App Development</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>UI/UX
+                                Design</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Automation
+                                Services</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Growth
+                                &amp; Digital Enablement</a></li>
+                    </ul>
+                </div>
+
+                <!-- Industries -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Industries</h3>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Finance
+                                &amp; Banking</a></li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Healthcare</a>
+                        </li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Retail
+                                &amp; E-Commerce</a></li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Logistics</a>
+                        </li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Education</a>
+                        </li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Real
+                                Estate</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10">
+            <div class="max-w-[1280px] mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-slate-500 text-center md:text-left">© 2026 Blueshore Technologies Pvt. Ltd. All
+                    rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-500">
+                    <a href="/privacy" class="hover:text-[#3790ff] transition-colors">Privacy Policy</a>
+                    <a href="/terms" class="hover:text-[#3790ff] transition-colors">Terms of Service</a>
+                    <a href="/cookie" class="hover:text-[#3790ff] transition-colors">Cookie Policy</a>
+                    <a href="/contact" class="hover:text-[#3790ff] transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

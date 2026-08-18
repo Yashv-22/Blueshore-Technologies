@@ -19,14 +19,123 @@
         <img src="/assets/BST-Logo.webp" alt="Blueshore Logo" class="h-10 w-auto">
         <span class="text-xl font-extrabold text-white tracking-tight">Blueshore <span class="text-blue-500">Technologies</span></span>
       </a>
-      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-        <a href="/services.html" class="text-slate-300 hover:text-blue-400 transition">Services</a>
-        <a href="/technology/" class="text-slate-300 hover:text-blue-400 transition">Technology</a>
-        <a href="/industry/" class="text-slate-300 hover:text-blue-400 transition">Industries</a>
-        <a href="/resources/" class="text-slate-300 hover:text-blue-400 transition">Resources</a>
-        <a href="/blog.html" class="text-slate-300 hover:text-blue-400 transition">Blog</a>
-        <a href="/contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl transition font-semibold">Contact Us</a>
-      </nav>
+      <!-- TopNavBar -->
+    <!-- Enhanced Top Navigation Bar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-slate-50/90 dark:bg-[#030816]/90 backdrop-blur-lg border-b border-black/10 dark:border-white/10 shadow-lg">
+        <div class="max-w-[1280px] mx-auto flex justify-between items-center px-8 py-2.5">
+            <a href="/" class="flex items-center gap-2 relative group/cms-block">
+                <img class="w-12 h-12 rounded object-contain" fetchpriority="high" src="/assets/BST-Logo.webp?v=2" alt="Blueshore Technologies Logo" title="Blueshore Technologies Logo" width="48" height="48" loading="eager"/>
+                <div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                    Blueshore Technologies
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-8 font-['Inter'] text-sm font-medium tracking-wide">
+                <a class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200"
+                    href="/">Home</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group">
+                    <a href="/services"
+                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Services <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute top-full left-0 mt-2 w-[850px] bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-6 grid grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Engineering &amp; Software</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/custom-software-development/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">code</span> Custom Software Development</a></li>
+                                <li><a href="/web-development-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">language</span> Web Development Services</a></li>
+                                <li><a href="/cloud-engineering/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">cloud</span> Cloud Engineering</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">AI &amp; Automation</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/ai-automation-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">smart_toy</span> AI Automation Services</a></li>
+                                <li><a href="/ai-chatbot-development/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">forum</span> AI Chatbot Development</a></li>
+                                <li><a href="/workflow-automation/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">account_tree</span> Workflow Automation</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Growth &amp; Marketing</h4>
+                            <ul class="space-y-3">
+                                <li><a href="/seo-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">trending_up</span> SEO Services</a></li>
+                                <li><a href="/performance-marketing/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">ads_click</span> Performance Marketing</a></li>
+                                <li><a href="/services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm font-semibold border-t border-slate-100 dark:border-slate-800 pt-2 mt-1"><span class="material-symbols-outlined text-lg">grid_view</span> View All Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industries Dropdown -->
+                <div class="relative group">
+                    <a href="/industries"
+                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Industries <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+                        <ul class="space-y-3">
+                            <li><a href="/industries#finance-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Finance &amp;
+                                    Banking</a></li>
+                            <li><a href="/industries#healthcare-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Healthcare</a>
+                            </li>
+                            <li><a href="/industries#ecommerce-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Retail &amp;
+                                    E-Commerce</a></li>
+                            <li><a href="/industries#logistics-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Logistics</a>
+                            </li>
+                            <li><a href="/industries#education-sector"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Education &amp;
+                                    EdTech</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About Dropdown -->
+                <div class="relative group">
+                    <a href="/about"
+                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
+                        Company <span
+                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+                        <ul class="space-y-3">
+                            <li><a href="/about"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">About Us</a>
+                            </li>
+                            <li><a href="/careers"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Careers</a>
+                            </li>
+                            <li><a href="/portfolio"
+                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Case
+                                    Studies</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200"
+                    href="/blog">Insights</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="/contact"
+                    class="hidden md:flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] text-sm font-medium transition-colors">
+                    <span class="material-symbols-outlined text-lg">call</span> +91 99907 12555
+                </a>
+                <button onclick="window.location.href='/contact'"
+                    class="hidden sm:inline-block bg-[#3790ff] text-[#030816] px-6 py-2.5 rounded hover:bg-[#5da2ff] hover:translate-y-[-1px] transition-all duration-200 font-bold text-sm shadow-[0_0_15px_rgba(55,144,255,0.3)]">
+                    Let's Talk
+                </button>
+            </div>
+        </div>
+    </nav>
     </div>
   </header>
 
@@ -60,10 +169,269 @@
     </section>
   </main>
 
-  <footer class="bg-slate-900 border-t border-slate-800 py-12 text-slate-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p>&copy; 2026 Blueshore Technologies Pvt. Ltd. All rights reserved.</p>
-    </div>
-  </footer>
+  <!-- Premium Footer -->
+    <footer class="w-full bg-slate-900 dark:bg-[#020813] relative overflow-hidden">
+
+        <!-- Subtle dot-grid background -->
+        <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style="background-image:radial-gradient(circle,#ffffff 1px,transparent 1px);background-size:28px 28px;">
+        </div>
+
+        <!-- Top golden gradient line -->
+        <div
+            class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3790ff] to-transparent opacity-60">
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="relative border-b border-white/10">
+            <div class="max-w-[1280px] mx-auto px-8 py-14 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight">Let's Build Something<br
+                            class="hidden md:block"> Extraordinary Together</h2>
+                </div>
+                <a href="/contact"
+                    class="flex-shrink-0 inline-flex items-center gap-3 bg-[#3790ff] hover:bg-[#2563eb] text-slate-900 font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_32px_rgba(55,144,255,0.35)] hover:-translate-y-0.5 text-sm tracking-wide">
+                    Start a Project
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Footer Grid -->
+        <div class="max-w-[1280px] mx-auto px-8 pt-16 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+
+                <!-- Brand Column (spans 2) -->
+                <div class="lg:col-span-2 flex flex-col gap-6">
+                    <div class="text-center md:text-left">
+                        <div class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-1">Blueshore
+                            Technologies</div>
+                        <div class="w-10 h-0.5 bg-[#3790ff] rounded-full mb-4 mx-auto md:mx-0"></div>
+                        <p class="text-sm text-slate-400 leading-relaxed max-w-sm mx-auto md:mx-0">
+                            Blueshore Technologies helps businesses scale faster with high-converting digital
+                            experiences, performance marketing, AI-powered automation, and enterprise-grade technology
+                            solutions.
+                        </p>
+                    </div>
+                    <!-- Contact quick-info -->
+                    <div class="space-y-3 text-sm text-slate-400 text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">mail</span>
+                            <a href="mailto:info@blueshoretech.com"
+                                class="hover:text-[#3790ff] transition-colors">info@blueshoretech.com</a>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">call</span>
+                            <a href="tel:+919990712555" class="hover:text-[#3790ff] transition-colors">+91 99907
+                                12555</a>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span class="material-symbols-outlined text-[#3790ff] text-base">location_on</span>
+                            <span>Delhi NCR, India</span>
+                        </div>
+                    </div>
+                    <!-- Verified Profile Badges (Clutch, Trustpilot, Google Business) -->
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-2.5 pt-3">
+                        <!-- Clutch Card -->
+                        <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
+                            <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-amber-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                            </span>
+                            <div class="text-left">
+                                <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch</div>
+                                <div class="text-[10px] font-bold text-amber-500 dark:text-amber-400 flex items-center gap-0.5 leading-tight">
+                                    <span>5.0</span>
+                                    <span class="text-amber-400">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Trustpilot Card -->
+                        <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
+                            <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-emerald-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                            </span>
+                            <div class="text-left">
+                                <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot</div>
+                                <div class="text-[10px] font-bold text-emerald-500 dark:text-emerald-400 flex items-center gap-0.5 leading-tight">
+                                    <span>5.0</span>
+                                    <span class="text-emerald-400">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Google Business Card -->
+                        <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
+                            <span class="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-blue-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                            </span>
+                            <div class="text-left">
+                                <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google</div>
+                                <div class="text-[10px] font-bold text-blue-500 dark:text-blue-400 flex items-center gap-0.5 leading-tight">
+                                    <span>5.0</span>
+                                    <span class="text-blue-400">★★★★★</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- BACKUP OF ORIGINAL FOOTER SOCIAL ICONS (CODE BACKUP) -->
+                    <!--
+                    <div class="footer-social-icons-backup hidden">
+                        <a href="https://www.linkedin.com/company/blueshore-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://x.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/blueshoretech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                    -->
+                    <!--
+                    <div class="footer-social-icons-backup hidden">
+                        <a href="https://www.linkedin.com/company/blueshore-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://x.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/blueshoretech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                    -->
+                    <!--
+                    <div class="footer-social-icons-backup hidden">
+                        <a href="https://www.linkedin.com/company/blueshore-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://x.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/blueshoretech" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/blueshoretech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 flex items-center justify-center text-slate-700 dark:text-slate-400 hover:text-[#3790ff] hover:border-[#3790ff]/50 hover:bg-[#3790ff]/10 transition-all duration-300">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
+                    -->
+                </div>
+
+                <!-- About -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Company</h3>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/about"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Our
+                                Company</a></li>
+                        <li><a href="/portfolio"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Valued
+                                Clients</a></li>
+                        <li><a href="/about"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Industry
+                                Partners</a></li>
+                        <li><a href="/careers"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Careers</a>
+                        </li>
+                        <li><a href="/blog"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Insights
+                                &amp; Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Services</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Custom
+                                Software</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Cloud
+                                &amp; Infrastructure</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Mobile
+                                App Development</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>UI/UX
+                                Design</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Automation
+                                Services</a></li>
+                        <li><a href="/services"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Growth
+                                &amp; Digital Enablement</a></li>
+                    </ul>
+                </div>
+
+                <!-- Industries -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xs font-bold tracking-[0.15em] uppercase text-[#3790ff] mb-5">Industries</h3>
+                    <ul class="space-y-3 text-sm text-slate-400 flex flex-col items-center md:items-start">
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Finance
+                                &amp; Banking</a></li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Healthcare</a>
+                        </li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Retail
+                                &amp; E-Commerce</a></li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Logistics</a>
+                        </li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Education</a>
+                        </li>
+                        <li><a href="/industries"
+                                class="hover:text-slate-900 dark:hover:text-white hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"><span
+                                    class="w-1 h-1 rounded-full bg-[#3790ff] opacity-0 group-hover:opacity-100 transition-opacity"></span>Real
+                                Estate</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10">
+            <div class="max-w-[1280px] mx-auto px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-slate-500 text-center md:text-left">© 2026 Blueshore Technologies Pvt. Ltd. All
+                    rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-500">
+                    <a href="/privacy" class="hover:text-[#3790ff] transition-colors">Privacy Policy</a>
+                    <a href="/terms" class="hover:text-[#3790ff] transition-colors">Terms of Service</a>
+                    <a href="/cookie" class="hover:text-[#3790ff] transition-colors">Cookie Policy</a>
+                    <a href="/contact" class="hover:text-[#3790ff] transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 </body>
 </html>
