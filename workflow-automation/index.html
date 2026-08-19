@@ -299,79 +299,90 @@
         </div>
     </nav>
 
-    <main class="pt-24">
+        <main class="pt-24 bg-white dark:bg-[#030816] text-slate-900 dark:text-white transition-colors duration-300">
 
-        <!-- ═══ SECTION 1: HERO SECTION ═══ -->
-        <section class="relative pt-16 pb-24 border-b border-black/5 dark:border-white/5 overflow-hidden reveal-up">
+        <!-- ═══ SECTION 1: HERO SECTION (FULL VIEWPORT COVERAGE) ═══ -->
+        <section class="relative pt-6 pb-12 min-h-[calc(100vh-96px)] flex items-center border-b border-slate-200 dark:border-white/5 overflow-hidden">
             <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#3790ff]/10 rounded-full blur-[140px] pointer-events-none"></div>
-            <div class="max-w-[1280px] mx-auto px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="max-w-[1280px] mx-auto px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-7">
-                        <div class="flex items-center gap-3 mb-4">
+                        <div class="flex items-center gap-3 mb-3">
                             <span class="w-8 h-[2px] bg-[#3790ff]"></span>
-                            <span class="text-[#3790ff] uppercase tracking-[0.2em] font-bold text-xs">Process Engineering Practice</span>
+                            <span class="text-[#3790ff] uppercase tracking-[0.2em] font-bold text-xs">Enterprise Workflow Automation Practice</span>
                         </div>
-                        <h1 class="speakable-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-6">
+                        <h1 class="speakable-title text-3xl md:text-4xl lg:text-[46px] font-extrabold text-slate-900 dark:text-white leading-[1.15] mb-4">
                             Workflow Automation Services <br/>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400 dark:from-white dark:to-slate-400">Self-Healing, Automated Enterprise Operations.</span>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3790ff] to-blue-600">Self-Healing, Automated Operations.</span>
                         </h1>
-                        <p class="aeo-answer-summary text-lg text-slate-600 dark:text-slate-300 font-light leading-relaxed mb-8 max-w-2xl">
-                            We architect self-hosted n8n workflows, Robotic Process Automation (RPA) bots, custom API webhooks, and real-time CRM/ERP data synchronization that eliminate manual tasks and accelerate operations.
+                        <p class="aeo-answer-summary text-sm md:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed mb-6 max-w-2xl">
+                            Blueshore Technologies delivers end-to-end <strong>Workflow Automation Services</strong>, engineering self-hosted n8n enterprise workflows, Robotic Process Automation (RPA) bots, custom API middleware webhooks, and real-time CRM/ERP data synchronization pipelines that eliminate manual tasks and accelerate operations by 10x.
                         </p>
                         
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-wrap items-center gap-4 mb-10">
-                            <a href="/contact" class="flex items-center gap-3 px-8 py-4 bg-[#3790ff] text-[#030816] font-bold rounded-lg hover:bg-[#5da2ff] transition-all shadow-[0_0_20px_rgba(55,144,255,0.3)] hover:-translate-y-0.5">
-                                Talk to an Automation Architect <span class="material-symbols-outlined">arrow_forward</span>
+                        <!-- CTA Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-4 mb-6">
+                            <a href="/contact" class="inline-flex items-center gap-2 bg-[#3790ff] text-white font-bold px-7 py-3.5 rounded-xl hover:bg-[#2563eb] hover:shadow-[0_0_25px_rgba(55,144,255,0.4)] transition-all duration-300 hover:-translate-y-0.5 text-xs md:text-sm">
+                                Talk to an Automation Architect <span class="material-symbols-outlined text-base">arrow_forward</span>
                             </a>
-                            <a href="#spotlight" class="flex items-center gap-2 px-6 py-4 border border-black/10 dark:border-white/10 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:border-[#3790ff] transition-all">
-                                <span class="material-symbols-outlined">visibility</span> Explore Workflow Solutions
+                            <a href="#workflow-practices" class="inline-flex items-center gap-2 border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white px-6 py-3.5 rounded-xl font-bold hover:border-[#3790ff] hover:text-[#3790ff] transition-all duration-300 text-xs md:text-sm">
+                                Explore Workflow Capabilities <span class="material-symbols-outlined text-base">grid_view</span>
                             </a>
                         </div>
 
-                        <!-- Trust Badges Strip -->
-                        <div class="pt-6 border-t border-black/10 dark:border-white/10 flex flex-wrap items-center gap-6">
-                            <div class="flex items-center gap-2">
-                                <span class="text-amber-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Clutch Verified</span>
-                            </div>
-                            <div class="w-px h-4 bg-black/10 dark:bg-white/10"></div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-emerald-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Trustpilot Verified</span>
-                            </div>
-                            <div class="w-px h-4 bg-black/10 dark:bg-white/10"></div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-blue-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Google Business</span>
-                            </div>
+                        <!-- Verified Trust Rating Badges -->
+                        <div class="flex flex-wrap items-center gap-5 pt-4 border-t border-slate-200 dark:border-white/10">
+                            <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch 5.0 Rating</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">Verified Automation Agency</div>
+                                </div>
+                            </a>
+                            <div class="h-5 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
+                            <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-emerald-500 text-lg" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot 5.0</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">100% Client Satisfaction</div>
+                                </div>
+                            </a>
+                            <div class="h-5 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
+                            <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-blue-500 text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google Verified</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">Global Engineering Squads</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Hero Visual Media & Widget -->
-                    <div class="lg:col-span-5 relative group">
-                        <div class="bg-white dark:bg-[#0B1221] p-3 rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl relative z-10 overflow-hidden">
-                            <div class="relative rounded-2xl overflow-hidden mb-6">
-                                <img class="dark:hidden w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/workflow_hero_light.jpg" alt="Workflow Automation Services Light" title="Workflow Automation Services Light" width="600" height="400" loading="eager" />
-                                <img class="hidden dark:block w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/homepage_hero_tech.webp" alt="Workflow Automation Services Dark" title="Workflow Automation Services Dark" width="600" height="400" loading="eager" />
+                    <!-- Right Column: Interactive Light-Themed Workflow & API Display Mockup -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden group">
+                            <div class="flex items-center justify-between px-3.5 py-1.5 border-b border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950/80 rounded-t-xl">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="text-[11px] font-mono text-slate-600 dark:text-slate-400">blueshore_n8n_pipeline.v3</span>
                             </div>
                             
-                            <div class="px-5 pb-4 space-y-3 font-mono text-xs">
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Manual Effort Reduction</span>
-                                    <span class="text-[#3790ff] font-bold">85% Reduced</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Data Processing Speed</span>
-                                    <span class="text-emerald-400 font-bold">Real-Time Sync</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Self-Hosting Cost Savings</span>
-                                    <span class="text-purple-400 font-bold">Zero Task Fees</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Error Retries &amp; Shielding</span>
-                                    <span class="text-emerald-400 font-bold">100% Self-Healing</span>
+                            <div class="relative rounded-b-xl overflow-hidden">
+                                <img src="/assets/api_middleware_integration_light.jpg" alt="Enterprise Workflow Automation & API Integration Flow" class="w-full h-[270px] object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-100/90 dark:from-slate-950/80 via-transparent to-transparent"></div>
+                                
+                                <!-- Floating Light Metrics Chips -->
+                                <div class="absolute bottom-3 left-3 right-3 grid grid-cols-2 gap-2">
+                                    <div class="p-2 rounded-lg bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+                                        <div class="text-sm font-bold text-[#3790ff]">10x Faster</div>
+                                        <div class="text-[9px] text-slate-600 dark:text-slate-300">Operational Processing Speed</div>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+                                        <div class="text-sm font-bold text-emerald-600 dark:text-emerald-400">99.9% Error-Free</div>
+                                        <div class="text-[9px] text-slate-600 dark:text-slate-300">Self-Healing Retries</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -380,522 +391,638 @@
             </div>
         </section>
 
-        <!-- ═══ SECTION 2: END-TO-END CAPABILITIES GRID ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
+        <!-- ═══ SECTION 2: EXECUTIVE SPOTLIGHT & CLIENT TESTIMONIALS (REVEALS ONLY ON SCROLL) ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Client Validation</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Trusted by Operations VPs &amp; Enterprise Leaders</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Discover how our workflow automation squad eliminates manual data entry, cuts processing time, and connects software systems.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Review Card 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Blueshore automated our entire invoice approval and ERP sync pipeline using self-hosted n8n. Processing time dropped from 3 days to under 4 seconds."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">VP</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Vice President of Operations</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Global Supply Chain Network</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Their RPA bots completely eliminated manual copy-pasting across our 4 legacy platforms. Our team saves over 150 administrative hours every week."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">COO</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Chief Operating Officer</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Logistics &amp; Transport Corp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Real-time CRM lead routing with zero data loss. Blueshore built self-healing retry logic that prevents broken webhooks automatically."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">HG</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Head of Growth</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">FinTech Platform</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 3: 6 DEDICATED WORKFLOW PRACTICES WITH 6 UNIQUE LIGHT IMAGES ═══ -->
+        <section id="workflow-practices" class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Full-Spectrum Capabilities</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">End-to-End Workflow Automation</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">We design self-hosted n8n systems, RPA bots, custom webhooks, and SaaS integration pipelines.</p>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Full-Spectrum Automation Capabilities</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Our 6 Core Workflow Automation Practices</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">From self-hosted n8n pipelines to custom API middleware, we connect your business tools into a unified, automated engine.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Offering Card 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">account_tree</span>
+                    <!-- Practice 1: Self-Hosted n8n & Enterprise Automation -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/api_middleware_integration_light.jpg" alt="Self-Hosted n8n & Enterprise Automation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Self-Hosted n8n &amp; Enterprise Workflows</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Private, self-hosted n8n cluster deployments providing unlimited workflow execution without per-task subscription fees. Paired with <a href="/custom-software-development/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Custom Software Development</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Self-Hosted n8n Enterprise Pipelines</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Deploying self-hosted n8n instances on private cloud VPCs, providing unlimited workflow triggers with zero per-task billing fees and strict data privacy.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Unlimited Task Executions</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Private VPC Cloud Deployment</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Zero Per-Operation SaaS Fees</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Self-Hosted Docker n8n Clusters</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Unlimited Workflow Executions</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Custom Community Nodes &amp; JavaScript</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                    <!-- Practice 2: Robotic Process Automation (RPA) -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/desktop_app_software_light.jpg" alt="Robotic Process Automation RPA & Screen Scraping" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Robotic Process Automation (RPA)</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Headless browser bots (Playwright/Selenium) automating legacy web portals, data scraping, and manual UI form filling. Explore <a href="/ai-automation-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">AI Automation Services</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Robotic Process Automation (RPA)</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Building custom UiPath and Python Playwright RPA bots that automate legacy portal logins, web scraping, and spreadsheet data entry.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> UiPath &amp; Playwright Automation</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Legacy System Interface Scraping</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Scheduled Headless Execution</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Playwright &amp; Selenium RPA Bots</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Automated Web Form Data Entry</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Multi-Portal Data Extraction</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">webhook</span>
+                    <!-- Practice 3: CRM & ERP Two-Way Data Synchronization -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/data_analytics_dashboard_light.jpg" alt="CRM & ERP Two-Way Data Synchronization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">CRM &amp; ERP Data Synchronization</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Real-time bidirectional data pipelines syncing Salesforce, HubSpot, SAP, NetSuite, and QuickBooks with zero latency. Integrated with <a href="/cloud-engineering/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Cloud Engineering</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Custom Webhook &amp; REST API Bridges</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Engineering real-time Python FastAPI and Node.js webhook listeners that connect disparate SaaS tools with zero lag.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Real-Time Webhook Triggers</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Sub-Second Payload Dispatch</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> HMAC Signature Authentication</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Salesforce &amp; NetSuite 2-Way Sync</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Real-Time WebSockets &amp; Webhooks</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Automated Conflict Resolution</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 4 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">sync</span>
+                    <!-- Practice 4: Document AI & Invoice Processing -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/mobile_app_development_light.jpg" alt="Document AI & Automated Invoice Processing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Document AI &amp; Invoice Extraction</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Automated email parsing, PDF document OCR, and line-item invoice data extraction fed directly into accounting software. See <a href="/ai-chatbot-development/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">AI Chatbot Development</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">ERP &amp; CRM Two-Way Data Sync</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Automating two-way data sync between SAP, Salesforce, HubSpot, QuickBooks, and PostgreSQL with automatic conflict resolution.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> SAP &amp; Salesforce Sync</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Automatic Conflict Resolution</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Audit-Trail Activity Logs</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Automated Invoice PDF OCR</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Email Attachment Parsing</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Automated QuickBooks Entry</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 5 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-[#3790ff] text-3xl">notifications_active</span>
+                    <!-- Practice 5: Custom Webhook Middleware & Event Bus -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/seo_dashboard_light.jpg" alt="Custom Webhook Middleware & Event Architecture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Custom Webhooks &amp; Middleware</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Resilient API queue routers (RabbitMQ, Redis Streams) that handle high-volume webhook bursts with guaranteed delivery. Paired with <a href="/web-development-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Web Engineering</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Automated Slack &amp; Teams Notifications</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Configuring instant Slack and Microsoft Teams alert webhooks for new high-value deals, system errors, or pending approval requests.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Interactive Slack Approval Buttons</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Real-Time Error Alert Routing</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Automated Daily Metric Summaries</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> RabbitMQ &amp; Redis Message Queues</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Exponential Backoff Retry Logic</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Rate-Limiting &amp; Payload Transformation</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 6 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">published_with_changes</span>
+                    <!-- Practice 6: Automated E-Commerce Fulfillment & Inventory -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/team_planning_collaboration_light.jpg" alt="Automated E-Commerce Fulfillment & Inventory Sync" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">E-Commerce Fulfillment &amp; Inventory</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Multi-warehouse inventory synchronization, automated shipping label generation, and order tracking email workflows. Boosted by <a href="/performance-marketing/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Performance Marketing</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Self-Healing Workflow Logic</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Engineering error-handling sub-workflows that catch API timeouts, perform exponential backoff retries, and alert engineers cleanly.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Automatic Exponential Retry</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Dead-Letter Queue Isolation</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Zero Data Loss Architecture</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Multi-Warehouse Stock Sync</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Automated Shipping Label Generation</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Order Status Webhook Pipelines</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 3: FEATURE SPOTLIGHT Z-PATTERN ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up" id="spotlight">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Architectural Deep Dive</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">How We Architect Enterprise Workflows</h2>
-            </div>
-
-            <div class="space-y-24">
-                <!-- Spotlight 1 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -left-8 -top-12">01</div>
-                    <div class="lg:col-span-6 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">01 — SELF-HOSTED N8N</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Private, Unlimited Workflow Orchestration</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            SaaS automation platforms charge per-execution fees that scale exponentially. We deploy self-hosted n8n instances on your AWS or DigitalOcean servers, unlocking unlimited workflow executions, custom JavaScript nodes, and 100% data privacy.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Self-Hosted n8n Docker</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Unlimited Executions</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Custom Code Nodes</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Discuss n8n Deployment <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/data_ai_analytics_light.webp" alt="Self Hosted n8n Architecture Light" title="Self Hosted n8n Architecture Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/homepage_hero_tech.webp" alt="Self Hosted n8n Architecture Dark" title="Self Hosted n8n Architecture Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotlight 2 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -right-8 -top-12">02</div>
-                    <div class="lg:col-span-6 lg:order-2 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">02 — ROBOTIC PROCESS AUTOMATION</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Headless Browser &amp; Portal Automation</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Legacy enterprise software often lacks APIs. Our RPA bots log into web portals, navigate multi-page forms, download reports, and sync structured data into modern cloud databases without manual human clicking.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Python Playwright &amp; UiPath</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Headless Portal Scraping</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Automated PDF Downloads</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Explore RPA Solutions <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 lg:order-1 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/software_dev_desk_light.webp" alt="RPA Automation Light" title="RPA Automation Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cybersecurity_insight_v3.webp" alt="RPA Automation Dark" title="RPA Automation Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotlight 3 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -left-8 -top-12">03</div>
-                    <div class="lg:col-span-6 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">03 — REAL-TIME CRM / ERP PIPELINES</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Bidirectional SaaS Stack Synchronization</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Break data silos between your marketing, sales, and accounting tools. We build two-way sync pipelines that pass customer records from lead capture forms to Salesforce, QuickBooks, and Slack in less than one second.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Sub-Second Sync Speed</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Salesforce &amp; SAP Sync</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Automated Error Recovery</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Integrate SaaS Pipelines <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cybersecurity_insight_light.webp" alt="SaaS Pipeline Sync Light" title="SaaS Pipeline Sync Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/ai_automation_insight_v3.webp" alt="SaaS Pipeline Sync Dark" title="SaaS Pipeline Sync Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 4: INDUSTRY SECTORS ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
+        <!-- ═══ SECTION 4: 3-STEP AGILE WORKFLOW PROCESS ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Tailored Industry Verticals</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Workflow Automation By Industry Sector</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">We build custom workflow automations for specialized operational requirements.</p>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Agile Automation Framework</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Our 3-Step Workflow Automation Process</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Structured, zero-downtime execution built for self-healing operational reliability.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Industry 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">account_balance</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Finance &amp; Invoice Approval</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Automated invoice matching, multi-tier Slack approval buttons, and ERP ledger posting.</p>
-                        <span class="text-xs font-mono text-[#3790ff] font-bold uppercase tracking-wider">Automated Approval Workflows</span>
+                <div class="grid md:grid-cols-3 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">01</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Process Audit &amp; Bottleneck Mapping</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            We audit your manual data entry workflows, map API endpoints, identify operational bottlenecks, and design a self-healing n8n architecture blueprint.
+                        </p>
                     </div>
 
-                    <!-- Industry 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">local_shipping</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Logistics &amp; Dispatch Sync</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Automated driver dispatch SMS alerts, bill of lading PDF extraction, and fleet tracking sync.</p>
-                        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Automated Dispatch Alerts</span>
+                    <!-- Step 2 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">02</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">n8n Pipeline &amp; Webhook Engineering</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Our automation engineers build custom n8n nodes, configure exponential backoff retry queues, and test CRM/ERP data synchronization.
+                        </p>
                     </div>
 
-                    <!-- Industry 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">shopping_cart</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">E-Commerce Fulfillment</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Order sync between Shopify, 3PL warehouse logistics, inventory updates, and tracking emails.</p>
-                        <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">3PL Warehouse Integration</span>
-                    </div>
-
-                    <!-- Industry 4 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">medical_services</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Healthcare Intake Pipelines</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">HIPAA-compliant patient registration processing, EHR synchronization, and SMS appointment reminders.</p>
-                        <span class="text-xs font-mono text-[#3790ff] font-bold uppercase tracking-wider">HIPAA Compliant Workflows</span>
-                    </div>
-
-                    <!-- Industry 5 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">badge</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">HR Employee Onboarding</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Automated background check requests, Google Workspace account creation, and contract e-signing.</p>
-                        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Automated Onboarding</span>
-                    </div>
-
-                    <!-- Industry 6 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">real_estate_agent</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Real Estate Contract Pipeline</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Automated DocuSign contract triggers, escrow status sync, and lead notification webhooks.</p>
-                        <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">DocuSign API Sync</span>
+                    <!-- Step 3 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">03</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Production Deployment &amp; 24/7 Ops</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Zero-downtime cutover deployment, automated dead-letter queue monitoring, and 24/7 ongoing workflow health checks.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 5: 5-STEP TIMELINE ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Agile Methodology</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Our 5-Step Workflow Automation Process</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">A structured engineering process ensuring clean data transformation and error-free automation.</p>
-            </div>
-
-            <div class="grid md:grid-cols-5 gap-6 relative">
-                <!-- Step 1 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">01</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Process Mapping</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Documenting manual triggers, data inputs, SaaS endpoints, and edge-case exceptions.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">02</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Self-Hosted n8n Setup</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Deploying n8n instances on private VPC cloud servers with SSL and webhook encryption.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">03</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">API &amp; RPA Development</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Coding custom webhook integrations, OAuth2 authentication nodes, and RPA Playwright scripts.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">04</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Error Testing &amp; Retries</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Simulating network failures, testing retry backoffs, and setting up error alert notifications.</p>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">05</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Live Production Sync</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Enabling real-time automated execution with 24/7 logging telemetry and performance monitoring.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 6: TECH STACK TABS ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
-            <div class="max-w-[1280px] mx-auto px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Workflow Tech Stack</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Automation Platforms &amp; Integration APIs</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-base">We build robust workflow automation using leading integration tooling.</p>
-                </div>
-
-                <!-- Tab Controls -->
-                <div class="flex flex-wrap justify-center gap-3 mb-12">
-                    <button onclick="filterTech('all')" class="tab-btn active px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 transition-all">All Stack</button>
-                    <button onclick="filterTech('platforms')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">Automation Engines</button>
-                    <button onclick="filterTech('rpa')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">RPA &amp; Scraping</button>
-                    <button onclick="filterTech('saas')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">SaaS Connectors</button>
-                </div>
-
-                <!-- Tech Badges Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4" id="tech-grid">
-                    <div class="tech-item platforms p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">n8n Self-Hosted</span>
-                    </div>
-                    <div class="tech-item platforms p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Make (Integromat)</span>
-                    </div>
-                    <div class="tech-item platforms p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Zapier Enterprise</span>
-                    </div>
-                    <div class="tech-item rpa p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">UiPath RPA</span>
-                    </div>
-                    <div class="tech-item rpa p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Python Playwright</span>
-                    </div>
-                    <div class="tech-item platforms p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Power Automate</span>
-                    </div>
-                    <div class="tech-item saas p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Salesforce API</span>
-                    </div>
-                    <div class="tech-item saas p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">HubSpot Webhooks</span>
-                    </div>
-                    <div class="tech-item saas p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Slack API Webhooks</span>
-                    </div>
-                    <div class="tech-item saas p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">PostgreSQL &amp; Redis</span>
-                    </div>
-                    <div class="tech-item rpa p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Selenium Headless</span>
-                    </div>
-                    <div class="tech-item platforms p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Python FastAPI Webhooks</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 7: CLIENT ENGAGEMENT MODELS ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Flexible Collaboration</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Workflow Engagement Models</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">Select the workflow automation partnership model that fits your operational needs.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Model 1 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 glow-hover transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">groups</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Dedicated Automation Team</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for company-wide digital transformation</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Full-time dedicated workflow engineers building and optimizing your entire SaaS integration backlog.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg border border-[#3790ff] text-[#3790ff] hover:bg-[#3790ff] hover:text-[#030816] font-bold transition-all text-sm">Hire Automation Team</a>
-                </div>
-
-                <!-- Model 2 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border-2 border-[#3790ff] shadow-xl relative flex flex-col justify-between">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#3790ff] text-[#030816] text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">Most Popular</div>
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">assignment_turned_in</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Fixed-Price Workflow Sprint</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for specific process automation builds</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Self-hosted n8n setup or custom API integration project with guaranteed zero data loss and fixed-fee delivery.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg bg-[#3790ff] text-[#030816] hover:bg-[#5da2ff] font-bold transition-all text-sm">Get Fixed Price Quote</a>
-                </div>
-
-                <!-- Model 3 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 glow-hover transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">schedule</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Managed Workflow Maintenance</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 font-mono uppercase mb-4">Best for continuous server &amp; API monitoring</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Monthly retainer for n8n server monitoring, API token updates, error log resolution, and workflow updates.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg border border-[#3790ff] text-[#3790ff] hover:bg-[#3790ff] hover:text-[#030816] font-bold transition-all text-sm">Start Maintenance Plan</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 8: CLIENT REVIEWS & VERIFIED PROOF ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up" id="portfolio">
+        <!-- ═══ SECTION 5: 10 VALUE PILLARS GRID ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Proven Track Record</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">What Our Clients Say</h2>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Why Partner With Us</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Why Choose Blueshore Technologies for Workflow Automation?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">We combine senior automation engineers with self-healing n8n infrastructure to maximize business efficiency. Learn more <a href="/about" class="text-[#3790ff] font-semibold underline underline-offset-4">About Our Agency</a>.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">speed</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">10x Speed</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Operational Speedup</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">verified</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">99.9% Error Free</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Self-Healing Retries</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">dns</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Self-Hosted n8n</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Zero Per-Task Fees</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">sync</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Real-Time Sync</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">CRM &amp; ERP Pipeline</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">shield</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">100% IP Ownership</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full Workflow Rights</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">group_add</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Dedicated Squads</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Senior Automation Leads</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">published_with_changes</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Agile Sprints</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Bi-Weekly Deliverables</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">lock</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Strict NDA</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full Confidentiality</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">support_agent</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">24/7 SLA Support</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Proactive Monitoring</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">terminal</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">API Middleware</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Python &amp; Node Webhooks</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 6: SOLUTION VERTICALS WITH 4 UNIQUE HIGH-RES IMAGES ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Bespoke Workflow Solutions</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Bespoke Workflow Automations We Develop</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Tailored automation pipelines engineered for operational excellence across industries. Explore our <a href="/industries" class="text-[#3790ff] font-semibold underline underline-offset-4">Industry Solutions</a>.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Real Review 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-amber-400 font-bold text-lg">★★★★★ 5.0</span>
-                            <span class="px-3 py-1 bg-[#3790ff]/10 text-[#3790ff] rounded-full text-xs font-bold font-mono">Clutch Verified</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">"Blueshore Technologies deployed a self-hosted n8n automation server for us. We eliminated over $4,000 in monthly Zapier tasks and our lead sync happens instantly..."</p>
+                    <!-- Solution 1 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">Karan Verma</div>
-                            <div class="text-xs text-slate-500">VP Operations • SaaS Platform</div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/financial_dashboard_light.jpg" alt="End-to-End Financial & Payroll Automation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">account_balance_wallet</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">End-to-End Financial &amp; Payroll Automation</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Automated invoice reconciliation, payroll calculation workflows, and instant bank settlement alerts synced directly to QuickBooks &amp; Xero.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">QuickBooks Sync</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Invoice OCR</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Payroll Automation</span>
                         </div>
                     </div>
 
-                    <!-- Real Review 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-amber-400 font-bold text-lg">★★★★★ 5.0</span>
-                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold font-mono">Trustpilot Verified</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">"Their RPA automation bots process over 5,000 legacy portal invoices every week cleanly. Error rates dropped from 12% down to 0%..."</p>
+                    <!-- Solution 2 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">Sarah Jenkins</div>
-                            <div class="text-xs text-slate-500">Finance Director • Logistics Enterprise</div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/logistics_fleet_tracking_light.jpg" alt="Logistics & Fleet Dispatch Automation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">local_shipping</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Logistics &amp; Fleet Dispatch Automation</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Automated driver dispatching, bill-of-lading PDF parsing, and real-time shipment status webhooks connecting warehouse ERPs.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">ERP Dispatch</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">PDF Parsing</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Status Webhooks</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 3 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/person_working_laptop_light.jpg" alt="HR Onboarding & Document Verification Pipelines" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">badge</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">HR Onboarding &amp; Verification Pipelines</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Automated employee contract generation, background check webhooks, and IT account provisioning across Slack, Google Workspace, and Jira.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">IT Provisioning</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">DocuSign API</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Slack Bot Sync</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 4 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/fintech_healthcare_saas_light.jpg" alt="Healthcare & SaaS Automated Billing Workflows" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">credit_card</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Healthcare &amp; SaaS Automated Billing</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Multi-tier subscription renewal webhooks, Stripe dunning failure retries, and automated invoice emailing with zero manual intervention. Integrated with <a href="/cloud-engineering/" class="text-[#3790ff] font-semibold underline underline-offset-4">Cloud Infrastructure</a>.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Stripe Dunning</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Renewal Webhooks</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Auto Invoicing</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 9: FREQUENTLY ASKED QUESTIONS (ACCORDION) ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Got Questions?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Workflow Automation FAQs</h2>
-            </div>
-
-            <div class="max-w-3xl mx-auto space-y-4">
-                <!-- FAQ 1 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>What automation tools do you support for workflow automation?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-1">expand_more</span>
-                    </button>
-                    <div id="faq-answer-1" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        We build custom workflows on n8n (self-hosted enterprise & cloud), Make (Integromat), Zapier, Power Automate, and custom Python/Node.js webhooks.
+        <!-- ═══ SECTION 7: LEGACY PROCESS MODERNIZATION & AUTOMATION TRANSFORMATION ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Automation Transformation</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-6">Legacy Manual Process Modernization</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6">
+                            Is your team wasting hundreds of hours copying data between disconnected spreadsheets and legacy software? We eliminate human error by building self-healing n8n automation pipelines and custom API middleware. Learn about our <a href="/custom-software-development/" class="text-[#3790ff] font-semibold underline underline-offset-4">Custom Software Development</a>.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Manual Copy-Pasting to Automated API Webhooks</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Replace manual spreadsheet entries with instant, sub-second API data synchronization across your entire software stack.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Single-Point Failures to Self-Healing Retry Logic</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Configure exponential backoff dead-letter queues so third-party downtime never drops customer data.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Siloed Apps to Unified n8n Orchestration</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Connect CRM, ERP, finance, and marketing tools into a single, transparent visual workflow canvas.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ 2 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>Why do you recommend self-hosted n8n over third-party platforms?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-2">expand_more</span>
-                    </button>
-                    <div id="faq-answer-2" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Self-hosted n8n eliminates per-operation pricing fees, allows unlimited workflow executions, complies with HIPAA / GDPR data privacy, and runs inside your private VPC.
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>How quickly can custom workflow automations be deployed?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-3">expand_more</span>
-                    </button>
-                    <div id="faq-answer-3" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Initial core workflows are mapped, built, error-shielded, and live in 1 to 2 weeks.
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>What happens if an API endpoint fails or goes down?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-4">expand_more</span>
-                    </button>
-                    <div id="faq-answer-4" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Our self-healing workflows execute exponential retry backoffs, isolate failed payloads in dead-letter queues, and alert your team in Slack with zero data loss.
+                    <!-- Light-Themed Automation Impact Metrics Card -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-slate-900 dark:text-white">
+                            <span class="material-symbols-outlined text-[#3790ff]">speed</span> Automation Transformation Metrics
+                        </h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Manual Data Entry Reduction</span>
+                                <span class="font-bold text-emerald-600 dark:text-emerald-400">-90% Manual Tasks</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Operational Processing Speed</span>
+                                <span class="font-bold text-[#3790ff]">10x Faster</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Data Transfer Accuracy</span>
+                                <span class="font-bold text-amber-600 dark:text-amber-400">99.9% Accuracy</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 10: NDA & CONSULTATION CTA BANNER (THEME ADAPTIVE: LIGHT IN LIGHT MODE, DARK IN DARK MODE) ═══ -->
-        <section class="max-w-[1280px] mx-auto px-8 py-20 reveal-up">
-            <div class="bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 dark:from-[#0B1221] dark:to-[#131B2F] border border-slate-200 dark:border-[#3790ff]/30 p-12 rounded-3xl text-center relative overflow-hidden shadow-xl dark:shadow-2xl">
-                <div class="relative z-10 max-w-2xl mx-auto">
-                    <span class="text-[#3790ff] font-mono text-xs font-bold uppercase tracking-widest">100% Confidential • NDA Guaranteed</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-3 mb-4">Ready to Automate Your Business Operations?</h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8">Schedule a technical workflow consultation with our process engineers. We will analyze your SaaS stack and present an automation plan.</p>
-                    <a href="/contact" class="inline-flex items-center gap-3 px-8 py-4 bg-[#3790ff] text-[#030816] font-bold rounded-lg hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-[#030816] transition-all shadow-xl text-base hover:-translate-y-0.5">
-                        Get Started &amp; Request Workflow Audit <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
+        <!-- ═══ SECTION 8: SENIOR AUTOMATION DEVELOPER SHOWCASE ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Engineering Talent</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Hire Senior Workflow Automation Engineers</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Our dedicated automation squad consists of n8n architects, RPA engineers, and ERP/CRM integration specialists. Review our <a href="/portfolio" class="text-[#3790ff] font-semibold underline underline-offset-4">Automation Case Studies</a>.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Squad Member 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">AA</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Principal Automation Architect</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">15,000+ Automation Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Self-Hosted n8n, Enterprise API Middleware &amp; Queue Architecture</p>
+                    </div>
+
+                    <!-- Squad Member 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">MW</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Senior API Middleware Lead</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">12,000+ API Integration Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Node.js, Python FastAPI, Webhooks &amp; RabbitMQ Queues</p>
+                    </div>
+
+                    <!-- Squad Member 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">RP</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Senior RPA &amp; Scraping Lead</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">10,000+ Bot Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Playwright, Selenium, Headless Browsers &amp; Document OCR</p>
+                    </div>
+
+                    <!-- Squad Member 4 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">ER</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">ERP &amp; CRM Sync Specialist</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">8,000+ Sync Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Salesforce, NetSuite, SAP API &amp; QuickBooks Automation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 9: DISCOVERY & CONSULTATION FORM ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Let's Connect</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-4">Schedule a Workflow Automation &amp; Process Audit</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                            Speak with a lead automation architect about your operational bottlenecks. We evaluate your API stack and outline a clear n8n automation roadmap. Or visit our <a href="/contact" class="text-[#3790ff] font-semibold underline underline-offset-4">Contact Page</a>.
+                        </p>
+
+                        <div class="space-y-4 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">security</span>
+                                <span>100% Data Confidentiality &amp; Mutual NDA Available</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">timer</span>
+                                <span>Guaranteed Response SLA within 2 Business Hours</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">support</span>
+                                <span>Direct Consultation with Principal Automation Engineers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 p-8 md:p-10 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-xl">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Request Technical Workflow Audit</h3>
+                        <form id="workflow-automation-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Full Name *</label>
+                                    <input type="text" required placeholder="John Smith" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Work Email *</label>
+                                    <input type="email" required placeholder="john@company.com" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Company Name *</label>
+                                    <input type="text" required placeholder="Acme Logistics" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Phone Number *</label>
+                                    <input type="tel" required placeholder="+91 99999 00000" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Workflow Automation Brief *</label>
+                                <textarea required rows="4" placeholder="Describe your manual data bottlenecks, software tools (n8n/Zapier/CRM/ERP), or automation goals..." class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-[#3790ff] text-white font-bold rounded-xl hover:bg-[#2563eb] transition-all shadow-lg text-sm flex items-center justify-center gap-2">
+                                Submit Consultation Request <span class="material-symbols-outlined">send</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 10: INTERACTIVE FAQ ACCORDION ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] reveal-up">
+            <div class="max-w-[1000px] mx-auto px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Got Questions?</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Frequently Asked Questions</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Everything you need to know about our workflow automation services.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Which workflow automation tools and platforms do you support?</span>
+                            <span id="faq-icon-1" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-1" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            We specialize in self-hosted n8n enterprise clusters, Zapier Enterprise, Make (Integromat), Playwright RPA bots, and custom Python/Node.js webhook middleware.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>How do you prevent data loss during third-party API outages?</span>
+                            <span id="faq-icon-2" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-2" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            We engineer self-healing retry queues with exponential backoff and dead-letter queues in RabbitMQ / Redis Streams so webhooks and payload events are safely buffered and re-tried automatically.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Who owns the n8n workflows, custom nodes, and IP rights?</span>
+                            <span id="faq-icon-3" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-3" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            You retain 100% intellectual property ownership of all n8n workflow JSON schemas, custom node code, and API middleware scripts.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>How quickly can a workflow automation squad be onboarded?</span>
+                            <span id="faq-icon-4" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-4" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            Our automation engineers can be integrated into your workspace, Jira, and Slack channels within 3 to 5 business days after initial discovery.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -950,13 +1077,13 @@
                         <!-- Clutch Card -->
                         <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-amber-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-amber-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch</div>
                                 <div class="text-[10px] font-bold text-amber-500 dark:text-amber-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-amber-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -964,13 +1091,13 @@
                         <!-- Trustpilot Card -->
                         <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-emerald-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-emerald-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot</div>
                                 <div class="text-[10px] font-bold text-emerald-500 dark:text-emerald-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-emerald-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -978,13 +1105,13 @@
                         <!-- Google Business Card -->
                         <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-blue-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-blue-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google</div>
                                 <div class="text-[10px] font-bold text-blue-500 dark:text-blue-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-blue-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -1150,5 +1277,7 @@
     <script src="/assets/responsive.js?v=3" defer></script>
     <script src="/assets/ai-chat.js?v=2.1" defer></script>
     <script src="/assets/theme-toggle.js" defer></script>
+    <script src="/assets/crm-form-handler.js" defer></script>
+    <script src="/assets/visitor-telemetry.js" defer></script>
 </body>
 </html>

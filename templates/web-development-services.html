@@ -315,79 +315,90 @@
         </div>
     </nav>
 
-    <main class="pt-24">
+        <main class="pt-24 bg-white dark:bg-[#030816] text-slate-900 dark:text-white transition-colors duration-300">
 
-        <!-- ═══ SECTION 1: HERO SECTION ═══ -->
-        <section class="relative pt-16 pb-24 border-b border-black/5 dark:border-white/5 overflow-hidden reveal-up">
+        <!-- ═══ SECTION 1: HERO SECTION (FULL VIEWPORT COVERAGE) ═══ -->
+        <section class="relative pt-6 pb-12 min-h-[calc(100vh-96px)] flex items-center border-b border-slate-200 dark:border-white/5 overflow-hidden">
             <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#3790ff]/10 rounded-full blur-[140px] pointer-events-none"></div>
-            <div class="max-w-[1280px] mx-auto px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="max-w-[1280px] mx-auto px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-7">
-                        <div class="flex items-center gap-3 mb-4">
+                        <div class="flex items-center gap-3 mb-3">
                             <span class="w-8 h-[2px] bg-[#3790ff]"></span>
-                            <span class="text-[#3790ff] uppercase tracking-[0.2em] font-bold text-xs">Web Engineering Practice</span>
+                            <span class="text-[#3790ff] uppercase tracking-[0.2em] font-bold text-xs">Enterprise Web Engineering Practice</span>
                         </div>
-                        <h1 class="speakable-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-6">
+                        <h1 class="speakable-title text-3xl md:text-4xl lg:text-[46px] font-extrabold text-slate-900 dark:text-white leading-[1.15] mb-4">
                             Web Development Services <br/>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400 dark:from-white dark:to-slate-400">Fast, Scalable &amp; High-Converting.</span>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3790ff] to-blue-600">Fast, Scalable &amp; High-Converting.</span>
                         </h1>
-                        <p class="aeo-answer-summary text-lg text-slate-600 dark:text-slate-300 font-light leading-relaxed mb-8 max-w-2xl">
-                            We design and develop sub-second loading web applications, headless e-commerce platforms, Progressive Web Apps (PWA), and custom web portals optimized for 100/100 Core Web Vitals and organic search growth.
+                        <p class="aeo-answer-summary text-sm md:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed mb-6 max-w-2xl">
+                            Blueshore Technologies delivers end-to-end <strong>Web Development Services</strong>, engineering sub-second loading web applications, headless e-commerce portals, Progressive Web Apps (PWA), and custom enterprise web portals optimized for 100/100 Core Web Vitals and organic search growth.
                         </p>
                         
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-wrap items-center gap-4 mb-10">
-                            <a href="/contact" class="flex items-center gap-3 px-8 py-4 bg-[#3790ff] text-[#030816] font-bold rounded-lg hover:bg-[#5da2ff] transition-all shadow-[0_0_20px_rgba(55,144,255,0.3)] hover:-translate-y-0.5">
-                                Talk to a Web Architect <span class="material-symbols-outlined">arrow_forward</span>
+                        <!-- CTA Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-4 mb-6">
+                            <a href="/contact" class="inline-flex items-center gap-2 bg-[#3790ff] text-white font-bold px-7 py-3.5 rounded-xl hover:bg-[#2563eb] hover:shadow-[0_0_25px_rgba(55,144,255,0.4)] transition-all duration-300 hover:-translate-y-0.5 text-xs md:text-sm">
+                                Talk to a Web Architect <span class="material-symbols-outlined text-base">arrow_forward</span>
                             </a>
-                            <a href="#spotlight" class="flex items-center gap-2 px-6 py-4 border border-black/10 dark:border-white/10 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:border-[#3790ff] transition-all">
-                                <span class="material-symbols-outlined">visibility</span> Explore Web Capabilities
+                            <a href="#web-practices" class="inline-flex items-center gap-2 border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white px-6 py-3.5 rounded-xl font-bold hover:border-[#3790ff] hover:text-[#3790ff] transition-all duration-300 text-xs md:text-sm">
+                                Explore Web Capabilities <span class="material-symbols-outlined text-base">grid_view</span>
                             </a>
                         </div>
 
-                        <!-- Trust Badges Strip -->
-                        <div class="pt-6 border-t border-black/10 dark:border-white/10 flex flex-wrap items-center gap-6">
-                            <div class="flex items-center gap-2">
-                                <span class="text-amber-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Clutch Verified</span>
-                            </div>
-                            <div class="w-px h-4 bg-black/10 dark:bg-white/10"></div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-emerald-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Trustpilot Verified</span>
-                            </div>
-                            <div class="w-px h-4 bg-black/10 dark:bg-white/10"></div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-blue-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Google Business</span>
-                            </div>
+                        <!-- Verified Trust Rating Badges -->
+                        <div class="flex flex-wrap items-center gap-5 pt-4 border-t border-slate-200 dark:border-white/10">
+                            <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch 5.0 Rating</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">Verified Web Agency</div>
+                                </div>
+                            </a>
+                            <div class="h-5 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
+                            <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-emerald-500 text-lg" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot 5.0</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">100% Client Satisfaction</div>
+                                </div>
+                            </a>
+                            <div class="h-5 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
+                            <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-blue-500 text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google Verified</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">Global Engineering Squads</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Hero Visual Media & Widget -->
-                    <div class="lg:col-span-5 relative group">
-                        <div class="bg-white dark:bg-[#0B1221] p-3 rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl relative z-10 overflow-hidden">
-                            <div class="relative rounded-2xl overflow-hidden mb-6">
-                                <img class="dark:hidden w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/web_dev_hero_light.jpg" alt="Web Development Services Light" title="Web Development Services Light" width="600" height="400" loading="eager" />
-                                <img class="hidden dark:block w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/homepage_hero_tech.webp" alt="Web Development Services Dark" title="Web Development Services Dark" width="600" height="400" loading="eager" />
+                    <!-- Right Column: Interactive Light-Themed Web Dashboard Display Mockup -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden group">
+                            <div class="flex items-center justify-between px-3.5 py-1.5 border-b border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950/80 rounded-t-xl">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="text-[11px] font-mono text-slate-600 dark:text-slate-400">blueshore_web_engine.v2</span>
                             </div>
                             
-                            <div class="px-5 pb-4 space-y-3 font-mono text-xs">
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Core Web Vitals Score</span>
-                                    <span class="text-[#3790ff] font-bold">100/100 Perfect</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Web Applications Delivered</span>
-                                    <span class="text-emerald-400 font-bold">50+ Platforms</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Average LCP Load Speed</span>
-                                    <span class="text-purple-400 font-bold">0.4 Seconds</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Mobile Responsiveness</span>
-                                    <span class="text-emerald-400 font-bold">100% Adaptive</span>
+                            <div class="relative rounded-b-xl overflow-hidden">
+                                <img src="/assets/seo_dashboard_light.jpg" alt="Enterprise Web Development Performance Dashboard" class="w-full h-[270px] object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-100/90 dark:from-slate-950/80 via-transparent to-transparent"></div>
+                                
+                                <!-- Floating Light Metrics Chips -->
+                                <div class="absolute bottom-3 left-3 right-3 grid grid-cols-2 gap-2">
+                                    <div class="p-2 rounded-lg bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+                                        <div class="text-sm font-bold text-emerald-600 dark:text-emerald-400">100/100 Speed</div>
+                                        <div class="text-[9px] text-slate-600 dark:text-slate-300">Core Web Vitals Audit</div>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+                                        <div class="text-sm font-bold text-[#3790ff]">&lt; 0.4s Load</div>
+                                        <div class="text-[9px] text-slate-600 dark:text-slate-300">Sub-Second Rendering</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -396,684 +407,638 @@
             </div>
         </section>
 
-        
-        <!-- ═══ TOP-RATED RATINGS & WEB DEV MOVING TICKER STRIP ═══ -->
-        <section class="relative py-10 bg-slate-900 dark:bg-[#030816] overflow-hidden border-b border-black/10 dark:border-white/10">
-            <!-- Curved Top Blue Ambient Background Container -->
-            <div class="max-w-[1280px] mx-auto px-4 sm:px-8">
-                <div class="bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-[32px] sm:rounded-[40px] py-8 sm:py-10 px-4 sm:px-8 shadow-2xl relative overflow-hidden group">
-                    <!-- Top Blue Accent Line -->
-                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#3790ff] via-[#2563eb] to-[#60a5fa]"></div>
-                    
-                    <!-- Top Center Rating Header: Clutch & Trustpilot -->
-                    <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-8 text-center">
-                        <span class="text-sm sm:text-base font-extrabold text-slate-800 dark:text-slate-200">Top-rated on</span>
-                        
-                        <!-- Clutch Rating Badge -->
-                        <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/10 transition-all group/badge">
-                            <span class="font-extrabold text-slate-900 dark:text-white text-sm tracking-tight font-headline-display">Clutch</span>
-                            <span class="text-amber-400 text-xs font-bold">★★★★★</span>
-                            <span class="text-[10px] font-extrabold text-slate-600 dark:text-slate-400 tracking-wider">5.0 RATING</span>
-                        </a>
+        <!-- ═══ SECTION 2: EXECUTIVE SPOTLIGHT & CLIENT TESTIMONIALS (REVEALS ONLY ON SCROLL) ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Client Validation</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Trusted by Global Brands &amp; Digital Leaders</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Discover how our web development services boost page load speeds, maximize search engine rankings, and double conversion rates.</p>
+                </div>
 
-                        <span class="text-slate-400 font-bold text-sm">&amp;</span>
-
-                        <!-- Trustpilot Rating Badge -->
-                        <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/10 transition-all group/badge">
-                            <span class="font-extrabold text-slate-900 dark:text-white text-sm tracking-tight font-headline-display">Trustpilot</span>
-                            <span class="text-emerald-400 text-xs font-bold">★★★★★</span>
-                            <span class="text-[10px] font-extrabold text-slate-600 dark:text-slate-400 tracking-wider">5.0 RATING</span>
-                        </a>
-                    </div>
-
-                    <!-- Moving Ticker Carousel Container with Fade Edges -->
-                    <div class="relative overflow-hidden w-full">
-                        <!-- Fade Gradients on sides -->
-                        <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white dark:from-[#0B1221] to-transparent z-10 pointer-events-none"></div>
-                        <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white dark:from-[#0B1221] to-transparent z-10 pointer-events-none"></div>
-
-                        <!-- Infinite Sliding Track (Duplicated for seamless loop) -->
-                        <div class="flex items-center gap-10 sm:gap-16 whitespace-nowrap animate-logo-ticker py-2">
-
-                            <!-- Set 1 -->
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-amber-400/10 dark:bg-amber-400/20 border border-amber-400/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm14.5 12.5h-2.5v-1.5h1.5v-2h-2.5v-4h3.5v1.5h-2v1h2v5zm-5-6h-2v4.5c0 .83-.67 1.5-1.5 1.5S7.5 14.83 7.5 14h1.5c0 .28.22.5.5.5s.5-.22.5-.5V9.5h2.5z"/></svg>
-                                </div>
-                                <span>JavaScript</span>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Review Card 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Blueshore rebuilt our store into a headless Next.js architecture. Our organic traffic doubled and mobile checkout conversion rates jumped by 45%."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">VP</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Vice President of E-Commerce</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Global Retail Enterprise</p>
                             </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-sky-400/10 dark:bg-sky-400/20 border border-sky-400/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-sky-400 fill-current" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><g fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="12" rx="9" ry="3.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/></g></svg>
-                                </div>
-                                <span>React &amp; Next.js</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-red-600/10 dark:bg-red-600/20 border border-red-600/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-red-600 fill-current" viewBox="0 0 24 24"><path d="M12 2.5L2.5 5.8l1.4 12.3L12 21.5l8.1-3.4 1.4-12.3L12 2.5zm0 2.8l5.8 2.1-1 9-4.8 2.1-4.8-2.1-1-9 5.8-2.1zm-1.8 4.2h3.6l.8 2.5h-5.2l-.3-1.8 1.1-.7zm.9 4.3h1.8l-2.4 2.8v-2.8z"/></svg>
-                                </div>
-                                <span>Angular</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-emerald-500 fill-current" viewBox="0 0 24 24"><path d="M12 1.5C9.5 5.8 5.2 8.7 5.2 13.8c0 4.2 3.1 7.2 6.8 7.2 3.7 0 6.8-3 6.8-7.2 0-5.1-4.3-8-6.8-12.3zm.2 18c-3.1 0-5.3-2.3-5.3-5.5 0-3.6 3.2-6 5.3-9.5 2.1 3.5 5.3 5.9 5.3 9.5 0 3.2-2.2 5.5-5.3 5.5z"/></svg>
-                                </div>
-                                <span>MongoDB</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-orange-500/10 dark:bg-orange-500/20 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-orange-500 fill-current" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.97 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718h11.858l.241-2.718H5.328l.695 8.156h8.868l-.348 3.843-2.573.695-2.572-.695-.165-1.897H6.516l.322 3.824 5.132 1.422 5.132-1.422.71-7.89H8.531z"/></svg>
-                                </div>
-                                <span>HTML5 &amp; CSS3</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-slate-800/10 dark:bg-white/10 border border-slate-700/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-slate-900 dark:text-white fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2zm6 8h-2v-3c0-.55-.45-1-1-1s-1 .45-1 1v3h-2v-6h2v1.1c.37-.64 1.05-1.1 1.83-1.1 1.2 0 2.17.97 2.17 2.17V17z"/></svg>
-                                </div>
-                                <span>Node.js / Express</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 border border-teal-500/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-teal-500 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                                </div>
-                                <span>FastAPI / Python</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-blue-600/10 dark:bg-blue-600/20 border border-blue-600/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-blue-600 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                                </div>
-                                <span>TypeScript</span>
-                            </div>
-
-
-                            <!-- Set 1 -->
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-amber-400/10 dark:bg-amber-400/20 border border-amber-400/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm14.5 12.5h-2.5v-1.5h1.5v-2h-2.5v-4h3.5v1.5h-2v1h2v5zm-5-6h-2v4.5c0 .83-.67 1.5-1.5 1.5S7.5 14.83 7.5 14h1.5c0 .28.22.5.5.5s.5-.22.5-.5V9.5h2.5z"/></svg>
-                                </div>
-                                <span>JavaScript</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-sky-400/10 dark:bg-sky-400/20 border border-sky-400/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-sky-400 fill-current" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><g fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="12" rx="9" ry="3.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/></g></svg>
-                                </div>
-                                <span>React &amp; Next.js</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-red-600/10 dark:bg-red-600/20 border border-red-600/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-red-600 fill-current" viewBox="0 0 24 24"><path d="M12 2.5L2.5 5.8l1.4 12.3L12 21.5l8.1-3.4 1.4-12.3L12 2.5zm0 2.8l5.8 2.1-1 9-4.8 2.1-4.8-2.1-1-9 5.8-2.1zm-1.8 4.2h3.6l.8 2.5h-5.2l-.3-1.8 1.1-.7zm.9 4.3h1.8l-2.4 2.8v-2.8z"/></svg>
-                                </div>
-                                <span>Angular</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-emerald-500 fill-current" viewBox="0 0 24 24"><path d="M12 1.5C9.5 5.8 5.2 8.7 5.2 13.8c0 4.2 3.1 7.2 6.8 7.2 3.7 0 6.8-3 6.8-7.2 0-5.1-4.3-8-6.8-12.3zm.2 18c-3.1 0-5.3-2.3-5.3-5.5 0-3.6 3.2-6 5.3-9.5 2.1 3.5 5.3 5.9 5.3 9.5 0 3.2-2.2 5.5-5.3 5.5z"/></svg>
-                                </div>
-                                <span>MongoDB</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-orange-500/10 dark:bg-orange-500/20 border border-orange-500/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-orange-500 fill-current" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.97 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718h11.858l.241-2.718H5.328l.695 8.156h8.868l-.348 3.843-2.573.695-2.572-.695-.165-1.897H6.516l.322 3.824 5.132 1.422 5.132-1.422.71-7.89H8.531z"/></svg>
-                                </div>
-                                <span>HTML5 &amp; CSS3</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-slate-800/10 dark:bg-white/10 border border-slate-700/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-slate-900 dark:text-white fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2zm6 8h-2v-3c0-.55-.45-1-1-1s-1 .45-1 1v3h-2v-6h2v1.1c.37-.64 1.05-1.1 1.83-1.1 1.2 0 2.17.97 2.17 2.17V17z"/></svg>
-                                </div>
-                                <span>Node.js / Express</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 border border-teal-500/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-teal-500 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                                </div>
-                                <span>FastAPI / Python</span>
-                            </div>
-
-                            <div class="flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group/item">
-                                <div class="w-9 h-9 rounded-xl bg-blue-600/10 dark:bg-blue-600/20 border border-blue-600/20 flex items-center justify-center shrink-0 group-hover/item:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 text-blue-600 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                                </div>
-                                <span>TypeScript</span>
-                            </div>
-
                         </div>
                     </div>
 
+                    <!-- Review Card 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Their web engineering squad delivered a sub-second SaaS web portal with zero downtime. Clean code, responsive UI, and superb SEO optimization."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">CTO</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Chief Technology Officer</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">B2B SaaS Platform</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Our Google Lighthouse score went from 42 to 100 in just two sprints. Blueshore is the most technical and reliable web development partner we have worked with."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">HM</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Head of Marketing</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">FinTech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- ═══ SECTION 2: END-TO-END CAPABILITIES GRID ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
+        <!-- ═══ SECTION 3: 6 DEDICATED WEB ENGINEERING PRACTICES WITH 6 UNIQUE LIGHT IMAGES ═══ -->
+        <section id="web-practices" class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Full-Spectrum Capabilities</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">End-to-End Web Development Solutions</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">We build accessible, ultra-responsive, and scalable web solutions configured for growth.</p>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Full-Spectrum Web Capabilities</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Our 6 Core Web Engineering Practices</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">From high-throughput web applications to headless CMS engines, we craft resilient digital experiences tailored to your business growth.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Offering Card 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">language</span>
+                    <!-- Practice 1: Custom Enterprise Web Apps & SaaS -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/data_analytics_dashboard_light.jpg" alt="Custom Enterprise Web Applications & SaaS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Custom Web Apps &amp; SaaS Platforms</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Scalable React, Next.js, and Node.js web applications engineered for high user concurrency, multi-tenant billing, and cloud deployment. Learn about our <a href="/custom-software-development/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Custom Software Development</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Custom Web Application Development</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Building tailored, high-converting React.js, Next.js, and Vue.js web applications with lightning-fast routing and dynamic database integrations.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Next.js Server-Side Rendering</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> TypeScript Type Safety</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Responsive Mobile-First Design</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Multi-Tenant SaaS Dashboards</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> React &amp; Next.js SSR Architectures</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Micro-Frontend Web Portals</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">storefront</span>
+                    <!-- Practice 2: Headless E-Commerce & Marketplaces -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/team_planning_collaboration_light.jpg" alt="Headless E-Commerce & Marketplaces" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Headless E-Commerce &amp; Portals</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                High-converting storefronts on Shopify Plus, WooCommerce, and custom headless Commerce APIs with instant checkout sync. Paired with <a href="/performance-marketing/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Performance Marketing</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Headless E-Commerce &amp; CMS Systems</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Architecting headless Shopify, Strapi, Sanity, and WooCommerce storefronts with sub-second checkout speeds and instant inventory synchronization.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Headless Shopify Storefront API</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Decoupled Content Management</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Stripe &amp; Payment API Checkout</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Headless Shopify &amp; Commerce Layer</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Sub-Second Checkout Pipelines</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Multi-Currency &amp; Localization</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">phonelink</span>
+                    <!-- Practice 3: Progressive Web Applications (PWA) -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/mobile_app_development_light.jpg" alt="Progressive Web Applications PWA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Progressive Web Applications (PWA)</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Mobile-first PWAs delivering app-like offline experiences, push notifications, and background data synchronization across all devices.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Progressive Web Applications (PWA)</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Developing offline-capable Progressive Web Apps with push notifications, instant background syncing, and native app-like user experiences.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Service Worker Offline Caching</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Push Notification Support</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Add to Home Screen Installation</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Offline-First Service Workers</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Web Push Notifications</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Installable Desktop &amp; Mobile Web</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 4 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">speed</span>
+                    <!-- Practice 4: Custom CMS & Headless Content Engines -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/headless_cms_web_light.jpg" alt="Custom CMS & Headless Content Engines" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Custom CMS &amp; Headless Publishing</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Decoupled WordPress, Strapi, Sanity, and custom CMS platforms giving editorial teams full publishing freedom without sacrificing site speed. Backed by our <a href="/seo-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">SEO Services</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Core Web Vitals &amp; Speed Optimization</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Refactoring heavy codebases to achieve 100/100 Google PageSpeed Insights, eliminating Cumulative Layout Shift (CLS), and reducing LCP times.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> WebP &amp; AVIF Auto Compression</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Critical CSS &amp; Code Splitting</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Sub-Second Loading Times</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Headless WordPress &amp; Strapi</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Visual Page Builder Modules</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Automated Multi-Language Sync</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 5 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">integration_instructions</span>
+                    <!-- Practice 5: Full-Stack API & Integration -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/api_middleware_integration_light.jpg" alt="Full-Stack API & Web Portal Integrations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">API &amp; Portal Integrations</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                RESTful and GraphQL API pipelines connecting CRM, ERP, payment gateways, and third-party SaaS services smoothly into web portals. Explore <a href="/cloud-engineering/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Cloud Engineering</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">API Integration &amp; Middleware Build</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Connecting frontend web applications with secure backend RESTful and GraphQL APIs, CRM webhooks, and third-party SaaS services.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> REST &amp; GraphQL Endpoints</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Secure OAuth2 &amp; JWT Tokens</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Real-Time WebSockets Sync</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> GraphQL &amp; REST Microservices</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Stripe, PayPal &amp; ERP Connectors</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Real-Time WebSockets Sync</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 6 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">security</span>
+                    <!-- Practice 6: Core Web Vitals & Speed Optimization -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/web_performance_speed_light.jpg" alt="Core Web Vitals & Speed Optimization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Core Web Vitals &amp; Speed Optimization</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Systematic LCP, CLS, and INP score optimization, code splitting, edge CDN caching, and image compression for 100/100 Lighthouse scores. See our <a href="/workflow-automation/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Workflow Automation</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Web Security &amp; Compliance Hardening</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Implementing OWASP Top 10 security protection, SSL/TLS encryption, Content Security Policies (CSP), and automated vulnerability testing.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> OWASP Top 10 Shielding</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Strict Content Security Policies</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> GDPR &amp; Privacy Compliance</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Guaranteed 90+ Lighthouse Scores</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Edge Cloudflare CDN Optimization</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Sub-Second Server Side Rendering</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 3: FEATURE SPOTLIGHT Z-PATTERN ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up" id="spotlight">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Architectural Deep Dive</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">How We Build High-Performance Websites</h2>
-            </div>
-
-            <div class="space-y-24">
-                <!-- Spotlight 1 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -left-8 -top-12">01</div>
-                    <div class="lg:col-span-6 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">01 — HEADLESS &amp; SSR ARCHITECTURE</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Server-Side Rendering &amp; Instant Edge Delivery</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Client-side rendered websites suffer from slow initial paint speeds. We leverage Next.js SSR and edge CDN caching to serve fully rendered HTML directly from global edge servers, ensuring instant page display.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Next.js 14 App Router</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Global Edge CDN</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Sub-0.4s Initial Paint</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Discuss Web Architecture <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/web_dev_desk_light.webp" alt="SSR Architecture Light" title="SSR Architecture Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/homepage_hero_tech.webp" alt="SSR Architecture Dark" title="SSR Architecture Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotlight 2 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -right-8 -top-12">02</div>
-                    <div class="lg:col-span-6 lg:order-2 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">02 — PERFORMANCE &amp; CORE WEB VITALS</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">100/100 PageSpeed &amp; Zero Cumulative Layout Shift</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Google penalizes slow websites. We eliminate layout shifts, optimize image asset delivery with responsive WebP formatting, and prune unused JavaScript to guarantee top search engine rankings.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">100/100 Core Web Vitals</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Zero CLS Layout Shifts</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Lazy Asset Loading</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Audit Web Performance <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 lg:order-1 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/data_ai_analytics_light.webp" alt="Performance Light" title="Performance Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cloud_infrastructure_insight_v3.webp" alt="Performance Dark" title="Performance Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotlight 3 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -left-8 -top-12">03</div>
-                    <div class="lg:col-span-6 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">03 — ENTERPRISE SECURITY &amp; ACCESSIBILITY</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">WCAG 2.1 AA Accessibility &amp; OWASP Hardening</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Accessibility and web security are non-negotiable. We build websites compliant with WCAG 2.1 AA screen reader accessibility guidelines, enforced with SSL encryption and DDoS protection.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">WCAG 2.1 AA Compliant</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">OWASP Security Shielding</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Automated SSL / TLS</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Review Security &amp; Access <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cybersecurity_insight_light.webp" alt="Web Security Light" title="Web Security Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cybersecurity_insight_v3.webp" alt="Web Security Dark" title="Web Security Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 4: INDUSTRY SECTORS ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
+        <!-- ═══ SECTION 4: 3-STEP AGILE WEB ENGINEERING PROCESS ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Tailored Industry Verticals</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Web Solutions By Industry Sector</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">We build domain-specific web platforms configured for key industry verticals.</p>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Agile Web Delivery Framework</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Our 3-Step Web Engineering Process</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Transparent, milestone-driven execution designed for rapid deployment without technical debt.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Industry 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">account_balance</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">FinTech &amp; Banking Portals</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Ultra-secure customer portals, loan application flows, and encrypted banking web interfaces.</p>
-                        <span class="text-xs font-mono text-[#3790ff] font-bold uppercase tracking-wider">PCI-DSS Encrypted</span>
+                <div class="grid md:grid-cols-3 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">01</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Discovery &amp; UX Architecture</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            We map site architecture, define conversion funnels, conduct performance audits, and create high-fidelity Figma prototypes.
+                        </p>
                     </div>
 
-                    <!-- Industry 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">medical_services</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Healthcare &amp; Clinic Portals</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">HIPAA-compliant doctor appointment scheduling, patient intake forms, and telemedicine web apps.</p>
-                        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">HIPAA Certified</span>
+                    <!-- Step 2 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">02</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Modern Stack &amp; Headless Build</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Our web engineers build clean React/Next.js components, integrate APIs, and configure headless CMS publishing workflows.
+                        </p>
                     </div>
 
-                    <!-- Industry 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">shopping_cart</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">E-Commerce &amp; Retail Stores</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">High-conversion Shopify &amp; Next.js e-commerce storefronts with instant search and checkout.</p>
-                        <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">Sub-Second Checkout</span>
-                    </div>
-
-                    <!-- Industry 4 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">local_shipping</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Logistics &amp; Tracking Dashboards</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Interactive shipment tracking web applications, warehouse portals, and client booking widgets.</p>
-                        <span class="text-xs font-mono text-[#3790ff] font-bold uppercase tracking-wider">Real-Time Tracking</span>
-                    </div>
-
-                    <!-- Industry 5 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">real_estate_agent</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Real Estate Property Portals</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Custom property search web applications with interactive maps, MLS feed integrations, and virtual tour viewers.</p>
-                        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">MLS API Sync</span>
-                    </div>
-
-                    <!-- Industry 6 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">school</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Education &amp; EdTech Portals</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">LMS learning management web platforms, interactive student testing portals, and video course streaming.</p>
-                        <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">LMS &amp; Video Stream</span>
+                    <!-- Step 3 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">03</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Core Vitals Optimization &amp; Launch</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Full Lighthouse audit, cross-browser QA testing, zero-downtime DNS deployment, and 24/7 post-launch maintenance.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 5: 5-STEP TIMELINE ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Agile Methodology</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Our 5-Step Web Development Process</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">A transparent, sprint-based development lifecycle ensuring rapid delivery and zero technical debt.</p>
-            </div>
-
-            <div class="grid md:grid-cols-5 gap-6 relative">
-                <!-- Step 1 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">01</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Discovery &amp; Wireframes</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Mapping site architecture, sitemaps, conversion funnels, and interactive Figma wireframes.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">02</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">UI/UX Design</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Designing pixel-perfect, responsive component design systems aligned with your brand identity.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">03</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Frontend &amp; Backend Build</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Developing React/Next.js pages and API integrations in 2-week agile sprints with daily code pushes.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">04</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Vitals &amp; Speed Audit</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Running automated PageSpeed audits, cross-browser responsiveness checks, and security scans.</p>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">05</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Deploy &amp; Support</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Production launch, DNS migration, search engine indexing, and 24/7 technical monitoring.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 6: TECH STACK TABS ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
-            <div class="max-w-[1280px] mx-auto px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Battle-Tested Tech Stack</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Web Technologies &amp; Frameworks We Engineer</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-base">We leverage modern frontend and backend technologies tailored to performance.</p>
-                </div>
-
-                <!-- Tab Controls -->
-                <div class="flex flex-wrap justify-center gap-3 mb-12">
-                    <button onclick="filterTech('all')" class="tab-btn active px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 transition-all">All Stack</button>
-                    <button onclick="filterTech('frontend')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">Frontend</button>
-                    <button onclick="filterTech('backend')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">Backend &amp; CMS</button>
-                    <button onclick="filterTech('cloud')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">Hosting &amp; Edge</button>
-                </div>
-
-                <!-- Tech Badges Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4" id="tech-grid">
-                    <div class="tech-item frontend p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">React.js</span>
-                    </div>
-                    <div class="tech-item frontend p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Next.js SSR</span>
-                    </div>
-                    <div class="tech-item frontend p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Tailwind CSS</span>
-                    </div>
-                    <div class="tech-item backend p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Node.js</span>
-                    </div>
-                    <div class="tech-item backend p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Strapi CMS</span>
-                    </div>
-                    <div class="tech-item backend p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Shopify API</span>
-                    </div>
-                    <div class="tech-item cloud p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Vercel / Edge</span>
-                    </div>
-                    <div class="tech-item cloud p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">AWS CloudFront</span>
-                    </div>
-                    <div class="tech-item cloud p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Cloudflare CDN</span>
-                    </div>
-                    <div class="tech-item backend p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">GraphQL API</span>
-                    </div>
-                    <div class="tech-item frontend p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">TypeScript</span>
-                    </div>
-                    <div class="tech-item cloud p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Docker Container</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 7: CLIENT ENGAGEMENT MODELS ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Flexible Collaboration</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Web Engagement Models</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">Select the web development partnership model that fits your scope and budget.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Model 1 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 glow-hover transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">groups</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Dedicated Web Team</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for ongoing digital expansion</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Full-time dedicated React/Next.js frontend developers and UI engineers working on your product roadmap.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg border border-[#3790ff] text-[#3790ff] hover:bg-[#3790ff] hover:text-[#030816] font-bold transition-all text-sm">Hire Web Team</a>
-                </div>
-
-                <!-- Model 2 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border-2 border-[#3790ff] shadow-xl relative flex flex-col justify-between">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#3790ff] text-[#030816] text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">Most Popular</div>
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">assignment_turned_in</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Fixed-Price Web Build</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for defined web portals</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">End-to-end custom web design and development with clear scope, fixed pricing, and guaranteed delivery milestones.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg bg-[#3790ff] text-[#030816] hover:bg-[#5da2ff] font-bold transition-all text-sm">Get Fixed Price Quote</a>
-                </div>
-
-                <!-- Model 3 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 glow-hover transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">schedule</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Speed &amp; Vitals Retainer</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for site maintenance &amp; optimization</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Monthly retainer for continuous Core Web Vitals monitoring, security audits, and feature enhancements.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg border border-[#3790ff] text-[#3790ff] hover:bg-[#3790ff] hover:text-[#030816] font-bold transition-all text-sm">Start Retainer Plan</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 8: CLIENT REVIEWS & VERIFIED PROOF ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up" id="portfolio">
+        <!-- ═══ SECTION 5: 10 VALUE PILLARS GRID ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Proven Track Record</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">What Our Clients Say</h2>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Why Partner With Us</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Why Choose Blueshore Technologies for Web Development?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">We combine senior frontend engineering with transparent delivery to maximize your return on investment. Learn more <a href="/about" class="text-[#3790ff] font-semibold underline underline-offset-4">About Our Agency</a>.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">bolt</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">&lt;0.4s Speed</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Sub-Second Rendering</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">speed</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">100/100 Vitals</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Guaranteed Scores</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">devices</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">100% Mobile</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Fully Responsive UX</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">search</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">SEO &amp; AEO Ready</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Structured Schema Sync</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">shield</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">100% IP Ownership</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full Source Rights</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">group_add</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Dedicated Squads</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Senior Web Architects</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">published_with_changes</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Agile Sprints</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Bi-Weekly Deliverables</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">lock</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Enterprise SSL</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Zero Trust Security</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">support_agent</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">24/7 SLA Support</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Dedicated Helpdesk</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">verified_user</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Strict NDA</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full Confidentiality</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 6: SOLUTION VERTICALS WITH 4 UNIQUE HIGH-RES IMAGES ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Bespoke Web Solutions</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Bespoke Web Applications We Develop</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Tailored web portals engineered for industry-specific operational excellence. Explore our <a href="/industries" class="text-[#3790ff] font-semibold underline underline-offset-4">Industry Solutions</a>.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Real Review 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-amber-400 font-bold text-lg">★★★★★ 5.0</span>
-                            <span class="px-3 py-1 bg-[#3790ff]/10 text-[#3790ff] rounded-full text-xs font-bold font-mono">Clutch Verified</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">"Blueshore Technologies transformed our web platform with incredible speed and attention to detail. Our page load times dropped below 1 second and conversions increased significantly..."</p>
+                    <!-- Solution 1 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">Amit Verma</div>
-                            <div class="text-xs text-slate-500">Founder &amp; CEO • E-Commerce Brand</div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/person_working_laptop_light.jpg" alt="B2B & B2C Corporate Web Portals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">language</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">B2B &amp; B2C Corporate Portals</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Enterprise corporate websites, client self-service portals, investor relations hubs, and multi-region web properties built with automated localization.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">B2B Portals</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Client Portals</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Multi-Region Sync</span>
                         </div>
                     </div>
 
-                    <!-- Real Review 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-amber-400 font-bold text-lg">★★★★★ 5.0</span>
-                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold font-mono">Trustpilot Verified</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">"Their web development team is top-tier. They delivered a custom Next.js application with 100/100 Core Web Vitals that exceeded all client expectations..."</p>
+                    <!-- Solution 2 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">Sarah Jenkins</div>
-                            <div class="text-xs text-slate-500">VP of Technology • Global Digital Agency</div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/desktop_app_software_light.jpg" alt="Headless Shopify & Marketplaces" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">shopping_bag</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Headless Shopify &amp; Marketplaces</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Ultra-fast custom Shopify storefronts, multi-vendor marketplaces, and subscription management web apps paired with <a href="/performance-marketing/" class="text-[#3790ff] font-semibold underline underline-offset-4">Performance Marketing</a>.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Shopify Plus</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Multi-Vendor</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Custom Checkout</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 3 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/financial_dashboard_light.jpg" alt="Interactive Web Dashboards & Analytics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">analytics</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Web Analytics &amp; Reporting Portals</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Real-time data visualization web apps, financial analytics dashboards, and interactive reporting interfaces built for high data throughput.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Real-Time Data</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Interactive Charts</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Export Pipelines</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 4 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/logistics_fleet_tracking_light.jpg" alt="On-Demand Web Applications" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">cloud_sync</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">On-Demand Web Applications</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                High-performance booking engines, real-time dispatch web applications, and customer portals integrated with <a href="/cloud-engineering/" class="text-[#3790ff] font-semibold underline underline-offset-4">Cloud Infrastructure</a>.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Real-Time Sync</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Booking Engines</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">SaaS Dispatch</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 9: FREQUENTLY ASKED QUESTIONS (ACCORDION) ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Got Questions?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Web Development FAQs</h2>
-            </div>
-
-            <div class="max-w-3xl mx-auto space-y-4">
-                <!-- FAQ 1 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>What web development technologies do you specialize in?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-1">expand_more</span>
-                    </button>
-                    <div id="faq-answer-1" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        We specialize in modern JavaScript/TypeScript frameworks including React.js, Next.js (SSR), Vue.js, Node.js, Python Django, and headless CMS platforms like Strapi and Sanity.
+        <!-- ═══ SECTION 7: LEGACY WEB MODERNIZATION & SPEED TRANSFORMATION ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Web Speed Transformation</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-6">Legacy Website Modernization &amp; Speed Refactoring</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6">
+                            Is your slow monolithic website costing you Google rankings and client conversions? We re-engineer sluggish legacy websites into lightning-fast Next.js and React headless web platforms with zero search engine ranking loss. Learn about our <a href="/cloud-engineering/" class="text-[#3790ff] font-semibold underline underline-offset-4">Cloud Engineering Practices</a>.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">WordPress / PHP to Headless Next.js Refactoring</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Decouple rigid CMS monoliths into ultra-fast static &amp; server-rendered React components.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Core Web Vitals &amp; LCP Optimization</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Eliminate render-blocking resources, optimize fonts, and compress assets for sub-second rendering.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Zero-Downtime SEO Migration</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Preserve all existing URL structures, 301 redirects, and organic search engine authority during migration.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ 2 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>How do you guarantee fast website loading speeds and 100/100 Core Web Vitals?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-2">expand_more</span>
-                    </button>
-                    <div id="faq-answer-2" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        We implement server-side rendering (SSR), automatic WebP image compression, edge CDN caching, code splitting, and zero unused CSS to achieve sub-second LCP speeds and 100/100 Core Web Vitals scores.
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>Are your custom websites mobile-responsive and SEO-optimized?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-3">expand_more</span>
-                    </button>
-                    <div id="faq-answer-3" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Yes, 100% of our web builds are engineered mobile-first with adaptive Tailwind CSS grid systems, semantic HTML5 tags, schema markup, and search engine friendly routing.
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>Do I get full ownership of the source code and web assets?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-4">expand_more</span>
-                    </button>
-                    <div id="faq-answer-4" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Yes, you retain 100% full intellectual property and code ownership upon completion. All Git repositories and server credentials are handed over directly to you.
+                    <!-- Light-Themed Web Modernization Impact Metrics Card -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-slate-900 dark:text-white">
+                            <span class="material-symbols-outlined text-[#3790ff]">speed</span> Web Speed Transformation Metrics
+                        </h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Page Load Time Reduction</span>
+                                <span class="font-bold text-emerald-600 dark:text-emerald-400">-70% Faster</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Organic Traffic Growth</span>
+                                <span class="font-bold text-[#3790ff]">+250% Growth</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">System Uptime SLA</span>
+                                <span class="font-bold text-amber-600 dark:text-amber-400">99.99% Reliability</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 10: NDA & CONSULTATION CTA BANNER (THEME ADAPTIVE: LIGHT IN LIGHT MODE, DARK IN DARK MODE) ═══ -->
-        <section class="max-w-[1280px] mx-auto px-8 py-20 reveal-up">
-            <div class="bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 dark:from-[#0B1221] dark:to-[#131B2F] border border-slate-200 dark:border-[#3790ff]/30 p-12 rounded-3xl text-center relative overflow-hidden shadow-xl dark:shadow-2xl">
-                <div class="relative z-10 max-w-2xl mx-auto">
-                    <span class="text-[#3790ff] font-mono text-xs font-bold uppercase tracking-widest">100% Confidential • NDA Guaranteed</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-3 mb-4">Ready to Build Your High-Performance Web Application?</h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8">Schedule a technical consultation with our web architects. We will review your requirements and present an engineering proposal.</p>
-                    <a href="/contact" class="inline-flex items-center gap-3 px-8 py-4 bg-[#3790ff] text-[#030816] font-bold rounded-lg hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-[#030816] transition-all shadow-xl text-base hover:-translate-y-0.5">
-                        Get Started &amp; Request Technical Proposal <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
+        <!-- ═══ SECTION 8: SENIOR WEB DEVELOPER SHOWCASE ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Engineering Talent</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Hire Senior Web Development Engineers</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Our dedicated web squad consists of senior frontend architects, full-stack engineers, and web speed specialists. Review our <a href="/portfolio" class="text-[#3790ff] font-semibold underline underline-offset-4">Web Case Studies</a>.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Squad Member 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">WA</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Lead Web Solutions Architect</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">15,000+ Development Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">React, Next.js, Headless CMS, Node.js &amp; Cloudflare CDN</p>
+                    </div>
+
+                    <!-- Squad Member 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">FE</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Senior Frontend Specialist</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">12,000+ Development Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Tailwind CSS, TypeScript, Vue, PWA &amp; Web Vitals</p>
+                    </div>
+
+                    <!-- Squad Member 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">BE</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Full-Stack Web Engineer</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">10,000+ Development Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Node.js, Django, PostgreSQL, REST APIs &amp; GraphQL</p>
+                    </div>
+
+                    <!-- Squad Member 4 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">QA</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Lead Web QA &amp; Speed Lead</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">8,000+ Testing Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Lighthouse Audit, Cypress E2E, Cross-Browser &amp; Security</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 9: DISCOVERY & CONSULTATION FORM ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Let's Connect</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-4">Schedule a Web Performance &amp; Architecture Audit</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                            Speak with a lead web architect about your project requirements. We evaluate your current website performance and present a clear technical execution roadmap. Or visit our <a href="/contact" class="text-[#3790ff] font-semibold underline underline-offset-4">Contact Page</a>.
+                        </p>
+
+                        <div class="space-y-4 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">security</span>
+                                <span>100% Confidentiality &amp; Mutual NDA Available</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">timer</span>
+                                <span>Guaranteed Response SLA within 2 Business Hours</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">support</span>
+                                <span>Direct Consultation with Lead Systems Architects</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 p-8 md:p-10 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-xl">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Request Technical Web Audit</h3>
+                        <form id="web-development-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Full Name *</label>
+                                    <input type="text" required placeholder="John Smith" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Work Email *</label>
+                                    <input type="email" required placeholder="john@company.com" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Company / Website URL *</label>
+                                    <input type="text" required placeholder="example.com" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Phone Number *</label>
+                                    <input type="tel" required placeholder="+91 99999 00000" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Project Brief *</label>
+                                <textarea required rows="4" placeholder="Describe your web development goals, speed issues, or tech stack requirements..." class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-[#3790ff] text-white font-bold rounded-xl hover:bg-[#2563eb] transition-all shadow-lg text-sm flex items-center justify-center gap-2">
+                                Submit Consultation Request <span class="material-symbols-outlined">send</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 10: INTERACTIVE FAQ ACCORDION ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] reveal-up">
+            <div class="max-w-[1000px] mx-auto px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Got Questions?</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Frequently Asked Questions</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Everything you need to know about our web development services.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Which tech stack do you recommend for modern web development?</span>
+                            <span id="faq-icon-1" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-1" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            We specialize in modern JavaScript/TypeScript stacks including React, Next.js, Node.js, and Tailwind CSS for high performance, along with Python (Django/FastAPI) and Laravel for robust backend web applications.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>How do you guarantee 100/100 Core Web Vitals speed?</span>
+                            <span id="faq-icon-2" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-2" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            We optimize server-side rendering (SSR), implement static site generation (SSG), utilize edge CDN caching (Cloudflare/Vercel), eliminate render-blocking assets, and compress media formats into WebP/AVIF.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Who owns the website code and IP rights upon completion?</span>
+                            <span id="faq-icon-3" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-3" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            You retain 100% intellectual property rights and full source code ownership. All Git repositories, design assets, and hosting credentials are transferred directly to your organization.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>How fast can a web engineering squad be onboarded?</span>
+                            <span id="faq-icon-4" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-4" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            Our dedicated web developers can be integrated into your workflow, Jira, and Slack channels within 3 to 5 business days after initial alignment.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1128,13 +1093,13 @@
                         <!-- Clutch Card -->
                         <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-amber-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-amber-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch</div>
                                 <div class="text-[10px] font-bold text-amber-500 dark:text-amber-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-amber-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -1142,13 +1107,13 @@
                         <!-- Trustpilot Card -->
                         <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-emerald-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-emerald-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot</div>
                                 <div class="text-[10px] font-bold text-emerald-500 dark:text-emerald-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-emerald-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -1156,13 +1121,13 @@
                         <!-- Google Business Card -->
                         <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-blue-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-blue-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google</div>
                                 <div class="text-[10px] font-bold text-blue-500 dark:text-blue-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-blue-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -1328,5 +1293,7 @@
     <script src="/assets/responsive.js?v=3" defer></script>
     <script src="/assets/ai-chat.js?v=2.1" defer></script>
     <script src="/assets/theme-toggle.js" defer></script>
+    <script src="/assets/crm-form-handler.js" defer></script>
+    <script src="/assets/visitor-telemetry.js" defer></script>
 </body>
 </html>

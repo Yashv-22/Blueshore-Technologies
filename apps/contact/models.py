@@ -13,14 +13,14 @@ class ContactRequest(models.Model):
     
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
-    company = models.CharField(max_length=255)
+    company = models.CharField(max_length=255, blank=True, default='')
     email = models.EmailField()
-    phone = models.CharField(max_length=50)
-    service = models.CharField(max_length=150)
-    budget = models.CharField(max_length=100)
-    message = models.TextField()
+    phone = models.CharField(max_length=50, blank=True, default='')
+    service = models.CharField(max_length=150, blank=True, default='')
+    budget = models.CharField(max_length=100, blank=True, default='')
+    message = models.TextField(blank=True, default='')
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default='New')
-    source_page = models.CharField(max_length=255, default='/contact.html')
+    source_page = models.CharField(max_length=255, default='/contact')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -31,3 +31,4 @@ class ContactRequest(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.company} ({self.service})"
+

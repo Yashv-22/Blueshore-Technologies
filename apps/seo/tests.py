@@ -106,10 +106,10 @@ class ProgrammaticSEOTests(TestCase):
         url = reverse('index')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "15+")
-        self.assertContains(response, "500+")
+        self.assertContains(response, "7+")
+        self.assertContains(response, "50+")
         self.assertContains(response, "98%")
-        self.assertContains(response, "40+")
+        self.assertContains(response, "20+")
 
     def test_author_list_view_resolves_successfully(self):
         """Verify that /authors/ hub returns 200 OK and valid BreadcrumbList schema"""

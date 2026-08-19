@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.utils import timezone
 from django.core.cache import cache
 from apps.blog.models import BlogPost, AuthorProfile
-from apps.seo.models import RobotsRule
+from apps.seo.models import SEOPage, ServicePillar, RobotsRule, GlossaryTerm, ComparisonPage, B2BResource, TechnologyHubPage, IndustryHubPage
 
 def dynamic_sitemap_view(request):
     """Generates an XML sitemap dynamically targeting all core marketing and insights content"""

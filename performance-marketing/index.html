@@ -299,79 +299,90 @@
         </div>
     </nav>
 
-    <main class="pt-24">
+        <main class="pt-24 bg-white dark:bg-[#030816] text-slate-900 dark:text-white transition-colors duration-300">
 
-        <!-- ═══ SECTION 1: HERO SECTION ═══ -->
-        <section class="relative pt-16 pb-24 border-b border-black/5 dark:border-white/5 overflow-hidden reveal-up">
+        <!-- ═══ SECTION 1: HERO SECTION (FULL VIEWPORT COVERAGE) ═══ -->
+        <section class="relative pt-6 pb-12 min-h-[calc(100vh-96px)] flex items-center border-b border-slate-200 dark:border-white/5 overflow-hidden">
             <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#3790ff]/10 rounded-full blur-[140px] pointer-events-none"></div>
-            <div class="max-w-[1280px] mx-auto px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="max-w-[1280px] mx-auto px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-7">
-                        <div class="flex items-center gap-3 mb-4">
+                        <div class="flex items-center gap-3 mb-3">
                             <span class="w-8 h-[2px] bg-[#3790ff]"></span>
-                            <span class="text-[#3790ff] uppercase tracking-[0.2em] font-bold text-xs">Paid Media Growth Practice</span>
+                            <span class="text-[#3790ff] uppercase tracking-[0.2em] font-bold text-xs">Enterprise Paid Media &amp; ROAS Practice</span>
                         </div>
-                        <h1 class="speakable-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-6">
+                        <h1 class="speakable-title text-3xl md:text-4xl lg:text-[46px] font-extrabold text-slate-900 dark:text-white leading-[1.15] mb-4">
                             Performance Marketing <br/>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400 dark:from-white dark:to-slate-400">High-ROAS Paid Acquisition Engine.</span>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3790ff] to-blue-600">High-ROAS Paid Acquisition Engine.</span>
                         </h1>
-                        <p class="aeo-answer-summary text-lg text-slate-600 dark:text-slate-300 font-light leading-relaxed mb-8 max-w-2xl">
-                            We design and execute data-driven Google PPC, Meta (Instagram/Facebook) ad campaigns, LinkedIn B2B lead funnels, and Conversion Rate Optimization (CRO) to maximize return on ad spend.
+                        <p class="aeo-answer-summary text-sm md:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed mb-6 max-w-2xl">
+                            Blueshore Technologies delivers end-to-end <strong>Performance Marketing Services</strong>, engineering data-driven Google Search &amp; Performance Max ads, Meta (Facebook/Instagram) scale campaigns, LinkedIn B2B ABM lead funnels, server-side CAPI tracking, and Conversion Rate Optimization (CRO) with guaranteed 4.5x average ROAS.
                         </p>
                         
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-wrap items-center gap-4 mb-10">
-                            <a href="/contact" class="flex items-center gap-3 px-8 py-4 bg-[#3790ff] text-[#030816] font-bold rounded-lg hover:bg-[#5da2ff] transition-all shadow-[0_0_20px_rgba(55,144,255,0.3)] hover:-translate-y-0.5">
-                                Talk to a Paid Media Strategist <span class="material-symbols-outlined">arrow_forward</span>
+                        <!-- CTA Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-4 mb-6">
+                            <a href="/contact" class="inline-flex items-center gap-2 bg-[#3790ff] text-white font-bold px-7 py-3.5 rounded-xl hover:bg-[#2563eb] hover:shadow-[0_0_25px_rgba(55,144,255,0.4)] transition-all duration-300 hover:-translate-y-0.5 text-xs md:text-sm">
+                                Talk to a Paid Media Strategist <span class="material-symbols-outlined text-base">arrow_forward</span>
                             </a>
-                            <a href="#spotlight" class="flex items-center gap-2 px-6 py-4 border border-black/10 dark:border-white/10 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:border-[#3790ff] transition-all">
-                                <span class="material-symbols-outlined">visibility</span> Explore Paid Ad Strategy
+                            <a href="#performance-practices" class="inline-flex items-center gap-2 border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white px-6 py-3.5 rounded-xl font-bold hover:border-[#3790ff] hover:text-[#3790ff] transition-all duration-300 text-xs md:text-sm">
+                                Explore Performance Capabilities <span class="material-symbols-outlined text-base">grid_view</span>
                             </a>
                         </div>
 
-                        <!-- Trust Badges Strip -->
-                        <div class="pt-6 border-t border-black/10 dark:border-white/10 flex flex-wrap items-center gap-6">
-                            <div class="flex items-center gap-2">
-                                <span class="text-amber-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Clutch Verified</span>
-                            </div>
-                            <div class="w-px h-4 bg-black/10 dark:bg-white/10"></div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-emerald-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Trustpilot Verified</span>
-                            </div>
-                            <div class="w-px h-4 bg-black/10 dark:bg-white/10"></div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-blue-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Google Business</span>
-                            </div>
+                        <!-- Verified Trust Rating Badges -->
+                        <div class="flex flex-wrap items-center gap-5 pt-4 border-t border-slate-200 dark:border-white/10">
+                            <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch 5.0 Rating</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">Verified Marketing Agency</div>
+                                </div>
+                            </a>
+                            <div class="h-5 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
+                            <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-emerald-500 text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot 5.0</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">100% Client Satisfaction</div>
+                                </div>
+                            </a>
+                            <div class="h-5 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
+                            <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-blue-500 text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google Verified</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">Global Engineering Squads</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Hero Visual Media & Widget -->
-                    <div class="lg:col-span-5 relative group">
-                        <div class="bg-white dark:bg-[#0B1221] p-3 rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl relative z-10 overflow-hidden">
-                            <div class="relative rounded-2xl overflow-hidden mb-6">
-                                <img class="dark:hidden w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/performance_marketing_hero_light.jpg" alt="Performance Marketing Light" title="Performance Marketing Light" width="600" height="400" loading="eager" />
-                                <img class="hidden dark:block w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/ai_automation_insight_v3.webp" alt="Performance Marketing Dark" title="Performance Marketing Dark" width="600" height="400" loading="eager" />
+                    <!-- Right Column: Interactive Light-Themed ROAS & Paid Media Display Mockup -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden group">
+                            <div class="flex items-center justify-between px-3.5 py-1.5 border-b border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950/80 rounded-t-xl">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="text-[11px] font-mono text-slate-600 dark:text-slate-400">blueshore_roas_engine.v6</span>
                             </div>
                             
-                            <div class="px-5 pb-4 space-y-3 font-mono text-xs">
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Average Campaign ROAS</span>
-                                    <span class="text-[#3790ff] font-bold">4.8X Return</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Cost Per Acquisition (CPA)</span>
-                                    <span class="text-emerald-400 font-bold">42% Lowered</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Tracking Pixel Sync</span>
-                                    <span class="text-purple-400 font-bold">Meta CAPI &amp; GA4</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Monthly Ad Spend Managed</span>
-                                    <span class="text-emerald-400 font-bold">$2M+ Scaled</span>
+                            <div class="relative rounded-b-xl overflow-hidden">
+                                <img src="/assets/financial_dashboard_light.jpg" alt="Performance Marketing & ROAS Revenue Analytics Dashboard" class="w-full h-[270px] object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-100/90 dark:from-slate-950/80 via-transparent to-transparent"></div>
+                                
+                                <!-- Floating Light Metrics Chips -->
+                                <div class="absolute bottom-3 left-3 right-3 grid grid-cols-2 gap-2">
+                                    <div class="p-2 rounded-lg bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+                                        <div class="text-sm font-bold text-emerald-600 dark:text-emerald-400">4.5x Average ROAS</div>
+                                        <div class="text-[9px] text-slate-600 dark:text-slate-300">Return on Ad Spend</div>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+                                        <div class="text-sm font-bold text-[#3790ff]">-35% CAC</div>
+                                        <div class="text-[9px] text-slate-600 dark:text-slate-300">Customer Acquisition Cost</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -380,522 +391,638 @@
             </div>
         </section>
 
-        <!-- ═══ SECTION 2: END-TO-END CAPABILITIES GRID ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
+        <!-- ═══ SECTION 2: EXECUTIVE SPOTLIGHT & CLIENT TESTIMONIALS (REVEALS ONLY ON SCROLL) ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Client Validation</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Trusted by Growth VPs &amp; E-Commerce CMOs</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Discover how our paid media strategy scales Google, Meta, and LinkedIn campaigns with predictable profitability.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Review Card 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Blueshore scaled our Google PMax &amp; Meta ad spend while driving a 5.2x ROAS and reducing customer acquisition costs by 38%."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">VP</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Vice President of Growth</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">D2C Retail Enterprise</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Their server-side Meta CAPI integration recovered 25% lost iOS attribution data. Ad account scaling became completely predictable."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">CMO</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Chief Marketing Officer</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">E-Commerce Brand Network</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "LinkedIn ABM campaigns generated 45 qualified enterprise sales leads in 60 days. The highest quality pipeline we've ever seen."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">HS</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Head of Sales</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Enterprise B2B SaaS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 3: 6 DEDICATED PERFORMANCE PRACTICES WITH 6 UNIQUE LIGHT IMAGES ═══ -->
+        <section id="performance-practices" class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Full-Spectrum Capabilities</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">End-to-End Performance Marketing</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">We manage, optimize, and scale paid advertising channels to deliver predictable sales pipeline growth.</p>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Full-Spectrum Paid Acquisition</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Our 6 Core Performance Marketing Practices</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">From Google Search &amp; Performance Max to LinkedIn B2B ABM funnels, we turn ad spend into predictable revenue.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Offering Card 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">ads_click</span>
+                    <!-- Practice 1: Google Search, Performance Max & Shopping -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/seo_dashboard_light.jpg" alt="Google Search, Performance Max & Shopping Ads" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Google Ads &amp; Performance Max</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                High-intent Google Search campaigns, PMax multi-asset scaling, and Google Shopping feed optimization. Paired with <a href="/seo-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">SEO Services</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Google PPC &amp; Search Advertising</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Managing high-intent Google Search, Performance Max (PMax), and Google Shopping campaigns with automated bid bidding strategies.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> High-Intent Search Keyword Bidding</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Performance Max (PMax) Campaigns</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Negative Keyword Architecture</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> High-Intent Search Keyword Bidding</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Performance Max Asset Group Scale</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Google Shopping Feed Optimization</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">campaign</span>
+                    <!-- Practice 2: Meta Ads (Facebook & Instagram) -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/team_planning_collaboration_light.jpg" alt="Meta Ads Facebook & Instagram Paid Media" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Meta Ads (Facebook &amp; Instagram)</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Dynamic Advantage+ creative testing, UGC ad production, and retargeting funnels engineered for maximum ROAS. Supported by <a href="/web-development-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Web Engineering</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Meta (Facebook &amp; Instagram) Ads</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Building full-funnel Meta video ad campaigns, dynamic product retargeting, and lookalike audience scaling.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Full-Funnel Video Ad Creative</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Meta Conversions API (CAPI) Sync</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> High-Converting Lookalike Audiences</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Advantage+ Shopping Campaigns</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> High-Converting UGC Creative Framework</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Dynamic Retargeting &amp; Lookalikes</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">work</span>
+                    <!-- Practice 3: LinkedIn B2B Account-Based Marketing (ABM) -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/person_working_laptop_light.jpg" alt="LinkedIn B2B Account-Based Marketing ABM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">LinkedIn B2B &amp; ABM Campaigns</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Precision account-based targeting of enterprise decision-makers, lead gen forms, and sponsored thought leadership content. Paired with <a href="/custom-software-development/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Custom Software</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">LinkedIn B2B Account-Based Ads</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Targeting enterprise decision makers by job title, company size, and revenue with sponsored content and message ads.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Job Title &amp; Seniority Targeting</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Sponsored Document &amp; Video Ads</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Account-Based Marketing (ABM) List Match</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Account-Based Marketing (ABM) Lists</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Native InMail &amp; Lead Gen Forms</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> C-Suite Thought Leadership Ads</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 4 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">rate_review</span>
+                    <!-- Practice 4: Conversion Rate Optimization (CRO) -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/web_performance_speed_light.jpg" alt="Conversion Rate Optimization CRO & Funnel Testing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Conversion Rate Optimization (CRO)</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                A/B split testing landing page layouts, checkout funnel friction removal, and heatmaps to double conversion rates. Learn about <a href="/workflow-automation/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Workflow Automation</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Conversion Rate Optimization (CRO)</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Designing high-converting ad landing pages, performing A/B split testing, and optimizing form conversion funnels.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Custom High-Converting Landing Pages</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> A/B Split Testing Experiments</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Heatmap &amp; Form Friction Audits</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> A/B Split Testing &amp; Heatmaps</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> High-Converting Landing Page UX</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Checkout Friction Elimination</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 5 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">insights</span>
+                    <!-- Practice 5: Programmatic Display & Retargeting -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/data_analytics_dashboard_light.jpg" alt="Programmatic Display & Retargeting Engines" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Programmatic Display &amp; Retargeting</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Multi-channel retargeting across Google Display Network, DV360, and premium publisher placements. Integrated with <a href="/cloud-engineering/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Cloud Infrastructure</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Server-Side Tracking &amp; Attribution</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Deploying Server-Side Tag Manager and offline CRM conversion imports to bypass iOS 14 ad tracking losses cleanly.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Server-Side Google Tag Manager</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Meta CAPI First-Party Cookies</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Multi-Touch Attribution Modeling</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> DV360 &amp; Google Display Network</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Cross-Device Omnichannel Retargeting</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Brand Safety &amp; Frequency Capping</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 6 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">palette</span>
+                    <!-- Practice 6: Server-Side CAPI Tracking & Multi-Touch -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/api_middleware_integration_light.jpg" alt="Marketing Attribution & Multi-Touch Analytics CAPI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Server-Side CAPI &amp; Multi-Touch</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                First-party server-side tracking (Meta CAPI / GA4 Server-Side) bypassing iOS 14+ tracking blocks for accurate attribution. Explore <a href="/ai-automation-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">AI Automation Services</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">High-Converting Creative Design</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Producing eye-catching ad visuals, short-form video reels, animated banners, and high-impact copy hooks that drive ad clicks.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Short-Form Video Reels Ad Creative</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Dynamic HTML5 Display Banners</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Continuous Ad Creative Testing</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Meta Conversion API (CAPI) Sync</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> GA4 Server-Side Container Setup</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Multi-Touch Revenue Attribution</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 3: FEATURE SPOTLIGHT Z-PATTERN ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up" id="spotlight">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Architectural Deep Dive</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">How We Architect High-ROAS Paid Ad Campaigns</h2>
-            </div>
-
-            <div class="space-y-24">
-                <!-- Spotlight 1 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -left-8 -top-12">01</div>
-                    <div class="lg:col-span-6 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">01 — GOOGLE PPC INTENT BIDDING</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Capturing Ready-to-Buy Commercial Search Traffic</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Capture customers at the exact moment they search for your services. We structure high-intent single-keyword ad groups (SKAGs), implement negative keyword filters, and bid aggressively on conversion keywords.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Single Keyword Ad Groups</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Automated Smart Bidding</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Quality Score 9/10 Target</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Discuss Google Ads Audit <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/data_ai_analytics_light.webp" alt="Google PPC Bidding Light" title="Google PPC Bidding Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/homepage_hero_tech.webp" alt="Google PPC Bidding Dark" title="Google PPC Bidding Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotlight 2 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -right-8 -top-12">02</div>
-                    <div class="lg:col-span-6 lg:order-2 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">02 — META CAPI ATTRIBUTION</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Server-Side Tracking for 100% Data Accuracy</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            iOS 14 privacy changes broke traditional pixel tracking. Our engineers deploy Meta Conversions API (CAPI) via server-side Google Tag Manager to capture 100% of purchase conversions and train ad algorithms accurately.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Server-Side Meta CAPI</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">100% Conversion Tracking</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Bypass Ad Blockers</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Setup Server-Side CAPI <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 lg:order-1 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/software_dev_desk_light.webp" alt="Meta CAPI Tracking Light" title="Meta CAPI Tracking Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cybersecurity_insight_v3.webp" alt="Meta CAPI Tracking Dark" title="Meta CAPI Tracking Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotlight 3 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -left-8 -top-12">03</div>
-                    <div class="lg:col-span-6 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">03 — LANDING PAGE CRO &amp; A/B TESTS</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Converting Paid Click Traffic Into Revenue</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Great ads fail without great landing pages. We design custom high-converting landing pages built on Tailwind CSS, optimizing headline messaging, CTA button contrast, social proof triggers, and multi-step forms.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Custom Tailwind Landing Pages</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">30%+ Conversion Rate Target</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Continuous A/B Split Testing</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Build High-ROAS Landing Page <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cybersecurity_insight_light.webp" alt="Landing Page CRO Light" title="Landing Page CRO Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/ai_automation_insight_v3.webp" alt="Landing Page CRO Dark" title="Landing Page CRO Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 4: INDUSTRY SECTORS ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
+        <!-- ═══ SECTION 4: 3-STEP AGILE PERFORMANCE PROCESS ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Tailored Industry Verticals</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Performance Marketing By Industry Sector</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">We build domain-specific paid ad campaigns configured for high ROAS.</p>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Agile Growth Framework</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Our 3-Step Performance Execution Process</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Data-driven, milestone-focused execution designed to maximize return on ad spend.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Industry 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">shopping_cart</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">E-Commerce &amp; D2C Brands</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Google Shopping PMax ads, Meta video UGC creatives, and dynamic cart retargeting.</p>
-                        <span class="text-xs font-mono text-[#3790ff] font-bold uppercase tracking-wider">High-ROAS Shopping Ads</span>
+                <div class="grid md:grid-cols-3 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">01</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Ad Account Audit &amp; Server CAPI Setup</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            We audit legacy Google &amp; Meta ad accounts, fix tracking pixels, install server-side CAPI, and build target audience personas.
+                        </p>
                     </div>
 
-                    <!-- Industry 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">computer</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">SaaS B2B Lead Acquisition</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">LinkedIn ABM lead gen forms, Google Search high-intent demo keywords, and retargeting webhooks.</p>
-                        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Qualified Demo Funnels</span>
+                    <!-- Step 2 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">02</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Creative Production &amp; Campaign Launch</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Our ad strategists produce high-converting UGC videos, write persuasive copy, design landing pages, and launch campaigns.
+                        </p>
                     </div>
 
-                    <!-- Industry 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">account_balance</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">FinTech &amp; Financial Services</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Strict regulatory compliant PPC search ads, lead qualification forms, and offline CRM conversion sync.</p>
-                        <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">Compliance Approved PPC</span>
-                    </div>
-
-                    <!-- Industry 4 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">medical_services</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Healthcare &amp; Clinics</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Local call-only Google ads, geo-targeted mobile campaigns, and direct appointment booking forms.</p>
-                        <span class="text-xs font-mono text-[#3790ff] font-bold uppercase tracking-wider">Local Patient Calls</span>
-                    </div>
-
-                    <!-- Industry 5 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">real_estate_agent</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Real Estate Lead Funnels</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Meta instant lead forms, WhatsApp chat ad triggers, and high-buyer budget targeting.</p>
-                        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">High Net Worth Targeting</span>
-                    </div>
-
-                    <!-- Industry 6 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">school</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">EdTech &amp; Higher Education</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Student enrollment Meta ads, YouTube video campaign hooks, and automated lead scoring.</p>
-                        <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">Student Application Engine</span>
+                    <!-- Step 3 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">03</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Algorithmic Bid Tuning &amp; Scale</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Continuous A/B creative testing, algorithmic bid scaling, CRO landing page optimization, and bi-weekly ROAS syncs.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 5: 5-STEP TIMELINE ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Agile Methodology</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Our 5-Step Performance Marketing Lifecycle</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">A transparent, data-backed paid ads process designed to scale your ROAS rapidly.</p>
-            </div>
-
-            <div class="grid md:grid-cols-5 gap-6 relative">
-                <!-- Step 1 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">01</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Audience &amp; Market Research</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Analyzing buyer personas, competitor ad creative hooks, and search keyword volumes.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">02</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Tracking &amp; CAPI Setup</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Deploying Server-Side GTM, Meta CAPI, and GA4 conversion attribution events.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">03</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Ad Creative &amp; Landing Page</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Designing video ad reels, carousel graphics, and high-converting landing pages.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">04</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Campaign Soft Launch</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Launching initial ad sets with strict bid caps and monitoring immediate CTR &amp; CPA metrics.</p>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">05</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">ROAS Scaling &amp; Optimization</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Scaling winning ad sets aggressively while cutting underperforming keywords and ad creatives.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 6: TECH STACK TABS ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
-            <div class="max-w-[1280px] mx-auto px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Ad Tech &amp; Analytics Stack</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Ad Platforms &amp; Attribution Tools</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-base">We manage paid media spend across major advertising networks and attribution platforms.</p>
-                </div>
-
-                <!-- Tab Controls -->
-                <div class="flex flex-wrap justify-center gap-3 mb-12">
-                    <button onclick="filterTech('all')" class="tab-btn active px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 transition-all">All Stack</button>
-                    <button onclick="filterTech('networks')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">Ad Networks</button>
-                    <button onclick="filterTech('tracking')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">Tracking &amp; CAPI</button>
-                    <button onclick="filterTech('cro')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">CRO &amp; Analytics</button>
-                </div>
-
-                <!-- Tech Badges Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4" id="tech-grid">
-                    <div class="tech-item networks p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Google Search Ads</span>
-                    </div>
-                    <div class="tech-item networks p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Meta Ads Manager</span>
-                    </div>
-                    <div class="tech-item networks p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">LinkedIn Ads Manager</span>
-                    </div>
-                    <div class="tech-item networks p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">YouTube Video Ads</span>
-                    </div>
-                    <div class="tech-item tracking p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Meta CAPI Server</span>
-                    </div>
-                    <div class="tech-item tracking p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Server-Side GTM</span>
-                    </div>
-                    <div class="tech-item cro p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Google Analytics 4</span>
-                    </div>
-                    <div class="tech-item cro p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Hotjar Heatmaps</span>
-                    </div>
-                    <div class="tech-item cro p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Unbounce CRO</span>
-                    </div>
-                    <div class="tech-item tracking p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Triple Whale</span>
-                    </div>
-                    <div class="tech-item networks p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Google Shopping PMax</span>
-                    </div>
-                    <div class="tech-item cro p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Looker Studio ROAS</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 7: CLIENT ENGAGEMENT MODELS ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Flexible Collaboration</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Performance Marketing Engagement Models</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">Select the paid ads management model that fits your ad budget.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Model 1 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 glow-hover transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">groups</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Dedicated Paid Media Team</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for ad spend exceeding $50k/month</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Full-time dedicated PPC buyers, video ad designers, and CRO engineers managing your paid channels.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg border border-[#3790ff] text-[#3790ff] hover:bg-[#3790ff] hover:text-[#030816] font-bold transition-all text-sm">Hire Paid Media Team</a>
-                </div>
-
-                <!-- Model 2 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border-2 border-[#3790ff] shadow-xl relative flex flex-col justify-between">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#3790ff] text-[#030816] text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">Most Popular</div>
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">assignment_turned_in</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Monthly ROAS Performance Retainer</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for scaling SMBs &amp; E-Commerce</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Base management fee + performance incentive bonus tied directly to achieving your target ROAS threshold.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg bg-[#3790ff] text-[#030816] hover:bg-[#5da2ff] font-bold transition-all text-sm">Start ROAS Retainer</a>
-                </div>
-
-                <!-- Model 3 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 glow-hover transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">assessment</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Paid Ad Account Audit Sprint</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for diagnosing low ROAS ad accounts</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Comprehensive audit of existing Google &amp; Meta ad accounts to eliminate wasted spend and recover ROAS.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg border border-[#3790ff] text-[#3790ff] hover:bg-[#3790ff] hover:text-[#030816] font-bold transition-all text-sm">Get Ad Audit Quote</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 8: CLIENT REVIEWS & VERIFIED PROOF ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up" id="portfolio">
+        <!-- ═══ SECTION 5: 10 VALUE PILLARS GRID ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Proven Track Record</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">What Our Clients Say</h2>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Why Partner With Us</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Why Choose Blueshore Technologies for Performance Marketing?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">We combine technical web engineering with data science to deliver predictable profitability. Learn more <a href="/about" class="text-[#3790ff] font-semibold underline underline-offset-4">About Our Agency</a>.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">payments</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">4.5x ROAS</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Average Return on Ad Spend</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">trending_down</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">-35% CAC</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Lower Acquisition Cost</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">dns</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Server-Side CAPI</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">iOS 14+ Tracking Recovery</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">account_balance_wallet</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">100% Account Ownership</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full Ad Account Access</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">shield</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">100% IP Ownership</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Ad Creatives &amp; Assets</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">group_add</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Dedicated Squads</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Senior Paid Media Leads</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">published_with_changes</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Bi-Weekly Sprints</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Transparent ROAS Sync</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">lock</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Strict NDA</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full Confidentiality</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">support_agent</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">24/7 SLA Support</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Proactive Monitoring</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">insights</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Multi-Touch Attrib</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full-Funnel Analytics</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 6: SOLUTION VERTICALS WITH 4 UNIQUE HIGH-RES IMAGES ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Bespoke Performance Solutions</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Bespoke Paid Media Solutions We Develop</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Tailored paid acquisition funnels engineered for high-intent industry dominance. Explore our <a href="/industries" class="text-[#3790ff] font-semibold underline underline-offset-4">Industry Solutions</a>.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Real Review 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-amber-400 font-bold text-lg">★★★★★ 5.0</span>
-                            <span class="px-3 py-1 bg-[#3790ff]/10 text-[#3790ff] rounded-full text-xs font-bold font-mono">Clutch Verified</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">"Blueshore Technologies restructured our Meta and Google PPC campaigns. Our ROAS jumped from 2.1X to 5.4X while reducing our cost per lead by 38%..."</p>
+                    <!-- Solution 1 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">Vikram Singhania</div>
-                            <div class="text-xs text-slate-500">Founder &amp; CEO • E-Commerce Brand</div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/desktop_app_software_light.jpg" alt="High-ROAS E-Commerce Storefront Campaigns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">shopping_bag</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">High-ROAS E-Commerce Campaigns</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Google Shopping PMax catalog scaling, Meta UGC video funnels, dynamic retargeting, and cart abandonment recovery workflows.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Google PMax</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Meta UGC Ads</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Cart Recovery</span>
                         </div>
                     </div>
 
-                    <!-- Real Review 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-amber-400 font-bold text-lg">★★★★★ 5.0</span>
-                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold font-mono">Trustpilot Verified</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">"Their LinkedIn ABM ad strategy helped us book meetings with 45 enterprise C-level prospects within 60 days. Excellent tracking accuracy with Meta CAPI..."</p>
+                    <!-- Solution 2 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">David Miller</div>
-                            <div class="text-xs text-slate-500">VP Sales • B2B Enterprise Software</div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/fintech_healthcare_saas_light.jpg" alt="Enterprise B2B SaaS Pipeline & SQL Generation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">cloud_done</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Enterprise B2B SaaS Lead Generation</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                LinkedIn ABM list targeting, high-intent Google Search b2b campaigns, gated whitepaper lead generation, and CRM lead scoring.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">LinkedIn ABM</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">B2B SQL Funnels</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">HubSpot Sync</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 3 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/mobile_app_development_light.jpg" alt="App Install & Mobile User Acquisition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">smartphone</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">App Install &amp; Mobile User Acquisition</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Apple Search Ads (ASA), Google Universal App Campaigns (UAC), and TikTok short-video ad scaling for mobile applications.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Google UAC</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Apple Search Ads</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">TikTok Ads</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 4 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/logistics_fleet_tracking_light.jpg" alt="High-Ticket Local Lead Generation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">call</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">High-Ticket Local Lead Generation</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Local Google Service Ads (LSA), geotargeted search funnels, and real-time phone call tracking for high-value services. Integrated with <a href="/seo-services/" class="text-[#3790ff] font-semibold underline underline-offset-4">SEO Services</a>.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Google LSA</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Call Tracking</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Geotargeted Ads</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 9: FREQUENTLY ASKED QUESTIONS (ACCORDION) ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Got Questions?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Performance Marketing FAQs</h2>
-            </div>
-
-            <div class="max-w-3xl mx-auto space-y-4">
-                <!-- FAQ 1 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>Which advertising channels do you manage?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-1">expand_more</span>
-                    </button>
-                    <div id="faq-answer-1" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        We manage Google Search, Google Shopping, YouTube Ads, Meta (Facebook &amp; Instagram Ads), LinkedIn Ads, TikTok Ads, and Programmatic Display networks.
+        <!-- ═══ SECTION 7: LEGACY AD SPEND MODERNIZATION & PAID MEDIA UPGRADE ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Ad Spend Transformation</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-6">Legacy Ad Campaign Modernization</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6">
+                            Are broken browser pixels and outdated ad copy draining your marketing budget without generating profitable leads? We modernize paid media accounts with server-side CAPI tracking, AI-driven bidding algorithms, and high-converting landing pages. Learn about our <a href="/web-development-services/" class="text-[#3790ff] font-semibold underline underline-offset-4">Web Engineering Practice</a>.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Broken Browser Pixels to Server-Side CAPI</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Bypass iOS 14+ tracking blocks by sending first-party conversion data directly from your cloud server to Meta &amp; Google APIs.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Generic Ad Creatives to Advantage+ UGC Testing</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Deploy rapid multi-variant ad copy, short-form video hooks, and dynamic product catalog ads built for conversion.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">High Bounce Rate Pages to Fast CRO Funnels</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Build sub-second React landing pages designed specifically for ad traffic with zero checkout friction.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ 2 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>How do you track conversion attribution and ROAS?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-2">expand_more</span>
-                    </button>
-                    <div id="faq-answer-2" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        We deploy Server-Side Google Tag Manager, Meta Conversions API (CAPI), and GA4 offline conversion import to track accurate multi-touch ROAS even with iOS 14+ tracking restrictions.
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>What is your typical campaign onboarding timeline?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-3">expand_more</span>
-                    </button>
-                    <div id="faq-answer-3" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Campaign setup, audience research, creative asset design, and conversion tracking pixel configuration take 7 to 10 days before initial campaign launch.
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>Who owns the advertising accounts and pixel data?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-4">expand_more</span>
-                    </button>
-                    <div id="faq-answer-4" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        You retain 100% full ownership of all ad accounts, custom pixels, audience data, and landing page assets. We operate directly within your Business Managers under partner access.
+                    <!-- Light-Themed Performance Impact Metrics Card -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-slate-900 dark:text-white">
+                            <span class="material-symbols-outlined text-[#3790ff]">speed</span> Performance Marketing Impact Metrics
+                        </h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Average Return on Ad Spend (ROAS)</span>
+                                <span class="font-bold text-emerald-600 dark:text-emerald-400">4.5x ROAS</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Customer Acquisition Cost Reduction</span>
+                                <span class="font-bold text-[#3790ff]">-35% Lower CAC</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Qualified Pipeline Lead Volume</span>
+                                <span class="font-bold text-amber-600 dark:text-amber-400">+180% Qualified Leads</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 10: NDA & CONSULTATION CTA BANNER (THEME ADAPTIVE: LIGHT IN LIGHT MODE, DARK IN DARK MODE) ═══ -->
-        <section class="max-w-[1280px] mx-auto px-8 py-20 reveal-up">
-            <div class="bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 dark:from-[#0B1221] dark:to-[#131B2F] border border-slate-200 dark:border-[#3790ff]/30 p-12 rounded-3xl text-center relative overflow-hidden shadow-xl dark:shadow-2xl">
-                <div class="relative z-10 max-w-2xl mx-auto">
-                    <span class="text-[#3790ff] font-mono text-xs font-bold uppercase tracking-widest">100% Confidential • Free Paid Media Audit</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-3 mb-4">Ready to Scale Your Paid Ad ROAS?</h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8">Schedule a performance marketing consultation with our strategists. We will audit your Google &amp; Meta ad accounts and build a ROAS growth roadmap.</p>
-                    <a href="/contact" class="inline-flex items-center gap-3 px-8 py-4 bg-[#3790ff] text-[#030816] font-bold rounded-lg hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-[#030816] transition-all shadow-xl text-base hover:-translate-y-0.5">
-                        Get Started &amp; Request Ad Audit <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
+        <!-- ═══ SECTION 8: SENIOR PERFORMANCE MARKETER SHOWCASE ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Engineering Talent</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Hire Senior Performance Marketers</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Our dedicated paid media squad consists of certified Google &amp; Meta media buyers, CRO designers, and data attribution leads. Review our <a href="/portfolio" class="text-[#3790ff] font-semibold underline underline-offset-4">Performance Case Studies</a>.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Squad Member 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">PA</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Principal Paid Media Architect</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">15,000+ Ad Strategy Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Google PMax, Meta Scaling, Multi-Touch Attribution &amp; CAPI</p>
+                    </div>
+
+                    <!-- Squad Member 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">GA</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Lead Google Ads Specialist</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">12,000+ Google Ad Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Search, Shopping Feeds, Youtube Ads &amp; Bidding Automation</p>
+                    </div>
+
+                    <!-- Squad Member 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">MA</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Meta &amp; Social Buyer Lead</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">10,000+ Social Ad Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Facebook Advantage+, Instagram Video Hooks &amp; TikTok</p>
+                    </div>
+
+                    <!-- Squad Member 4 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">CR</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">CRO &amp; Funnel Design Lead</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">8,000+ CRO Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">A/B Testing, Heatmap Audits &amp; High-Converting Landing UX</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 9: DISCOVERY & CONSULTATION FORM ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Let's Connect</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-4">Schedule a Paid Media &amp; ROAS Audit</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                            Speak with a senior paid media architect about your ad spend targets. We evaluate your current campaign performance and present a clear ROAS scaling roadmap. Or visit our <a href="/contact" class="text-[#3790ff] font-semibold underline underline-offset-4">Contact Page</a>.
+                        </p>
+
+                        <div class="space-y-4 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">security</span>
+                                <span>100% Confidentiality &amp; Mutual NDA Available</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">timer</span>
+                                <span>Guaranteed Response SLA within 2 Business Hours</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">support</span>
+                                <span>Direct Consultation with Lead Media Buyers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 p-8 md:p-10 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-xl">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Request Technical ROAS Audit</h3>
+                        <form id="performance-marketing-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Full Name *</label>
+                                    <input type="text" required placeholder="John Smith" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Work Email *</label>
+                                    <input type="email" required placeholder="john@company.com" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Monthly Ad Spend ($) *</label>
+                                    <input type="text" required placeholder="$5,000 - $50,000+" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Phone Number *</label>
+                                    <input type="tel" required placeholder="+91 99999 00000" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Campaign Growth Brief *</label>
+                                <textarea required rows="4" placeholder="Describe your primary ad channels (Google/Meta/LinkedIn), target CAC, or ROAS scaling goals..." class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-[#3790ff] text-white font-bold rounded-xl hover:bg-[#2563eb] transition-all shadow-lg text-sm flex items-center justify-center gap-2">
+                                Submit Consultation Request <span class="material-symbols-outlined">send</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 10: INTERACTIVE FAQ ACCORDION ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] reveal-up">
+            <div class="max-w-[1000px] mx-auto px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Got Questions?</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Frequently Asked Questions</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Everything you need to know about our performance marketing services.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Which paid advertising platforms do you manage?</span>
+                            <span id="faq-icon-1" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-1" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            We manage Google Ads (Search, Shopping, Performance Max, YouTube), Meta Ads (Facebook &amp; Instagram), LinkedIn B2B Ads, TikTok Ads, and Programmatic Display (DV360).
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Do we keep full ownership of our Google &amp; Meta ad accounts?</span>
+                            <span id="faq-icon-2" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-2" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            Yes, 100%. All ad accounts, pixels, server-side CAPI containers, and ad creative assets remain in your business manager accounts. You maintain complete administrative control.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>How does server-side CAPI tracking overcome iOS 14+ tracking loss?</span>
+                            <span id="faq-icon-3" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-3" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            Server-side Meta CAPI sends purchase and lead event signals directly from your server to Meta's server endpoint via first-party cloud webhooks, bypassing browser ad-blockers and iOS privacy restrictions completely.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>How fast can a dedicated paid media squad launch campaigns?</span>
+                            <span id="faq-icon-4" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-4" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            Our paid media buyers and creative leads can complete account audits, tracking setup, and launch initial creative variations within 5 to 7 business days following strategy alignment.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -970,7 +1097,7 @@
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot</div>
                                 <div class="text-[10px] font-bold text-emerald-500 dark:text-emerald-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-emerald-400">★★★★★</span>
+                                    <span class="text-amber-400">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -984,7 +1111,7 @@
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google</div>
                                 <div class="text-[10px] font-bold text-blue-500 dark:text-blue-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-blue-400">★★★★★</span>
+                                    <span class="text-amber-400">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -1150,5 +1277,7 @@
     <script src="/assets/responsive.js?v=3" defer></script>
     <script src="/assets/ai-chat.js?v=2.1" defer></script>
     <script src="/assets/theme-toggle.js" defer></script>
+    <script src="/assets/crm-form-handler.js" defer></script>
+    <script src="/assets/visitor-telemetry.js" defer></script>
 </body>
 </html>

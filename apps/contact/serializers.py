@@ -8,5 +8,11 @@ class ContactRequestSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'name': {'required': True},
             'email': {'required': True},
-            'message': {'required': True},
+            'message': {'required': False, 'allow_blank': True, 'default': ''},
+            'company': {'required': False, 'allow_blank': True, 'default': ''},
+            'phone': {'required': False, 'allow_blank': True, 'default': ''},
+            'service': {'required': False, 'allow_blank': True, 'default': ''},
+            'budget': {'required': False, 'allow_blank': True, 'default': ''},
+            'source_page': {'required': False, 'allow_blank': True, 'default': '/contact'},
         }
+

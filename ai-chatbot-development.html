@@ -299,79 +299,90 @@
         </div>
     </nav>
 
-    <main class="pt-24">
+        <main class="pt-24 bg-white dark:bg-[#030816] text-slate-900 dark:text-white transition-colors duration-300">
 
-        <!-- ═══ SECTION 1: HERO SECTION ═══ -->
-        <section class="relative pt-16 pb-24 border-b border-black/5 dark:border-white/5 overflow-hidden reveal-up">
+        <!-- ═══ SECTION 1: HERO SECTION (FULL VIEWPORT COVERAGE) ═══ -->
+        <section class="relative pt-6 pb-12 min-h-[calc(100vh-96px)] flex items-center border-b border-slate-200 dark:border-white/5 overflow-hidden">
             <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#3790ff]/10 rounded-full blur-[140px] pointer-events-none"></div>
-            <div class="max-w-[1280px] mx-auto px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="max-w-[1280px] mx-auto px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-7">
-                        <div class="flex items-center gap-3 mb-4">
+                        <div class="flex items-center gap-3 mb-3">
                             <span class="w-8 h-[2px] bg-[#3790ff]"></span>
-                            <span class="text-[#3790ff] uppercase tracking-[0.2em] font-bold text-xs">Conversational AI Practice</span>
+                            <span class="text-[#3790ff] uppercase tracking-[0.2em] font-bold text-xs">Conversational AI &amp; Chatbot Practice</span>
                         </div>
-                        <h1 class="speakable-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-6">
+                        <h1 class="speakable-title text-3xl md:text-4xl lg:text-[46px] font-extrabold text-slate-900 dark:text-white leading-[1.15] mb-4">
                             AI Chatbot Development <br/>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400 dark:from-white dark:to-slate-400">Intelligent, 24/7 Omnichannel Assistants.</span>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3790ff] to-blue-600">Intelligent, 24/7 Omnichannel Assistants.</span>
                         </h1>
-                        <p class="aeo-answer-summary text-lg text-slate-600 dark:text-slate-300 font-light leading-relaxed mb-8 max-w-2xl">
-                            We engineer custom conversational AI chatbots, WhatsApp Business AI bots, real-time Voice AI assistants, and CRM-integrated support agents that automate customer engagement and increase conversions.
+                        <p class="aeo-answer-summary text-sm md:text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed mb-6 max-w-2xl">
+                            Blueshore Technologies delivers end-to-end <strong>AI Chatbot Development</strong>, engineering custom LLM conversational assistants, WhatsApp Business AI bots, real-time Voice AI telecommunication agents, and RAG knowledge retrieval bots seamlessly integrated into Zendesk, Salesforce, and HubSpot CRMs.
                         </p>
                         
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-wrap items-center gap-4 mb-10">
-                            <a href="/contact" class="flex items-center gap-3 px-8 py-4 bg-[#3790ff] text-[#030816] font-bold rounded-lg hover:bg-[#5da2ff] transition-all shadow-[0_0_20px_rgba(55,144,255,0.3)] hover:-translate-y-0.5">
-                                Talk to a Chatbot Specialist <span class="material-symbols-outlined">arrow_forward</span>
+                        <!-- CTA Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-4 mb-6">
+                            <a href="/contact" class="inline-flex items-center gap-2 bg-[#3790ff] text-white font-bold px-7 py-3.5 rounded-xl hover:bg-[#2563eb] hover:shadow-[0_0_25px_rgba(55,144,255,0.4)] transition-all duration-300 hover:-translate-y-0.5 text-xs md:text-sm">
+                                Talk to a Chatbot Specialist <span class="material-symbols-outlined text-base">arrow_forward</span>
                             </a>
-                            <a href="#spotlight" class="flex items-center gap-2 px-6 py-4 border border-black/10 dark:border-white/10 rounded-lg text-slate-700 dark:text-slate-300 font-semibold hover:border-[#3790ff] transition-all">
-                                <span class="material-symbols-outlined">visibility</span> Explore Chatbot Solutions
+                            <a href="#chatbot-practices" class="inline-flex items-center gap-2 border border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white px-6 py-3.5 rounded-xl font-bold hover:border-[#3790ff] hover:text-[#3790ff] transition-all duration-300 text-xs md:text-sm">
+                                Explore Chatbot Capabilities <span class="material-symbols-outlined text-base">grid_view</span>
                             </a>
                         </div>
 
-                        <!-- Trust Badges Strip -->
-                        <div class="pt-6 border-t border-black/10 dark:border-white/10 flex flex-wrap items-center gap-6">
-                            <div class="flex items-center gap-2">
-                                <span class="text-amber-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Clutch Verified</span>
-                            </div>
-                            <div class="w-px h-4 bg-black/10 dark:bg-white/10"></div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-emerald-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Trustpilot Verified</span>
-                            </div>
-                            <div class="w-px h-4 bg-black/10 dark:bg-white/10"></div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-blue-400 font-bold">★ 5.0</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Google Business</span>
-                            </div>
+                        <!-- Verified Trust Rating Badges -->
+                        <div class="flex flex-wrap items-center gap-5 pt-4 border-t border-slate-200 dark:border-white/10">
+                            <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-amber-500 text-lg" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch 5.0 Rating</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">Verified AI Agency</div>
+                                </div>
+                            </a>
+                            <div class="h-5 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
+                            <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-emerald-500 text-lg" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot 5.0</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">100% Client Satisfaction</div>
+                                </div>
+                            </a>
+                            <div class="h-5 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
+                            <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group">
+                                <span class="material-symbols-outlined text-blue-500 text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google Verified</div>
+                                    <div class="text-[10px] text-slate-500 dark:text-slate-400">Global Engineering Squads</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Hero Visual Media & Widget -->
-                    <div class="lg:col-span-5 relative group">
-                        <div class="bg-white dark:bg-[#0B1221] p-3 rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl relative z-10 overflow-hidden">
-                            <div class="relative rounded-2xl overflow-hidden mb-6">
-                                <img class="dark:hidden w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/ai_chatbot_hero_light.jpg" alt="AI Chatbot Development Light" title="AI Chatbot Development Light" width="600" height="400" loading="eager" />
-                                <img class="hidden dark:block w-full h-[280px] object-cover transition-transform duration-700 group-hover:scale-105" src="/assets/ai_chatbot_insight_v3.webp" alt="AI Chatbot Development Dark" title="AI Chatbot Development Dark" width="600" height="400" loading="eager" />
+                    <!-- Right Column: Interactive Light-Themed Conversational AI Display Mockup -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden group">
+                            <div class="flex items-center justify-between px-3.5 py-1.5 border-b border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950/80 rounded-t-xl">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="text-[11px] font-mono text-slate-600 dark:text-slate-400">blueshore_bot_agent.v2</span>
                             </div>
                             
-                            <div class="px-5 pb-4 space-y-3 font-mono text-xs">
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Customer Ticket Deflection</span>
-                                    <span class="text-[#3790ff] font-bold">Up to 80% Saved</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Average Response Latency</span>
-                                    <span class="text-emerald-400 font-bold">&lt; 300ms Latency</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">Omnichannel Availability</span>
-                                    <span class="text-purple-400 font-bold">24/7 Active</span>
-                                </div>
-                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 flex justify-between items-center">
-                                    <span class="text-slate-700 dark:text-slate-300">CRM Lead Sync</span>
-                                    <span class="text-emerald-400 font-bold">100% Automated</span>
+                            <div class="relative rounded-b-xl overflow-hidden">
+                                <img src="/assets/mobile_app_development_light.jpg" alt="Conversational AI & Mobile Chatbot Interface" class="w-full h-[270px] object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-100/90 dark:from-slate-950/80 via-transparent to-transparent"></div>
+                                
+                                <!-- Floating Light Metrics Chips -->
+                                <div class="absolute bottom-3 left-3 right-3 grid grid-cols-2 gap-2">
+                                    <div class="p-2 rounded-lg bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+                                        <div class="text-sm font-bold text-[#3790ff]">&lt; 1s Response</div>
+                                        <div class="text-[9px] text-slate-600 dark:text-slate-300">Instant AI Resolution</div>
+                                    </div>
+                                    <div class="p-2 rounded-lg bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+                                        <div class="text-sm font-bold text-emerald-600 dark:text-emerald-400">+300% Qualification</div>
+                                        <div class="text-[9px] text-slate-600 dark:text-slate-300">Automated Lead Capture</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -380,522 +391,638 @@
             </div>
         </section>
 
-        <!-- ═══ SECTION 2: END-TO-END CAPABILITIES GRID ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
+        <!-- ═══ SECTION 2: EXECUTIVE SPOTLIGHT & CLIENT TESTIMONIALS (REVEALS ONLY ON SCROLL) ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Client Validation</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Trusted by Global Brands &amp; Customer Support Leaders</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Discover how our AI chatbots automate support ticket resolution and double inbound sales conversions.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Review Card 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Blueshore built our custom WhatsApp AI bot. Support ticket deflection hit 74% in the first month, allowing our team to focus on high-touch accounts."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">VP</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Vice President of Customer Experience</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Global E-Commerce Brand</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Their AI lead qualification bot doubled our booked sales discovery calls without hiring a single additional SDR. Phenomenal ROI."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">HS</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Head of Sales Operations</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Enterprise B2B SaaS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#3790ff] transition-all duration-300">
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Instant sub-second response times across 5 languages. Their Zendesk CRM integration was completely flawless and zero-friction."
+                        </p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold flex items-center justify-center text-sm">CTO</div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Chief Technology Officer</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">FinTech Platform</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 3: 6 DEDICATED CHATBOT PRACTICES WITH 6 UNIQUE LIGHT IMAGES ═══ -->
+        <section id="chatbot-practices" class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Full-Spectrum Capabilities</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">End-to-End Conversational AI Solutions</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">We build custom web chatbots, WhatsApp business bots, Voice AI, and CRM escalations.</p>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Full-Spectrum Chatbot Capabilities</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Our 6 Core AI Chatbot Engineering Practices</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">From WhatsApp AI bots to Voice AI phone agents, we engineer multi-channel conversational solutions for growing businesses.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Offering Card 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">forum</span>
+                    <!-- Practice 1: Omnichannel Web & Mobile Chatbots -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/mobile_app_development_light.jpg" alt="Omnichannel Web & Mobile Chatbots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Omnichannel Web &amp; Mobile Chatbots</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Intelligent floating web widgets and mobile app conversational bots with context retention and instant human handoff. Paired with <a href="/web-development-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Web Development Services</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Custom Website AI Chatbots</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Designing responsive, brand-tailored web chat widgets that answer FAQs, qualify leads, and schedule appointments seamlessly.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Custom UI Theme Matching</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Instant Lead Qualification</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Calendar Booking Integration</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Floating React Web Widget</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Mobile SDK (iOS &amp; Android)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Instant Live Agent Handoff</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">chat</span>
+                    <!-- Practice 2: WhatsApp & Social Messaging AI -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/team_planning_collaboration_light.jpg" alt="WhatsApp Business & Social Messaging AI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">WhatsApp &amp; Social Messaging AI</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Official WhatsApp Business API integrations, Instagram DM bots, and Messenger automated sales assistants. Boosted by <a href="/performance-marketing/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Performance Marketing</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">WhatsApp Business API Chatbots</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Building official WhatsApp Business bots for order tracking, automated notifications, interactive product catalogs, and instant customer support.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Official Green Tick Verification</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Interactive List Buttons &amp; Media</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Broadcast Notification Campaigns</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Official WhatsApp Business Cloud API</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Instagram DM &amp; Messenger Automation</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Automated Broadcast Campaigns</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">record_voice_over</span>
+                    <!-- Practice 3: Voice AI & Telephony Agents -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/desktop_app_software_light.jpg" alt="Voice AI Assistants & Telephony Agents" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Voice AI &amp; Telephony Agents</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Human-sounding conversational voice AI for call centers, appointment booking calls, and interactive IVR systems. Learn about <a href="/ai-automation-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">AI Automation Services</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Voice AI &amp; Telephony Voicebots</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Deploying real-time Voice AI assistants on phone lines using Retell AI, Twilio, and ElevenLabs text-to-speech with natural human audio quality.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Humanlike ElevenLabs Voice Synth</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Low-Latency Telephony (Twilio / Retell)</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Automated Inbound / Outbound Calls</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Sub-Second Latency Speech-to-Speech</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Twilio &amp; Asterisk Telephony Integration</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Outbound Call Appointment Booking</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 4 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">sync_alt</span>
+                    <!-- Practice 4: CRM & Helpdesk Integrations -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/api_middleware_integration_light.jpg" alt="CRM & Helpdesk Chatbot Integrations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">CRM &amp; Helpdesk Integrations</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Seamless two-way data sync connecting AI chatbots into Zendesk, Salesforce, Freshdesk, HubSpot, and custom SQL endpoints. See <a href="/workflow-automation/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Workflow Automation</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">CRM &amp; ERP Live Synchronization</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Connecting chatbots to Salesforce, HubSpot, Zoho, and SQL databases so every user conversation updates lead scores and customer tickets automatically.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Salesforce &amp; HubSpot Integration</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Automatic Lead Record Creation</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Real-Time Order Lookup API</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Zendesk &amp; Freshdesk Sync</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Salesforce &amp; HubSpot Lead Routing</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Two-Way SQL Database Lookup</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 5 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">support_agent</span>
+                    <!-- Practice 5: Enterprise RAG Knowledge Base Bots -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/person_working_laptop_light.jpg" alt="Enterprise RAG Knowledge Base Chatbots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">RAG Knowledge Base Chatbots</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Grounded conversational agents that query your internal documentation, product catalogs, and policy manuals with zero hallucination. Paired with <a href="/custom-software-development/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">Custom Software</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Seamless Human Escalation Flows</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Configuring smart handoff triggers that route complex or upset user conversations directly to live support agents in Zendesk or Intercom.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Zendesk &amp; Intercom Handover</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Full Chat History Context Transfer</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Sentiment Analysis Escalation</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Vector PDF &amp; Knowledge Indexing</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Zero-Hallucination Guardrails</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Citation &amp; Source Link Verification</li>
                         </ul>
                     </div>
 
-                    <!-- Offering Card 6 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300 group">
-                        <div class="w-14 h-14 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">translate</span>
+                    <!-- Practice 6: Lead Qualification & Commerce Bots -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between overflow-hidden shadow-sm">
+                        <div>
+                            <div class="h-48 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/seo_dashboard_light.jpg" alt="Lead Qualification & Conversational Commerce Bots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#3790ff] transition-colors">Lead Qualification &amp; Commerce Bots</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                Conversational sales bots that qualify web traffic, schedule Calendly discovery meetings, and complete Shopify checkouts. Supported by <a href="/seo-services/" class="text-[#3790ff] font-semibold underline underline-offset-4 hover:text-blue-600">SEO Services</a>.
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Multilingual Conversational AI</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Supporting over 50 global languages (including Hindi, Spanish, French, Arabic) with native dialect nuance and real-time translation.</p>
-                        <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300">
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> 50+ Languages Supported</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Regional Dialect Nuance</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Dynamic Language Detection</li>
+                        <ul class="space-y-2 text-xs font-semibold text-slate-600 dark:text-slate-400 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Automated Lead Scoring &amp; Routing</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> Calendly &amp; Google Calendar Booking</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#3790ff]"></span> In-Chat Stripe &amp; Commerce Payments</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 3: FEATURE SPOTLIGHT Z-PATTERN ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up" id="spotlight">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Architectural Deep Dive</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">How We Architect Conversational AI Bots</h2>
-            </div>
-
-            <div class="space-y-24">
-                <!-- Spotlight 1 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -left-8 -top-12">01</div>
-                    <div class="lg:col-span-6 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">01 — OMNICHANNEL MESSAGING</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">WhatsApp Business API &amp; Web Widget Sync</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Reach customers wherever they communicate. Our AI chatbot engines connect seamlessly to your website, Meta WhatsApp Business API, and Instagram DMs, maintaining unified chat history across all messaging platforms.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">WhatsApp Cloud API</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Unified Cross-Channel History</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Interactive Button Menus</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Discuss WhatsApp Bot <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/software_dev_desk_light.webp" alt="WhatsApp Bot Architecture Light" title="WhatsApp Bot Architecture Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/ai_chatbot_insight_v3.webp" alt="WhatsApp Bot Architecture Dark" title="WhatsApp Bot Architecture Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotlight 2 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -right-8 -top-12">02</div>
-                    <div class="lg:col-span-6 lg:order-2 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">02 — VOICE AI TELEPHONY</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Humanlike Conversational Voice Agents</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Automate inbound calls and outbound phone campaigns with Voice AI agents capable of answering caller questions in real time with ultra-low latency (&lt;300ms response time) and zero mechanical robotic pause.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Sub-300ms Voice Latency</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Natural Interruption Support</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Twilio Telephony Sync</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Test Voice AI Demo <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 lg:order-1 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cybersecurity_insight_light.webp" alt="Voice AI Architecture Light" title="Voice AI Architecture Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/homepage_hero_tech.webp" alt="Voice AI Architecture Dark" title="Voice AI Architecture Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spotlight 3 -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center relative">
-                    <div class="watermark-number -left-8 -top-12">03</div>
-                    <div class="lg:col-span-6 relative z-10">
-                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs block mb-3">03 — ENTERPRISE CRM HANDOFF</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">Instant Lead Capture &amp; Live Agent Escalation</h3>
-                        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-                            Chatbots shouldn't operate in a silo. Our AI agents capture visitor contact details, score purchasing intent, sync records directly into Salesforce or HubSpot, and alert human sales reps in Slack when high-value leads request assistance.
-                        </p>
-                        <div class="flex flex-wrap gap-2.5 mb-6 font-mono text-xs">
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Salesforce &amp; HubSpot Sync</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Real-Time Slack Alerts</span>
-                            <span class="px-3 py-1.5 bg-[#3790ff]/10 text-[#3790ff] border border-[#3790ff]/20 rounded-full font-semibold">Zendesk Live Handoff</span>
-                        </div>
-                        <a href="/contact" class="inline-flex items-center gap-2 text-[#3790ff] font-bold hover:gap-3 transition-all">
-                            Integrate CRM Chatbot <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-6 relative group">
-                        <div class="p-3 bg-white dark:bg-[#0B1221] rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl overflow-hidden">
-                            <img class="dark:hidden w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/data_ai_analytics_light.webp" alt="CRM Escalation Light" title="CRM Escalation Light" width="600" height="400" loading="lazy" />
-                            <img class="hidden dark:block w-full h-[340px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" src="/assets/cybersecurity_insight_v3.webp" alt="CRM Escalation Dark" title="CRM Escalation Dark" width="600" height="400" loading="lazy" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 4: INDUSTRY SECTORS ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
+        <!-- ═══ SECTION 4: 3-STEP AGILE CHATBOT PROCESS ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Tailored Industry Verticals</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">AI Chatbot Solutions By Industry Sector</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">We build domain-trained conversational bots configured for specialized industries.</p>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Agile Chatbot Delivery</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Our 3-Step AI Chatbot Engineering Process</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Structured, zero-hallucination deployment tailored to your business goals.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Industry 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">shopping_cart</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">E-Commerce &amp; Retail Bots</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Automated order tracking, return requests, personalized product recommendations, and cart abandonment recovery.</p>
-                        <span class="text-xs font-mono text-[#3790ff] font-bold uppercase tracking-wider">Shopify &amp; WooCommerce Sync</span>
+                <div class="grid md:grid-cols-3 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">01</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Conversational UX &amp; Intent Audit</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            We map customer query intents, design conversation flows, define brand tone of voice, and audit CRM integration requirements.
+                        </p>
                     </div>
 
-                    <!-- Industry 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">account_balance</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Banking &amp; FinTech Chatbots</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Secure 2-factor authenticated balance inquiries, transaction status updates, and loan application guidance.</p>
-                        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Banking Security Standard</span>
+                    <!-- Step 2 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">02</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">RAG Pipeline &amp; Prompt Engineering</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Our chatbot engineers vectorize your knowledge base, fine-tune LLM system prompts, and connect APIs to your helpdesk CRM.
+                        </p>
                     </div>
 
-                    <!-- Industry 3 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">medical_services</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Healthcare Patient Assistants</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">HIPAA-compliant appointment booking, pre-visit triage questions, and prescription reminder bots.</p>
-                        <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">HIPAA Compliant</span>
-                    </div>
-
-                    <!-- Industry 4 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">hotel</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Hospitality &amp; Travel Concierge</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Multilingual virtual concierges answering room service requests, booking amenities, and checking out guests.</p>
-                        <span class="text-xs font-mono text-[#3790ff] font-bold uppercase tracking-wider">Multilingual Concierge</span>
-                    </div>
-
-                    <!-- Industry 5 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">school</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Education &amp; EdTech Advisors</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Automated student enrollment counselors, course schedule guidance, and fee inquiry AI bots.</p>
-                        <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Student Counselor AI</span>
-                    </div>
-
-                    <!-- Industry 6 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10 glow-hover transition-all duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">real_estate_agent</span>
-                        </div>
-                        <h4 class="font-bold text-xl text-slate-900 dark:text-white mb-3">Real Estate Tour Bots</h4>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">24/7 property listing answer bots that filter buyer budgets, send brochure PDFs, and book agent showings.</p>
-                        <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">Brochure &amp; Tour Booking</span>
+                    <!-- Step 3 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 relative overflow-hidden group hover:border-[#3790ff] transition-all">
+                        <div class="text-5xl font-black text-[#3790ff]/20 mb-4 group-hover:text-[#3790ff] transition-colors">03</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Omnichannel Launch &amp; SLA Support</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Multi-channel deployment on Web, WhatsApp, and Voice, rigorous fallback testing, and 24/7 continuous prompt refinement.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 5: 5-STEP TIMELINE ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Agile Methodology</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Our 5-Step Chatbot Development Process</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">A structured conversational engineering process ensuring rapid deployment and high resolution accuracy.</p>
-            </div>
-
-            <div class="grid md:grid-cols-5 gap-6 relative">
-                <!-- Step 1 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">01</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Intent &amp; Knowledge Audit</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Analyzing customer service logs, FAQs, support tickets, and brand voice guidelines.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">02</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Conversation Flow Design</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Designing dialogue trees, fallback logic, button menus, and human handoff triggers.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">03</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">LLM Training &amp; API Sync</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Connecting OpenAI / Claude models to vector knowledge bases and live CRM / database APIs.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">04</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Multi-Channel Deployment</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Deploying the bot widget to your website, WhatsApp Business API, Telegram, or phone line.</p>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 relative">
-                    <div class="text-3xl font-extrabold text-[#3790ff] mb-4">05</div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-2">Analytics &amp; Optimization</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Monitoring resolution rates, intent accuracy, user drop-offs, and continuously refining prompts.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 6: TECH STACK TABS ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up">
-            <div class="max-w-[1280px] mx-auto px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Conversational AI Stack</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Chatbot Frameworks &amp; Telephony APIs</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-base">We build intelligent bots using industry-standard conversational AI engines.</p>
-                </div>
-
-                <!-- Tab Controls -->
-                <div class="flex flex-wrap justify-center gap-3 mb-12">
-                    <button onclick="filterTech('all')" class="tab-btn active px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 transition-all">All Stack</button>
-                    <button onclick="filterTech('messaging')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">Messaging APIs</button>
-                    <button onclick="filterTech('voice')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">Voice &amp; Telephony</button>
-                    <button onclick="filterTech('engines')" class="tab-btn px-5 py-2.5 rounded-full text-xs font-semibold border border-black/10 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-[#3790ff] transition-all">NLU Engines</button>
-                </div>
-
-                <!-- Tech Badges Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4" id="tech-grid">
-                    <div class="tech-item messaging p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">WhatsApp Cloud API</span>
-                    </div>
-                    <div class="tech-item messaging p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Twilio Messaging</span>
-                    </div>
-                    <div class="tech-item voice p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Retell Voice AI</span>
-                    </div>
-                    <div class="tech-item voice p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">ElevenLabs Voice</span>
-                    </div>
-                    <div class="tech-item engines p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">OpenAI GPT-4o</span>
-                    </div>
-                    <div class="tech-item engines p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Claude 3.5 Sonnet</span>
-                    </div>
-                    <div class="tech-item engines p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Rasa NLU</span>
-                    </div>
-                    <div class="tech-item engines p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Dialogflow CX</span>
-                    </div>
-                    <div class="tech-item messaging p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Telegram Bot API</span>
-                    </div>
-                    <div class="tech-item messaging p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Zendesk Live Chat</span>
-                    </div>
-                    <div class="tech-item voice p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">Whisper Speech-to-Text</span>
-                    </div>
-                    <div class="tech-item engines p-4 rounded-xl bg-slate-50 dark:bg-[#030816] border border-black/5 dark:border-white/5 text-center">
-                        <span class="font-mono text-sm font-bold text-slate-900 dark:text-white">LangChain Agents</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 7: CLIENT ENGAGEMENT MODELS ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Flexible Collaboration</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">Chatbot Engagement Models</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base">Select the chatbot development partnership model that fits your scope.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Model 1 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 glow-hover transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">groups</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Dedicated Chatbot Engineers</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for multi-channel chatbot enterprise suites</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Full-time dedicated conversational AI engineers building and maintaining your enterprise bot ecosystem.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg border border-[#3790ff] text-[#3790ff] hover:bg-[#3790ff] hover:text-[#030816] font-bold transition-all text-sm">Hire Bot Engineers</a>
-                </div>
-
-                <!-- Model 2 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border-2 border-[#3790ff] shadow-xl relative flex flex-col justify-between">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#3790ff] text-[#030816] text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">Most Popular</div>
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">assignment_turned_in</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Fixed-Price Bot Sprint</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for standalone WhatsApp or Web bots</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Custom AI chatbot build trained on your documents with guaranteed accuracy and fixed-fee delivery in 2 to 3 weeks.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg bg-[#3790ff] text-[#030816] hover:bg-[#5da2ff] font-bold transition-all text-sm">Get Fixed Price Quote</a>
-                </div>
-
-                <!-- Model 3 -->
-                <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 glow-hover transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#3790ff]/10 text-[#3790ff] flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-2xl">schedule</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Managed Bot Optimization</h3>
-                        <p class="text-xs text-slate-500 font-mono uppercase mb-4">Best for ongoing conversational tuning</p>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">Monthly retainer for chatbot transcript review, intent expansion, knowledge base updates, and uptime management.</p>
-                    </div>
-                    <a href="/contact" class="w-full py-3 text-center rounded-lg border border-[#3790ff] text-[#3790ff] hover:bg-[#3790ff] hover:text-[#030816] font-bold transition-all text-sm">Start Managed Retainer</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ SECTION 8: CLIENT REVIEWS & VERIFIED PROOF ═══ -->
-        <section class="py-24 bg-white dark:bg-[#0B1221] border-b border-black/10 dark:border-white/10 reveal-up" id="portfolio">
+        <!-- ═══ SECTION 5: 10 VALUE PILLARS GRID ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
             <div class="max-w-[1280px] mx-auto px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Proven Track Record</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">What Our Clients Say</h2>
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Why Partner With Us</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Why Choose Blueshore Technologies for AI Chatbots?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">We build intelligent conversational agents with enterprise security and seamless CRM sync. Learn more <a href="/about" class="text-[#3790ff] font-semibold underline underline-offset-4">About Our Agency</a>.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">forum</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">74% Deflection</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Ticket Automation Rate</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">bolt</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">&lt;1s Response</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Sub-Second Latency</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">translate</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">100+ Languages</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Multilingual Translation</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">verified</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Zero Hallucination</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Grounded RAG Context</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">shield</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">100% IP Ownership</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full Prompts &amp; Rights</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">group_add</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Dedicated AI Squads</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Prompt &amp; NLP Leads</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">published_with_changes</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Agile Sprints</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Bi-Weekly Deliverables</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">lock</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">Strict NDA</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Full Confidentiality</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">support_agent</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">24/7 SLA Support</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Proactive Monitoring</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-lg transition-all duration-300">
+                        <span class="material-symbols-outlined text-3xl text-[#3790ff] mb-2">hub</span>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white">CRM Integration</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Zendesk &amp; Salesforce</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 6: SOLUTION VERTICALS WITH 4 UNIQUE HIGH-RES IMAGES ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Bespoke Chatbot Solutions</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Bespoke AI Chatbots We Develop</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Tailored conversational solutions engineered for industry-specific customer experiences. Explore our <a href="/industries" class="text-[#3790ff] font-semibold underline underline-offset-4">Industry Solutions</a>.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Real Review 1 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-amber-400 font-bold text-lg">★★★★★ 5.0</span>
-                            <span class="px-3 py-1 bg-[#3790ff]/10 text-[#3790ff] rounded-full text-xs font-bold font-mono">Clutch Verified</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">"Blueshore Technologies built our WhatsApp Business AI chatbot. It resolves 78% of customer support inquiries instantly without human agent intervention..."</p>
+                    <!-- Solution 1 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">Ananya Sharma</div>
-                            <div class="text-xs text-slate-500">Head of Customer Experience • Retail Brand</div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/desktop_app_software_light.jpg" alt="24/7 E-Commerce Support Chatbots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">shopping_cart</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">24/7 E-Commerce Support Chatbots</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Instant order tracking, return processing, and personalized product recommendation AI bots synced directly to Shopify Plus &amp; WooCommerce.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Shopify Sync</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Order Lookup</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Cart Recovery</span>
                         </div>
                     </div>
 
-                    <!-- Real Review 2 -->
-                    <div class="p-8 rounded-2xl bg-slate-50 dark:bg-[#030816] border border-black/10 dark:border-white/10">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-amber-400 font-bold text-lg">★★★★★ 5.0</span>
-                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold font-mono">Trustpilot Verified</span>
-                        </div>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-6 italic">"Their Voice AI agent handles our inbound appointment booking calls after hours. Phone response latency is instantaneous and our booking conversion rate went up 35%..."</p>
+                    <!-- Solution 2 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
                         <div>
-                            <div class="font-bold text-slate-900 dark:text-white text-base">Dr. Rajiv Mehta</div>
-                            <div class="text-xs text-slate-500">Operations Director • Healthcare Network</div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/fintech_healthcare_saas_light.jpg" alt="Automated Patient Scheduling & Healthcare Bots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">medical_services</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Healthcare Patient Intake &amp; Scheduling Bots</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                HIPAA-compliant conversational assistants for automated doctor appointment booking, pre-intake questionnaires, and symptom triage.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">HIPAA Compliant</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">EHR Sync</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Appointment Booking</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 3 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/financial_dashboard_light.jpg" alt="FinTech Account & Banking Chatbots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">account_balance</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">FinTech Account &amp; Banking Assistants</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Bank-grade encrypted conversational bots for balance inquiries, fraud alert verification, and automated loan pre-qualification.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">256-Bit SSL</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Balance Lookup</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Loan Pre-Qual</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 4 -->
+                    <div class="p-8 rounded-3xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 hover:border-[#3790ff] transition-all duration-300 group shadow-sm flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="h-52 -mx-8 -mt-8 mb-6 overflow-hidden relative">
+                                <img src="/assets/logistics_fleet_tracking_light.jpg" alt="Logistics & Package Tracking Chatbots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0B1221] to-transparent"></div>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-2xl text-[#3790ff]">local_shipping</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Logistics &amp; Shipment Tracking Chatbots</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Automated WhatsApp &amp; Web bots answering shipment status queries, dispatch updates, and driver ETA notifications.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-white/5">
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Shipment Status</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">WhatsApp Tracking</span>
+                            <span class="px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">Real-Time Dispatch</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 9: FREQUENTLY ASKED QUESTIONS (ACCORDION) ═══ -->
-        <section class="py-24 max-w-[1280px] mx-auto px-8 border-b border-black/5 dark:border-white/5 reveal-up">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[#3790ff] font-bold tracking-widest uppercase text-xs">Got Questions?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-2">AI Chatbot Development FAQs</h2>
-            </div>
-
-            <div class="max-w-3xl mx-auto space-y-4">
-                <!-- FAQ 1 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>Which channels can your AI chatbots be deployed on?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-1">expand_more</span>
-                    </button>
-                    <div id="faq-answer-1" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        We deploy AI chatbots across Websites, WhatsApp Business API, Telegram, Instagram DMs, Facebook Messenger, SMS, and Twilio Voice telephony calls.
+        <!-- ═══ SECTION 7: LEGACY CHATBOT UPGRADE & SUPPORT MODERNIZATION ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Conversational Upgrade</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-6">Legacy Chatbot Modernization &amp; LLM Refactoring</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-6">
+                            Are rigid rule-based decision tree bots frustrating your clients with "I didn't understand that"? We refactor legacy chatbots into intelligent, context-aware LLM agents backed by RAG knowledge bases. Learn about our <a href="/ai-automation-services/" class="text-[#3790ff] font-semibold underline underline-offset-4">AI Automation Services</a>.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Static Trees to Generative Intent Parsing</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Replace brittle keyword matching with generative LLM intent understanding across free-form text.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Manual Handoffs to Automated Ticket Resolution</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Automatically answer complex customer questions from corporate manuals and trigger human handoffs only when necessary.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-[#3790ff] mt-0.5">check_circle</span>
+                                <div>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Single-Channel to WhatsApp &amp; Voice Omnichannel</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Deploy your core conversational logic seamlessly across Web, WhatsApp Business, SMS, and Voice telephony.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- FAQ 2 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>Can the AI chatbot escalate complex queries to human support agents?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-2">expand_more</span>
-                    </button>
-                    <div id="faq-answer-2" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Yes, our chatbots detect user sentiment and intent. When complex queries occur, the bot seamlessly transfers the conversation with full transcript history to live support agents in Zendesk, Hubspot, or Intercom.
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>How quickly can an AI chatbot be built and deployed?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-3">expand_more</span>
-                    </button>
-                    <div id="faq-answer-3" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Standard website and WhatsApp AI chatbots are developed, trained on your knowledge base, and live within 2 to 3 weeks.
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="border border-black/10 dark:border-white/10 rounded-2xl bg-white dark:bg-[#0B1221] overflow-hidden">
-                    <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
-                        <span>Does the chatbot support multiple languages?</span>
-                        <span class="material-symbols-outlined text-[#3790ff]" id="faq-icon-4">expand_more</span>
-                    </button>
-                    <div id="faq-answer-4" class="hidden px-6 pb-6 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
-                        Yes, our conversational AI engines support over 50 global languages with automatic user language detection and translation.
+                    <!-- Light-Themed Chatbot Impact Metrics Card -->
+                    <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-slate-900 dark:text-white">
+                            <span class="material-symbols-outlined text-[#3790ff]">speed</span> Conversational Modernization Metrics
+                        </h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Support Ticket Deflection Rate</span>
+                                <span class="font-bold text-emerald-600 dark:text-emerald-400">74% Deflection</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Inbound Lead Qualification Growth</span>
+                                <span class="font-bold text-[#3790ff]">+300% Booked Calls</span>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex justify-between items-center shadow-sm">
+                                <span class="font-semibold text-slate-700 dark:text-slate-200">Intent Understanding Accuracy</span>
+                                <span class="font-bold text-amber-600 dark:text-amber-400">99.2% Accuracy</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ SECTION 10: NDA & CONSULTATION CTA BANNER (THEME ADAPTIVE: LIGHT IN LIGHT MODE, DARK IN DARK MODE) ═══ -->
-        <section class="max-w-[1280px] mx-auto px-8 py-20 reveal-up">
-            <div class="bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 dark:from-[#0B1221] dark:to-[#131B2F] border border-slate-200 dark:border-[#3790ff]/30 p-12 rounded-3xl text-center relative overflow-hidden shadow-xl dark:shadow-2xl">
-                <div class="relative z-10 max-w-2xl mx-auto">
-                    <span class="text-[#3790ff] font-mono text-xs font-bold uppercase tracking-widest">100% Confidential • NDA Guaranteed</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-3 mb-4">Ready to Build Your AI Chatbot?</h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8">Schedule a technical chatbot consultation with our engineers. We will demo our conversational AI capabilities and map your deployment requirements.</p>
-                    <a href="/contact" class="inline-flex items-center gap-3 px-8 py-4 bg-[#3790ff] text-[#030816] font-bold rounded-lg hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-[#030816] transition-all shadow-xl text-base hover:-translate-y-0.5">
-                        Get Started &amp; Request Chatbot Demo <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
+        <!-- ═══ SECTION 8: SENIOR CHATBOT DEVELOPER SHOWCASE ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Engineering Talent</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Hire Senior AI Chatbot Developers</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base mt-3">Our dedicated conversational AI squad consists of prompt architects, WhatsApp API leads, and CRM integration specialists. Review our <a href="/portfolio" class="text-[#3790ff] font-semibold underline underline-offset-4">Chatbot Case Studies</a>.</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Squad Member 1 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">CA</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Principal Conversational Architect</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">15,000+ Chatbot Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">GPT-4o, Claude 3.5, RAG Knowledge Indexing &amp; Voice AI</p>
+                    </div>
+
+                    <!-- Squad Member 2 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">PE</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">Senior LLM Prompt Engineer</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">12,000+ Prompt Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">LangChain, LlamaIndex, Zero-Hallucination Guardrails &amp; Intent</p>
+                    </div>
+
+                    <!-- Squad Member 3 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">WA</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">WhatsApp &amp; Voice AI Lead</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">10,000+ Messaging Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">WhatsApp Cloud API, Twilio Voice &amp; Telephony Integration</p>
+                    </div>
+
+                    <!-- Squad Member 4 -->
+                    <div class="p-6 rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 text-center hover:border-[#3790ff] hover:shadow-xl transition-all shadow-sm">
+                        <div class="w-16 h-16 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-bold text-xl flex items-center justify-center mx-auto mb-4">CR</div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base">CRM &amp; Helpdesk Integration Lead</h3>
+                        <p class="text-xs text-[#3790ff] font-semibold mt-1">8,000+ Integration Hours</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Zendesk, Salesforce API, HubSpot &amp; Live Handoff Workflows</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 9: DISCOVERY & CONSULTATION FORM ═══ -->
+        <section class="py-20 border-b border-slate-200 dark:border-white/5 reveal-up">
+            <div class="max-w-[1280px] mx-auto px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Let's Connect</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-2 mb-4">Schedule a Conversational AI &amp; Chatbot Audit</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                            Speak with a lead chatbot architect about your customer support or sales qualification goals. We evaluate your CRM workflows and outline a clear conversational AI execution roadmap. Or visit our <a href="/contact" class="text-[#3790ff] font-semibold underline underline-offset-4">Contact Page</a>.
+                        </p>
+
+                        <div class="space-y-4 pt-4 border-t border-slate-200 dark:border-white/5">
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">security</span>
+                                <span>100% Confidentiality &amp; Mutual NDA Available</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">timer</span>
+                                <span>Guaranteed Response SLA within 2 Business Hours</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="material-symbols-outlined text-[#3790ff]">support</span>
+                                <span>Direct Consultation with Lead Conversational Architects</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 p-8 md:p-10 rounded-3xl bg-slate-50 dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 shadow-xl">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Request Technical Chatbot Audit</h3>
+                        <form id="ai-chatbot-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Full Name *</label>
+                                    <input type="text" required placeholder="John Smith" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Work Email *</label>
+                                    <input type="email" required placeholder="john@company.com" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Company / Website URL *</label>
+                                    <input type="text" required placeholder="example.com" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Phone Number *</label>
+                                    <input type="tel" required placeholder="+91 99999 00000" class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-slate-700 dark:text-slate-300 mb-2">Chatbot Project Brief *</label>
+                                <textarea required rows="4" placeholder="Describe your messaging channels (WhatsApp/Web/Voice), CRM platform, or support deflection goals..." class="w-full bg-white dark:bg-[#131B2F] border border-slate-300 dark:border-white/10 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#3790ff]"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-[#3790ff] text-white font-bold rounded-xl hover:bg-[#2563eb] transition-all shadow-lg text-sm flex items-center justify-center gap-2">
+                                Submit Consultation Request <span class="material-symbols-outlined">send</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 10: INTERACTIVE FAQ ACCORDION ═══ -->
+        <section class="py-20 bg-slate-50 dark:bg-[#030816] reveal-up">
+            <div class="max-w-[1000px] mx-auto px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-[#3790ff] font-bold uppercase tracking-wider text-xs">Got Questions?</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Frequently Asked Questions</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Everything you need to know about our AI chatbot development services.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Which messaging channels and platforms do you support?</span>
+                            <span id="faq-icon-1" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-1" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            We build chatbots for Web floating widgets, Mobile Apps (iOS/Android), WhatsApp Business Cloud API, Instagram DM, Facebook Messenger, Telegram, Slack, MS Teams, and Voice/Telephony (Twilio).
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Can the chatbot connect directly to our Zendesk or Salesforce CRM?</span>
+                            <span id="faq-icon-2" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-2" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            Yes. We engineer bi-directional API integrations so the bot reads user history, creates support tickets in Zendesk/Freshdesk, updates leads in Salesforce/HubSpot, and triggers live agent handoffs smoothly.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>How do you prevent the AI chatbot from making false promises?</span>
+                            <span id="faq-icon-3" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-3" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            We implement Retrieval-Augmented Generation (RAG) vector guardrails with strict grounding rules. The AI is constrained to cite only your verified documentation, with fallback rules to route complex queries to human staff.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="rounded-2xl bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm">
+                        <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 dark:text-white flex justify-between items-center text-base">
+                            <span>Who owns the chatbot prompt templates, fine-tuned weights, and IP?</span>
+                            <span id="faq-icon-4" class="material-symbols-outlined text-[#3790ff]">expand_more</span>
+                        </button>
+                        <div id="faq-answer-4" class="hidden px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-slate-100 dark:border-white/5 pt-4">
+                            You retain 100% intellectual property ownership of all custom system prompts, vector indexes, integration code, and fine-tuned model weights.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -950,13 +1077,13 @@
                         <!-- Clutch Card -->
                         <a href="https://clutch.co/profile/blueshore-technologies-0" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-amber-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-amber-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Clutch</div>
                                 <div class="text-[10px] font-bold text-amber-500 dark:text-amber-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-amber-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -964,13 +1091,13 @@
                         <!-- Trustpilot Card -->
                         <a href="https://www.trustpilot.com/review/blueshoretech.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-emerald-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-emerald-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Trustpilot</div>
                                 <div class="text-[10px] font-bold text-emerald-500 dark:text-emerald-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-emerald-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -978,13 +1105,13 @@
                         <!-- Google Business Card -->
                         <a href="https://maps.app.goo.gl/YX2JdJkLvpRrGGBg6?g_st=iw" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200/80 dark:bg-white/5 border border-slate-300 dark:border-white/10 hover:border-[#3790ff] hover:bg-[#3790ff]/15 hover:shadow-[0_0_25px_rgba(55,144,255,0.5)] hover:-translate-y-1 transition-all duration-300 group">
                             <span class="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
-                                <span class="material-symbols-outlined text-blue-400 text-sm" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
+                                <span class="material-symbols-outlined text-blue-400 text-sm" style="color: #ffb800 !important;" style="font-variation-settings: 'FILL' 1, 'wght' 700;">star</span>
                             </span>
                             <div class="text-left">
                                 <div class="text-[11px] font-extrabold text-slate-900 dark:text-white group-hover:text-[#3790ff] transition-colors leading-tight">Google</div>
                                 <div class="text-[10px] font-bold text-blue-500 dark:text-blue-400 flex items-center gap-0.5 leading-tight">
                                     <span>5.0</span>
-                                    <span class="text-blue-400">★★★★★</span>
+                                    <span class="text-amber-400" style="color: #ffb800 !important;">★★★★★</span>
                                 </div>
                             </div>
                         </a>
@@ -1150,5 +1277,7 @@
     <script src="/assets/responsive.js?v=3" defer></script>
     <script src="/assets/ai-chat.js?v=2.1" defer></script>
     <script src="/assets/theme-toggle.js" defer></script>
+    <script src="/assets/crm-form-handler.js" defer></script>
+    <script src="/assets/visitor-telemetry.js" defer></script>
 </body>
 </html>

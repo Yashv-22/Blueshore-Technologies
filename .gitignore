@@ -87,3 +87,20 @@ node_modules/
 
 # Logs
 *.log
+
+# Temporary Build Scripts and Data Dump Text Files
+page_*.txt
+*.txt
+deploy_package.tar.gz
+.env.backup*
+append_pages.py
+build_*.py
+create_*.py
+do_build.py
+gen_*.py
+generate_*.py
+make_*.py
+page_builder.py
+run_restoration.py
+update_all_service_pages.py
+write_*.py

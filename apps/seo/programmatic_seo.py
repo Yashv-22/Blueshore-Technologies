@@ -275,7 +275,7 @@ def get_programmatic_page_data(service_slug, location_slug):
     ]
     proof_points = [
         f"Co-founded and directed by senior systems engineers Abhishek Kashyap and Ashish Kushwaha.",
-        f"150+ custom B2B projects successfully delivered across global tech hubs.",
+        f"50+ custom B2B projects successfully delivered across global tech hubs.",
         f"Strict compliance with regional data rules including GDPR, SOC 2, and local policies."
     ]
     geo_block = {

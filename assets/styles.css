@@ -192,8 +192,8 @@ html.dark footer .space-y-3 a:hover {
     color: #3790ff !important;
 }
 
-footer a.rounded-lg,
-html.dark footer a.rounded-lg {
+footer a.rounded-lg:not(.social-icon-btn),
+html.dark footer a.rounded-lg:not(.social-icon-btn) {
     background-color: rgba(255, 255, 255, 0.05) !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
     color: #94a3b8 !important;
@@ -205,14 +205,64 @@ html.dark footer .border-t {
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-footer .border-t a,
-html.dark footer .border-t a {
+footer .border-t a:not(.social-icon-btn),
+html.dark footer .border-t a:not(.social-icon-btn) {
     color: #64748b !important;
 }
 
-footer .border-t a:hover,
-html.dark footer .border-t a:hover {
+footer .border-t a:not(.social-icon-btn):hover,
+html.dark footer .border-t a:not(.social-icon-btn):hover {
     color: #3790ff !important;
+}
+
+/* ALL FOOTER SOCIAL ICON BUTTONS & CONTAINERS - ALWAYS BRAND BLUE */
+footer .social-icon-btn,
+footer a.social-icon-btn,
+footer a.social-icon-btn.rounded-xl,
+footer a.social-icon-btn.rounded-lg,
+html.dark footer a.social-icon-btn,
+html.dark footer a.social-icon-btn.rounded-xl,
+html.dark footer a.social-icon-btn.rounded-lg,
+html:not(.dark) footer a.social-icon-btn,
+html:not(.dark) footer a.social-icon-btn.rounded-xl,
+html:not(.dark) footer a.social-icon-btn.rounded-lg {
+    color: #3790ff !important;
+    background-color: rgba(55, 144, 255, 0.12) !important;
+    border: 1px solid rgba(55, 144, 255, 0.35) !important;
+}
+
+footer .social-icon-btn svg,
+footer a.social-icon-btn svg,
+html.dark footer a.social-icon-btn svg,
+html:not(.dark) footer a.social-icon-btn svg,
+footer .social-icon-btn path,
+footer a.social-icon-btn path,
+html.dark footer a.social-icon-btn path,
+html:not(.dark) footer a.social-icon-btn path {
+    color: #3790ff !important;
+    fill: #3790ff !important;
+}
+
+footer .social-icon-btn:hover,
+footer a.social-icon-btn:hover,
+html.dark footer a.social-icon-btn:hover,
+html:not(.dark) footer a.social-icon-btn:hover {
+    color: #3790ff !important;
+    background-color: rgba(55, 144, 255, 0.25) !important;
+    border-color: #3790ff !important;
+    box-shadow: 0 0 20px rgba(55, 144, 255, 0.4) !important;
+}
+
+footer .social-icon-btn:hover svg,
+footer a.social-icon-btn:hover svg,
+html.dark footer a.social-icon-btn:hover svg,
+html:not(.dark) footer a.social-icon-btn:hover svg,
+footer .social-icon-btn:hover path,
+footer a.social-icon-btn:hover path,
+html.dark footer a.social-icon-btn:hover path,
+html:not(.dark) footer a.social-icon-btn:hover path {
+    color: #3790ff !important;
+    fill: #3790ff !important;
 }
 
 
@@ -1932,13 +1982,15 @@ html:not(.dark) footer .space-y-3 a:hover {
     color: #3790ff !important;
 }
 
-html:not(.dark) footer a.rounded-lg {
+html:not(.dark) footer a.rounded-lg:not(.social-icon-btn),
+html:not(.dark) footer a.rounded-xl:not(.social-icon-btn) {
     background-color: rgba(0, 0, 0, 0.04) !important;
     border-color: rgba(0, 0, 0, 0.1) !important;
     color: #475569 !important;
 }
 
-html:not(.dark) footer a.rounded-lg:hover {
+html:not(.dark) footer a.rounded-lg:not(.social-icon-btn):hover,
+html:not(.dark) footer a.rounded-xl:not(.social-icon-btn):hover {
     background-color: rgba(0, 0, 0, 0.08) !important;
     color: #3790ff !important;
 }
@@ -1947,11 +1999,11 @@ html:not(.dark) footer .border-t {
     border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-html:not(.dark) footer .border-t a {
+html:not(.dark) footer .border-t a:not(.social-icon-btn) {
     color: #64748b !important;
 }
 
-html:not(.dark) footer .border-t a:hover {
+html:not(.dark) footer .border-t a:not(.social-icon-btn):hover {
     color: #3790ff !important;
 }
 

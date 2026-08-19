@@ -490,12 +490,6 @@ def generate_geo_aeo_block(page_name, config):
                         <ul class="text-xs text-slate-400 space-y-2 font-light">
                             {geo_benefits_html}
                         </ul>
-                        <div class="pt-2 border-t border-white/[0.06]">
-                            <h4 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-1.5">E-E-A-T Authority</h4>
-                            <p class="text-[10px] text-slate-500 leading-relaxed font-light">
-                                Verified B2B systems engineering by Blueshore Technologies. 150+ products delivered, ISO 27001 readiness, zero-trust cloud standards, and Clutch Leader honors.
-                            </p>
-                        </div>
                     </div>
                 </div>
 

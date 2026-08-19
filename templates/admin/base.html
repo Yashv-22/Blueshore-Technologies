@@ -847,7 +847,7 @@
       
       <!-- Sidebar Header (Logo & Brand) -->
       <div class="flex items-center justify-between px-5 h-16 border-b border-slate-800/60 shrink-0">
-        <a href="{% url 'admin-dashboard' %}" class="flex items-center gap-3 decoration-none">
+        <a href="{% url 'admin-dashboard' %}" class="sidebar-nav-item flex items-center gap-3 decoration-none">
           <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-600 shadow-lg shadow-blue-600/30">
             <span class="font-extrabold text-white text-sm font-sans tracking-tight">BT</span>
           </div>
@@ -862,19 +862,10 @@
       </div>
 
       <!-- Navigation groups container -->
-      <div class="flex-1 overflow-y-auto p-4 space-y-6 scrollbar-thin">
+      <div class="flex-1 overflow-y-auto p-4 space-y-5 scrollbar-thin">
         
-        <!-- MAIN NAVIGATION Section -->
-        <div>
-          <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-2 py-1 mb-2">Main Navigation</div>
-          <a href="{% url 'admin-dashboard' %}" id="sidebar-dashboard-link" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs decoration-none transition-all">
-            <i data-lucide="layout-dashboard" class="w-4.5 h-4.5"></i>
-            <span>Dashboard</span>
-          </a>
-        </div>
-
         <!-- Search bar for navigation filtering -->
-        <div class="relative mb-2">
+        <div class="relative mb-3">
           <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-500">
             <i data-lucide="search" class="w-4 h-4"></i>
           </span>
@@ -883,123 +874,115 @@
                  class="w-full bg-[#050811] border border-slate-800/80 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-300 placeholder-slate-650 focus:outline-none focus:border-blue-500 transition-colors">
         </div>
 
-        <!-- TopNavBar -->
-    <!-- Enhanced Top Navigation Bar -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-slate-50/90 dark:bg-[#030816]/90 backdrop-blur-lg border-b border-black/10 dark:border-white/10 shadow-lg">
-        <div class="max-w-[1280px] mx-auto flex justify-between items-center px-8 py-2.5">
-            <a href="/" class="flex items-center gap-2 relative group/cms-block">
-                <img class="w-12 h-12 rounded object-contain" fetchpriority="high" src="/assets/BST-Logo.webp?v=2" alt="Blueshore Technologies Logo" title="Blueshore Technologies Logo" width="48" height="48" loading="eager"/>
-                <div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white">
-                    Blueshore Technologies
-                </div>
-            </a>
-            <div class="hidden lg:flex items-center gap-8 font-['Inter'] text-sm font-medium tracking-wide">
-                <a class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200"
-                    href="/">Home</a>
-
-                <!-- Services Dropdown -->
-                <div class="relative group">
-                    <a href="/services"
-                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
-                        Services <span
-                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
-                    </a>
-                    <div class="absolute top-full left-0 mt-2 w-[850px] bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-6 grid grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Engineering &amp; Software</h4>
-                            <ul class="space-y-3">
-                                <li><a href="/custom-software-development/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">code</span> Custom Software Development</a></li>
-                                <li><a href="/web-development-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">language</span> Web Development Services</a></li>
-                                <li><a href="/cloud-engineering/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">cloud</span> Cloud Engineering</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">AI &amp; Automation</h4>
-                            <ul class="space-y-3">
-                                <li><a href="/ai-automation-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">smart_toy</span> AI Automation Services</a></li>
-                                <li><a href="/ai-chatbot-development/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">forum</span> AI Chatbot Development</a></li>
-                                <li><a href="/workflow-automation/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">account_tree</span> Workflow Automation</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-[#3790ff] font-bold mb-4 text-xs uppercase tracking-wider">Growth &amp; Marketing</h4>
-                            <ul class="space-y-3">
-                                <li><a href="/seo-services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">trending_up</span> SEO Services</a></li>
-                                <li><a href="/performance-marketing/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-lg">ads_click</span> Performance Marketing</a></li>
-                                <li><a href="/services/" class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] flex items-center gap-2 text-sm font-semibold border-t border-slate-100 dark:border-slate-800 pt-2 mt-1"><span class="material-symbols-outlined text-lg">grid_view</span> View All Services</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industries Dropdown -->
-                <div class="relative group">
-                    <a href="/industries"
-                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
-                        Industries <span
-                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
-                    </a>
-                    <div
-                        class="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
-                        <ul class="space-y-3">
-                            <li><a href="/industries#finance-sector"
-                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Finance &amp;
-                                    Banking</a></li>
-                            <li><a href="/industries#healthcare-sector"
-                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Healthcare</a>
-                            </li>
-                            <li><a href="/industries#ecommerce-sector"
-                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Retail &amp;
-                                    E-Commerce</a></li>
-                            <li><a href="/industries#logistics-sector"
-                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Logistics</a>
-                            </li>
-                            <li><a href="/industries#education-sector"
-                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Education &amp;
-                                    EdTech</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- About Dropdown -->
-                <div class="relative group">
-                    <a href="/about"
-                        class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200 py-2">
-                        Company <span
-                            class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
-                    </a>
-                    <div
-                        class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
-                        <ul class="space-y-3">
-                            <li><a href="/about"
-                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">About Us</a>
-                            </li>
-                            <li><a href="/careers"
-                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Careers</a>
-                            </li>
-                            <li><a href="/portfolio"
-                                    class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] block">Case
-                                    Studies</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <a class="text-slate-600 dark:text-slate-300 hover:text-[#3790ff] transition-colors duration-200"
-                    href="/blog">Insights</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="/contact"
-                    class="hidden md:flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-[#3790ff] text-sm font-medium transition-colors">
-                    <span class="material-symbols-outlined text-lg">call</span> +91 99907 12555
-                </a>
-                <button onclick="window.location.href='/contact'"
-                    class="hidden sm:inline-block bg-[#3790ff] text-[#030816] px-6 py-2.5 rounded hover:bg-[#5da2ff] hover:translate-y-[-1px] transition-all duration-200 font-bold text-sm shadow-[0_0_15px_rgba(55,144,255,0.3)]">
-                    Let's Talk
-                </button>
-            </div>
+        <!-- 1. MAIN NAVIGATION Section -->
+        <div class="sidebar-nav-section">
+          <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-2 py-1 mb-1 sidebar-section-title">MAIN NAVIGATION</div>
+          <a href="{% url 'admin-dashboard' %}" class="sidebar-nav-item flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-semibold text-white bg-blue-600 shadow-md shadow-blue-600/20 decoration-none">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+            <span>Dashboard</span>
+          </a>
         </div>
-    </nav>
+
+        <!-- 2. VISITOR INTELLIGENCE -->
+        <div class="sidebar-nav-section">
+          <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-2 py-1 mb-1 sidebar-section-title">VISITOR INTELLIGENCE</div>
+          <div class="space-y-0.5">
+            <a href="/admin/live-visitors/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="radio" class="w-3.5 h-3.5 text-emerald-400"></i> Live Visitors</span>
+            </a>
+            <a href="/admin/live-conversations/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="message-square" class="w-3.5 h-3.5 text-blue-400"></i> Live Conversations</span>
+            </a>
+            <a href="/admin/visitor-analytics/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="bar-chart-3" class="w-3.5 h-3.5 text-purple-400"></i> Visitor Analytics</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. CRM SYSTEMS -->
+        <div class="sidebar-nav-section">
+          <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-2 py-1 mb-1 sidebar-section-title">CRM SYSTEMS</div>
+          <div class="space-y-0.5">
+            <a href="/admin/crm/lead/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="inbox" class="w-3.5 h-3.5 text-blue-400"></i> Leads Inbox</span>
+              <span class="text-[10px] text-blue-400 font-bold">+</span>
+            </a>
+            <a href="/admin/crm/client/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="users" class="w-3.5 h-3.5 text-cyan-400"></i> Client Accounts</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+            <a href="/admin/crm/project/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="briefcase" class="w-3.5 h-3.5 text-emerald-400"></i> Active Projects</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+            <a href="/admin/crm/kanban/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="trello" class="w-3.5 h-3.5 text-amber-400"></i> CRM Kanban Board</span>
+            </a>
+            <a href="/admin/crm/calendar/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-purple-400"></i> Workspace Calendar</span>
+            </a>
+            <a href="/admin/crm/proposal/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="file-text" class="w-3.5 h-3.5 text-rose-400"></i> Proposals</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+            <a href="/admin/crm/contract/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="file-check" class="w-3.5 h-3.5 text-indigo-400"></i> Contracts</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+            <a href="/admin/crm/invoice/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="receipt" class="w-3.5 h-3.5 text-teal-400"></i> Invoices</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. AI ASSISTANT -->
+        <div class="sidebar-nav-section">
+          <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-2 py-1 mb-1 sidebar-section-title">AI ASSISTANT</div>
+          <div class="space-y-0.5">
+            <a href="/admin/chatbot/chatbotlead/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="bot" class="w-3.5 h-3.5 text-purple-400"></i> Chatbot Leads</span>
+              <span class="text-[10px] text-purple-400 font-bold">+</span>
+            </a>
+            <a href="/admin/chatbot/chatconversation/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="messages-square" class="w-3.5 h-3.5 text-blue-400"></i> AI Conversations</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. CONTENT MANAGEMENT -->
+        <div class="sidebar-nav-section">
+          <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-2 py-1 mb-1 sidebar-section-title">CONTENT MANAGEMENT</div>
+          <div class="space-y-0.5">
+            <a href="/admin/blog/blogpost/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="newspaper" class="w-3.5 h-3.5 text-amber-400"></i> Blog Posts</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+            <a href="/admin/portfolio/project/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="folder-git-2" class="w-3.5 h-3.5 text-cyan-400"></i> Portfolio CMS</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+            <a href="/admin/newsletter/newslettersubscriber/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-rose-400"></i> Subscribers</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+            <a href="/admin/seo/seopage/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="globe" class="w-3.5 h-3.5 text-emerald-400"></i> SEO Configs</span>
+              <span class="text-[10px] text-slate-500 font-bold">+</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. SYSTEM & SECURITY -->
+        <div class="sidebar-nav-section">
+          <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest px-2 py-1 mb-1 sidebar-section-title">SYSTEM &amp; SECURITY</div>
+          <div class="space-y-0.5">
+            <a href="/admin/security/soc/" class="sidebar-nav-item flex items-center justify-between px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 decoration-none transition-colors">
+              <span class="flex items-center gap-2.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-red-400"></i> SOC Security Center</span>
+            </a>
+          </div>
+        </div>
+
       </div>
 
       <!-- Sidebar Footer (Platform Status, Time, Collapse) -->
@@ -1700,7 +1683,33 @@
     const sidebarInput = document.getElementById('sidebar-nav-filter');
     if (sidebarInput) {
       sidebarInput.addEventListener('input', (e) => {
-        buildSidebar(e.target.value);
+        const q = e.target.value.toLowerCase().trim();
+        const sections = document.querySelectorAll('.sidebar-nav-section');
+        
+        sections.forEach(section => {
+          const titleEl = section.querySelector('.sidebar-section-title');
+          const titleText = titleEl ? titleEl.textContent.toLowerCase() : '';
+          const sectionMatchesHeader = q && titleText.includes(q);
+          
+          const items = section.querySelectorAll('.sidebar-nav-item');
+          let visibleCount = 0;
+          
+          items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (!q || sectionMatchesHeader || text.includes(q)) {
+              item.style.display = '';
+              visibleCount++;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+          
+          if (!q || visibleCount > 0 || sectionMatchesHeader) {
+            section.style.display = '';
+          } else {
+            section.style.display = 'none';
+          }
+        });
       });
     }
 
@@ -1883,5 +1892,7 @@
 </div>
 
 {% block extrabody %}{% endblock extrabody %}
+    
+    <script src="/assets/visitor-telemetry.js" defer></script>
 </body>
 </html>

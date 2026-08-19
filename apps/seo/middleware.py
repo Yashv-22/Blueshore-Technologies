@@ -25,12 +25,12 @@ DEFAULT_GEO_BLOCKS = {
         "SEO-optimized digital ecosystems that scale conversions and streamline business operations."
     ),
     "key_takeaways": [
-        "150+ custom digital platforms successfully delivered globally.",
+        "50+ custom digital platforms successfully delivered globally.",
         "Specialized expertise in AI automation, conversion-focused design, and performance marketing.",
         "Guaranteed 2-hour response SLA with dedicated 24/7 technical support."
     ],
     "eeat_proof_points": (
-        "Verified B2B systems engineering by Blueshore Technologies. 150+ products delivered, ISO 27001 readiness, "
+        "Verified B2B systems engineering by Blueshore Technologies. 50+ products delivered, ISO 27001 readiness, "
         "zero-trust cloud standards, and Clutch Leader honors."
     )
 }
@@ -162,53 +162,53 @@ def generate_geo_aeo_html(seo_page, path):
         <div class="max-w-[1280px] mx-auto px-8 relative z-10">
 
             <blockquote
-                class="answer-summary featured-answer text-lg text-white font-medium pl-4 border-l-4 border-[#3790ff] leading-relaxed mb-10 max-w-4xl mx-auto italic text-center md:text-left">
+                class="answer-summary featured-answer text-lg text-white font-medium pl-4 border-l-4 border-[#3790ff] leading-relaxed mb-16 md:mb-20 max-w-4xl mx-auto italic text-center md:text-left">
                 "{featured_answer}"
             </blockquote>
 
             <!-- GEO Block Header -->
-            <div class="grid lg:grid-cols-3 gap-12 pb-14 border-b border-white/[0.06] text-left">
+            <div class="grid lg:grid-cols-3 gap-10 md:gap-12 pb-14 border-b border-white/[0.06] text-left">
                 <!-- Column 1: What is this & Who is it for -->
-                <div class="space-y-4">
-                    <h3 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold">What Is This?</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed font-light">
-                        {what_is_this}
-                    </p>
-                    <div class="pt-2">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">What Is This?</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed font-light">
+                            {what_is_this}
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/[0.06]">
                         <h4 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">Who Is It For?</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed font-light">
+                        <p class="text-xs text-slate-400 leading-relaxed font-light">
                             {who_is_it_for}
                         </p>
                     </div>
                 </div>
 
                 <!-- Column 2: Why it matters & Key Takeaways -->
-                <div class="space-y-4">
-                    <h3 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold">Why It Matters</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed font-light">
-                        {why_it_matters}
-                    </p>
+                <div class="space-y-8">
                     <div>
+                        <h3 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">Why It Matters</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed font-light">
+                            {why_it_matters}
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/[0.06]">
                         <h4 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">Key Takeaways</h4>
-                        <ul class="list-disc pl-4 text-xs text-slate-500 space-y-1.5 font-light">
+                        <ul class="list-disc pl-4 text-xs text-slate-400 space-y-1.5 font-light">
                             {key_takeaways_html}
                         </ul>
                     </div>
                 </div>
 
-                <!-- Column 3: Benefits & E-E-A-T Summary -->
-                <div class="space-y-4">
-                    <h3 class="text-xs uppercase tracking-widest text-white font-bold">Core Benefits</h3>
-                    <ul class="text-xs text-slate-400 space-y-2 font-light">
-                        <li><strong>Conversion Optimization:</strong> Fast, mobile-first websites designed to turn visitors into leads.</li>
-                        <li><strong>AI Automation:</strong> Custom CRM, chatbots, and workflow automation reducing manual work.</li>
-                        <li><strong>Performance Marketing:</strong> Data-driven ad campaigns maximizing ROI and growth.</li>
-                    </ul>
-                    <div class="pt-2 border-t border-white/[0.06]">
-                        <h4 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-1.5">E-E-A-T Authority</h4>
-                        <p class="text-[10px] text-slate-500 leading-relaxed font-light">
-                            {eeat_proof_points_html}
-                        </p>
+                <!-- Column 3: Core Benefits -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">Core Benefits</h3>
+                        <ul class="text-xs text-slate-400 space-y-2.5 font-light">
+                            <li><strong class="text-white">Conversion Optimization:</strong> Fast, mobile-first websites designed to turn visitors into leads.</li>
+                            <li><strong class="text-white">AI Automation:</strong> Custom CRM, chatbots, and workflow automation reducing manual work.</li>
+                            <li><strong class="text-white">Performance Marketing:</strong> Data-driven ad campaigns maximizing ROI and growth.</li>
+                        </ul>
                     </div>
                 </div>
             </div>

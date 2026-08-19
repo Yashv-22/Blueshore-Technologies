@@ -192,11 +192,15 @@ class ChatProxyAPIView(APIView):
     def post(self, request, *args, **kwargs):
         session_id = request.data.get('session_id')
         contents = request.data.get('contents', [])
+        message_param = request.data.get('message')
         
+        if not contents and message_param:
+            contents = [{'role': 'user', 'parts': [{'text': str(message_param)}]}]
+
         if not session_id or not contents:
             return Response({
                 'success': False,
-                'message': 'session_id and contents are required.'
+                'message': 'session_id and contents (or message) are required.'
             }, status=status.HTTP_400_BAD_REQUEST)
         
         # Get or create conversation history

@@ -29,7 +29,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from apps.intelligence.views import (
     live_visitors_view, live_conversations_view, visitor_analytics_view,
     get_replay_frames_view, get_visitor_timeline_view, admin_dashboard_view,
-    security_soc_dashboard_view, admin_dashboard_metrics_api
+    security_soc_dashboard_view, admin_dashboard_metrics_api, telemetry_ping_api
 )
 from apps.crm.views import proposal_pdf_view, contract_pdf_view, invoice_pdf_view, crm_kanban_view, update_lead_status_api, workspace_calendar_view, client_portal_login_view, client_portal_logout_view, client_portal_view
 
@@ -63,22 +63,29 @@ from apps.seo.sitemaps import (
 from apps.seo.tools_views import roi_calculator_view, cloud_cost_calculator_view, crm_readiness_view
 
 urlpatterns = [
-    # Visitor Intelligence Admin Views (Must be before admin.site.urls)
+    # Visitor Intelligence & Security Admin Views (Must be before admin.site.urls)
     path('admin/', staff_member_required(admin_dashboard_view), name='admin-dashboard'),
     path('admin/dashboard/api/metrics/', staff_member_required(admin_dashboard_metrics_api), name='admin-dashboard-metrics-api'),
     path('admin/live-visitors/', staff_member_required(live_visitors_view), name='live-visitors'),
     path('admin/live-conversations/', staff_member_required(live_conversations_view), name='live-conversations'),
     path('admin/visitor-analytics/', staff_member_required(visitor_analytics_view), name='visitor-analytics'),
     path('admin/security/soc/', staff_member_required(security_soc_dashboard_view), name='security-soc-dashboard'),
+    path('admin/security-soc/', staff_member_required(security_soc_dashboard_view), name='security-soc-dashboard-alt'),
     path('admin/live-visitors/frames/', staff_member_required(get_replay_frames_view), name='live-visitors-frames'),
     path('admin/live-visitors/timeline/', staff_member_required(get_visitor_timeline_view), name='live-visitors-timeline'),
+    path('api/telemetry/ping/', telemetry_ping_api, name='telemetry-ping-api'),
+
+    # SEO Admin Dashboards
+    path('admin/seo/dashboard/', staff_member_required(seo_os_admin_dashboard_view), name='seo-os-admin-dashboard'),
+    path('admin/seo-os-dashboard/', staff_member_required(seo_os_admin_dashboard_view), name='seo-os-dashboard-alt'),
+    path('admin/seo/audit-report/', staff_member_required(seo_audit_report_view), name='seo-audit-report'),
 
     # CRM Document PDFs
     path('admin/crm/proposal/<uuid:proposal_id>/pdf/', proposal_pdf_view, name='proposal-pdf'),
     path('admin/crm/contract/<uuid:contract_id>/pdf/', contract_pdf_view, name='contract-pdf'),
     path('admin/crm/invoice/<uuid:invoice_id>/pdf/', invoice_pdf_view, name='invoice-pdf'),
 
-    # CRM Kanban Board
+    # CRM Kanban Board & Calendar
     path('admin/crm/kanban/', staff_member_required(crm_kanban_view), name='crm-kanban'),
     path('admin/crm/calendar/', staff_member_required(workspace_calendar_view), name='workspace-calendar'),
     path('admin/crm/lead/<int:lead_id>/update-status/', update_lead_status_api, name='api-crm-lead-update-status'),
@@ -91,15 +98,46 @@ urlpatterns = [
     path('sitemap.xml', dynamic_sitemap_view, name='dynamic-sitemap'),
     path('sitemap-index.xml', sitemap_index_view, name='dynamic-sitemap-index'),
     
-    # Core pages
+    # Core pages with clean URLs
     path('', index_view, name='index'),
     path('index.html', RedirectView.as_view(pattern_name='index', permanent=True)),
-    path('about.html', about_view, name='about'),
-    path('services.html', services_view, name='services'),
-    path('industries.html', industries_view, name='industries'),
-    path('cookie.html', cookie_view, name='cookie'),
-    path('privacy.html', privacy_view, name='privacy'),
-    path('terms.html', terms_view, name='terms'),
+    
+    path('about/', about_view, name='about'),
+    path('about-us/', about_view, name='about-us'),
+    path('about.html', RedirectView.as_view(url='/about/', permanent=True)),
+    path('about-us.html', RedirectView.as_view(url='/about-us/', permanent=True)),
+    
+    path('services/', services_view, name='services'),
+    path('services.html', RedirectView.as_view(url='/services/', permanent=True)),
+    
+    path('industries/', industries_view, name='industries'),
+    path('industries.html', RedirectView.as_view(url='/industries/', permanent=True)),
+    
+    path('contact/', contact_view, name='contact'),
+    path('contact.html', RedirectView.as_view(url='/contact/', permanent=True)),
+    
+    path('careers/', careers_view, name='careers'),
+    path('careers.html', RedirectView.as_view(url='/careers/', permanent=True)),
+    
+    path('portfolio/', portfolio_view, name='portfolio'),
+    path('portfolio.html', RedirectView.as_view(url='/portfolio/', permanent=True)),
+    path('portfolio/<slug:slug>/', portfolio_detail_view, name='portfolio-detail'),
+    
+    path('blog/', blog_view, name='blog'),
+    path('blog.html', RedirectView.as_view(url='/blog/', permanent=True)),
+    path('blog/<slug:slug>/', blog_detail_view, name='blog-detail'),
+    
+    path('cookie/', cookie_view, name='cookie'),
+    path('cookie.html', RedirectView.as_view(url='/cookie/', permanent=True)),
+    
+    path('privacy/', privacy_view, name='privacy'),
+    path('privacy.html', RedirectView.as_view(url='/privacy/', permanent=True)),
+    
+    path('terms/', terms_view, name='terms'),
+    path('terms.html', RedirectView.as_view(url='/terms/', permanent=True)),
+    
+    path('submit-portfolio/', submit_portfolio_view, name='submit-portfolio'),
+    path('submit-portfolio.html', RedirectView.as_view(url='/submit-portfolio/', permanent=True)),
     
     # Redirects for old/static service pages to clean URLs
     path('custom-software-development.html', RedirectView.as_view(url='/custom-software-development/', permanent=True)),
@@ -120,17 +158,6 @@ urlpatterns = [
     path('cloud-engineering/', cloud_engineering_view, name='cloud-engineering'),
     path('ai-chatbot-development/', ai_chatbot_development_view, name='ai-chatbot-development'),
     path('workflow-automation/', workflow_automation_view, name='workflow-automation'),
-    
-    # App-specific page views
-    path('contact.html', contact_view, name='contact'),
-    path('careers.html', careers_view, name='careers'),
-    path('submit-portfolio.html', submit_portfolio_view, name='submit-portfolio'),
-    path('portfolio.html', portfolio_view, name='portfolio'),
-    path('portfolio/<slug:slug>/', portfolio_detail_view, name='portfolio-detail'),
-    
-    # Blog URLs
-    path('blog.html', blog_view, name='blog'),
-    path('blog/<slug:slug>/', blog_detail_view, name='blog-detail'),
 
     # API endpoints
     path('api/contact/submit/', ContactRequestCreateAPIView.as_view(), name='api-contact-submit'),

@@ -920,7 +920,7 @@ def get_page_seo_data(route):
                 "Expertise in Django, Next.js, Kubernetes, and secure database designs.",
                 "Zero-downtime integration and legacy modernization pipelines."
             ],
-            "proof_points": f"Verified B2B {name_val} engineering by Blueshore Technologies. 150+ robust platforms successfully delivered globally with full ISO 27001 readiness."
+            "proof_points": f"Verified B2B {name_val} engineering by Blueshore Technologies. 50+ robust platforms successfully delivered globally with full ISO 27001 readiness."
         }
     else:
         # Core pages
@@ -930,11 +930,11 @@ def get_page_seo_data(route):
             "who_is_it_for": "Global mid-market and enterprise businesses seeking high-performance digital systems, custom web apps, and robust AI automation solutions.",
             "why_it_matters": "In a hyper-connected economy, technology without strategy is just an expense. We design resilient, SEO-optimized digital ecosystems that scale conversions and streamline business operations.",
             "takeaways": [
-                "150+ custom digital platforms successfully delivered globally.",
+                "50+ custom digital platforms successfully delivered globally.",
                 "Specialized expertise in AI automation, conversion-focused design, and performance marketing.",
                 "Guaranteed 2-hour response SLA with dedicated 24/7 technical support."
             ],
-            "proof_points": "Verified B2B systems engineering by Blueshore Technologies. 150+ products delivered, ISO 27001 readiness, zero-trust cloud standards, and Clutch Leader honors."
+            "proof_points": "Verified B2B systems engineering by Blueshore Technologies. 50+ products delivered, ISO 27001 readiness, zero-trust cloud standards, and Clutch Leader honors."
         }
         
     return {

@@ -228,7 +228,7 @@ class SystemHandler:
 | **Data Extraction** | Keyword stuffing in headers | Structured JSON-LD & entity markup | +35% Crawl Efficiency |
 | **Interactivity** | Static text blocks | Live conversational widgets & FAQ systems | +48% User Retention |
 | **Response Latency** | Unoptimized asset pipelines | Clean Tailwind compiles & CDN caching | -60% Page Load Time |
-| **Information Depth** | Thin, generic 500-word summaries | 1,500+ word semantic cluster articles | +72% Topical Authority |"""
+| **Information Depth** | Thin, generic 500-word summaries | 1,50+ word semantic cluster articles | +72% Topical Authority |"""
 
     sec1_p3 = f"As shown in the technical representation, structuring operations around modular handlers or clear optimization tables prevents single points of failure. This guarantees that even if a secondary service encounters a database deadlock or API timeout, the core user transaction completes successfully. Building this level of fault tolerance is critical for enterprise credibility, ensuring that your digital platforms remain online 24/7 with a guaranteed 99.99% uptime SLA."
 
@@ -645,7 +645,7 @@ for i, post_info in enumerate(all_posts_to_seed):
     else:
         post_author = ashish_user
         
-    # Build the 1,500+ word expanded content
+    # Build the 1,50+ word expanded content
     expanded_content = build_expanded_article(
         post_info["title"],
         post_info["category_slug"],
