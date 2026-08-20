@@ -97,7 +97,7 @@ def generate_geo_aeo_html(seo_page, path):
     key_takeaways_html = ""
     for t in takeaways:
         if t.strip():
-            key_takeaways_html += f"<li>{t.strip()}</li>\n"
+            key_takeaways_html += f'<li class="flex items-start gap-2.5 text-left"><span class="material-symbols-outlined text-[#3790ff] text-sm shrink-0 mt-0.5">check_circle</span><span>{t.strip()}</span></li>\n'
             
     # Build EEAT proof points HTML
     eeat_proof_points_html = " ".join([p.strip() for p in proof_points if p.strip()])
@@ -162,55 +162,132 @@ def generate_geo_aeo_html(seo_page, path):
         <div class="max-w-[1280px] mx-auto px-8 relative z-10">
 
             <blockquote
-                class="answer-summary featured-answer text-lg text-white font-medium pl-4 border-l-4 border-[#3790ff] leading-relaxed mb-16 md:mb-20 max-w-4xl mx-auto italic text-center md:text-left">
+                class="answer-summary featured-answer text-lg text-white font-medium pl-4 border-l-4 border-[#3790ff] leading-relaxed mb-16 md:mb-20 max-w-4xl mx-auto italic text-center">
                 "{featured_answer}"
             </blockquote>
 
-            <!-- GEO Block Header -->
-            <div class="grid lg:grid-cols-3 gap-10 md:gap-12 pb-14 border-b border-white/[0.06] text-left">
-                <!-- Column 1: What is this & Who is it for -->
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">What Is This?</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed font-light">
-                            {what_is_this}
-                        </p>
+            <!-- GEO Block Header (Original Bento Layout Restored + Equal Bottom Cards + Light Theme Fix) -->
+            <div class="space-y-6 pb-16 border-b border-black/10 dark:border-white/[0.08]">
+                
+                <!-- Row 1: Overview & Strategic Value (Original 60/40 Split) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                    
+                    <!-- Card 1 (60% Width / col-span-7) -->
+                    <div class="lg:col-span-7 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:border-[#3790ff]/40 hover:shadow-lg transition-all duration-300">
+                        <div class="space-y-6">
+                            <div>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-3">
+                                    <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                                    What Is This?
+                                </div>
+                                <p class="text-sm md:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-normal text-left">
+                                    {what_is_this}
+                                </p>
+                            </div>
+                            
+                            <div class="pt-5 border-t border-black/10 dark:border-white/[0.08]">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-3">
+                                    <span class="material-symbols-outlined text-sm">group</span>
+                                    Who Is It For?
+                                </div>
+                                <p class="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-normal text-left">
+                                    {who_is_it_for}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pt-6 border-t border-white/[0.06]">
-                        <h4 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">Who Is It For?</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed font-light">
-                            {who_is_it_for}
-                        </p>
+
+                    <!-- Card 2 (40% Width / col-span-5) -->
+                    <div class="lg:col-span-5 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:border-[#3790ff]/40 hover:shadow-lg transition-all duration-300">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-3">
+                                <span class="material-symbols-outlined text-sm">insights</span>
+                                Why It Matters
+                            </div>
+                            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal text-left">
+                                {why_it_matters}
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-black/10 dark:border-white/[0.08] flex items-center gap-3 text-xs text-[#3790ff] font-semibold">
+                            <span class="material-symbols-outlined text-base">verified</span>
+                            <span>Enterprise-grade technology & growth strategy</span>
+                        </div>
                     </div>
+
                 </div>
 
-                <!-- Column 2: Why it matters & Key Takeaways -->
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">Why It Matters</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed font-light">
-                            {why_it_matters}
-                        </p>
+                <!-- Row 2: Key Takeaways & Core Benefits (2 Equal-Sized Centered Cards) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch max-w-5xl mx-auto">
+                    
+                    <!-- Card 3: Key Takeaways (50% Width) -->
+                    <div class="bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-2xl p-7 flex flex-col justify-between h-full shadow-sm hover:border-[#3790ff]/40 hover:shadow-lg transition-all duration-300">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-4">
+                                <span class="material-symbols-outlined text-sm">fact_check</span>
+                                Key Takeaways
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
+                                    <span class="w-8 h-8 rounded-lg bg-[#3790ff]/15 text-[#3790ff] flex items-center justify-center font-extrabold text-xs shrink-0">50+</span>
+                                    <span class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">Custom digital platforms successfully delivered globally.</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
+                                    <span class="w-8 h-8 rounded-lg bg-[#3790ff]/15 text-[#3790ff] flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-base">psychology</span>
+                                    </span>
+                                    <span class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">Specialized expertise in AI automation, conversion design & marketing.</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
+                                    <span class="w-8 h-8 rounded-lg bg-[#3790ff]/15 text-[#3790ff] flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-base">schedule</span>
+                                    </span>
+                                    <span class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">Guaranteed 2-hour response SLA with dedicated 24/7 technical support.</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pt-6 border-t border-white/[0.06]">
-                        <h4 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">Key Takeaways</h4>
-                        <ul class="list-disc pl-4 text-xs text-slate-400 space-y-1.5 font-light">
-                            {key_takeaways_html}
-                        </ul>
+
+                    <!-- Card 4: Core Benefits (50% Width - Exact Same Size as Card 3) -->
+                    <div class="bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-2xl p-7 flex flex-col justify-between h-full shadow-sm hover:border-[#3790ff]/40 hover:shadow-lg transition-all duration-300">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-4">
+                                <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                                Core Benefits
+                            </div>
+                            <div class="space-y-3">
+                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
+                                    <div class="font-bold text-xs text-slate-900 dark:text-white mb-1 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-base">bolt</span>
+                                        Conversion Optimization
+                                    </div>
+                                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed text-left">
+                                        Fast, mobile-first websites designed to turn visitors into leads.
+                                    </p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
+                                    <div class="font-bold text-xs text-slate-900 dark:text-white mb-1 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-base">smart_toy</span>
+                                        AI Automation
+                                    </div>
+                                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed text-left">
+                                        Custom CRM, chatbots, and workflow automation reducing manual work.
+                                    </p>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
+                                    <div class="font-bold text-xs text-slate-900 dark:text-white mb-1 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-base">trending_up</span>
+                                        Performance Marketing
+                                    </div>
+                                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed text-left">
+                                        Data-driven ad campaigns maximizing ROI and business growth.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
 
-                <!-- Column 3: Core Benefits -->
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="text-xs uppercase tracking-widest text-[#3790ff] font-bold mb-2">Core Benefits</h3>
-                        <ul class="text-xs text-slate-400 space-y-2.5 font-light">
-                            <li><strong class="text-white">Conversion Optimization:</strong> Fast, mobile-first websites designed to turn visitors into leads.</li>
-                            <li><strong class="text-white">AI Automation:</strong> Custom CRM, chatbots, and workflow automation reducing manual work.</li>
-                            <li><strong class="text-white">Performance Marketing:</strong> Data-driven ad campaigns maximizing ROI and growth.</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- AEO FAQ Accordion Block -->
