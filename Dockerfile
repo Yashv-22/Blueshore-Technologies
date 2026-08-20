@@ -42,8 +42,9 @@ COPY . .
 RUN mkdir -p /app/staticfiles /app/media
 
 # Create a non-root user and set permissions
-RUN useradd -U django && \
-    chown -R django:django /app
+RUN useradd -m -U django && \
+    mkdir -p /home/django /app/staticfiles /app/media && \
+    chown -R django:django /home/django /app
 
 USER django
 
