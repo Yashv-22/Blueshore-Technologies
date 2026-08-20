@@ -254,6 +254,22 @@
     }
 
     function bindEvents() {
+        // Disable click navigation on top-level "Services" and "Company" navbar dropdown triggers
+        document.addEventListener('click', function (e) {
+            const trigger = e.target.closest('nav .relative.group > a, nav .relative.group > button, .mobile-menu-row > a');
+            if (trigger) {
+                const text = trigger.textContent.trim().toLowerCase();
+                if (text.startsWith('services') || text.startsWith('company')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (trigger.matches('.mobile-menu-row > a')) {
+                        const toggleBtn = trigger.parentElement.querySelector('.mobile-submenu-toggle');
+                        if (toggleBtn) toggleBtn.click();
+                    }
+                    return false;
+                }
+            }
+        }, true);
         // Open menu
         document.addEventListener('click', function (e) {
             const hamburger = e.target.closest('#hamburger-btn');
