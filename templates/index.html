@@ -3326,11 +3326,11 @@
             </div>
         </section>
 
-        <!-- Why Choose BlueShore? Section -->
-        <section class="py-20 bg-slate-50 dark:bg-[#030816] border-y border-black/10 dark:border-white/10 core-values-section" id="why-choose-blueshore">
-            <div class="max-w-[1280px] mx-auto px-8">
+        <!-- Why Choose BlueShore? Section (Sticky Card Stacking Effect) -->
+        <section class="py-24 bg-slate-50 dark:bg-[#030816] border-y border-black/10 dark:border-white/10 relative" id="why-choose-blueshore">
+            <div class="max-w-[1280px] mx-auto px-6 md:px-8">
                 <!-- Section Header -->
-                <div class="mb-16 md:mb-20 text-center max-w-4xl mx-auto reveal-up">
+                <div class="mb-16 text-center max-w-4xl mx-auto">
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#3790ff]/10 text-[#3790ff] font-label-md text-xs font-semibold uppercase tracking-wider mb-5 border border-[#3790ff]/20">
                         <span class="material-symbols-outlined text-sm">rocket_launch</span> Engineered For Revenue Growth
                     </span>
@@ -3343,100 +3343,134 @@
                     </p>
                 </div>
 
-                <!-- Top 3 Tiles Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
-                    <!-- Tile 1 -->
-                    <div class="bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-9 border border-black/10 dark:border-white/10 shadow-[0px_4px_25px_rgba(0,51,102,0.06)] hover:shadow-2xl hover:border-[#3790ff]/40 transition-all duration-300 flex flex-col justify-between group reveal-pop" data-delay="100">
-                        <div>
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[#3790ff] text-3xl">hub</span>
+                <!-- Sticky Stacking Cards Container -->
+                <div class="relative space-y-16 max-w-5xl mx-auto pb-16 why-choose-card-stack">
+                    
+                    <!-- Card 1 -->
+                    <div class="sticky top-28 md:top-32 z-[10] bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-[0_20px_50px_rgba(0,51,102,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 min-h-[360px] flex flex-col justify-between group">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-7 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-3xl">hub</span>
+                                    </div>
+                                    <span class="text-xs font-bold px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">01 / Unified Strategy</span>
                                 </div>
-                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">01 / Unified Strategy</span>
+                                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white pt-2">
+                                    Your growth engine, not another vendor
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                                    Most companies stitch together a development shop, an automation freelancer, and an SEO agency — and watch results fall through the gaps between them. Blueshore closes those gaps. Custom software development, AI workflow automation, and search visibility (SEO + AEO/GEO) run as one accountable team.
+                                </p>
                             </div>
-                            <h3 class="font-headline-sm text-xl font-bold text-slate-900 dark:text-white mb-4">
-                                Your growth engine, not another vendor
-                            </h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                Most companies stitch together a development shop, an automation freelancer, and an SEO agency — and watch results fall through the gaps between them. Blueshore closes those gaps. Custom software development, AI workflow automation, and search visibility (SEO + AEO/GEO) run as one accountable team, so every line of code we ship is pulling toward the same outcome: qualified leads in your pipeline.
-                            </p>
+                            <div class="md:col-span-5 bg-gradient-to-br from-[#3790ff]/10 via-[#3790ff]/5 to-transparent dark:from-[#3790ff]/20 dark:to-transparent rounded-2xl p-6 border border-[#3790ff]/20 flex flex-col justify-center space-y-3">
+                                <div class="text-xs font-bold uppercase tracking-wider text-[#3790ff]">Core Impact</div>
+                                <div class="text-2xl font-black text-slate-900 dark:text-white">Single Accountable Team</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-300">Eliminate vendor fragmentation. Every line of code shipped drives qualified B2B leads.</div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Tile 2: Revenue First -->
-                    <div class="bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-9 border border-black/10 dark:border-white/10 shadow-[0px_4px_25px_rgba(0,51,102,0.06)] hover:shadow-2xl hover:border-[#3790ff]/40 transition-all duration-300 flex flex-col justify-between group reveal-pop" data-delay="200">
-                        <div>
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[#3790ff] text-3xl">insights</span>
+                    <!-- Card 2 -->
+                    <div class="sticky top-28 md:top-32 z-[20] bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-[0_20px_50px_rgba(0,51,102,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 min-h-[360px] flex flex-col justify-between group">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-7 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-3xl">insights</span>
+                                    </div>
+                                    <span class="text-xs font-bold px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">02 / Revenue Discovery</span>
                                 </div>
-                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">02 / Revenue Discovery</span>
+                                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white pt-2">
+                                    We find the revenue before we write the code
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                                    Every engagement starts with a strategic audit that identifies where growth is leaking — manual work eating your margins, a website invisible to buyers, tools that don't talk to each other. You get a clear plan tying every build to a business number before you commit.
+                                </p>
                             </div>
-                            <h3 class="font-headline-sm text-xl font-bold text-slate-900 dark:text-white mb-4">
-                                We find the revenue before we write the code
-                            </h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                Every engagement starts with a strategic audit that identifies where growth is leaking — manual work eating your margins, a website invisible to buyers, tools that don't talk to each other. You get a clear plan tying every build to a business number before you commit. Then transparent agile sprints and weekly demos keep the momentum visible.
-                            </p>
+                            <div class="md:col-span-5 bg-gradient-to-br from-[#3790ff]/10 via-[#3790ff]/5 to-transparent dark:from-[#3790ff]/20 dark:to-transparent rounded-2xl p-6 border border-[#3790ff]/20 flex flex-col justify-center space-y-3">
+                                <div class="text-xs font-bold uppercase tracking-wider text-[#3790ff]">Core Impact</div>
+                                <div class="text-2xl font-black text-slate-900 dark:text-white">ROI-Backed Roadmap</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-300">Clear revenue milestones tied to every agile sprint and weekly live demo.</div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Tile 3: Automation -->
-                    <div class="bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-9 border border-black/10 dark:border-white/10 shadow-[0px_4px_25px_rgba(0,51,102,0.06)] hover:shadow-2xl hover:border-[#3790ff]/40 transition-all duration-300 flex flex-col justify-between group reveal-pop" data-delay="300">
-                        <div>
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[#3790ff] text-3xl">auto_mode</span>
+                    <!-- Card 3 -->
+                    <div class="sticky top-28 md:top-32 z-[30] bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-[0_20px_50px_rgba(0,51,102,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 min-h-[360px] flex flex-col justify-between group">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-7 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-3xl">auto_mode</span>
+                                    </div>
+                                    <span class="text-xs font-bold px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">03 / AI Automation</span>
                                 </div>
-                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">03 / AI Automation</span>
+                                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white pt-2">
+                                    Automation that compounds
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                                    Our AI automation doesn't just save hours — it removes growth bottlenecks permanently. Intelligent workflows, custom AI agents, and CRM/ERP integrations that let your team stop doing manual work and start closing more of it.
+                                </p>
                             </div>
-                            <h3 class="font-headline-sm text-xl font-bold text-slate-900 dark:text-white mb-4">
-                                Automation that compounds
-                            </h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                Our AI automation doesn't just save hours — it removes growth bottlenecks permanently. Intelligent workflows, custom AI agents, and CRM/ERP integrations that let your team stop doing manual work and start closing more of it. Every process we automate is capacity handed back to growth.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom 2 Centered Tiles Row -->
-                <div class="flex flex-col md:flex-row justify-center items-stretch gap-8 mb-16">
-                    <!-- Tile 4: Search Visibility -->
-                    <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-9 border border-black/10 dark:border-white/10 shadow-[0px_4px_25px_rgba(0,51,102,0.06)] hover:shadow-2xl hover:border-[#3790ff]/40 transition-all duration-300 flex flex-col justify-between group reveal-pop" data-delay="400">
-                        <div>
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[#3790ff] text-3xl">travel_explore</span>
-                                </div>
-                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">04 / SEO + AEO/GEO</span>
+                            <div class="md:col-span-5 bg-gradient-to-br from-[#3790ff]/10 via-[#3790ff]/5 to-transparent dark:from-[#3790ff]/20 dark:to-transparent rounded-2xl p-6 border border-[#3790ff]/20 flex flex-col justify-center space-y-3">
+                                <div class="text-xs font-bold uppercase tracking-wider text-[#3790ff]">Core Impact</div>
+                                <div class="text-2xl font-black text-slate-900 dark:text-white">Zero Manual Bottlenecks</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-300">Automate operations permanently and redirect capacity directly to sales.</div>
                             </div>
-                            <h3 class="font-headline-sm text-xl font-bold text-slate-900 dark:text-white mb-4">
-                                Get found. Get cited. Get chosen.
-                            </h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                Your next customer is asking Google and ChatGPT who to hire. Our SEO and AI search optimization (AEO/GEO) practice puts your brand in both answers — turning search visibility into a compounding acquisition channel most of your competitors haven't discovered yet.
-                            </p>
                         </div>
                     </div>
 
-                    <!-- Tile 5: Global Economics -->
-                    <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-9 border border-black/10 dark:border-white/10 shadow-[0px_4px_25px_rgba(0,51,102,0.06)] hover:shadow-2xl hover:border-[#3790ff]/40 transition-all duration-300 flex flex-col justify-between group reveal-pop" data-delay="500">
-                        <div>
-                            <div class="flex items-center justify-between mb-7">
-                                <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-[#3790ff] text-3xl">verified_user</span>
+                    <!-- Card 4 -->
+                    <div class="sticky top-28 md:top-32 z-[40] bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-[0_20px_50px_rgba(0,51,102,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 min-h-[360px] flex flex-col justify-between group">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-7 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-3xl">travel_explore</span>
+                                    </div>
+                                    <span class="text-xs font-bold px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">04 / SEO + AEO/GEO</span>
                                 </div>
-                                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">05 / Global Standard</span>
+                                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white pt-2">
+                                    Get found. Get cited. Get chosen.
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                                    Your next customer is asking Google and ChatGPT who to hire. Our SEO and AI search optimization (AEO/GEO) practice puts your brand in both answers — turning search visibility into a compounding acquisition channel.
+                                </p>
                             </div>
-                            <h3 class="font-headline-sm text-xl font-bold text-slate-900 dark:text-white mb-4">
-                                Global-standard delivery, growth-friendly economics
-                            </h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                Senior full-stack and AI engineering from our Delhi NCR delivery center, at rates that leave budget for the growth experiments that matter — with the communication, code quality, and data-security standards (NDA-backed, GDPR-aware) international clients expect. More runway, same standard.
-                            </p>
+                            <div class="md:col-span-5 bg-gradient-to-br from-[#3790ff]/10 via-[#3790ff]/5 to-transparent dark:from-[#3790ff]/20 dark:to-transparent rounded-2xl p-6 border border-[#3790ff]/20 flex flex-col justify-center space-y-3">
+                                <div class="text-xs font-bold uppercase tracking-wider text-[#3790ff]">Core Impact</div>
+                                <div class="text-2xl font-black text-slate-900 dark:text-white">AI & Search Visibility</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-300">Dominate search results across Google, Perplexity, and ChatGPT.</div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Card 5 -->
+                    <div class="sticky top-28 md:top-32 z-[50] bg-white dark:bg-[#0B1221] rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-[0_20px_50px_rgba(0,51,102,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 min-h-[360px] flex flex-col justify-between group">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-7 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-14 h-14 bg-[#3790ff]/10 rounded-2xl flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[#3790ff] text-3xl">verified_user</span>
+                                    </div>
+                                    <span class="text-xs font-bold px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-700">05 / Global Standard</span>
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white pt-2">
+                                    Global-standard delivery, growth-friendly economics
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                                    Senior full-stack and AI engineering from our Delhi NCR delivery center, at rates that leave budget for the growth experiments that matter — with the communication, code quality, and data-security standards international clients expect.
+                                </p>
+                            </div>
+                            <div class="md:col-span-5 bg-gradient-to-br from-[#3790ff]/10 via-[#3790ff]/5 to-transparent dark:from-[#3790ff]/20 dark:to-transparent rounded-2xl p-6 border border-[#3790ff]/20 flex flex-col justify-center space-y-3">
+                                <div class="text-xs font-bold uppercase tracking-wider text-[#3790ff]">Core Impact</div>
+                                <div class="text-2xl font-black text-slate-900 dark:text-white">Maximum Engineering Runway</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-300">NDA-backed, GDPR-compliant engineering at optimal unit economics.</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Bottom Strategy Audit Callout Banner -->

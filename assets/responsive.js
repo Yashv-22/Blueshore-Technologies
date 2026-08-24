@@ -528,72 +528,42 @@
     }
 
     /**
-     * Scroll-Reveal & Continuous 3D Opening Animation: Why Choose Blueshore Cards
-     * As the user scrolls continuously down into the Why Choose section,
-     * the cards unfold smoothly in real-time from a 3D folded angle into full open view.
+     * Sticky Stacking Card Enhancer: Why Choose Blueshore Cards
+     * Enhances native CSS position:sticky card stacking with scroll-driven depth styling.
      */
     function initWhyChooseScrollAnimation() {
-        var sections = document.querySelectorAll('.core-values-section, #why-choose-blueshore, [data-section="why-choose"]');
-        if (!sections.length) return;
+        var stackContainers = document.querySelectorAll('.why-choose-card-stack');
+        if (!stackContainers.length) return;
 
-        sections.forEach(function(section) {
-            var cardContainers = section.querySelectorAll('.grid > div, .flex > div');
-            var cards = [];
-
-            cardContainers.forEach(function(card) {
-                // Exclude full-width callout banners or non-card containers
-                if (!card.classList.contains('bg-gradient-to-r') && card.querySelector('h3')) {
-                    card.classList.add('why-choose-card');
-                    cards.push(card);
-                }
-            });
-
+        stackContainers.forEach(function(container) {
+            var cards = container.querySelectorAll('.sticky');
             if (!cards.length) return;
 
-            cards.forEach(function(card, idx) {
-                card.style.transitionDelay = (idx * 110) + 'ms';
-            });
-
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('card-opened');
+            window.addEventListener('scroll', function() {
+                var winHeight = window.innerHeight;
+                cards.forEach(function(card, idx) {
+                    var rect = card.getBoundingClientRect();
+                    // If a card is stuck near the top header (top <= 140px)
+                    if (rect.top <= 140 && idx < cards.length - 1) {
+                        var nextCard = cards[idx + 1];
+                        var nextRect = nextCard.getBoundingClientRect();
+                        // As next card slides over this card, subtly scale down underneath
+                        if (nextRect.top < winHeight && nextRect.top > 140) {
+                            var overlapProgress = (winHeight - nextRect.top) / (winHeight - 140);
+                            overlapProgress = Math.min(Math.max(overlapProgress, 0), 1);
+                            var scale = 1 - (overlapProgress * 0.04);
+                            var opacity = 1 - (overlapProgress * 0.15);
+                            card.style.transform = 'scale(' + scale.toFixed(3) + ')';
+                            card.style.opacity = opacity.toFixed(2);
+                        } else if (nextRect.top <= 140) {
+                            card.style.transform = 'scale(0.96)';
+                            card.style.opacity = '0.85';
+                        }
+                    } else {
+                        card.style.transform = 'scale(1)';
+                        card.style.opacity = '1';
                     }
                 });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -30px 0px'
-            });
-
-            cards.forEach(function(card) {
-                observer.observe(card);
-            });
-
-            // Continuous scroll listener for real-time smooth 3D unfolding as user scrolls
-            window.addEventListener('scroll', function() {
-                var rect = section.getBoundingClientRect();
-                var winHeight = window.innerHeight;
-
-                if (rect.top < winHeight && rect.bottom > 0) {
-                    var scrollRatio = (winHeight - rect.top) / (winHeight + rect.height * 0.7);
-                    var progress = Math.min(Math.max(scrollRatio, 0), 1);
-
-                    cards.forEach(function(card, idx) {
-                        if (!card.classList.contains('card-opened')) {
-                            var angle = Math.max(24 * (1 - progress * 2), 0);
-                            var translateY = Math.max(50 * (1 - progress * 2), 0);
-                            var scale = Math.min(0.92 + (0.08 * progress * 2), 1);
-                            var opacity = Math.min(progress * 2.2, 1);
-
-                            card.style.transform = 'perspective(1000px) rotateX(' + angle.toFixed(1) + 'deg) translateY(' + translateY.toFixed(1) + 'px) scale(' + scale.toFixed(3) + ')';
-                            card.style.opacity = opacity.toFixed(2);
-
-                            if (progress > 0.4) {
-                                card.classList.add('card-opened');
-                            }
-                        }
-                    });
-                }
             }, { passive: true });
         });
     }
