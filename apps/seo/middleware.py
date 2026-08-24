@@ -166,121 +166,134 @@ def generate_geo_aeo_html(seo_page, path):
                 "{featured_answer}"
             </blockquote>
 
-            <!-- GEO Block Header (Original Bento Layout Restored + Equal Bottom Cards + Light Theme Fix) -->
-            <div class="space-y-6 pb-16 border-b border-black/10 dark:border-white/[0.08]">
+            <!-- GEO Block Header (Symmetrical 2x2 Bento Cards) -->
+            <div class="pb-16 border-b border-slate-200 dark:border-white/[0.08]">
                 
-                <!-- Row 1: Overview & Strategic Value (Original 60/40 Split) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                <!-- Unified 2x2 Symmetrical Bento Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch max-w-6xl mx-auto">
                     
-                    <!-- Card 1 (60% Width / col-span-7) -->
-                    <div class="lg:col-span-7 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:border-[#3790ff]/40 hover:shadow-lg transition-all duration-300">
-                        <div class="space-y-6">
-                            <div>
-                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-3">
-                                    <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                    <!-- Card 1: Overview & Target Audience -->
+                    <div class="bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 rounded-3xl p-7 md:p-8 flex flex-col justify-between h-full lg:h-[360px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:border-[#3790ff]/40 hover:shadow-xl transition-all duration-300 group">
+                        <div class="flex-1 flex flex-col justify-between space-y-4">
+                            <!-- Top Block -->
+                            <div class="space-y-2">
+                                <div class="geo-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-extrabold uppercase tracking-wider">
+                                    <span class="material-symbols-outlined text-base">auto_awesome</span>
                                     What Is This?
                                 </div>
-                                <p class="text-sm md:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-normal text-left">
+                                <h4 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+                                    Full-Service Software &amp; AI Engineering Agency
+                                </h4>
+                                <p class="text-xs md:text-sm text-slate-800 dark:text-slate-200 font-medium leading-relaxed text-left">
                                     {what_is_this}
                                 </p>
                             </div>
                             
-                            <div class="pt-5 border-t border-black/10 dark:border-white/[0.08]">
-                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-3">
-                                    <span class="material-symbols-outlined text-sm">group</span>
+                            <!-- Bottom Block -->
+                            <div class="pt-4 border-t border-slate-200 dark:border-white/[0.08] space-y-1.5">
+                                <div class="geo-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-extrabold uppercase tracking-wider">
+                                    <span class="material-symbols-outlined text-base">group</span>
                                     Who Is It For?
                                 </div>
-                                <p class="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-normal text-left">
+                                <p class="text-xs md:text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-left">
                                     {who_is_it_for}
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 2 (40% Width / col-span-5) -->
-                    <div class="lg:col-span-5 bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:border-[#3790ff]/40 hover:shadow-lg transition-all duration-300">
-                        <div>
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-3">
-                                <span class="material-symbols-outlined text-sm">insights</span>
-                                Why It Matters
+                    <!-- Card 2: Strategic Value & Assurance -->
+                    <div class="bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 rounded-3xl p-7 md:p-8 flex flex-col justify-between h-full lg:h-[360px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:border-[#3790ff]/40 hover:shadow-xl transition-all duration-300 group">
+                        <div class="flex-1 flex flex-col justify-between space-y-4">
+                            <!-- Top Block -->
+                            <div class="space-y-2">
+                                <div class="geo-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-extrabold uppercase tracking-wider">
+                                    <span class="material-symbols-outlined text-base">insights</span>
+                                    Why It Matters
+                                </div>
+                                <h4 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+                                    Strategy-Led Technology Built for Revenue Growth
+                                </h4>
+                                <p class="text-xs md:text-sm text-slate-800 dark:text-slate-200 font-medium leading-relaxed text-left">
+                                    {why_it_matters}
+                                </p>
                             </div>
-                            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal text-left">
-                                {why_it_matters}
-                            </p>
-                        </div>
-                        <div class="pt-6 mt-6 border-t border-black/10 dark:border-white/[0.08] flex items-center gap-3 text-xs text-[#3790ff] font-semibold">
-                            <span class="material-symbols-outlined text-base">verified</span>
-                            <span>Enterprise-grade technology & growth strategy</span>
+                            
+                            <!-- Bottom Block -->
+                            <div class="pt-4 border-t border-slate-200 dark:border-white/[0.08] space-y-1.5">
+                                <div class="geo-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-extrabold uppercase tracking-wider">
+                                    <span class="material-symbols-outlined text-base">verified</span>
+                                    Enterprise Assurance
+                                </div>
+                                <p class="text-xs md:text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed text-left">
+                                    Enterprise-grade security standards, zero-trust cloud infrastructure, and 100% transparent agile delivery cycles.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                </div>
-
-                <!-- Row 2: Key Takeaways & Core Benefits (2 Equal-Sized Centered Cards) -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch max-w-5xl mx-auto">
-                    
-                    <!-- Card 3: Key Takeaways (50% Width) -->
-                    <div class="bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-2xl p-7 flex flex-col justify-between h-full shadow-sm hover:border-[#3790ff]/40 hover:shadow-lg transition-all duration-300">
-                        <div>
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-4">
-                                <span class="material-symbols-outlined text-sm">fact_check</span>
+                    <!-- Card 3: Key Takeaways -->
+                    <div class="bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 rounded-3xl p-7 md:p-8 flex flex-col justify-between h-full lg:h-[360px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:border-[#3790ff]/40 hover:shadow-xl transition-all duration-300 group">
+                        <div class="flex-1 flex flex-col justify-between">
+                            <div class="geo-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-extrabold uppercase tracking-wider mb-3 shrink-0">
+                                <span class="material-symbols-outlined text-base">fact_check</span>
                                 Key Takeaways
                             </div>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
-                                    <span class="w-8 h-8 rounded-lg bg-[#3790ff]/15 text-[#3790ff] flex items-center justify-center font-extrabold text-xs shrink-0">50+</span>
-                                    <span class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">Custom digital platforms successfully delivered globally.</span>
+                            <div class="space-y-2.5 flex-1 flex flex-col justify-between">
+                                <div class="geo-pill-card flex items-center gap-3 p-3 rounded-2xl flex-1">
+                                    <span class="geo-icon-box w-9 h-9 rounded-xl flex items-center justify-center font-extrabold text-xs shrink-0">50+</span>
+                                    <span class="text-xs text-slate-900 dark:text-slate-100 font-semibold leading-relaxed">Custom digital platforms successfully delivered globally.</span>
                                 </div>
-                                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
-                                    <span class="w-8 h-8 rounded-lg bg-[#3790ff]/15 text-[#3790ff] flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-[#3790ff] text-base">psychology</span>
+                                <div class="geo-pill-card flex items-center gap-3 p-3 rounded-2xl flex-1">
+                                    <span class="geo-icon-box w-9 h-9 rounded-xl flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-base">psychology</span>
                                     </span>
-                                    <span class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">Specialized expertise in AI automation, conversion design & marketing.</span>
+                                    <span class="text-xs text-slate-900 dark:text-slate-100 font-semibold leading-relaxed">Specialized expertise in AI automation, conversion design &amp; marketing.</span>
                                 </div>
-                                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
-                                    <span class="w-8 h-8 rounded-lg bg-[#3790ff]/15 text-[#3790ff] flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-[#3790ff] text-base">schedule</span>
+                                <div class="geo-pill-card flex items-center gap-3 p-3 rounded-2xl flex-1">
+                                    <span class="geo-icon-box w-9 h-9 rounded-xl flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
                                     </span>
-                                    <span class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">Guaranteed 2-hour response SLA with dedicated 24/7 technical support.</span>
+                                    <span class="text-xs text-slate-900 dark:text-slate-100 font-semibold leading-relaxed">Guaranteed 2-hour response SLA with dedicated 24/7 technical support.</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 4: Core Benefits (50% Width - Exact Same Size as Card 3) -->
-                    <div class="bg-white dark:bg-[#0B1221] border border-black/10 dark:border-white/10 rounded-2xl p-7 flex flex-col justify-between h-full shadow-sm hover:border-[#3790ff]/40 hover:shadow-lg transition-all duration-300">
-                        <div>
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#3790ff]/10 text-[#3790ff] text-xs font-bold uppercase tracking-wider mb-4">
-                                <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                    <!-- Card 4: Core Benefits -->
+                    <div class="bg-white dark:bg-[#0B1221] border border-slate-200 dark:border-white/10 rounded-3xl p-7 md:p-8 flex flex-col justify-between h-full lg:h-[360px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:border-[#3790ff]/40 hover:shadow-xl transition-all duration-300 group">
+                        <div class="flex-1 flex flex-col justify-between">
+                            <div class="geo-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-extrabold uppercase tracking-wider mb-3 shrink-0">
+                                <span class="material-symbols-outlined text-base">rocket_launch</span>
                                 Core Benefits
                             </div>
-                            <div class="space-y-3">
-                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
-                                    <div class="font-bold text-xs text-slate-900 dark:text-white mb-1 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[#3790ff] text-base">bolt</span>
-                                        Conversion Optimization
+                            <div class="space-y-2.5 flex-1 flex flex-col justify-between">
+                                <div class="geo-pill-card flex items-center gap-3 p-3 rounded-2xl flex-1">
+                                    <span class="geo-icon-box w-9 h-9 rounded-xl flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-base">bolt</span>
+                                    </span>
+                                    <div>
+                                        <div class="font-extrabold text-xs text-slate-900 dark:text-white mb-0.5">Conversion Optimization</div>
+                                        <p class="text-xs text-slate-700 dark:text-slate-300 font-medium leading-normal text-left">Fast, mobile-first websites designed to turn visitors into leads.</p>
                                     </div>
-                                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed text-left">
-                                        Fast, mobile-first websites designed to turn visitors into leads.
-                                    </p>
                                 </div>
-                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
-                                    <div class="font-bold text-xs text-slate-900 dark:text-white mb-1 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[#3790ff] text-base">smart_toy</span>
-                                        AI Automation
+                                <div class="geo-pill-card flex items-center gap-3 p-3 rounded-2xl flex-1">
+                                    <span class="geo-icon-box w-9 h-9 rounded-xl flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-base">smart_toy</span>
+                                    </span>
+                                    <div>
+                                        <div class="font-extrabold text-xs text-slate-900 dark:text-white mb-0.5">AI Automation</div>
+                                        <p class="text-xs text-slate-700 dark:text-slate-300 font-medium leading-normal text-left">Custom CRM, chatbots, and workflow automation reducing manual work.</p>
                                     </div>
-                                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed text-left">
-                                        Custom CRM, chatbots, and workflow automation reducing manual work.
-                                    </p>
                                 </div>
-                                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.05]">
-                                    <div class="font-bold text-xs text-slate-900 dark:text-white mb-1 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-[#3790ff] text-base">trending_up</span>
-                                        Performance Marketing
+                                <div class="geo-pill-card flex items-center gap-3 p-3 rounded-2xl flex-1">
+                                    <span class="geo-icon-box w-9 h-9 rounded-xl flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-base">trending_up</span>
+                                    </span>
+                                    <div>
+                                        <div class="font-extrabold text-xs text-slate-900 dark:text-white mb-0.5">Performance Marketing</div>
+                                        <p class="text-xs text-slate-700 dark:text-slate-300 font-medium leading-normal text-left">Data-driven ad campaigns maximizing ROI and business growth.</p>
                                     </div>
-                                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed text-left">
-                                        Data-driven ad campaigns maximizing ROI and business growth.
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -344,8 +357,9 @@ class SEOMiddleware(MiddlewareMixin):
 
         path = request.path
         
-        # Check cache if not authenticated
-        is_cacheable = not (hasattr(request, 'user') and request.user.is_authenticated)
+        # Check cache if not authenticated and not in DEBUG mode
+        from django.conf import settings
+        is_cacheable = not (hasattr(request, 'user') and request.user.is_authenticated) and not getattr(settings, 'DEBUG', False)
         cache_key = f"seo_processed_content:{path}"
         if is_cacheable:
             cached_html = cache.get(cache_key)
