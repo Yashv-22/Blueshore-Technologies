@@ -528,43 +528,86 @@
     }
 
     /**
-     * Sticky Stacking Card Enhancer: Why Choose Blueshore Cards
-     * Enhances native CSS position:sticky card stacking with scroll-driven depth styling.
+     * Pinned Card Deck Shuffle Engine: Why Choose Blueshore Cards
+     * Cards are stacked directly on top of each other.
+     * While the viewport is pinned on scroll, scrolling shuffles the active card away
+     * to reveal the next card underneath in a seamless deck shuffle effect.
      */
     function initWhyChooseScrollAnimation() {
-        var stackContainers = document.querySelectorAll('.why-choose-card-stack');
-        if (!stackContainers.length) return;
+        var sections = document.querySelectorAll('.why-choose-pinned-section');
+        if (!sections.length) return;
 
-        stackContainers.forEach(function(container) {
-            var cards = container.querySelectorAll('.sticky');
+        sections.forEach(function(section) {
+            var cards = section.querySelectorAll('.why-choose-deck-card');
+            var dots = section.querySelectorAll('.indicator-dot');
             if (!cards.length) return;
 
-            window.addEventListener('scroll', function() {
+            function updateDeckShuffle() {
+                var rect = section.getBoundingClientRect();
                 var winHeight = window.innerHeight;
+                var scrollableDistance = rect.height - winHeight;
+
+                if (scrollableDistance <= 0) return;
+
+                // Overall progress of section through viewport: 0.0 at top entry -> 1.0 at exit
+                var progress = -rect.top / scrollableDistance;
+                progress = Math.min(Math.max(progress, 0), 1);
+
+                var numCards = cards.length;
+                var totalSegments = numCards - 1;
+                var rawSegment = progress * totalSegments;
+                var activeIdx = Math.min(Math.floor(rawSegment), totalSegments);
+                var segmentProgress = rawSegment - activeIdx; // 0.0 to 1.0 for current step transition
+
                 cards.forEach(function(card, idx) {
-                    var rect = card.getBoundingClientRect();
-                    // If a card is stuck near the top header (top <= 140px)
-                    if (rect.top <= 140 && idx < cards.length - 1) {
-                        var nextCard = cards[idx + 1];
-                        var nextRect = nextCard.getBoundingClientRect();
-                        // As next card slides over this card, subtly scale down underneath
-                        if (nextRect.top < winHeight && nextRect.top > 140) {
-                            var overlapProgress = (winHeight - nextRect.top) / (winHeight - 140);
-                            overlapProgress = Math.min(Math.max(overlapProgress, 0), 1);
-                            var scale = 1 - (overlapProgress * 0.04);
-                            var opacity = 1 - (overlapProgress * 0.15);
-                            card.style.transform = 'scale(' + scale.toFixed(3) + ')';
-                            card.style.opacity = opacity.toFixed(2);
-                        } else if (nextRect.top <= 140) {
-                            card.style.transform = 'scale(0.96)';
-                            card.style.opacity = '0.85';
-                        }
-                    } else {
-                        card.style.transform = 'scale(1)';
+                    var cardIdx = parseInt(card.getAttribute('data-card-index') || idx, 10);
+
+                    if (cardIdx < activeIdx) {
+                        // Past cards: shuffled out up & off screen
+                        card.style.transform = 'translateY(-140%) rotate(-6deg) scale(0.9)';
+                        card.style.opacity = '0';
+                        card.style.pointerEvents = 'none';
+                    } else if (cardIdx === activeIdx) {
+                        // Current top active card: shuffling out as user scrolls
+                        var translateY = -140 * segmentProgress;
+                        var rotate = -6 * segmentProgress;
+                        var scale = 1 - (0.08 * segmentProgress);
+                        var opacity = 1 - (segmentProgress * 1.25);
+
+                        card.style.transform = 'translateY(' + translateY.toFixed(1) + '%) rotate(' + rotate.toFixed(1) + 'deg) scale(' + scale.toFixed(3) + ')';
+                        card.style.opacity = Math.max(opacity, 0).toFixed(2);
+                        card.style.pointerEvents = segmentProgress > 0.5 ? 'none' : 'auto';
+                    } else if (cardIdx === activeIdx + 1) {
+                        // Next card waiting directly underneath: scaling up smoothly to foreground
+                        var scale = 0.94 + (0.06 * segmentProgress);
+                        var translateY = 24 * (1 - segmentProgress);
+                        card.style.transform = 'translateY(' + translateY.toFixed(1) + 'px) scale(' + scale.toFixed(3) + ')';
                         card.style.opacity = '1';
+                        card.style.pointerEvents = 'auto';
+                    } else {
+                        // Future cards deeper in stack
+                        card.style.transform = 'translateY(24px) scale(0.94)';
+                        card.style.opacity = '0';
+                        card.style.pointerEvents = 'none';
                     }
                 });
-            }, { passive: true });
+
+                // Update indicators
+                if (dots.length) {
+                    dots.forEach(function(dot, dotIdx) {
+                        if (dotIdx === activeIdx) {
+                            dot.style.width = '24px';
+                            dot.style.backgroundColor = '#3790ff';
+                        } else {
+                            dot.style.width = '10px';
+                            dot.style.backgroundColor = document.documentElement.classList.contains('dark') ? '#334155' : '#cbd5e1';
+                        }
+                    });
+                }
+            }
+
+            window.addEventListener('scroll', updateDeckShuffle, { passive: true });
+            updateDeckShuffle(); // Initial trigger
         });
     }
 
