@@ -532,6 +532,7 @@
      * Cards are stacked directly on top of each other.
      * While the viewport is pinned on scroll, scrolling shuffles the active card away
      * to reveal the next card underneath in a seamless deck shuffle effect.
+     * The last card (Card 5) stays pinned and visible until scroll reaches the end of the section.
      */
     function initWhyChooseScrollAnimation() {
         var sections = document.querySelectorAll('.why-choose-pinned-section');
@@ -553,11 +554,22 @@
                 var progress = -rect.top / scrollableDistance;
                 progress = Math.min(Math.max(progress, 0), 1);
 
-                var numCards = cards.length;
-                var totalSegments = numCards - 1;
-                var rawSegment = progress * totalSegments;
+                var numCards = cards.length; // 5 cards
+                
+                // Reserve first 82% of scroll to reveal Card 1 -> Card 5
+                // The remaining 18% of scroll keeps Card 5 pinned & readable on screen before unpinning
+                var revealPhaseRatio = 0.82;
+                var activeSegmentProgress = Math.min(progress / revealPhaseRatio, 1.0);
+
+                var totalSegments = numCards - 1; // 4 transitions
+                var rawSegment = activeSegmentProgress * totalSegments;
                 var activeIdx = Math.min(Math.floor(rawSegment), totalSegments);
-                var segmentProgress = rawSegment - activeIdx; // 0.0 to 1.0 for current step transition
+                var segmentProgress = rawSegment - activeIdx;
+
+                if (activeSegmentProgress >= 1.0) {
+                    activeIdx = numCards - 1;
+                    segmentProgress = 0;
+                }
 
                 cards.forEach(function(card, idx) {
                     var cardIdx = parseInt(card.getAttribute('data-card-index') || idx, 10);
@@ -567,7 +579,7 @@
                         card.style.transform = 'translateY(-140%) rotate(-6deg) scale(0.9)';
                         card.style.opacity = '0';
                         card.style.pointerEvents = 'none';
-                    } else if (cardIdx === activeIdx) {
+                    } else if (cardIdx === activeIdx && activeIdx < numCards - 1) {
                         // Current top active card: shuffling out as user scrolls
                         var translateY = -140 * segmentProgress;
                         var rotate = -6 * segmentProgress;
@@ -577,11 +589,16 @@
                         card.style.transform = 'translateY(' + translateY.toFixed(1) + '%) rotate(' + rotate.toFixed(1) + 'deg) scale(' + scale.toFixed(3) + ')';
                         card.style.opacity = Math.max(opacity, 0).toFixed(2);
                         card.style.pointerEvents = segmentProgress > 0.5 ? 'none' : 'auto';
-                    } else if (cardIdx === activeIdx + 1) {
+                    } else if (cardIdx === activeIdx + 1 && activeIdx < numCards - 1) {
                         // Next card waiting directly underneath: scaling up smoothly to foreground
                         var scale = 0.94 + (0.06 * segmentProgress);
                         var translateY = 24 * (1 - segmentProgress);
                         card.style.transform = 'translateY(' + translateY.toFixed(1) + 'px) scale(' + scale.toFixed(3) + ')';
+                        card.style.opacity = '1';
+                        card.style.pointerEvents = 'auto';
+                    } else if (cardIdx === numCards - 1 && activeIdx === numCards - 1) {
+                        // Card 5 (Last Card): Fully active, centered & visible
+                        card.style.transform = 'translateY(0px) rotate(0deg) scale(1)';
                         card.style.opacity = '1';
                         card.style.pointerEvents = 'auto';
                     } else {
@@ -596,7 +613,7 @@
                 if (dots.length) {
                     dots.forEach(function(dot, dotIdx) {
                         if (dotIdx === activeIdx) {
-                            dot.style.width = '24px';
+                            dot.style.width = '28px';
                             dot.style.backgroundColor = '#3790ff';
                         } else {
                             dot.style.width = '10px';
