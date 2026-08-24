@@ -17,6 +17,7 @@
         // before the scroll-reveal observer reads card positions.
         setTimeout(initExpertiseReveal, 50);
         setTimeout(initStatsCountUp, 50);
+        setTimeout(initWhyChooseScrollAnimation, 50);
     };
 
     /**
@@ -138,7 +139,9 @@
             '.expertise-subtitle{opacity:0!important;transform:translateY(24px)!important;transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s,transform 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s!important;will-change:opacity,transform!important}',
             '.expertise-subtitle--visible{opacity:1!important;transform:translateY(0)!important}',
             '.expertise-card{opacity:0!important;transform:translateY(70px) scale(0.88)!important;filter:blur(6px)!important;transition:opacity 0.75s cubic-bezier(0.22,1,0.36,1),transform 0.75s cubic-bezier(0.22,1,0.36,1),filter 0.55s cubic-bezier(0.22,1,0.36,1)!important;will-change:opacity,transform,filter!important;overflow:hidden!important;position:relative!important}',
-            '.expertise-card--visible{opacity:1!important;transform:translateY(0) scale(1)!important;filter:blur(0)!important}'
+            '.expertise-card--visible{opacity:1!important;transform:translateY(0) scale(1)!important;filter:blur(0)!important}',
+            '.why-choose-card{opacity:0!important;transform:perspective(1000px) rotateX(24deg) translateY(50px) scale(0.92)!important;transform-origin:center top!important;transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1),box-shadow 0.4s ease,border-color 0.3s ease!important;will-change:opacity,transform!important}',
+            '.why-choose-card.card-opened{opacity:1!important;transform:perspective(1000px) rotateX(0deg) translateY(0) scale(1)!important}'
         ].join('\n');
 
         var style = document.createElement('style');
@@ -521,6 +524,77 @@
 
         statEls.forEach(function (el) {
             observer.observe(el);
+        });
+    }
+
+    /**
+     * Scroll-Reveal & Continuous 3D Opening Animation: Why Choose Blueshore Cards
+     * As the user scrolls continuously down into the Why Choose section,
+     * the cards unfold smoothly in real-time from a 3D folded angle into full open view.
+     */
+    function initWhyChooseScrollAnimation() {
+        var sections = document.querySelectorAll('.core-values-section, #why-choose-blueshore, [data-section="why-choose"]');
+        if (!sections.length) return;
+
+        sections.forEach(function(section) {
+            var cardContainers = section.querySelectorAll('.grid > div, .flex > div');
+            var cards = [];
+
+            cardContainers.forEach(function(card) {
+                // Exclude full-width callout banners or non-card containers
+                if (!card.classList.contains('bg-gradient-to-r') && card.querySelector('h3')) {
+                    card.classList.add('why-choose-card');
+                    cards.push(card);
+                }
+            });
+
+            if (!cards.length) return;
+
+            cards.forEach(function(card, idx) {
+                card.style.transitionDelay = (idx * 110) + 'ms';
+            });
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('card-opened');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -30px 0px'
+            });
+
+            cards.forEach(function(card) {
+                observer.observe(card);
+            });
+
+            // Continuous scroll listener for real-time smooth 3D unfolding as user scrolls
+            window.addEventListener('scroll', function() {
+                var rect = section.getBoundingClientRect();
+                var winHeight = window.innerHeight;
+
+                if (rect.top < winHeight && rect.bottom > 0) {
+                    var scrollRatio = (winHeight - rect.top) / (winHeight + rect.height * 0.7);
+                    var progress = Math.min(Math.max(scrollRatio, 0), 1);
+
+                    cards.forEach(function(card, idx) {
+                        if (!card.classList.contains('card-opened')) {
+                            var angle = Math.max(24 * (1 - progress * 2), 0);
+                            var translateY = Math.max(50 * (1 - progress * 2), 0);
+                            var scale = Math.min(0.92 + (0.08 * progress * 2), 1);
+                            var opacity = Math.min(progress * 2.2, 1);
+
+                            card.style.transform = 'perspective(1000px) rotateX(' + angle.toFixed(1) + 'deg) translateY(' + translateY.toFixed(1) + 'px) scale(' + scale.toFixed(3) + ')';
+                            card.style.opacity = opacity.toFixed(2);
+
+                            if (progress > 0.4) {
+                                card.classList.add('card-opened');
+                            }
+                        }
+                    });
+                }
+            }, { passive: true });
         });
     }
 
